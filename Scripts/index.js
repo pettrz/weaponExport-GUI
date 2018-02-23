@@ -11,7 +11,7 @@ xhttp.onreadystatechange = function() {
          value: JSON.parse(countries[i].weapons),
          writable: true
     });
-} console.log(weapons); }}
+} console.log(countries); }}
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
 
@@ -46,8 +46,15 @@ var map = $(function(){
           e.preventDefault();
       },
       onRegionClick(e, code) {
-        if (code in weapons)
-          alert(weapons[code] + 'k weapons to ' + code);
+          for (i=0; i < countries.length; i++)  {
+            if(countries[i].code == code) {
+              var country = countries[i];
+              console.log(country);
+              document.getElementById('country').innerHTML = country.country;
+              document.getElementById('info').innerHTML = country.info;
+              document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
+            }
+          }
       },
   });
 });
