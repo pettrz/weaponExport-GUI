@@ -1,28 +1,23 @@
 var countries;
-var weapons = {"AF" : 50, "DZ" : 150};
+var weapons = {};
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     countries = JSON.parse(xhttp.response);
-
     for (var i = 0; i < countries.length; i++) {  
-      Object.defineProperty(weapons, countries[i].code, {
-         value: JSON.parse(countries[i].weapons),
-         writable: true
-    });
-} console.log(countries); }}
+      weapons[countries[i].code] = countries[i].weapons;
+} console.log(weapons); }}
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
 
- var guns = {
-   "AF": 50,
-   "NO": 100,
-   "DZ": 150,
-   "US": 200,
-};
-
-console.log(guns);
+//  var guns = {
+//    "AF": 50,
+//    "NO": 100,
+//    "DZ": 150,
+//    "US": 200,
+// };
+// console.log(guns);
 
 var map = $(function(){
   $('#world-map').vectorMap({
@@ -53,6 +48,7 @@ var map = $(function(){
               document.getElementById('country').innerHTML = country.country;
               document.getElementById('info').innerHTML = country.info;
               document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
+              document.getElementById('weapons').innerHTML = 'Weapons: ' + country.weapons + 'k / year';
             }
           }
       },
