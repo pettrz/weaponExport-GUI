@@ -6,7 +6,7 @@ xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     countries = JSON.parse(xhttp.response);
     for (var i = 0; i < countries.length; i++) {  
-      weapons[countries[i].code] = countries[i].weapons;
+      weapons[countries[i].code] = JSON.parse(countries[i].weapons);
 } console.log(weapons); }}
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
