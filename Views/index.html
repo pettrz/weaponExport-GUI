@@ -16,19 +16,19 @@
 <body>
 <div class="row map" style="width: 1100px; height: 500px;">
      <div id="world-map" class="col-md-8 padding-0" style="height:500px"></div>
-     <div id="info" class="col-md-4" style="background-color:slategray; height: 100%; padding: 15px;">
+     <div id="infobox" class="col-md-4" style="background-color:slategray; height: 100%; padding: 15px;">
        
 
          <div class="country col-md-12" style=" width: 100%;">
            <div class="" style="">
-               <span class="flag-icon flag-icon-se" style="height: 3em; width: 3em;float:left; "></span>
-               <h1 style="float: left; margin: 0; padding-left: 15px;">Sweden</h1>
+               <span id="flag"class="flag-icon flag-icon-se" style="height: 3em; width: 3em;float:left; "></span>
+               <h1 id="country" style="float: left; margin: 0; padding-left: 15px;">Country</h1>
            </div>
            
          </div>
          <div class=" col-md-12 country_data">
            <ul>
-             <li>Test: x</li>
+             <li id="weapons">Test: x</li>
              <li>Test: xx</li>
              <li>Test: xx</li>
              
@@ -41,28 +41,7 @@
           
            <div class="col-md-12" style="word-wrap: break-word">
              <hr>
-            
-                TestTestTestTestTestTestTestTestTestTestTest
-                TestTestTestTestTestTestTestTestTestTestTest
-                <button onclick="readMoreFunction()">Läs mer</button>
-                <div id="readMoreText" id="hidden" style="display:none">
-                TestTestTestTestTestTestTestTestTestTestTest
-                TestTestTestTestTestTestTestTestTestTestTest
-                TestTestTestTestTestTestTestTestTestTestTest
-                TestTestTestTestTestTestTestTestTestTestTest
-                TestTestTestTestTestTestTestTestTestTestTest
-                TestTestTestTestTestTestTestTestTestTestTest
-                </div>
-                <script>
-                function readMoreFunction() {
-                var x = document.getElementById("readMoreText");
-                if (x.style.display === "none") {
-                x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                  }
-                }
-                </script>
+             <p id="info">info</p>
           </div>
           
       
