@@ -1,10 +1,12 @@
 var countries;
-var weapons = {};
+var weapons = {'AF':20, 'US':70};
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     countries = JSON.parse(xhttp.response);
+    console.log(xhttp.response);
+    console.log(JSON.parse(xhttp.response));
     for (var i = 0; i < countries.length; i++) {  
       weapons[countries[i].code] = JSON.parse(countries[i].weapons);
 } console.log(weapons); }}
