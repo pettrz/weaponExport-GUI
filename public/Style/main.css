@@ -1,0 +1,14 @@
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+.map{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.description{
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+}
