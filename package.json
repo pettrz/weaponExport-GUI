@@ -2,7 +2,6 @@
   "name": "vapenkarta",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +10,9 @@
     "url": "https://petter-t41718.visualstudio.com/Project-Vapenkarta/_git/Vapenkarta_API"
   },
   "author": "Team Chaos",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-html-partial": "^1.0.1"
+  }
 }
