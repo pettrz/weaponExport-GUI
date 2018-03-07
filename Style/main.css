@@ -45,8 +45,27 @@
     vertical-align: middle;
     background-color: #424242;
     color: white;
+    font-family: "Verdana", Geneva, sans-serif;
 }
 
-ul {
-    list-style-type: none;
+#country {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+#infobox1 {
+    padding: 3px;
+    font-weight: bold;
+}
+
+#columnWeapon{
+    text-align: left;
+}
+#columnGPI {
+    text-align: left;
+}
+
+#columnInfo{
+   float:right;
+   padding-top:5px;
 }
