@@ -12,4 +12,6 @@ gulp.task('build', function () {
         .pipe(gulp.dest('public/Style'))
     gulp.src('flags/**/*.svg')
         .pipe(gulp.dest('public/flags'))
+    gulp.src('Style/icons/*.png')
+        .pipe(gulp.dest('public/Style/icons'))
 });
