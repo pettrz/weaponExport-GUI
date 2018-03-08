@@ -48,10 +48,22 @@
 
 .jvectormap-zoomin{
     top: 40px;
+    height: 20px;
+    width: 23px;
+    line-height: 20px;
+    font-size: 40px;
 }
 
 .jvectormap-zoomout{
-    top:60px;
+    top:80px;
+    height: 20px;
+    width: 23px;
+    line-height: 20px;
+    font-size: 40px;
+}
+
+#navbar i{
+    color:white;
 }
 
 #infobox {
