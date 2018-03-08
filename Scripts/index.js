@@ -53,7 +53,8 @@ function CreateMap() {
                 document.getElementById('country').innerHTML = country.country;
                 document.getElementById('info').innerHTML = country.info;
                 document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
-                document.getElementById('weapons').innerHTML = 'Weapons: ' + country.weapons + 'k / year';
+                document.getElementById('weaponInfo').innerHTML = country.weapons + ' / år';
+                document.getElementById('GPIInfo').innerHTML = country.gpi + ' av 162';
               }
             }
         },

@@ -13,6 +13,8 @@
         />
         <link rel="stylesheet" href="./../Style/flag-icon.css" type="text/css"
         media="screen" />
+        <link rel="stylesheet" href="./../Style/fa-svg-wit-js.css" type="text/css"
+        media="screen" />
         <script src="http://code.jquery.com/jquery-git.min.js"></script>
         <script src="./../Scripts/jquery-jvectormap-2.0.3.min.js"></script>
         <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
@@ -20,6 +22,8 @@
         <script src="./../Scripts/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"
         defer="defer"></script>
+        <script src="./../Scripts/fontawesome.js"></script>
+        <script src="./../Scripts/fontawesome-all.js"></script>
     </head>
     
     <body>
@@ -31,7 +35,8 @@
             </div>
             <div id="map" class="row">
                 <div class="col-md-8 padding-0" style="height: 100%;">
-                    <div id="navbar"> <a class="active" href="">Sveriges Vapenexport</a> <a href="">Statistik</a> 
+                    <div id="navbar"> <a class="active" href="">Sveriges Vapenexport</a>
+ <a href="">Statistik</a> 
                         <a
                         href="">Aktörer</a>
                     </div>
@@ -47,12 +52,12 @@
                     <div id="country-data" class="col-md-12">
                         <div id="infox1">
                             <div id="columnWeapon" class="col-md-12">
-                                <img src="./../Style/icons/vapen-icon.png" />Vapen:
-                                <div id="columnInfo">10000 / år</div>
+                                <img src="./../Style/icons/vapen-icon.png" />Vapenexport:
+                                <div class="columnInfo" id="weaponInfo">10000 / år</div>
                             </div>
                             <div id="columnGPI" class="col-md-12">
                                 <img src="./../Style/icons/gpi-icon.png" />GPI-Rank:
-                                <div id="columnInfo">10 av 162</div>
+                                <div class="columnInfo" id="GPIInfo">10 av 162</div>
                             </div>
                         </div>
                     </div>
