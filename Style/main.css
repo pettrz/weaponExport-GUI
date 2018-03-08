@@ -109,6 +109,7 @@
 #columnWeapon{
     text-align: left;
     font-weight: bold;
+    padding-bottom: 10px;
 }
 
 #columnGPI {
@@ -144,4 +145,28 @@ img{
 .jvectormap-legend-title{
     text-align: left;
     padding-bottom: 5px;
+}
+
+#info{
+    overflow: hidden;
+    height: 190px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.buttonInfo {
+    background-color: #333131;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border: 2px solid #FFFFFF !important;
+
+}
+
+.buttonInfo:hover {
+    background-color: #808080;
+}
+
+.readMore{
+    padding-top: 500px;
 }
