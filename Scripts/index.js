@@ -1,5 +1,5 @@
 var countries;
-var weapons = {'AF':20, 'US':70};
+var weapons = {'AF':80, 'US':20};
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -32,11 +32,11 @@ function CreateMap() {
           regions: [{
             // values: guns,
             values: weapons,
-            scale: ['#ffff00', '#0000ff'],
+            scale: ['#0000ff', '#ffff00'],
             normalizeFunction: 'polynomial',
             legend: {
               title: 'Weapons',
-              vertical: false,
+              vertical: true,
         }}]},
         onRegionOver(e, code) {
           if (!(code in weapons))
@@ -54,7 +54,7 @@ function CreateMap() {
                 document.getElementById('country').innerHTML = country.country;
                 document.getElementById('info').innerHTML = country.info;
                 document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
-                document.getElementById('weaponInfo').innerHTML = country.weapons + ' / år';
+                document.getElementById('weaponInfo').innerHTML = country.weapons + ' / ï¿½r';
                 document.getElementById('GPIInfo').innerHTML = country.gpi + ' av 162';
               }
             }

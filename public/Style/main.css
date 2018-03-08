@@ -128,3 +128,20 @@
 img{
     padding-right: 10px;
 }
+
+.jvectormap-legend{
+    background-color: transparent !important;
+    margin: 0;
+}
+
+ .jvectormap-legend-cnt-v{
+    left: 0;
+    margin-top: 43.5%;
+    margin-left: 12%;
+    transform: scale(1.25, 1.25);
+} 
+
+.jvectormap-legend-title{
+    text-align: left;
+    padding-bottom: 5px;
+}
