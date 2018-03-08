@@ -46,6 +46,14 @@
     font-weight: bold;
 }
 
+.jvectormap-zoomin{
+    top: 40px;
+}
+
+.jvectormap-zoomout{
+    top:60px;
+}
+
 #infobox {
     text-align: center;
     vertical-align: middle;
