@@ -16,13 +16,12 @@ xhttp.onreadystatechange = function() {
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
 
-//  var guns = {
-//    "AF": 50,
-//    "NO": 100,
-//    "DZ": 150,
-//    "US": 200,
-// };
-// console.log(guns);
+function CountryList(searchTerm) {
+  for (i = 0; i < countries.length; i++) {
+    if (countries[i].country.includes(searchTerm))
+      return countries[i];
+  }
+}
 
 function CreateMap() {
   var map = $(function(){

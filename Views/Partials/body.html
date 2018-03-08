@@ -1,21 +1,25 @@
 <div class="container">
-<div id="map" class="row" >
-
-    <div class="col-md-8 padding-0" style="height: 100%;">
-        <div id="navbar"> 
-            <a class="active" href="">Sveriges Vapenexport</a>
-            <a href="">Statistik</a> 
-            <a href="">Aktörer</a>
-        </div>
+    <div>
+        <input id="search" type="text"/> <br />
+        <select multiple="multiple" id="countryList">
+        </select>
+    </div>
+    <div id="map" class="row" >
+        <div class="col-md-8 padding-0" style="height: 100%;">
+            <div id="navbar"> 
+                <a class="active" href="">Sveriges Vapenexport</a>
+                <a href="">Statistik</a> 
+                <a href="">Aktörer</a>
+            </div>
         <div id="world-map"></div>
     </div>
 
     <div id="infobox" class="col-md-4">
         <div class="country col-md-12" style=" width: 100%;">
-            <div> <span id="flag" class="flag-icon flag-icon-se"></span>
-
+            <div> 
+                <span id="flag" class="flag-icon flag-icon-se"></span>
                 <br/>
-                 <h1 id="country">Country</h1>
+                <h1 id="country">Country</h1>
             </div>
         </div>
         <div id="country-data" class="col-md-12">
@@ -37,6 +41,6 @@
         </div>
     </div>
     <h3>Här kan du se vart svenska vapen exporterats, hur svensk vapenexporten utvecklats över tid och vilka aktörer som påverkar exporten. Klicka på länderna och på flikarna.</h3>
-</div>
+    </div>
 </div>
 
