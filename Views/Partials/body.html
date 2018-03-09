@@ -9,52 +9,46 @@
         </div>
         <div id="world-map"></div>
     </div>
-
-    <div id="infobox"  class="col-md-4 padding-0">
-        <div class="country col-md-12" style=" width: 100%;">
-            <div> <span id="flag" class="flag-icon flag-icon-se"></span>
-                 <h1 id="country">Country</h1>
-                 
-            </div>
-        </div>
-        <div id="country-data" class="col-md-12">
-            <div id="data-column">
-                <div id="columnWeapon" class="col-md-12">
-                    <img src="./../Style/icons/vapen-icon.png" /> Vapenexport:
-                    <div class="columnInfo" id="weaponInfo">10000 / år</div>
-                </div>
-                <div id="columnGPI" class="col-md-12">
-                    <img src="./../Style/icons/gpi-icon.png" /> GPI-Rank:
-                    <div class="columnInfo" id="GPIInfo">10 av 162</div>                 
+            
+        <div id="infobox"  class="col-md-4 padding-0">
+            <div class="country col-md-12" style=" width: 100%;">
+                <div> 
+                    <span id="flag" class="flag-icon" data-bind="css: flag()"></span>
+                    <br/>
+                    <h1 id="country" data-bind="text: selectedCountry().country">Country</h1>
                 </div>
             </div>
+            <div id="country-data" class="col-md-12">
+                <div id="data-column">
+                    <div id="columnWeapon" class="col-md-12">
+                        <img src="./../Style/icons/vapen-icon.png" /> Vapenexport:
+                        <div class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo">10000 / år</div>
+                    </div>
+                    <div id="columnGPI" class="col-md-12">
+                        <img src="./../Style/icons/gpi-icon.png" /> GPI-Rank:
+                        <div class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo">10 av 162</div>                 
+                    </div>
+                </div>
+            </div>
+            <div id="info-field" class="col-md-12">
+                <p id="info" data-bind="text: selectedCountry().info">Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder.<br/>
+                    Kartan visar ett urval av de länder dit svenska vapen skickats, genom medveten krigsmaterielexport eller genom illegala överföringar. Läs mer om hur kartan är gjord under fliken Om produktionen.
+                </p>
+            </div>
+            <div class="readMore">
+                <button class="buttonInfo" type="button">Läs mer</button>
+            </div>
         </div>
-
-        <div id="info-field" class="col-md-12">
-
-            <p id="info">Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder.<br/>
-                 Kartan visar ett urval av de länder dit svenska vapen skickats, genom medveten krigsmaterielexport eller genom illegala överföringar. Läs mer om hur kartan är gjord under fliken Om produktionen.
-            </p>
-
-        </div>
-        <div class="readMore">
-            <button class="buttonInfo" type="button">Läs mer</button>
-        </div>
+        <div id="countryList">
+            <div class="searchDropdown">
+                <button class="searchDropbtn"><i class="fas fa-search"></i></button>
+                <input type="text" onclick="searchDropdownFunction()" placeholder="Search.." id="searchDropdownInput"  data-bind="value: searchTerm" onkeyup="filterFunction()">
+            <div id="searchDropdownContent" class="searchDropdown-content" >
+                <ul data-bind="foreach: showList()">
+                    <li data-bind="text: country"></li>
+                </ul>
         
-    </div>
-    <!--<h3>Här kan du se vart svenska vapen exporterats, hur den svenska vapenexporten utvecklats över tid och vilka aktörer som påverkar exporten. Klicka på länderna och på flikarna.</h3>-->
-</div>
-
-<div class="searchDropdown">
-<button onclick="searchDropdownFunction()" class="searchDropbtn"><i class="fas fa-search"></i></button>
-<input type="text" placeholder="Search.." id="searchDropdownInput" onkeyup="filterFunction()">
-  <div id="searchDropdownContent" class="searchDropdown-content" >
-    <a href="#about">About</a>
-    <a href="#base">Base</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-    <a href="#custom">Custom</a>
-    <a href="#support">Support</a>
-    <a href="#tools">Tools</a>
-  </div>
+            </div>
+            </div>
+        </div>
 </div>

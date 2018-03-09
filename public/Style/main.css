@@ -180,20 +180,21 @@ img{
     background-color: #333131;
 }
 
-.searchDropbtn:hover{
+/*.searchDropbtn:hover{
     background-color: #f2f2f2;
     color: #333131;
-}
+}*/
 
 #searchDropdownInput {
     background-position: 14px 15px;
     background-repeat: no-repeat;
     background-color:#f2f2f2;
     font-size: 16px;
-    padding: 15px 0px 15px 5px;
+    padding: 15px 0px 15px 10px;
     border: none;
     border-bottom: none;
     margin:-5px;
+    color:#333131;
 }
 
 .searchDropdown {
@@ -228,4 +229,15 @@ img{
 
 .show {
     display:block;
+}
+
+body{
+    color:#f2f2f2;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;   
+}
+
+ul {
+list-style-type: none;
 }
