@@ -37,8 +37,10 @@ function viewModel() {
   self.GPIInfo = ko.computed(() => {
     return self.selectedCountry().gpi + ' av 162'
   });
-  self.showList = ko.computed(() => {
+  self.showList = () => {
     if (self.searchTerm() == '') {
+      
+      console.log('all countries returned')
       return self.countryList();
     } else {
       var countries = [];
@@ -48,14 +50,14 @@ function viewModel() {
         }
       }
       if (countries.length == 0) {
-        console.log('didnt find em')
+        console.log('no match in list')
         return [{country: "Sorry, we couldn't find any countries that match your search!"}]
       } else {
-        console.log('it got returned')
+        console.log('returned matches in list')
         return countries;
       }
     }
-  });
+  };
 }
 
 ko.applyBindings(viewModel);

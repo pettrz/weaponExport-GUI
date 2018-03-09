@@ -1,7 +1,7 @@
 <div class="container">
     <div id="map" class="row" >
         <div class="col-md-8 padding-0" style="height: 100%;">
-            <div id="navbar"> 
+            <div id="navbar">
                 <a class="active" href="">Sveriges Vapenexport</a>
                 <a href="">Statistik</a> 
                 <a href="">Aktörer</a>
@@ -37,6 +37,12 @@
             <div class="readMore">
                 <button class="buttonInfo" type="button">Läs mer</button>
             </div>
+        </div>
+        <div id="countryList">
+            <input type="text" data-bind="value: searchTerm"/>
+            <ul data-bind="foreach: showList()">
+                <li data-bind="text: country"></li>
+            </ul>
         </div>
         <!--<h3>Här kan du se vart svenska vapen exporterats, hur den svenska vapenexporten utvecklats över tid och vilka aktörer som påverkar exporten. Klicka på länderna och på flikarna.</h3>-->
     </div>
