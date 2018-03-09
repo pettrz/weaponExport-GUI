@@ -13,27 +13,19 @@
         />
         <link rel="stylesheet" href="./../Style/flag-icon.css" type="text/css"
         media="screen" />
-        <link rel="stylesheet" href="./../Style/fa-svg-with-js.css" type="text/css"
+        <link rel="stylesheet" href="./../Style/fa-svg-wit-js.css" type="text/css"
         media="screen" />
         <script src="http://code.jquery.com/jquery-git.min.js"></script>
         <script src="./../Scripts/jquery-jvectormap-2.0.3.min.js"></script>
         <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+        <script src="./../Scripts/index.js"></script>
         <script src="./../Scripts/bootstrap.min.js"></script>
         <script src="./../Scripts/fontawesome.js"></script>
         <script src="./../Scripts/fontawesome-all.js"></script>
-        <script src="./../Scripts/index.js" defer="defer"></script>
     </head>
     
     <body>
         <div class="container">
-            <div>
-                <input id="search" type="text" data-bind="value: searchTerm" />
-                <br />
-                <ul data-bind="foreach: showList()">
-                    <li data-bind="text: country"></li>
-                </ul>
-            </div>
             <div id="map" class="row">
                 <div class="col-md-8 padding-0" style="height: 100%;">
                     <div id="navbar"> <a class="active" href="">Sveriges Vapenexport</a> <a href="">Statistik</a> 
@@ -44,7 +36,7 @@
                 </div>
                 <div id="infobox" class="col-md-4 padding-0">
                     <div class="country col-md-12" style=" width: 100%;">
-                        <div> <span id="flag" class="flag-icon" data-bind="css: flag()"></span>
+                        <div> <span id="flag" class="flag-icon flag-icon-se"></span>
                             <br/>
                              <h1 id="country">Country</h1>
                         </div>
@@ -53,19 +45,20 @@
                         <div id="data-column">
                             <div id="columnWeapon" class="col-md-12">
                                 <img src="./../Style/icons/vapen-icon.png" />Vapenexport:
-                                <div class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo()">weapons</div>
+                                <div class="columnInfo" id="weaponInfo">10000 / år</div>
                             </div>
                             <div id="columnGPI" class="col-md-12">
                                 <img src="./../Style/icons/gpi-icon.png" />GPI-Rank:
-                                <div class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo()">GPI</div>
+                                <div class="columnInfo" id="GPIInfo">10 av 162</div>
                             </div>
                         </div>
                     </div>
                     <div id="info-field" class="col-md-12">
-                        <hr>
-                        <p id="info" data-bind="text: selectedCountry().info">info</p>
-                        <hr>
-                        <p id="links" data-bind="text: selectedCountry().links">links</p>
+                        <p id="info">Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel
+                            till 54 länder.
+                            <br/>Kartan visar ett urval av de länder dit svenska vapen skickats, genom
+                            medveten krigsmaterielexport eller genom illegala överföringar. Läs mer
+                            om hur kartan är gjord under fliken Om produktionen.</p>
                     </div>
                     <div class="readMore">
                         <button class="buttonInfo" type="button">Läs mer</button>
@@ -73,6 +66,7 @@
                 </div>
                 <!--<h3>Här kan du se vart svenska vapen exporterats, hur den svenska vapenexporten utvecklats över tid och vilka aktörer som påverkar exporten. Klicka på länderna och på flikarna.</h3>-->
             </div>
+        </div>
     </body>
 
 </html>
