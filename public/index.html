@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Vapenkarta</title>
+        <link rel="stylesheet" href="./../Style/jquery-jvectormap-2.0.3.css"
+        type="text/css" media="screen" />
+        <link rel="stylesheet" href="./../Style/bootstrap.min.css" type="text/css"
+        media="screen" />
+        <link rel="stylesheet" href="./../Style/bootstrap-theme.min.css" type="text/css"
+        media="screen" />
+        <link rel="stylesheet" href="./../Style/main.css" type="text/css" media="screen"
+        />
+        <link rel="stylesheet" href="./../Style/flag-icon.css" type="text/css"
+        media="screen" />
+        <link rel="stylesheet" href="./../Style/fa-svg-wit-js.css" type="text/css"
+        media="screen" />
+        <script src="http://code.jquery.com/jquery-git.min.js"></script>
+        <script src="./../Scripts/jquery-jvectormap-2.0.3.min.js"></script>
+        <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
+        <script src="./../Scripts/index.js"></script>
+        <script src="./../Scripts/bootstrap.min.js"></script>
+        <script src="./../Scripts/fontawesome.js"></script>
+        <script src="./../Scripts/fontawesome-all.js"></script>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div id="map" class="row">
+                <div class="col-md-8 padding-0" style="height: 100%;">
+                    <div id="navbar"> <a class="active" href="">Sveriges Vapenexport</a> <a href="">Statistik</a> 
+                        <a
+                        href="">Aktörer</a> <a><i class="fas fa-search"></i></a>
+                    </div>
+                    <div id="world-map"></div>
+                </div>
+                <div id="infobox" class="col-md-4 padding-0">
+                    <div class="country col-md-12" style=" width: 100%;">
+                        <div> <span id="flag" class="flag-icon flag-icon-se"></span>
+                            <br/>
+                             <h1 id="country">Country</h1>
+                        </div>
+                    </div>
+                    <div id="country-data" class="col-md-12">
+                        <div id="data-column">
+                            <div id="columnWeapon" class="col-md-12">
+                                <img src="./../Style/icons/vapen-icon.png" />Vapenexport:
+                                <div class="columnInfo" id="weaponInfo">10000 / år</div>
+                            </div>
+                            <div id="columnGPI" class="col-md-12">
+                                <img src="./../Style/icons/gpi-icon.png" />GPI-Rank:
+                                <div class="columnInfo" id="GPIInfo">10 av 162</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="info-field" class="col-md-12">
+                        <p id="info">Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel
+                            till 54 länder.
+                            <br/>Kartan visar ett urval av de länder dit svenska vapen skickats, genom
+                            medveten krigsmaterielexport eller genom illegala överföringar. Läs mer
+                            om hur kartan är gjord under fliken Om produktionen.</p>
+                    </div>
+                    <div class="readMore">
+                        <button class="buttonInfo" type="button">Läs mer</button>
+                    </div>
+                </div>
+                <!--<h3>Här kan du se vart svenska vapen exporterats, hur den svenska vapenexporten utvecklats över tid och vilka aktörer som påverkar exporten. Klicka på länderna och på flikarna.</h3>-->
+            </div>
+        </div>
+    </body>
+
+</html>
