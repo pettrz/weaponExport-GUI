@@ -16,10 +16,6 @@ xhttp.onreadystatechange = function() {
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
 
-// function CountryList(searchTerm) {
-//   
-// }
-
 function viewModel() {
   self = this;
   self.countryList = ko.observableArray();
