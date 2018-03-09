@@ -186,16 +186,14 @@ img{
 }
 
 #searchDropdownInput {
-    background-position: 14px 12px;
+    background-position: 14px 15px;
     background-repeat: no-repeat;
+    background-color:#f2f2f2;
     font-size: 16px;
-    padding: 14px 20px 12px 45px;
+    padding: 15px 0px 15px 5px;
     border: none;
     border-bottom: none;
-}
-
-#searchDropdownInput:focus {
-    outline: 3px solid  #f2f2f2;
+    margin:-5px;
 }
 
 .searchDropdown {
@@ -207,7 +205,7 @@ img{
     display: none;
     position: absolute;
     background-color:  #333131;
-    min-width: 230px;
+    min-width: 250px;
     overflow: auto;
     border: none;
     z-index: 1;
