@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Views"
+    "\\public",
+    "\\Scripts",
+    "\\Style",
+    "\\Views",
+    "\\Views\\Partials"
   ],
   "SelectedNode": "\\Views\\index.html",
   "PreviewInSolutionExplorer": false

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 var weapons = {'AF':20, 'US':70};
+=======
+var countries;
+var weapons = {'AF':80, 'US':20};
+>>>>>>> ba90218519546b1c417584a5241acaceb14ce88b
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -72,11 +77,11 @@ function CreateMap() {
           regions: [{
             // values: guns,
             values: weapons,
-            scale: ['#ffff00', '#0000ff'],
+            scale: ['#0000ff', '#ffff00'],
             normalizeFunction: 'polynomial',
             legend: {
               title: 'Weapons',
-              vertical: false,
+              vertical: true,
         }}]},
         onRegionOver(e, code) {
           if (!(code in weapons))
@@ -87,6 +92,7 @@ function CreateMap() {
             e.preventDefault();
         },
         onRegionClick(e, code) {
+<<<<<<< HEAD
             for (i=0; i < countryList().length; i++)  {
               if(countryList()[i].code == code) {
                 selectedCountry(countryList()[i]);
@@ -96,6 +102,17 @@ function CreateMap() {
                 // document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
                 // document.getElementById('weaponInfo').innerHTML = country.weapons + ' / år';
                 // document.getElementById('GPIInfo').innerHTML = country.gpi + ' av 162';
+=======
+            for (i=0; i < countries.length; i++)  {
+              if(countries[i].code == code) {
+                var country = countries[i];
+                console.log(country);
+                document.getElementById('country').innerHTML = country.country;
+                document.getElementById('info').innerHTML = country.info;
+                document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
+                document.getElementById('weaponInfo').innerHTML = country.weapons + ' / �r';
+                document.getElementById('GPIInfo').innerHTML = country.gpi + ' av 162';
+>>>>>>> ba90218519546b1c417584a5241acaceb14ce88b
               }
             }
         },

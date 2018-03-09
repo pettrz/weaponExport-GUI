@@ -38,11 +38,11 @@
                 <div class="col-md-8 padding-0" style="height: 100%;">
                     <div id="navbar"> <a class="active" href="">Sveriges Vapenexport</a> <a href="">Statistik</a> 
                         <a
-                        href="">Aktörer</a>
+                        href="">Aktörer</a> <a><i class="fas fa-search"></i></a>
                     </div>
                     <div id="world-map"></div>
                 </div>
-                <div id="infobox" class="col-md-4">
+                <div id="infobox" class="col-md-4 padding-0">
                     <div class="country col-md-12" style=" width: 100%;">
                         <div> <span id="flag" class="flag-icon" data-bind="css: flag()"></span>
                             <br/>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div id="country-data" class="col-md-12">
-                        <div id="infox1">
+                        <div id="data-column">
                             <div id="columnWeapon" class="col-md-12">
                                 <img src="./../Style/icons/vapen-icon.png" />Vapenexport:
                                 <div class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo()">weapons</div>
@@ -61,17 +61,18 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
                     <div id="info-field" class="col-md-12">
                         <hr>
                         <p id="info" data-bind="text: selectedCountry().info">info</p>
                         <hr>
                         <p id="links" data-bind="text: selectedCountry().links">links</p>
                     </div>
+                    <div class="readMore">
+                        <button class="buttonInfo" type="button">Läs mer</button>
+                    </div>
                 </div>
-                 <h3>Här kan du se vart svenska vapen exporterats, hur svensk vapenexporten utvecklats över tid och vilka aktörer som påverkar exporten. Klicka på länderna och på flikarna.</h3>
+                <!--<h3>Här kan du se vart svenska vapen exporterats, hur den svenska vapenexporten utvecklats över tid och vilka aktörer som påverkar exporten. Klicka på länderna och på flikarna.</h3>-->
             </div>
-        </div>
     </body>
 
 </html>
