@@ -1,7 +1,9 @@
+/* Wrappers */
 .container{
     padding-left: 0;
     padding-right: 0;
 }
+
 #wrapper{
     height: 600px;
     width: 100%;
@@ -11,42 +13,39 @@
     padding-right: 0;
 }
 
-#menu{
-
-}
-
-#menu .navbar{
+/* Navbar */
+#inner-wrapper .navbar{
     margin: 0;
     border-radius: 0;
     padding: 0;
     font-size: 17px;
-    background-color: #333131 !important;
+    background-color: #333131;
     border: none;
-
 }
 
-.navbar a{
+#inner-wrapper .navbar a{
     height: 100%;
-    text-shadow: none !important;
+    text-shadow: none;
     color: white;
 }
 
-.navbar a:hover{
+#inner-wrapper .navbar a:hover{
     background-color: white;
-    color: #333131 !important;
+    color: #333131;
 }
 
-.navbar li.active {
+#inner-wrapper .navbar li.active {
     background-color: #2C2A2A;
-    color: white !important;
+    color: white ;
     font-weight: 700;
 }
 
-.navbar .nav-link {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+#inner-wrapper .navbar .nav-link {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
+/* Map */
 #world-map{
     height: 100%;
 }
@@ -55,17 +54,17 @@
     height: 550px;
 }
 
-
+/* Infobox */
 #infobox {
     background-color: #2c2a2a;
     color: white;
 }
 
-#infobox > .row > * {
+#infobox > .row > * {   /* All infobox columns*/
     padding-top: 20px;
-
 }
 
+/* Infobox header */
 #countryHeader{
     text-align: center;
 }
@@ -73,7 +72,6 @@
 #flag{
     height: 5em; 
     width: 5em;
-   
 }
 
 #country{
@@ -81,7 +79,7 @@
     font-weight: 500;
 }
 
-
+/* Infobox Data */
 #countryData div {
     background-color: #333131;
 }
@@ -99,13 +97,11 @@
 }
 
 .columnInfo{
-   float: right
-  
+   float: right;
 }
-#countryInfo{
-    
-}
-#info{
+
+/* Infobox textarea */
+#countryInfo #info{
     overflow:hidden;
     height: 200px;
     text-overflow: ellipsis;
@@ -115,6 +111,7 @@
    -webkit-text-fill-color: transparent;
 }
 
+/* Infobox button */
 #countryReadMore{
     text-align: center;
     padding-top: 0 !important;
@@ -126,4 +123,38 @@
     width: 150px;
     height: 40px;
     border: 2px solid #FFFFFF !important;
+}
+
+/* Map assets */
+.jvectormap-zoomin{
+    top: 20px;
+    height: 16px;
+    width: 16px;
+    line-height: 17px;
+    font-size: 22px;
+    background-color: #2c2a2a;
+    margin-left: 1%;
+}
+.jvectormap-zoomout{
+    top:55px;
+    height: 16px;
+    width: 16px;
+    line-height: 17px;
+    font-size: 22px;
+     background-color: #2c2a2a;
+     margin-left: 1%;
+}
+.jvectormap-legend{
+    background-color: transparent !important;
+    margin: 0;
+}
+.jvectormap-legend-cnt-v{
+    left: 0;
+    margin-top: 42%;
+    margin-left: 7%;
+    transform: scale(1.1, 1.1);
+} 
+.jvectormap-legend-title{
+    text-align: left;
+    padding-bottom: 5px;
 }
