@@ -51,7 +51,12 @@
                         <div id="world-map"></div>
                     </div>
                 </div>
-                <div id="infobox" class="col-md-4" style="height: 100%; "></div>
+                <div id="infobox" class="col-md-4" style="height: 100%; ">
+                    <div id="info-header" class="col-sm-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span> 
+                        <span
+                        id="country" data-bind="text: selectedCountry().country"></span>
+                    </div>
+                </div>
             </div>
             <!-- <div class="container">
 

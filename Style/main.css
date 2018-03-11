@@ -59,4 +59,30 @@
 
 #infobox {
     background-color: #2c2a2a;
+    color: white;
+}
+
+#infobox > * {
+    padding: 20px;
+}
+#info-header{
+    text-align: center;
+}
+
+#info-header span {
+    width: 100% ;
+
+}
+
+#flag{
+    height: 5em; 
+    width: 5em;
+    display: inline-block;
+}
+
+#country{
+    padding-top: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    display: inline-block;
 }
