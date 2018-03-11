@@ -61,17 +61,18 @@
     color: white;
 }
 
-#countryHeader > * {
+#infobox > .row > * {
+    padding-top: 20px;
 
 }
+
 #countryHeader{
     text-align: center;
 }
 
-
 #flag{
-    height: 7em; 
-    width: 7em;
+    height: 5em; 
+    width: 5em;
    
 }
 
@@ -81,9 +82,8 @@
 }
 
 
-#countryData {
+#countryData div {
     background-color: #333131;
- 
 }
 
 .data-col{
@@ -93,11 +93,37 @@
     vertical-align:middle;
     line-height: 30px;
 }
+
 .data-col img{
     padding-right: 5px;
 }
+
 .columnInfo{
    float: right
   
 }
+#countryInfo{
+    
+}
+#info{
+    overflow:hidden;
+    height: 200px;
+    text-overflow: ellipsis;
+    content: "";
+    background: -webkit-linear-gradient(top,#fff 90%, #333131);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
 
+#countryReadMore{
+    text-align: center;
+    padding-top: 0 !important;
+}
+
+.buttonInfo {
+    background-color: #333131;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: 2px solid #FFFFFF !important;
+}
