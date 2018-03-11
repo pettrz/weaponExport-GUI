@@ -1,7 +1,10 @@
+.container{
+    padding-left: 0;
+    padding-right: 0;
+}
 #wrapper{
     height: 600px;
     width: 100%;
-
 }
 #wrapper > * {
     padding-left: 0;
@@ -16,6 +19,33 @@
 #menu .navbar{
     margin: 0;
     border-radius: 0;
+    padding: 0;
+    font-size: 17px;
+    background-color: #333131 !important;
+    border: none;
+
+}
+
+.navbar a{
+    height: 100%;
+    text-shadow: none !important;
+    color: white;
+}
+
+.navbar a:hover{
+    background-color: white;
+    color: #333131 !important;
+}
+
+.navbar li.active {
+    background-color: #2C2A2A;
+    color: white !important;
+    font-weight: 700;
+}
+
+.navbar .nav-link {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 
 #map{
@@ -23,7 +53,7 @@
 }
 
 .jvectormap-container{
-    height: calc(600px - 62px);
+    height: 550px;
 }
 
 
