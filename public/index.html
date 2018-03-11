@@ -13,14 +13,10 @@
         media="screen" />
         <link rel="stylesheet" href="Style/bootstrap-theme.min.css" type="text/css"
         media="screen" />
-        <link rel="stylesheet" href="Style/bootstrap-reboot.css" type="text/css"
-        media="screen" />
         <link rel="stylesheet" href="Style/main.css" type="text/css" media="screen"
         />
         <link rel="stylesheet" href="Style/flag-icon.css" type="text/css" media="screen"
         />
-        <link rel="stylesheet" href="Style/fa-svg-with-js.css" type="text/css"
-        media="screen" />
         <script src="http://code.jquery.com/jquery-git.min.js"></script>
         <script src="Scripts/jquery-jvectormap-2.0.3.min.js"></script>
         <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
@@ -34,7 +30,7 @@
     <body>
         <div class="container">
             <div id="wrapper">
-                <div class="col-md-8">
+                <div id="inner-wrapper" class="col-md-8">
                     <div id="menu">
                         <nav class="navbar navbar-expand-md">
                             <ul class="navbar-nav">
@@ -47,14 +43,27 @@
                             </ul>
                         </nav>
                     </div>
-                    <div id="map">
-                        <div id="world-map"></div>
-                    </div>
+                    <div id="world-map"></div>
                 </div>
                 <div id="infobox" class="col-md-4" style="height: 100%; ">
-                    <div id="info-header" class="col-sm-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span> 
-                        <span
-                        id="country" data-bind="text: selectedCountry().country"></span>
+                    <div class="row">
+                        <div id="countryHeader" class="col-sm-12">
+                            <div class="col-sm-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span> 
+                            </div>
+                            <div class="col-sm-12"> <span id="country" data-bind="text: selectedCountry().country"></span>
+                            </div>
+                        </div>
+                        <div id="countryData" class="col-sm-12">
+                            <div class="data-col col-sm-12">
+                                <img src="./../Style/icons/vapen-icon.png" />Vapenexport: <span class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo">10000 / år</span>
+                            </div>
+                            <div class="data-col col-sm-12">
+                                <img src="./../Style/icons/gpi-icon.png" />GPI-Rank: <span class="columnInfo" align: "right" id="GPIInfo" data-bind="text: GPIInfo">10 / 162</span> 
+                            </div>
+                            <div class="data-col col-sm-12">
+                                <img src="./../Style/icons/vapen-icon.png" />Vapenexport: <span class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo">10000 / år</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

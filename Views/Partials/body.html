@@ -1,6 +1,6 @@
-<div class="container">
+<div  class="container">
     <div id="wrapper">
-        <div class="col-md-8">
+        <div id="inner-wrapper" class="col-md-8">
             <div id="menu">
                     <nav class="navbar navbar-expand-md">
                             
@@ -14,31 +14,57 @@
                                 <li class="nav-item">
                                 <a class="nav-link disabled" href="#">Aktörer</a>
                                 </li>
+                                
                             </ul>
                         
                     </nav>
             </div>
+
+            <div id="world-map"></div>
             
-            <div id="map">
-                    <div id="world-map"></div>
-            </div>  
-         
-    
         </div>
 
         
         <div id="infobox" class="col-md-4" style="height: 100%; ">
-                
-            <div id="info-header" class="col-sm-12">  
-                <span id="flag" class="flag-icon" data-bind="css: flag()"></span>                             
-                <span id="country" data-bind="text: selectedCountry().country"></span>
+            <div class="row">
+                <div id="countryHeader" class="col-sm-12">  
+                    <div class="col-sm-12">
+                        <span id="flag" class="flag-icon" data-bind="css: flag()"></span>  
+                    </div>           
+                    <div class="col-sm-12">              
+                        <span id="country" data-bind="text: selectedCountry().country"></span>
+                    </div>  
+                </div>
+
+        
+            <div id="countryData" class="col-sm-12">
+                <div class="data-col col-sm-12">
+                        <img src="./../Style/icons/vapen-icon.png" /> Vapenexport:
+                        <span class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo">10000 / år</span>
+                </div>
+                <div class="data-col col-sm-12">
+                        <img src="./../Style/icons/gpi-icon.png" /> GPI-Rank:
+                        <span class="columnInfo" align:"right" id="GPIInfo" data-bind="text: GPIInfo">10 / 162</span> 
+                </div>     
+                <div class="data-col col-sm-12">
+                        <img src="./../Style/icons/vapen-icon.png" /> Vapenexport:
+                        <span class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo">10000 / år</span>
+                </div>    
+                       
+
             </div>
-                        
-                
+
+            </div>
+
+
+
+    
         </div>
                 
         
 </div>
+
+
 
 
 
