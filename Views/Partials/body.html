@@ -40,30 +40,32 @@
                 <div id="countryData" class="collapse in">
                     <div class="col-sm-12">
                         <div class="data-col col-sm-12">
-                                <img src="./../Style/icons/vapen-icon.png" /> Vapenexport:
-                                <span class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo">10000 / år</span>
+                                <img src="./../Style/icons/vapen-icon.png" /> Status Freedom House:
+                                <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                         </div>
+
+                        <div class="data-col col-sm-12">
+                            <img src="./../Style/icons/vapen-icon.png" /> Vapenexport:
+                            <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
+                    </div> 
                         <div class="data-col col-sm-12">
                                 <img src="./../Style/icons/gpi-icon.png" /> GPI-Rank:
-                                <span class="columnInfo" align:"right" id="GPIInfo" data-bind="text: GPIInfo">10 / 162</span> 
+                                <span class="columnInfo" align:"right" id="GPIInfo" data-bind="text: GPIInfo"></span> 
                         </div>     
-                        <div class="data-col col-sm-12">
-                                <img src="./../Style/icons/vapen-icon.png" /> Vapenexport:
-                                <span class="columnInfo" id="weaponInfo" data-bind="text: weaponInfo">10000 / år</span>
-                        </div> 
+                        
                     </div>          
                 </div>
 
-                <div id="countryInfo" class="col-sm-12">
-                    <p id="info" class="col-sm-12" data-bind="text: selectedCountry().info">Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder.<br/>
-                        Kartan visar ett urval av de länder dit svenska vapen skickats, genom medveten krigsmaterielexport eller genom illegala överföringar. Läs mer om hur kartan är gjord under fliken Om produktionen.
+                
+
+                <div id="countryInfo" class="col-sm-12" style="height:220px;width:100px;overflow:auto">
+                    <p id="info" class="col-sm-12" data-bind="text: selectedCountry().info">
                     </p>
-                </div>
+                </div> 
 
                 <div id="countryReadMore" class="col-sm-12">
                         <button class="buttonInfo" type="button" data-toggle="collapse" data-target="#countryData">Läs mer</button>
                 </div>
-
             </div>
 
         </div>

@@ -147,8 +147,8 @@
     width: 16px;
     line-height: 17px;
     font-size: 22px;
-     background-color: #2c2a2a;
-     margin-left: 1%;
+    background-color: #2c2a2a;
+    margin-left: 1%;
 }
 .jvectormap-legend{
     background-color: transparent !important;
@@ -156,11 +156,21 @@
 }
 .jvectormap-legend-cnt-v{
     left: 0;
-    margin-top: 42%;
+    margin-top: 370px;
     margin-left: 7%;
     transform: scale(1.1, 1.1);
 } 
 .jvectormap-legend-title{
     text-align: left;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.jvectormap-legend-cnt-v .jvectormap-legend-tick-text{
+    padding-left: 10px;
+    font-size:14px;
+}
+.jvectormap-legend-cnt-v .jvectormap-legend-tick-sample{
+    width:25px;
+    height:25px;
 }
