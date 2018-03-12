@@ -1,4 +1,4 @@
-var weapons = {'AF':80, 'US':20, 'FI':30, 'EG': 60, 'DE': 50, 'CA':40, 'MX':70, 'PL': 65, 'BR':45, 'FR':25, 'ES': 20, 'SP':70, 'RU': 77, 'AG':80};
+var FHstatus = {};
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -9,9 +9,9 @@ xhttp.onreadystatechange = function() {
     
     for (var i = 0; i < xhttpCountries.length; i++) {  
       countryList.push(xhttpCountries[i]);
-      weapons[xhttpCountries[i].code] = Number(xhttpCountries[i].weapons);
+      FHstatus[xhttpCountries[i].code] = xhttpCountries[i].FHstatus;
     }
-    CreateMap();
+    CreateMapFreedom();
 }}
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
@@ -22,17 +22,17 @@ function viewModel() {
   self.selectedCountry = ko.observable({
     country: 'Sweden',
     code: 'SE',
-    weapons: '10000',
+    FHstatus: 'Partly Free',
     gpi: '10',
-    info: 'Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder',
+    info: 'Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder.',
     links: 'This is where links show up'
   });
   self.searchTerm = ko.observable("");
   self.flag = ko.computed(() => {
     return 'flag-icon flag-icon-' + self.selectedCountry().code.toLowerCase()
   });
-  self.weaponInfo = ko.computed(() =>{
-    return self.selectedCountry().weapons + ' / år'
+  self.statusInfo = ko.computed(() =>{
+    return self.selectedCountry().FHstatus
   });
   self.GPIInfo = ko.computed(() => {
     return self.selectedCountry().gpi + ' av 162'
@@ -62,26 +62,63 @@ function viewModel() {
 
 ko.applyBindings(viewModel);
 
-function CreateMap() {
+// function CreateMapWeapons() {
+//   var map = $(function(){
+//     $('#world-map').vectorMap({
+//         map: 'world_mill',
+//         series: {
+//           regions: [{
+//             values: weapons,
+//             scale: ['#f9bbbb', '#ad1414'],
+//             normalizeFunction: 'polynomial',
+//             legend: {
+//               title: 'Status ' + "<br>" +'Freedom House',
+//               vertical: true,
+//         }}]},
+//         onRegionOver(e, code) {
+//           if (!(code in weapons))
+//             e.preventDefault();
+//         },
+//         onRegionTipShow: function(e, el, code){
+//           if (!(code in weapons))
+//             e.preventDefault();
+//         },
+//         onRegionClick(e, code) {
+//             for (i=0; i < countryList().length; i++)  {
+//               if(countryList()[i].code == code) {
+//                 selectedCountry(countryList()[i]);
+//                 console.log(selectedCountry());innerHTML = country.gpi + ' av 162';
+//               }
+//             }
+//         },
+//     });
+//   });
+// }
+
+function CreateMapFreedom() {
   var map = $(function(){
     $('#world-map').vectorMap({
         map: 'world_mill',
         series: {
           regions: [{
             // values: guns,
-            values: weapons,
-            scale: ['#f9bbbb', '#ad1414'],
+            values: FHstatus,
+            scale: {
+              'Free': '#75d187',
+              'Partly Free': '#efe599',
+              'Not Free': '#b54d4d'
+            },
             normalizeFunction: 'polynomial',
             legend: {
               title: 'Status ' + "<br>" +'Freedom House',
               vertical: true,
         }}]},
         onRegionOver(e, code) {
-          if (!(code in weapons))
+          if (!(code in FHstatus))
             e.preventDefault();
         },
         onRegionTipShow: function(e, el, code){
-          if (!(code in weapons))
+          if (!(code in FHstatus))
             e.preventDefault();
         },
         onRegionClick(e, code) {
@@ -92,7 +129,7 @@ function CreateMap() {
                 // document.getElementById('country').innerHTML = country.country;
                 // document.getElementById('info').innerHTML = country.info;
                 // document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
-                // document.getElementById('weaponInfo').innerHTML = country.weapons + ' / år';
+                // document.getElementById('weaponInfo').innerHTML = country.FHstatus + ' / år';
                 // document.getElementById('GPIInfo').innerHTML = country.gpi + ' av 162';
               }
             }

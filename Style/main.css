@@ -234,14 +234,28 @@ list-style-type: none;
     /* background-color: transparent !important; */
     background-color: rgba(0, 0, 0, 0.45);
     padding-bottom: 20px;
+
 }
 .jvectormap-legend-cnt-v{
-    bottom: 25px;
-    left: 20px;
+    bottom: 30px;
+    left: 30px;
+    
     top: auto;
     right: auto;
     transform: scale(1.1, 1.1);
 } 
+
+.jvectormap-legend-cnt-v .jvectormap-legend-tick-text{
+    padding-left: 10px;
+    font-size:14px;
+}
+.jvectormap-legend-cnt-v .jvectormap-legend-tick-sample{
+    width:25px;
+    height:25px;
+}
+    
 .jvectormap-legend-title{
-    padding-bottom: 5px;
+    text-align: left;
+    padding-bottom: 10px;
+    font-size: 16px;
 }
