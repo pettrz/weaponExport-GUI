@@ -51,7 +51,7 @@ function viewModel() {
       }
       if (countries.length == 0) {
         console.log('no match in list')
-        return [{country: "Sorry, we couldn't find any countries that match your search!"}]
+        return [{country: "Inget resultat matchar din sökning!"}]
       } else {
         console.log('returned matches in list')
         return countries;
@@ -136,4 +136,23 @@ function CreateMapFreedom() {
         },
     });
   });
+}
+
+function searchDropdownFunction() {
+    document.getElementById("searchDropdownContent").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("searchDropdownInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("searchDropdownContent");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
 }

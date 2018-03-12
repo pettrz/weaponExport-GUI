@@ -39,6 +39,20 @@
                             </li>
                             <li class="nav-item"> <a class="nav-link disabled" href="#">Aktörer</a>
                             </li>
+                            <li>
+                                <div id="countryList">
+                                    <div class="searchDropdown"> <span class="searchDropbtn"><i class="fas fa-search"></i></span>
+                                        <input
+                                        type="text" onclick="searchDropdownFunction()" placeholder="Search.." id="searchDropdownInput"
+                                        data-bind="value: searchTerm" onkeyup="filterFunction()">
+                                            <div id="searchDropdownContent" class="searchDropdown-content">
+                                                <ul data-bind="foreach: showList()">
+                                                    <li data-bind="text: country"></li>
+                                                </ul>
+                                            </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                     <div id="world-map"></div>
@@ -72,14 +86,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="countryList">
-                    <input type="text" data-bind="value: searchTerm" />
-                    <ul data-bind="foreach: showList()">
-                        <li data-bind="text: country"></li>
-                    </ul>
-                </div>
-                <!-- <h3>Här kan du se vart svenska vapen exporterats, hur den svenska vapenexporten utvecklats över tid och vilka aktörer som påverkar exporten. Klicka på länderna och på flikarna.</h3>-->
             </div>
+        </div>
     </body>
 
 </html>
