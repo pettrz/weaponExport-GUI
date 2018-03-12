@@ -15,7 +15,20 @@
                                 <li class="nav-item">
                                 <a class="nav-link disabled" href="#">Aktörer</a>
                                 </li>
-                                
+                                <li>
+                                <div id="countryList">
+                                <div class="searchDropdown">
+                                    <span class="searchDropbtn"><i class="fas fa-search"></i></span>
+                                    <input type="text" onclick="searchDropdownFunction()" placeholder="Search.." id="searchDropdownInput"  data-bind="value: searchTerm" onkeyup="filterFunction()">
+                                <div id="searchDropdownContent" class="searchDropdown-content" >
+                                    <ul data-bind="foreach: showList()">
+                                        <li data-bind="text: country"></li>
+                                    </ul>
+        
+                                </div>
+                                </div>
+                                </div>
+                                </li>
                             </ul>
                         
                     </nav>
@@ -69,17 +82,5 @@
             </div>
 
         </div>
-
-        <div id="countryList">
-            <div class="searchDropdown">
-                <button class="searchDropbtn"><i class="fas fa-search"></i></button>
-                <input type="text" onclick="searchDropdownFunction()" placeholder="Search.." id="searchDropdownInput"  data-bind="value: searchTerm" onkeyup="filterFunction()">
-            <div id="searchDropdownContent" class="searchDropdown-content" >
-                <ul data-bind="foreach: showList()">
-                    <li data-bind="text: country"></li>
-                </ul>
-        
-            </div>
-            </div>
-        </div>
+</div>
 </div>
