@@ -60,13 +60,13 @@
     color: white;
 }
 
-#infobox > .row > * {   /* All infobox columns*/
-    padding-top: 20px;
-}
+
 
 /* Infobox header */
 #countryHeader{
     text-align: center;
+    padding-bottom: 10px;
+    padding-top: 15px;
 }
 
 #flag{
@@ -109,20 +109,26 @@
     background: -webkit-linear-gradient(top,#fff 90%, #333131);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+   padding-top: 15px;
 }
 
 /* Infobox button */
 #countryReadMore{
     text-align: center;
-    padding-top: 0 !important;
+    bottom: 0;
+    position: absolute;
+    padding-bottom: 25px;
 }
-
 .buttonInfo {
     background-color: #333131;
     color: white;
     width: 150px;
     height: 40px;
     border: 2px solid #FFFFFF !important;
+    
+}
+.buttonInfo:hover {
+    background-color: #808080;
 }
 
 /* Map assets */
