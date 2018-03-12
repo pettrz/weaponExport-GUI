@@ -1,170 +1,139 @@
-
-.padding-0{
-    padding-right:0;
-    padding-left:0;
+/* Wrappers */
+.container{
+    padding-left: 0;
+    padding-right: 0;
 }
 
-#map{
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%; 
+#wrapper{
     height: 600px;
+    width: 100%;
 }
-#world-map{
-    height: calc(100% - 52px);
-}
-
-.description{
-    height: 50%;
-    position: absolute;
-    bottom: 0;
+#inner-wrapper{
+    padding-left: 0;
+    padding-right: 0;
 }
 
-#navbar {
-    overflow: hidden;
-    background-color: #333131;
-    font-family: "Verdana", Geneva, sans-serif;
-}
-
-#navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+/* Navbar */
+#inner-wrapper .navbar{
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
     font-size: 17px;
+    background-color: #333131;
+    border: none;
 }
 
-#navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-#navbar a.active {
-    background-color: #2c2a2a;
+#inner-wrapper .navbar a{
+    height: 100%;
+    text-shadow: none;
     color: white;
-    font-weight: bold;
 }
 
-.jvectormap-zoomin{
-    top: 40px;
-    height: 20px;
-    width: 23px;
-    line-height: 20px;
-    font-size: 40px;
-    background-color: #2c2a2a;
+#inner-wrapper .navbar a:hover{
+    background-color: white;
+    color: #333131;
 }
 
-.jvectormap-zoomout{
-    top:80px;
-    height: 20px;
-    width: 23px;
-    line-height: 20px;
-    font-size: 40px;
-     background-color: #2c2a2a;
+#inner-wrapper .navbar li.active {
+    background-color: #2C2A2A;
+    color: white ;
+    font-weight: 700;
 }
 
-#navbar i{
-    color:white;
+#inner-wrapper .navbar .nav-link {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
+/* Map */
+#world-map{
+    height: 100%;
+}
+
+.jvectormap-container{
+    height: 550px;
+}
+
+/* Infobox */
 #infobox {
-    text-align: center;
-    vertical-align: middle;
     background-color: #2c2a2a;
     color: white;
-    font-family: "Verdana", Geneva, sans-serif;
-    height: 100%; 
 }
+
+#infobox > .row > * {   /* All infobox columns*/
+    padding-top: 20px;
+}
+
+/* Infobox header */
+#countryHeader{
+    text-align: center;
+}
+
 #flag{
     height: 5em; 
     width: 5em;
-    padding-top: 80px;
 }
 
-.flag-icon:before {
-    content: none !important;
+#country{
+    font-size: 30px;
+    font-weight: 500;
 }
 
-#info-field{
-    word-wrap: break-word;
-}
-
-#country {
-    font-weight: bold;
-    padding-bottom: 10px;
-    margin: 0; 
-    padding-left: 15px;
-    font-size: 25px;
-    text-align: center;
-}
-
-#country-data{
+/* Infobox Data */
+#countryData div {
     background-color: #333131;
-    height: 140px;
-
 }
 
-#columnWeapon{
+.data-col{
+    padding: 10px 15px 10px 15px;
     text-align: left;
     font-weight: bold;
-    padding-bottom: 10px;
+    vertical-align:middle;
+    line-height: 30px;
 }
 
-#columnGPI {
-    text-align: left;
-    font-weight: bold;
-}
-
-#data-column{
-      padding-top: 40px;
+.data-col img{
+    padding-right: 5px;
 }
 
 .columnInfo{
-   float:right;
-   padding-top:5px;
+   float: right;
 }
 
-img{
-    padding-right: 10px;
+/* Infobox textarea */
+#countryInfo #info{
+    overflow:hidden;
+    height: 200px;
+    text-overflow: ellipsis;
+    content: "";
+    background: -webkit-linear-gradient(top,#fff 90%, #333131);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 
-.jvectormap-legend{
-    background-color: transparent !important;
-    margin: 0;
-}
-
- .jvectormap-legend-cnt-v{
-    left: 0;
-    margin-top: 43.5%;
-    margin-left: 12%;
-    transform: scale(1.25, 1.25);
-} 
-
-.jvectormap-legend-title{
-    text-align: left;
-    padding-bottom: 5px;
-}
-
-#info{
-    overflow: hidden;
-    height: 190px;
-    padding-top: 30px;
-    padding-bottom: 50px;
+/* Infobox button */
+#countryReadMore{
+    text-align: center;
+    padding-top: 0 !important;
 }
 
 .buttonInfo {
     background-color: #333131;
     color: white;
-    width: 200px;
+    width: 150px;
     height: 40px;
     border: 2px solid #FFFFFF !important;
-
 }
 
-.buttonInfo:hover {
-    background-color: #808080;
+/* Map assets */
+.jvectormap-zoomin{
+    top: 20px;
+    height: 16px;
+    width: 16px;
+    line-height: 17px;
+    font-size: 22px;
+    background-color: #2c2a2a;
+    margin-left: 1%;
 }
 
 .readMore{
@@ -240,4 +209,28 @@ body{
 
 ul {
 list-style-type: none;
+}
+
+.jvectormap-zoomout{
+    top:55px;
+    height: 16px;
+    width: 16px;
+    line-height: 17px;
+    font-size: 22px;
+     background-color: #2c2a2a;
+     margin-left: 1%;
+}
+.jvectormap-legend{
+    background-color: transparent !important;
+    margin: 0;
+}
+.jvectormap-legend-cnt-v{
+    left: 0;
+    margin-top: 42%;
+    margin-left: 7%;
+    transform: scale(1.1, 1.1);
+} 
+.jvectormap-legend-title{
+    text-align: left;
+    padding-bottom: 5px;
 }

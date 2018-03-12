@@ -1,4 +1,4 @@
-var weapons = {'AF':20, 'US':70};
+var weapons = {'AF':80, 'US':20, 'FI':30, 'EG': 60, 'DE': 50, 'CA':40, 'MX':70, 'PL': 65, 'BR':45, 'FR':25, 'ES': 20, 'SP':70, 'RU': 77, 'AG':80};
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -24,7 +24,7 @@ function viewModel() {
     code: 'SE',
     weapons: '10000',
     gpi: '10',
-    info: 'This is where info ends up',
+    info: 'Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder',
     links: 'This is where links show up'
   });
   self.searchTerm = ko.observable("");
@@ -70,10 +70,10 @@ function CreateMap() {
           regions: [{
             // values: guns,
             values: weapons,
-            scale: ['#0000ff', '#ffff00'],
+            scale: ['#f9bbbb', '#ad1414'],
             normalizeFunction: 'polynomial',
             legend: {
-              title: 'Weapons',
+              title: 'Status ' + "<br>" +'Freedom House',
               vertical: true,
         }}]},
         onRegionOver(e, code) {
