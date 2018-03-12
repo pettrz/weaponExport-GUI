@@ -60,13 +60,13 @@
     color: white;
 }
 
-#infobox > .row > * {   /* All infobox columns*/
-    padding-top: 20px;
-}
+
 
 /* Infobox header */
 #countryHeader{
     text-align: center;
+    padding-bottom: 10px;
+    padding-top: 15px;
 }
 
 #flag{
@@ -109,31 +109,37 @@
     background: -webkit-linear-gradient(top,#fff 90%, #333131);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+   padding-top: 15px;
 }
 
 /* Infobox button */
 #countryReadMore{
     text-align: center;
-    padding-top: 0 !important;
+    bottom: 0;
+    position: absolute;
+    padding-bottom: 25px;
 }
-
 .buttonInfo {
     background-color: #333131;
     color: white;
     width: 150px;
     height: 40px;
     border: 2px solid #FFFFFF !important;
+    
+}
+.buttonInfo:hover {
+    background-color: #808080;
 }
 
 /* Map assets */
 .jvectormap-zoomin{
     top: 20px;
+    left: 20px;
     height: 16px;
     width: 16px;
     line-height: 17px;
     font-size: 22px;
     background-color: #2c2a2a;
-    margin-left: 1%;
 }
 
 .readMore{
@@ -217,24 +223,25 @@ list-style-type: none;
 
 .jvectormap-zoomout{
     top:55px;
+    left: 20px;
     height: 16px;
     width: 16px;
     line-height: 17px;
     font-size: 22px;
      background-color: #2c2a2a;
-     margin-left: 1%;
 }
 .jvectormap-legend{
-    background-color: transparent !important;
-    margin: 0;
+    /* background-color: transparent !important; */
+    background-color: rgba(0, 0, 0, 0.45);
+    padding-bottom: 20px;
 }
 .jvectormap-legend-cnt-v{
-    left: 0;
-    margin-top: 42%;
-    margin-left: 7%;
+    bottom: 25px;
+    left: 20px;
+    top: auto;
+    right: auto;
     transform: scale(1.1, 1.1);
 } 
 .jvectormap-legend-title{
-    text-align: left;
     padding-bottom: 5px;
 }
