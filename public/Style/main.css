@@ -134,33 +134,34 @@
 /* Map assets */
 .jvectormap-zoomin{
     top: 20px;
+    left: 20px;
     height: 16px;
     width: 16px;
     line-height: 17px;
     font-size: 22px;
     background-color: #2c2a2a;
-    margin-left: 1%;
 }
 .jvectormap-zoomout{
     top:55px;
+    left: 20px;
     height: 16px;
     width: 16px;
     line-height: 17px;
     font-size: 22px;
      background-color: #2c2a2a;
-     margin-left: 1%;
 }
 .jvectormap-legend{
-    background-color: transparent !important;
-    margin: 0;
+    /* background-color: transparent !important; */
+    background-color: rgba(0, 0, 0, 0.45);
+    padding-bottom: 20px;
 }
 .jvectormap-legend-cnt-v{
-    left: 0;
-    margin-top: 42%;
-    margin-left: 7%;
+    bottom: 25px;
+    left: 20px;
+    top: auto;
+    right: auto;
     transform: scale(1.1, 1.1);
 } 
 .jvectormap-legend-title{
-    text-align: left;
-    padding-bottom: 5px;
+padding-bottom: 5px;
 }
