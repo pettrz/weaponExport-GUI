@@ -10,6 +10,10 @@ xhttp.onreadystatechange = function() {
     for (var i = 0; i < xhttpCountries.length; i++) {  
       countryList.push(xhttpCountries[i]);
       FHstatus[xhttpCountries[i].code] = xhttpCountries[i].FHstatus;
+      if(countryList()[i].code=='SE'){
+        selectedCountry(countryList()[i]);
+        
+      }
     }
     CreateMapFreedom();
 }}
@@ -19,14 +23,8 @@ xhttp.send();
 function viewModel() {
   self = this;
   self.countryList = ko.observableArray();
-  self.selectedCountry = ko.observable({
-    country: 'Sverige',
-    code: 'SE',
-    FHstatus: 'Fri',
-    gpi: '10',
-    info: 'Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder.',
-    links: 'Här visas länken'
-  });
+  self.selectedCountry = ko.observable({code:''});
+
   self.searchTerm = ko.observable("");
   self.flag = ko.computed(() => {
     return 'flag-icon flag-icon-' + self.selectedCountry().code.toLowerCase()
