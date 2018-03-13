@@ -20,12 +20,12 @@ function viewModel() {
   self = this;
   self.countryList = ko.observableArray();
   self.selectedCountry = ko.observable({
-    country: 'Sweden',
+    country: 'Sverige',
     code: 'SE',
-    FHstatus: 'Partly Free',
+    FHstatus: 'Fri',
     gpi: '10',
     info: 'Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder. Svenska vapen finns över hela världen. 2014 sålde Sverige krigsmateriel till 54 länder.',
-    links: 'This is where links show up'
+    links: 'Här visas länken'
   });
   self.searchTerm = ko.observable("");
   self.flag = ko.computed(() => {
@@ -104,13 +104,13 @@ function CreateMapFreedom() {
             // values: guns,
             values: FHstatus,
             scale: {
-              'Free': '#75d187',
-              'Partly Free': '#efe599',
-              'Not Free': '#b54d4d'
+              'Fri': '#75d187',
+              'Delvis fri': '#efe599',
+              'Ofri': '#b54d4d'
             },
             normalizeFunction: 'polynomial',
             legend: {
-              title: 'Status ' + "<br>" +'Freedom House',
+              title: 'Demokratisk status',
               vertical: true,
         }}]},
         onRegionOver(e, code) {
@@ -120,6 +120,14 @@ function CreateMapFreedom() {
         onRegionTipShow: function(e, el, code){
           if (!(code in FHstatus))
             e.preventDefault();
+          else{
+            for (i=0; i < countryList().length; i++)  {
+              if(countryList()[i].code == code) {
+                el.html(countryList()[i].country);
+                //console.log(selectedCountry());
+              }
+            }
+          }
         },
         onRegionClick(e, code) {
             for (i=0; i < countryList().length; i++)  {
