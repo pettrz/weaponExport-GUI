@@ -102,14 +102,14 @@
 
 /* Infobox textarea */
 #countryInfo #info{
-    height: 275px;
-    content: "";
-    padding-top: 15px;
-    overflow: hidden;
+    overflow:hidden;
+    height: 200px;
     text-overflow: ellipsis;
-    /* background: -webkit-linear-gradient(top,#fff 80%, #333131);
+    content: "";
+    background: -webkit-linear-gradient(top,#fff 90%, #333131);
    -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent; */
+   -webkit-text-fill-color: transparent;
+   padding-top: 15px;
 }
 
 /* Infobox button */
@@ -194,10 +194,6 @@ input:focus::-webkit-input-placeholder
     font-size: 22px;
     background-color: #2c2a2a;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> fad89750b2baa2424fd21399fe6f9e208f669b9a
 .jvectormap-zoomout{
     top:55px;
     left: 20px;
