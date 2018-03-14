@@ -153,14 +153,14 @@ input:focus::-webkit-input-placeholder
 
 /* Infobox textarea */
 #countryInfo #info{
-    overflow:hidden;
-    height: 200px;
-    text-overflow: ellipsis;
+    height: 275px;
     content: "";
-    background: -webkit-linear-gradient(top,#fff 90%, #333131);
+    padding-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* background: -webkit-linear-gradient(top,#fff 80%, #333131);
    -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   padding-top: 15px;
+   -webkit-text-fill-color: transparent; */
 }
 
 /* Infobox button */
@@ -192,10 +192,6 @@ input:focus::-webkit-input-placeholder
     font-size: 22px;
     background-color: #2c2a2a;
 }
-
-
-
-
 
 .jvectormap-zoomout{
     top:55px;
