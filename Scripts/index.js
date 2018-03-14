@@ -49,7 +49,7 @@ function viewModel() {
       }
       if (countries.length == 0) {
         console.log('no match in list')
-        return [{country: "Inget resultat matchar din sökning!"}]
+        return [{country: "Inget resultat hittades!"}]
       } else {
         console.log('returned matches in list')
         return countries;
