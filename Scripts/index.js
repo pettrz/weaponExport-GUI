@@ -145,3 +145,33 @@ function CreateMapFreedom() {
 }
 
 
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("searchDropdownInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("searchDropdownContent");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+
+//Read more button - changing content on click
+var expanded = false;
+
+    function changeSize(){
+        if(!expanded){
+            document.getElementById('info').style.height = '375px';
+            document.getElementById('info').style.overflow = 'auto';
+            expanded = true;
+         } else {
+            document.getElementById('info').style.height = '275px';
+            document.getElementById('info').style.overflow = 'hidden';
+            expanded = false; 
+    }
+}
+   
