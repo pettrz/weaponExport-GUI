@@ -144,10 +144,8 @@ function CreateMapFreedom() {
   });
 }
 
-function searchDropdownFunction() {
-    document.getElementById("searchDropdownContent").classList.toggle("show");
-}
 
+<<<<<<< HEAD
 function filterFunction() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("searchDropdownInput");
@@ -178,3 +176,5 @@ var expanded = false;
     }
 }
    
+=======
+>>>>>>> fad89750b2baa2424fd21399fe6f9e208f669b9a

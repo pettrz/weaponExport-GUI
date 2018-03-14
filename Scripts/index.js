@@ -144,9 +144,6 @@ function CreateMapFreedom() {
   });
 }
 
-function searchDropdownFunction() {
-    document.getElementById("searchDropdownContent").classList.toggle("show");
-}
 
 function filterFunction() {
     var input, filter, ul, li, a, i;

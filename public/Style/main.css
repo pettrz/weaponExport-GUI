@@ -45,59 +45,6 @@
     padding-right: 1.5rem;
 }
 
-/* Country dropdown */
-#dropdownWrapper{
-    border: none;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 0;
-    background-color: rgba(0, 0, 0, 0.55);
-    padding: 0;
-    line-height: 32px;
-    width: 170px;
-    max-height: 300px;
-}
-
-#dropdownInput{
-    border: none;
-    line-height: 40px;
-    text-align: center;
-}
-
-input:focus::-webkit-input-placeholder 
-{
-    color: transparent;
-}
-
-#dropdownContent{
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: 258px;
-}
-
-.show {
-    display:block;
-}
-
-/* Scrollbar dropdown */
-#dropdownContent::-webkit-scrollbar {
-    width: 8px;
-
-}
-
-#dropdownContent::-webkit-scrollbar-track {
-    background: transparent; 
-}
- 
-#dropdownContent::-webkit-scrollbar-thumb {
-    background: #dadada; 
-    border-radius: 10px;
-}
-
-#dropdownContent::-webkit-scrollbar-thumb:hover {
-    background: white; 
-    
-}
-
 /* Map */
 #world-map{
     height: 100%;
@@ -112,6 +59,8 @@ input:focus::-webkit-input-placeholder
     background-color: #2c2a2a;
     color: white;
 }
+
+
 
 /* Infobox header */
 #countryHeader{
@@ -182,6 +131,59 @@ input:focus::-webkit-input-placeholder
     background-color: #808080;
 }
 
+/* Country dropdown */
+#dropdownSearch svg {
+    color: white;
+    margin: 0 5px;
+}
+
+#dropdownInput{
+    border: none;
+    line-height: 50px;
+    width: 170px;
+    text-align: center;
+    color: #333131;
+    height: 50px;
+}
+
+input:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+}
+
+#dropdownContent{
+    border: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 0;
+    line-height: 32px;
+    width: 170px;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Scrollbar dropdown */
+#dropdownContent::-webkit-scrollbar {
+    width: 8px;
+
+}
+
+#dropdownContent::-webkit-scrollbar-track {
+    background: transparent; 
+}
+ 
+#dropdownContent::-webkit-scrollbar-thumb {
+    background: #dadada; 
+    border-radius: 10px;
+}
+
+#dropdownContent::-webkit-scrollbar-thumb:hover {
+    background: white; 
+    
+}
+
 /* Map assets */
 .jvectormap-zoomin{
     top: 20px;
@@ -192,7 +194,10 @@ input:focus::-webkit-input-placeholder
     font-size: 22px;
     background-color: #2c2a2a;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fad89750b2baa2424fd21399fe6f9e208f669b9a
 .jvectormap-zoomout{
     top:55px;
     left: 20px;
@@ -203,14 +208,13 @@ input:focus::-webkit-input-placeholder
      background-color: #2c2a2a;
 }
 .jvectormap-legend{
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.45);
     padding-bottom: 20px;
 
 }
 .jvectormap-legend-cnt-v{
     bottom: 30px;
     left: 30px;
-    
     top: auto;
     right: auto;
     transform: scale(1.1, 1.1);
@@ -229,4 +233,52 @@ input:focus::-webkit-input-placeholder
     text-align: left;
     padding-bottom: 10px;
     font-size: 16px;
+}
+
+#tooltipGpi .tooltiptext {
+    visibility: hidden;
+    background-color: #f2f2f2;
+    color: #2c2a2a;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 140%;
+    padding:5px;
+
+    /* tooltip position */
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 3%;
+    margin-left: -10px;
+}
+
+#tooltipGpi:hover .tooltiptext {
+    visibility: visible;
+}
+
+#tooltipFH .tooltiptext {
+    visibility: hidden;
+    padding:5px;
+    background-color: #f2f2f2;
+    color: #2c2a2a;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 140%;
+    
+    /* tooltip position */
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 3%;
+    margin-left: -10px;
+}
+
+#tooltipFH:hover .tooltiptext {
+    visibility: visible;
+}
+
+a {
+    color:#2c2a2a;
 }
