@@ -39,8 +39,11 @@
                             </li>
                             <li class="nav-item"> <a class="nav-link disabled" href="#">Aktörer</a>
                             </li>
+<<<<<<< HEAD
+=======
                             <li class="nav-item"> <a class="nav-link disabled" href="#">Om produktionen</a>
                             </li>
+>>>>>>> 446703471b8b6960d59bfa2ad885678da01dacec
                         </ul>
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -74,11 +77,15 @@
                         </div>
                         <div id="countryData" class="collapse in">
                             <div class="col-sm-12">
-                                <div class="data-col col-sm-12">
-                                    <img src="./../Style/icons/vapen-icon.png" />Status enligt Freedom house: <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
+                                <div id="tooltipFH" class="data-col col-sm-12">
+                                    <img src="./../Style/icons/vapen-icon.png" />Status enligt Freedom house: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".  </br><a href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
+                                    <span
+                                    class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                                 </div>
-                                <div class="data-col col-sm-12">
-                                    <img src="./../Style/icons/gpi-icon.png" />GPI - ranking: <span class="columnInfo" align: "right" id="GPIInfo" data-bind="text: GPIInfo"></span> 
+                                <div id="tooltipGpi" class="data-col col-sm-12">
+                                    <img src="./../Style/icons/gpi-icon.png" />GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 162 av världens länder efter hur fredliga de är. Ju högre placring desto fredligare land. </br><a href="http://visionofhumanity.org/">Se Vision of Humanitys webbsida</a></span>
+                                    <span
+                                    class="columnInfo" align: "right" id="GPIInfo" data-bind="text: GPIInfo"></span>
                                 </div>
                             </div>
                         </div>
