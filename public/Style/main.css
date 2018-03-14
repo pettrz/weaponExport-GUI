@@ -279,6 +279,10 @@ input:focus::-webkit-input-placeholder
     visibility: visible;
 }
 
-a {
+.defRanks {
     color:#2c2a2a;
+}
+
+a {
+    color:#f2f2f2;
 }
