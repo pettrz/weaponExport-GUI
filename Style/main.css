@@ -102,14 +102,14 @@
 
 /* Infobox textarea */
 #countryInfo #info{
+    overflow:hidden;
     height: 275px;
-    content: "";
-    padding-top: 15px;
-    overflow: hidden;
     text-overflow: ellipsis;
-    /* background: -webkit-linear-gradient(top,#fff 80%, #333131);
+    content: "";
+    /* background: -webkit-linear-gradient(top,#fff 90%, #333131);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent; */
+   padding-top: 15px;
 }
 
 /* Infobox button */
