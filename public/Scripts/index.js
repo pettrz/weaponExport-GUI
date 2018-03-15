@@ -132,6 +132,12 @@ function CreateMapFreedom() {
               if(countryList()[i].code == code) {
                 selectedCountry(countryList()[i]);
                 console.log(selectedCountry());
+                
+                if(expanded){
+                  $('.buttonInfo').click();
+                }
+                
+                
                 // document.getElementById('country').innerHTML = country.country;
                 // document.getElementById('info').innerHTML = country.info;
                 // document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
@@ -143,27 +149,38 @@ function CreateMapFreedom() {
     });
   });
 }
+
 //Read more button - changing content on click
 var expanded = false;
 
     function changeSize(){
+
         if(!expanded){
             document.getElementById('countryInfo').style.height = '375px';
             document.getElementById('countryInfo').style.overflow = 'auto';   
             document.getElementById('countryInfo').classList.remove("overflow-fade"); 
-            document.getElementById('btnInfo').innerHTML='Visa mindre';        
+            document.getElementById('btnInfo').innerHTML='Visa mindre';
             expanded = true;
-         } else {
+            
+         } 
+         else {
             document.getElementById('countryInfo').style.height = '290px';
             document.getElementById('countryInfo').style.overflow = 'hidden';
             document.getElementById('countryInfo').classList.add("overflow-fade");   
-            document.getElementById('btnInfo').innerHTML='Läs mer';
-            expanded = false; 
-            
+            document.getElementById('btnInfo').innerHTML='Läs mer';   
+            expanded = false;       
     }
 }
 
-$(".buttonInfo").on("click", function() {
-  $("#countryInfo").scrollTop(0);
-  
-});
+  //Cooldown on button
+  $(".buttonInfo").on("click", function() {
+    //$("#countryInfo").scrollTop(0);
+
+    $(".buttonInfo").toggleClass("btnDisabled")
+    
+    setTimeout(function(){
+      $(".buttonInfo").toggleClass("btnDisabled")
+    }, 350); 
+    
+  });
+
