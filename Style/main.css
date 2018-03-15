@@ -101,16 +101,41 @@
 }
 
 /* Infobox textarea */
+#countryInfo{
+    height: 290px;
+    overflow:hidden;
+    padding: 0;
+    transition: height 0.3s;
+    position:relative;
+    
+}
+
 #countryInfo #info{
     overflow:hidden;
-    height: 275px;
-    text-overflow: ellipsis;
-    content: "";
+    padding: 20px;
+    margin-right: 8px;
+
     /* background: -webkit-linear-gradient(top,#fff 90%, #333131);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent; */
    padding-top: 15px;
 }
+
+.overflow-fade {
+    position: relative;
+}
+
+.overflow-fade:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), #2C2A2A 90%);
+    width: 100%;
+    height: 4em;
+  }
 
 /* Infobox button */
 #countryReadMore{
@@ -129,6 +154,9 @@
 }
 .buttonInfo:hover {
     background-color: #808080;
+}
+button:focus{
+     outline: 0 !important;
 }
 
 /* Country dropdown */
@@ -164,22 +192,22 @@ input:focus::-webkit-input-placeholder
     overflow-x: hidden;
 }
 
-/* Scrollbar dropdown */
-#dropdownContent::-webkit-scrollbar {
+/* Scrollbar*/
+::-webkit-scrollbar {
     width: 8px;
 
 }
 
-#dropdownContent::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: transparent; 
 }
  
-#dropdownContent::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #dadada; 
     border-radius: 10px;
 }
 
-#dropdownContent::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: white; 
     
 }
