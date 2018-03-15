@@ -60,8 +60,6 @@
     color: white;
 }
 
-
-
 /* Infobox header */
 #countryHeader{
     text-align: center;
@@ -94,6 +92,15 @@
 
 .data-col img{
     padding-right: 5px;
+}
+
+#links{
+    font-weight: normal;
+    line-height: 100%;
+}
+
+#linksBox{
+    background-color: #333131;
 }
 
 .columnInfo{

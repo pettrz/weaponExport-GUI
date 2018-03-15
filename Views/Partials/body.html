@@ -83,14 +83,20 @@
 
                 <div id="countryInfo" class="col-sm-12">
                     <p id="info" class="col-sm-12" data-bind="text: selectedCountry().info"></p>
-                    <div data-bind="foreach: selectedCountry().links">
-                        <p><a data-bind="attr: { href: $data }, text: $data"></a></p>
-                    </div>
+                    
                 </div> 
 
                 <div id="countryReadMore" class="col-sm-12">
                         <button onclick="changeSize()" class="buttonInfo" type="button" data-toggle="collapse" data-target="#countryData">Läs mer</button>
                 </div>
+
+                <div class="data-col" id="linksBox">
+                    <p>Extärna länkar</p>
+                        <div id="links" data-bind="foreach: selectedCountry().links">
+                            <p><a data-bind="attr: { href: $data }, text: $data"></a></p>
+                        </div>
+                </div>
+
             </div>
 
         </div>
