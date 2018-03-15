@@ -146,5 +146,17 @@ function CreateMapFreedom() {
     });
   });
 }
+//Read more button - changing content on click
+var expanded = false;
 
-
+    function changeSize(){
+        if(!expanded){
+            document.getElementById('info').style.height = '375px';
+            document.getElementById('info').style.overflow = 'auto';
+            expanded = true;
+         } else {
+            document.getElementById('info').style.height = '275px';
+            document.getElementById('info').style.overflow = 'hidden';
+            expanded = false; 
+    }
+}

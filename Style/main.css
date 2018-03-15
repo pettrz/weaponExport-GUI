@@ -103,12 +103,12 @@
 /* Infobox textarea */
 #countryInfo #info{
     overflow:hidden;
-    height: 200px;
+    height: 275px;
     text-overflow: ellipsis;
     content: "";
-    background: -webkit-linear-gradient(top,#fff 90%, #333131);
+    /* background: -webkit-linear-gradient(top,#fff 90%, #333131);
    -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+   -webkit-text-fill-color: transparent; */
    padding-top: 15px;
 }
 
