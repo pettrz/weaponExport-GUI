@@ -60,8 +60,6 @@
     color: white;
 }
 
-
-
 /* Infobox header */
 #countryHeader{
     text-align: center;
@@ -94,6 +92,11 @@
 
 .data-col img{
     padding-right: 5px;
+}
+
+#links{
+    font-weight: normal;
+    line-height: 100%;
 }
 
 .columnInfo{
@@ -303,6 +306,10 @@ input:focus::-webkit-input-placeholder
     visibility: visible;
 }
 
-a {
+.defRanks {
     color:#2c2a2a;
+}
+
+a {
+    color:#f2f2f2;
 }

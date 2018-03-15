@@ -67,12 +67,12 @@
                     <div class="col-sm-12">
                         <div id="tooltipFH" class="data-col col-sm-12">
                                 <img src="./../Style/icons/vapen-icon.png" /> Status enligt Freedom house:
-                                <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".  </br><a href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
+                                <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".  </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
                                 <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                         </div>
                         <div id="tooltipGpi" class="data-col col-sm-12">
                                 <img src="./../Style/icons/gpi-icon.png" /> GPI - ranking:
-                                <span class="tooltiptext">Global Peace Index rangordnar 162 av världens länder efter hur fredliga de är. Ju högre placring desto fredligare land. </br><a href="http://visionofhumanity.org/">Se Vision of Humanitys webbsida</a></span>
+                                <span class="tooltiptext">Global Peace Index rangordnar 162 av världens länder efter hur fredliga de är. Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">Se Vision of Humanitys webbsida</a></span>
                                 <span class="columnInfo" align:"right" id="GPIInfo" data-bind="text: GPIInfo"></span> 
                         </div>     
                         
@@ -81,14 +81,24 @@
 
                 
 
+
                 <div id="countryInfo" class="overflow-fade col-sm-12">
                     <p id="info" class="col-sm-12" data-bind="text: selectedCountry().info">
                     </p>
+                     <div class="data-col">
+                        <p>Extärna länkar</p>
+                        <div id="links" data-bind="foreach: selectedCountry().links">
+                            <p><a data-bind="attr: { href: $data }, text: $data"></a></p>
+                        </div>
+                    </div>
+
                 </div> 
 
                 <div id="countryReadMore" class="col-sm-12">
                         <button onclick="changeSize()" id="btnInfo" class="buttonInfo" type="button" data-toggle="collapse" data-target="#countryData">Läs mer</button>
                 </div>
+
+                
             </div>
 
         </div>

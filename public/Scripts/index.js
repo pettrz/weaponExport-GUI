@@ -35,6 +35,9 @@ function viewModel() {
   self.GPIInfo = ko.computed(() => {
     return self.selectedCountry().gpi + ' av 162'
   });
+  self.linksInfo = ko.computed(()=>{
+    return self.selectedCountry().links
+  });
   self.showList = () => {
     if (self.searchTerm() == '') {
       
