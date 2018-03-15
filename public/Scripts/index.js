@@ -151,12 +151,22 @@ var expanded = false;
 
     function changeSize(){
         if(!expanded){
-            document.getElementById('info').style.height = '375px';
-            document.getElementById('info').style.overflow = 'auto';
+            document.getElementById('countryInfo').style.height = '375px';
+            document.getElementById('countryInfo').style.overflow = 'auto';   
+            document.getElementById('countryInfo').classList.remove("overflow-fade"); 
+            document.getElementById('btnInfo').innerHTML='Visa mindre';        
             expanded = true;
          } else {
-            document.getElementById('info').style.height = '275px';
-            document.getElementById('info').style.overflow = 'hidden';
+            document.getElementById('countryInfo').style.height = '290px';
+            document.getElementById('countryInfo').style.overflow = 'hidden';
+            document.getElementById('countryInfo').classList.add("overflow-fade");   
+            document.getElementById('btnInfo').innerHTML='Läs mer';
             expanded = false; 
+            
     }
 }
+
+$(".buttonInfo").on("click", function() {
+  $("#countryInfo").scrollTop(0);
+  
+});
