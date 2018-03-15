@@ -177,7 +177,8 @@ var expanded = false;
 
   //Cooldown on button
   $(".buttonInfo").on("click", function() {
-    //$("#countryInfo").scrollTop(0);
+    
+    $("#countryInfo").scrollTop(0);
 
     $(".buttonInfo").toggleClass("btnDisabled")
     
