@@ -76,7 +76,6 @@
     font-size: 30px;
     font-weight: 500;
 }
-
 /* Infobox Data */
 #countryData div {
     background-color: #333131;
@@ -160,6 +159,10 @@
 }
 button:focus{
      outline: 0 !important;
+}
+.btnDisabled{
+    pointer-events: none;
+    cursor: default;
 }
 
 /* Country dropdown */
