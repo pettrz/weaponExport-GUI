@@ -7,7 +7,7 @@
                             
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                <a class="nav-link" href="#"> Sveriges Vapenexport<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#"> Karta <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                 <a class="nav-link disabled" href="#">Statistik</a>
@@ -48,10 +48,39 @@
             
         </div>
 
+        <div  id="infobox2" class="col-md-4" style="height: 100%; ">
+            <div class="row"> 
+            <div id="introHeader" class="col-sm-12"> 
+                <div class="col-sm-12">
+                        <img src="./../Style/icons/svenska_freds-logo.png" />
+                </div>          
+                <div class="col-sm-12">             
+                    <h1>Vapenexportkartan</h1>
+                   
+                </div>
+            </div>
+            <div id="introText" class="col-sm-12"> 
+                <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen och genom åren. <br/><br/> Kartan är framtagen av Svenska Freds- och Skiljedomsföreningen i syfte att sprida kunskap om den svenska vapenexporten och dess konsekvenser.</p>
+               <br/>
+               <div id="introPadding">
+                    <button type="button" class="introButton" data-toggle="collapse" data-target="#mapInfo">Såhär använder du kartan</button>
+               </div>
+                
+                <div id="mapInfo" class="collapse">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+            </div>
+            </div> 
+        </div>
         
-        <div id="infobox" class="col-md-4" style="height: 100%; ">
-            <div class="row">
 
+        
+
+        <div id="infobox" class="col-md-4" style="height: 100%; ">               
+           
+            <div class="row">
                 <div id="countryHeader" class="col-sm-12">  
                     <div class="col-sm-12">
                         <span id="flag" class="flag-icon" data-bind="css: flag()"></span>  
@@ -102,8 +131,9 @@
             </div>
 
         </div>
+    </div>
 </div>
-</div>
+
 
 
     
