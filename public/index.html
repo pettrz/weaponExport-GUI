@@ -33,7 +33,7 @@
                 <div id="inner-wrapper" class="col-md-8">
                     <nav class="navbar navbar-expand-md">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active"> <a class="nav-link" href="#"> Sveriges Vapenexport<span class="sr-only">(current)</span></a>
+                            <li class="nav-item active"> <a class="nav-link" href="#"> Karta <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item"> <a class="nav-link disabled" href="#">Statistik</a>
                             </li>
@@ -55,7 +55,46 @@
                     </nav>
                     <div id="world-map"></div>
                 </div>
-                <div id="infobox" class="col-md-4" style="height: 100%; ">
+                <div id="infoboxStart" class="col-md-4" style="height: 100%; ">
+                    <div class="row">
+                        <div id="introHeader" class="col-sm-12">
+                            <div class="col-sm-12">
+                                <img src="./../Style/icons/svenska_freds-logo.png" />
+                            </div>
+                            <div class="col-sm-12">
+                                 <h1>Vapenexportkartan</h1>
+                            </div>
+                        </div>
+                        <div id="introText" class="col-sm-12">
+                            <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen
+                                och genom åren.
+                                <br/>
+                                <br/>Kartan är framtagen av Svenska Freds- och Skiljedomsföreningen i syfte
+                                att sprida kunskap om den svenska vapenexporten och dess konsekvenser.</p>
+                            <!--
+                            <h4>Så använder du kartan</h4>
+
+               <p>Håll muspekaren över kartan för att scrolla eller klicka på plus/minus-tecknet för att zooma. Klicka på de färgade länderna för att läsa mer. Håll muspekaren över statistiken för Freedom house och GPI rankningen för mer information. Klicka på länken i popuprutan för detaljerad information. Klicka på läs mer knappen för mer information och scrolla i informationsrutan. Klicka på länkarna längst ned i informationsrutan för att kopplas vidare. För att hitta ett land klicka på sökrutan eller skriv i sökrutan. </p> -->
+                        </div>
+                        <!-- <div id="introPadding" class="col-sm-12">
+
+                <button type="button" class="introButton" data-toggle="collapse" data-target="#mapInfo">Såhär använder du kartan</button>
+
+           </div>
+
+            
+
+            <div id="mapInfo" class="collapse">
+
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+            </div> --></div>
+                </div>
+                <div id="infoboxCountry" class="col-md-4" style="height: 100%; ">
                     <div class="row">
                         <div id="countryHeader" class="col-sm-12">
                             <div class="col-sm-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span> 
@@ -66,12 +105,12 @@
                         <div id="countryData" class="collapse in">
                             <div class="col-sm-12">
                                 <div id="tooltipFH" class="data-col col-sm-12">
-                                    <img src="./../Style/icons/vapen-icon.png" />Status enligt Freedom house: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".  </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
+                                    <img src="./../Style/icons/freedom-house-logo.png" height="37px" width="37px">Status enligt Freedom house: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".  </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
                                     <span
                                     class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                                 </div>
                                 <div id="tooltipGpi" class="data-col col-sm-12">
-                                    <img src="./../Style/icons/gpi-icon.png" />GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 162 av världens länder efter hur fredliga de är. Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">Se Vision of Humanitys webbsida</a></span>
+                                    <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" padding-right="30px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 162 av världens länder efter hur fredliga de är. Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">Se Vision of Humanitys webbsida</a></span>
                                     <span
                                     class="columnInfo" align: "right" id="GPIInfo" data-bind="text: GPIInfo"></span>
                                 </div>
