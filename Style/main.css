@@ -174,7 +174,7 @@ button:focus{
 #dropdownInput{
     border: none;
     line-height: 50px;
-    width: 170px;
+    max-width: 170px;
     text-align: center;
     color: #333131;
     height: 50px;
@@ -186,6 +186,8 @@ input:focus::-webkit-input-placeholder
 }
 
 #dropdownContent{
+    position: absolute;
+    z-index: 10000;
     border: none;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 0;
@@ -315,4 +317,15 @@ input:focus::-webkit-input-placeholder
 
 a {
     color:#f2f2f2;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+ }
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { 
+ }
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { 
+    
 }
