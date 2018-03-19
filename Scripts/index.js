@@ -136,8 +136,9 @@ function CreateMapFreedom() {
                 selectedCountry(countryList()[i]);
                 console.log(selectedCountry());
                 
-                document.getElementById('infobox2').style.display = 'none';
-                document.getElementById('infobox').style.display = 'block';
+                //switch infobox
+                document.getElementById('infoboxStart').style.display = 'none';
+                document.getElementById('infoboxCountry').style.display = 'block';
 
 
                 if(expanded){
