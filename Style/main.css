@@ -8,6 +8,7 @@
     height: 600px;
     width: 100%;
     font-size: 14px;
+
 }
 #inner-wrapper{
     padding-left: 0;
@@ -124,22 +125,18 @@
 /* Infobox textarea */
 #countryInfo{
     height: 290px;
-    overflow:hidden;
+    overflow: hidden;
     padding: 0;
     transition: height 0.3s;
-    position:relative;
+    position: relative;
+
     
 }
 
 #countryInfo #info{
-    overflow:hidden;
     padding: 20px;
-    margin-right: 8px;
+    padding-top: 15px;
 
-    /* background: -webkit-linear-gradient(top,#fff 90%, #333131);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent; */
-   padding-top: 15px;
 }
 
 .overflow-fade {
@@ -207,6 +204,7 @@ input:focus::-webkit-input-placeholder
 #dropdownContent{
     z-index: 9999;
     position: absolute;
+    max-height: 300px;
     border: none;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 0;
@@ -346,8 +344,11 @@ input:focus::-webkit-input-placeholder
 
 } */
 
-/* >768px */
+/* >768px breakpoint*/
 @media screen and (max-width : 768px){
+    #dropdownContent{
+        height:
+    }
     .jvectormap-container{
         height: 450px;
     }
@@ -357,16 +358,35 @@ input:focus::-webkit-input-placeholder
     }
 }
 
-/* 768px - 992px */
-@media screen and (min-width : 768px){
+/* 992px breakpoint */
+@media screen and (max-width : 992px){
+
+    .jvectormap-zoomin{
+        top: 20px;
+        left: 20px;
+        height: 26px;
+        width: 26px;
+        line-height: 27px;
+        font-size: 32px;
+        background-color: #2c2a2a;
+    }
+    .jvectormap-zoomout{
+        top: 65px;
+        left: 20px;
+        height: 26px;
+        width: 26px;
+        line-height: 27px;
+        font-size: 32px;
+        background-color: #2c2a2a;
+    }
+
+
 
 }
 
-/* 992px - 1200px */
-@media screen and (min-width : 992px){
-    #wrapper{
-        font-size: 12px;
-    }
+/* 1200px breakpoint */
+@media screen and (max-width : 1200px){
+
 }
 
 /* 1200px< */
