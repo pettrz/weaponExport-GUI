@@ -192,4 +192,3 @@ var expanded = false;
     }, 350); 
     
   });
-

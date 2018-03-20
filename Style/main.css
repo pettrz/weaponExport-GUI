@@ -57,6 +57,10 @@
     height: 550px;
 }
 
+#info{
+    white-space: pre-wrap;
+}
+
 /* Infobox */
 #infoboxCountry {
     background-color: #2c2a2a;
