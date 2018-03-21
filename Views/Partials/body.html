@@ -136,12 +136,11 @@
                     </p>
                      <div class="data-col">
                         <p>Läs mer</p>
-                        
                         <div id="links" data-bind="foreach: selectedCountry().links">
-                            <p><a data-bind="attr: { href: $data }, text: $data"></a></p>
-                            <div id="titles" data-bind="text: selectedCountry().title">
+                            <p><div id="titles" data-bind="text: selectedCountry().title">
                                 <p><a data-bind="text:  $data"></a></p>
-                            </div>
+                            </div><a data-bind="attr: { href: $data }, text: $data"></a></p>
+                            
                      </div>
                     </div>
 
