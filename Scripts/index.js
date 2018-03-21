@@ -191,3 +191,16 @@ var expanded = false;
     
   });
 
+  $(window).resize(function(){
+    var width = $(window).width();
+    if(width <= 992){
+      $('#countryData').on('hide.bs.collapse', function (e) {
+        e.preventDefault(e);
+      })
+    } else {
+      document.getElementById('countryInfo').style.height = '290px';
+      $('#countryData').unbind('hide.bs.collapse')
+    }
+ })
+ .resize();
+
