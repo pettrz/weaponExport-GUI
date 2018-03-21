@@ -136,6 +136,11 @@ function CreateMapFreedom() {
                 selectedCountry(countryList()[i]);
                 console.log(selectedCountry());
                 
+                //switch infobox
+                document.getElementById('infoboxStart').style.display = 'none';
+                document.getElementById('infoboxCountry').style.display = 'block';
+
+
                 if(expanded){
                   $('.buttonInfo').click();
                 }
@@ -168,7 +173,7 @@ var expanded = false;
             
          } 
          else {
-            document.getElementById('countryInfo').style.height = '290px';
+            document.getElementById('countryInfo').style.height = '275px';
             document.getElementById('countryInfo').style.overflow = 'hidden';
             document.getElementById('countryInfo').classList.add("overflow-fade");   
             document.getElementById('btnInfo').innerHTML='Läs mer';  
@@ -203,4 +208,5 @@ var expanded = false;
     }
  })
  .resize();
+
 
