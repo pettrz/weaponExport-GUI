@@ -140,8 +140,8 @@ function CreateMapFreedom() {
                 console.log(selectedCountry());
                 
                 //switch infobox
-                document.getElementById('infoboxStart').style.display = 'none';
-                document.getElementById('infoboxCountry').style.display = 'block';
+                // document.getElementById('infoboxStart').style.display = 'none';
+                // document.getElementById('infoboxCountry').style.display = 'block';
 
 
                 if(expanded){
@@ -170,7 +170,7 @@ var expanded = false;
             document.getElementById('countryInfo').style.height = '375px';
             document.getElementById('countryInfo').style.overflow = 'auto';   
             document.getElementById('countryInfo').classList.remove("overflow-fade"); 
-            document.getElementById('btnInfo').innerHTML='Visa mindre';
+            document.getElementById('btnInfo').innerHTML='Visa mindre'; 
             document.getElementById('info').style.paddingRight='12px';  
             expanded = true;
             
@@ -199,17 +199,18 @@ var expanded = false;
     
   });
 
-  $(window).resize(function(){
-    var width = $(window).width();
-    if(width <= 992){
-      $('#countryData').on('hide.bs.collapse', function (e) {
-        e.preventDefault(e);
-      })
-    } else {
-      document.getElementById('countryInfo').style.height = '290px';
-      $('#countryData').unbind('hide.bs.collapse')
-    }
+$(window).resize(function(){
+ var width = $(window).width();
+if(width <= 992){
+  document.getElementById('btnInfo').style.display = 'static';
+ $('#countryData').on('hide.bs.collapse', function (e) {
+       e.preventDefault(e);
+   })
+  } else {
+     document.getElementById('countryInfo').style.height = '290px';
+     $('#countryData').unbind('hide.bs.collapse')
+   }
  })
- .resize();
+.resize();
 
 
