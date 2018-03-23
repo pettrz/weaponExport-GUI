@@ -33,7 +33,7 @@ function viewModel() {
     return self.selectedCountry().FHstatus
   });
   self.GPIInfo = ko.computed(() => {
-    return self.selectedCountry().gpi + ' av 162'
+    return self.selectedCountry().gpi + ' av 163'
   });
   self.linksInfo = ko.computed(()=>{
     return self.selectedCountry().links
