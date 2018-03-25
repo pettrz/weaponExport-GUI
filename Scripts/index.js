@@ -49,13 +49,14 @@ function viewModel() {
     } else {
       var countries = [];
       for (i = 0; i < countryList().length; i++) {
-        if (countryList()[i].country.includes(searchTerm())) {
+        if (countryList()[i].country.toUpperCase().includes(searchTerm().toUpperCase())) {
           countries[i] = countryList()[i];
+          countries = countries.filter(function(n){ return n != undefined });
         }
       }
       if (countries.length == 0) {
         console.log('no match in list')
-        return [{country: "Inget resultat hittades!"}]
+        return [{country: "Inget resultat hittades."}]
       } else {
         console.log('returned matches in list')
         return countries;
