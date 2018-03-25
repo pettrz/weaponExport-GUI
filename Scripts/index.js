@@ -139,9 +139,8 @@ function CreateMapFreedom() {
                 selectedCountry(countryList()[i]);
                 console.log(selectedCountry());
                 
-                //switch infobox
-                // document.getElementById('infoboxStart').style.display = 'none';
-                // document.getElementById('infoboxCountry').style.display = 'block';
+
+                toggleInfobox()
 
 
                 if(expanded){
@@ -176,7 +175,7 @@ var expanded = false;
             
          } 
          else {
-            document.getElementById('countryInfo').style.height = '275px';
+            document.getElementById('countryInfo').style.height = '290px';
             document.getElementById('countryInfo').style.overflow = 'hidden';
             document.getElementById('countryInfo').classList.add("overflow-fade");   
             document.getElementById('btnInfo').innerHTML='Läs mer';  
@@ -213,4 +212,7 @@ if(width <= 992){
  })
 .resize();
 
-
+function toggleInfobox(){
+  document.getElementById('infobox-start').style.display = 'none';
+  document.getElementById('infobox-country').style.display = 'block';
+}

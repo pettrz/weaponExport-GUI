@@ -1,88 +1,77 @@
+
+
+
+
+
 html,body {
     height: 100%;
 
 }
 #wrapper1{
-    height: 600px;
     color: white;
     font-size: 15px;
-    line-height: 22px;
-    
-}
-#inner-wrapper1{
-    padding: 0;
-
+    line-height: 22px;   
 }
 
-#navbar1{
-
-    padding: 0;
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+#navbar-wrapper{
     background-color: #333131;
 }
 
-
-
-#navbar1 .navbar{
-    min-height: 50px;
-    padding-bottom: 0;
-    padding-top: 0;
-
-}
-
-
-
-#navbar1 .navbar a{
-    height: 100%;
-    color: white;
-
-}
-
-
-
-#navbar1 .nav-item{
-    padding: 0 10px 0 10px;
-    height: 100%;
-}
-
-#navbar1 .nav-link:hover{
-    background-color: white;
-    color:  #2c2a2a;
-}
-
- #navbar1 a.active{
-    background-color:  #2c2a2a;
-}
-
-#map1{
-
-    background-color: #505050;
-    padding: 0;
-}
-#infobox1{
-
+#infobox-country{
     background-color: #2c2a2a;
-
-
+    color: white;
+    display: none;
 }
 
 #countryData1{
     background-color: #333131;;
-    padding: 0;
-}
-#countryInfo1{
-    height: 275px;
-    overflow:hidden;
-    padding: 0;
-    transition: height 0.3s;
-    position: relative;
-
-
 
 }
+
 
 #dropdownContent{
     margin: 0;
+    width: 200px;
+    border-radius: 0 0 3px 3px;
+    background-color: rgba(0, 0, 0, 0.55);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: none;
+    line-height: 32px;
+    padding: 0;
+    max-height: 250px;
+
 }
+
+#dropdown-wrapper{
+    position: absolute;
+    right: 0;
+    padding-right: 16px;
+}
+#dropdownContent .dropdown-item{
+    color: white;
+
+}
+#dropdownContent .dropdown-item:hover{
+    background-color: rgba(0, 0, 0, 0.40);
+}
+
+
+#world-map{
+    height: 550px;
+}
+
+#test{
+    width: 300px;
+}
+
+
+
+
 
 
 
@@ -116,28 +105,20 @@ html,body {
     top: 0;
 }
 /* Map */
-#world-map{
-    height: 100%;
-}
 
-.jvectormap-container{
-    height: 550px;
-}
+
+
 
 #info{
     white-space: pre-wrap;
 }
 
 /* Infobox */
-#infoboxCountry {
+
+#infobox-start{
     background-color: #2c2a2a;
-    color: white;
-    display:none;
-}
-#infoboxStart{
-    background-color: #2c2a2a;
-    color: white;
     text-align: center;
+
 }
 #introHeader{
     text-align: center;
@@ -161,9 +142,11 @@ html,body {
 #flag{
     height: 5em; 
     width: 5em;
+
 }
 
-#country{
+.infobox-header{
+    padding-top: 20px;
     font-size: 30px;
     font-weight: 500;
 }
@@ -198,13 +181,10 @@ img{
 
 /* Infobox textarea */
 #countryInfo{
-    height: 275px;
     overflow:hidden;
     padding: 0;
     transition: height 0.3s;
     position: relative;
-
-    
 }
 
 #countryInfo #info{
@@ -232,9 +212,11 @@ img{
 /* Infobox button */
 #countryReadMore{
     text-align: center;
-    bottom: 0;
     position: absolute;
+    z-index: 1000;
+    bottom:0;
     padding-bottom: 25px;
+
 
 }
 #introPadding{
@@ -271,18 +253,18 @@ button:focus{
 }
 
 /* Country dropdown */
-#dropdownSearch svg {
-    color: white;
-    margin: 0 5px;
+#dropdownSearch{
+    
+    height: 100%;
 }
+
 
 #dropdownInput{
     border: none;
-    line-height: 50px;
     max-width: 170px;
     text-align: center;
     color: #333131;
-    height: 50px;
+    height: 100%;
 }
 
 input:focus::-webkit-input-placeholder 
@@ -290,20 +272,6 @@ input:focus::-webkit-input-placeholder
     color: transparent;
 }
 
-#dropdownContent{
-    z-index: 9999;
-    position: absolute;
-    max-height: 300px;
-    border: none;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 0;
-    background-color: rgba(0, 0, 0, 0.55);
-    padding: 0;
-    line-height: 32px;
-    width: 100%; 
-    overflow-y: auto;
-    overflow-x: hidden;
-}
 
 /* Scrollbar*/
 ::-webkit-scrollbar {
@@ -331,7 +299,6 @@ input:focus::-webkit-input-placeholder
     left: 20px;
     height: 16px;
     width: 16px;
-    line-height: 17px;
     font-size: 22px;
     background-color: #2c2a2a;
 }
@@ -340,7 +307,6 @@ input:focus::-webkit-input-placeholder
     left: 20px;
     height: 16px;
     width: 16px;
-    line-height: 17px;
     font-size: 22px;
      background-color: #2c2a2a;
 }
@@ -436,44 +402,28 @@ input:focus::-webkit-input-placeholder
 /* >768px breakpoint*/
 @media screen and (max-width : 768px){
 
+    #dropdown-wrapper{
+        top: 8px;
+        
+    }
+    #dropdownContent{
+        max-height: 200px;
+    }
+    #navbarNav .nav-item{
+        line-height: 32px;
+    }
     .jvectormap-legend-cnt-v{
         transform: scale(1, 1);
         left: 20px;
     } 
-    
-    .jvectormap-container{
+
+    #countryReadMore{
+        position: static;
+    }
+    #world-map{
         height: 500px;
     }
-
-    #navbar1 .navbar{
-
-        padding: 0;
-    }
-
-    #navbar1 .nav-item{
-
-        padding: 0;
-    }
-
-    #navbar1 .nav-link{
-
-        padding-left: 20px;
-    }
-    #dropdownInput{
-        height: 75px;
-    }
-
-    #navbar1 .navbar-toggler{
-        line-height: 65px;
-    }
-
-    #navbar1 .navbar a{
-        line-height: 50px;
-    }
-
-    #navbar1 .navbar button{
-        padding-left: 20px;
-    }
+    
 }
 
 /* 992px breakpoint */
@@ -484,7 +434,7 @@ input:focus::-webkit-input-placeholder
         left: 20px;
         height: 26px;
         width: 26px;
-        line-height: 27px;
+        line-height: 17px;
         font-size: 32px;
         background-color: #2c2a2a;
     }
@@ -493,7 +443,7 @@ input:focus::-webkit-input-placeholder
         left: 20px;
         height: 26px;
         width: 26px;
-        line-height: 27px;
+        line-height: 17px;
         font-size: 32px;
         background-color: #2c2a2a;
     }

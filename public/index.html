@@ -2,7 +2,7 @@
 <html>
     
     <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
         <title>Vapenkarta</title>
         <link rel="stylesheet" href="Style/jquery-jvectormap-2.0.3.css"
         type="text/css" media="screen" />
@@ -29,118 +29,94 @@
     <body>
         <div class="container">
             <div id="wrapper1">
-                <div class="row h-100">
-                    <div id="inner-wrapper1" class="col-lg-8">
-                        <div id="navbar1" class="col-md-12">
-                            <nav class="navbar navbar-expand-md">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
-                                style="line-height: 65px;"> <span class="fa fa-bars fa-2x" style="color: white;"></span>
-                                </button>
-                                <ul id="search" class="nav navbar-nav ml-auto">
-                                    <li id="dropdownSearch" class="dropdown">
-                                        <input type="text" id="dropdownInput" data-toggle="dropdown" placeholder="Sök Land..."
-                                        data-bind="value: searchTerm, valueUpdate: 'keyup'">
-                                        <div id="dropdownContent" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <div data-bind="foreach: showList()"> <a class="dropdown-item" data-bind="text: country" href="#"></a>
-                                            </div>
-                                        </div>
+                <div class="row mx-auto no-gutter">
+                    <div id="navbar-wrapper" class="col-lg-8">
+                        <nav class="navbar navbar-expand-md navbar-dark">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div id="dropdown-wrapper">
+                                <form class="form-inline">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Sök land..."
+                                    aria-label="Search" data-target="#dropdownContent" data-toggle="dropdown"
+                                    data-bind="value: searchTerm, valueUpdate: 'keyup'">
+                                </form>
+                                <div id="dropdownContent" class="dropdown-menu dropdown-menu-right ml-auto "
+                                aria-labelledby="navbarDropdown">
+                                    <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="toggleInfobox()" data-bind="text: country, click: selectedCountry"
+                                        href="#"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active"> <a class="nav-link" href="#">Vapenexportkarta <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item"> <a class="nav-link" href="#">Statistik</a>
+                                    </li>
+                                    <li class="nav-item"> <a class="nav-link disabled" href="#">Aktörer</a>
+                                    </li>
+                                    <li class="nav-item"> <a class="nav-link disabled" href="#">Om kartan</a>
                                     </li>
                                 </ul>
-                                <div class="collapse navbar-collapse" id="navbarCollapse">
-                                    <ul class="navbar-nav mr-auto">
-                                        <li class="nav-item"> <a class="nav-link active" href="#"> Kartan<span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="nav-item"> <a class="nav-link disabled" href="#">Statistik</a>
-                                        </li>
-                                        <li class="nav-item"> <a class="nav-link disabled" href="#">Aktörer</a>
-                                        </li>
-                                        <li class="nav-item"> <a class="nav-link disabled" href="#">Om kartan</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                            <!-- <nav class="navbar navbar-expand-md">
-
-            
-
-                                                <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse"
-
-                                                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-
-                                                    aria-label="Toggle navigation" style="height: 50px; "> <span class="fa fa-bars fa-2x" style=""></span>
-
-                                                </button>
-
-                        
-
-                        
-
-                                                
-
-                                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-                                                    
-
-                                                        <ul class="nav navbar-nav mr-auto">
-
-                                                            <li class="nav-item">
-
-                                                                <a class="nav-link active" href="#"> Kartan<span class="sr-only">(current)</span></a>
-
-                                                            </li>
-
-                                                            <li class="nav-item">
-
-                                                                <a class="nav-link disabled" href="#">Statistik</a>
-
-                                                            </li>
-
-                                                            <li class="nav-item">
-
-                                                                <a class="nav-link disabled" href="#">Aktörer</a>
-
-                                                            </li>
-
-                                                            <li class="nav-item">
-
-                                                                <a class="nav-link disabled" href="#">Om kartan</a>
-
-                                                            </li>
-
-                                                            
-
-                                                            
-
-                                                        </ul>
-
-        
-
-                                                </div>
-
-                        
-
-                                            </nav> -->
-                        </div>
-                        <div id="map1" class="col-md-12">
-                            <div id="world-map"></div>
-                        </div>
+                            </div>
+                        </nav>
+                        <div id="world-map"></div>
                     </div>
-                    <div id="infobox1" class="col-lg-4">
-                        <div class="row">
-                            <div id="countryHeader" class="col-sm-12">
+                    <div id="infobox-start" class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                        <div class="row mx-auto">
+                            <div id="introHeader" class="col-xs-5 col-sm-5 col-md-5 col-lg-12">
+                                <div class="col-sm-12">
+                                    <img src="./../Style/icons/svenska_freds-logo.png" />
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="infobox-header">Vapenexportkartan</div>
+                                </div>
+                            </div>
+                            <div id="introText" class="col-xs-7 col-sm-7 col-md-7 col-lg-12">
+                                <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen
+                                    och genom åren. Kartan visar ett urval av de länder dit svenska vapen skickats,
+                                    genom medveten export eller genom illegala överföringar.
+                                    <br/>
+                                    <br/>Läs mer om hur kartan, källor och urval i fliken “Om kartan”.</p>
+                                <!--
+                                <h4>Så använder du kartan</h4>
+
+                       <p>Håll muspekaren över kartan för att scrolla eller klicka på plus/minus-tecknet för att zooma. Klicka på de färgade länderna för att läsa mer. Håll muspekaren över statistiken för Freedom house och GPI rankningen för mer information. Klicka på länken i popuprutan för detaljerad information. Klicka på läs mer knappen för mer information och scrolla i informationsrutan. Klicka på länkarna längst ned i informationsrutan för att kopplas vidare. För att hitta ett land klicka på sökrutan eller skriv i sökrutan. </p> -->
+                            </div>
+                            <!-- <div id="introPadding" class="col-sm-12">
+
+                        <button type="button" class="introButton" data-toggle="collapse" data-target="#mapInfo">Såhär använder du kartan</button>
+
+                   </div>
+
+                    
+
+                    <div id="mapInfo" class="collapse">
+
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+                    </div> --></div>
+                    </div>
+                    <div id="infobox-country" class="col-sm-12 col-md-12 col-lg-4">
+                        <div class="row mx-auto">
+                            <div id="countryHeader" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">
                                 <div class="col-xs-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span> 
                                 </div>
-                                <div class="col-xs-12"> <span id="country" data-bind="text: selectedCountry().country"></span>
+                                <div class="col-xs-12"> <span id="country" class="infobox-header" data-bind="text: selectedCountry().country"></span>
                                 </div>
                             </div>
                             <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
-                                <div id="tooltipFH" class="data-col col-xs-12">
+                                <div id="tooltipFH" class="data-col col-sm-12">
                                     <img src="./../Style/icons/freedom-house-logo.png" height="37px" width="37px">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".  </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
                                     <span
                                     class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                                 </div>
-                                <div id="tooltipGpi" class="data-col col-xs-12">
+                                <div id="tooltipGpi" class="data-col col-sm-12">
                                     <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" padding-right="30px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 162 av världens länder efter hur fredliga de är. Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">Se Vision of Humanitys webbsida</a></span>
                                     <span
                                     class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo"></span>
@@ -168,9 +144,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- End wrapper2 -->
                 </div>
             </div>
-        </div>
         </div>
     </body>
 
