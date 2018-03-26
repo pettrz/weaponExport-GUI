@@ -216,4 +216,9 @@ if(width <= 992){
 function toggleInfobox(){
   document.getElementById('infobox-start').style.display = 'none';
   document.getElementById('infobox-country').style.display = 'block';
+
+  if(expanded){
+    $('.buttonInfo').click();
+  }
+  
 }
