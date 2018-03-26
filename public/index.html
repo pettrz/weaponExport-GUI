@@ -43,8 +43,7 @@
                                 </form>
                                 <div id="dropdownContent" class="dropdown-menu dropdown-menu-right ml-auto "
                                 aria-labelledby="navbarDropdown">
-                                    <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="toggleInfobox()" data-bind="text: country, click: selectedCountry"
-                                        href="#"></a>
+                                    <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="toggleInfobox()" data-bind="text: country, click: selectedCountry"></a>
                                     </div>
                                 </div>
                             </div>
@@ -107,17 +106,25 @@
                             <div id="countryHeader" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">
                                 <div class="col-xs-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span> 
                                 </div>
-                                <div class="col-xs-12"> <span id="country" class="infobox-header" data-bind="text: selectedCountry().country"></span>
+                                <div class="col-xs-12"> <span class="infobox-header" data-bind="text: selectedCountry().country"></span>
                                 </div>
                             </div>
                             <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
                                 <div id="tooltipFH" class="data-col col-sm-12">
-                                    <img src="./../Style/icons/freedom-house-logo.png" height="37px" width="37px">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".  </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
+                                    <img src="./../Style/icons/freedom-house-logo.png" height="37px" width="37px">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
+
+                                    världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
+
+                                      </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
                                     <span
                                     class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                                 </div>
                                 <div id="tooltipGpi" class="data-col col-sm-12">
-                                    <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" padding-right="30px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">Se Vision of Humanitys webbsida</a></span>
+                                    <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" padding-right="30px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
+
+                                    Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">
+
+                                    Se Vision of Humanitys webbsida</a></span>
                                     <span
                                     class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo"></span>
                                 </div>
