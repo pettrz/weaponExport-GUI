@@ -28,9 +28,9 @@
     
     <body>
         <div class="container">
-            <div id="wrapper1">
-                <div class="row mx-auto no-gutter">
-                    <div id="navbar-wrapper" class="col-lg-8">
+            <div id="wrapper">
+                <div class="row h-100 mx-auto no-gutter">
+                    <div id="inner-wrapper" class="col-lg-8">
                         <nav class="navbar navbar-expand-md navbar-dark">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
@@ -62,17 +62,17 @@
                         </nav>
                         <div id="world-map"></div>
                     </div>
-                    <div id="infobox-start" class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div id="infobox-before" class="col-md-12 col-lg-4">
                         <div class="row mx-auto">
-                            <div id="introHeader" class="col-xs-5 col-sm-5 col-md-5 col-lg-12">
-                                <div class="col-sm-12">
+                            <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
+                                <div class="col-sm-12 ">
                                     <img src="./../Style/icons/svenska_freds-logo.png" />
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="infobox-header">Vapenexportkartan</div>
                                 </div>
                             </div>
-                            <div id="introText" class="col-xs-7 col-sm-7 col-md-7 col-lg-12">
+                            <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
                                 <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen
                                     och genom åren. Kartan visar ett urval av de länder dit svenska vapen skickats,
                                     genom medveten export eller genom illegala överföringar.
@@ -81,10 +81,10 @@
                             </div>
                         </div>
                     </div>
-                    <div id="infobox-country" class="col-sm-12 col-md-12 col-lg-4">
+                    <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
                         <div class="row mx-auto">
-                            <div id="countryHeader" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">
-                                <div class="col-xs-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span> 
+                            <div id="countryHeader" class="col-sm-5 col-md-0 col-lg-12">
+                                <div class="col-xs-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span>
                                 </div>
                                 <div class="col-xs-12"> <span class="infobox-header" data-bind="text: selectedCountry().country"></span>
                                 </div>
@@ -93,18 +93,18 @@
                                 <div id="tooltipFH" class="data-col col-sm-12">
                                     <img src="./../Style/icons/freedom-house-logo.png" height="37px" width="37px">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
 
-                                    världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
+                                        världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
 
-                                      </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
+                                          </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
                                     <span
                                     class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                                 </div>
                                 <div id="tooltipGpi" class="data-col col-sm-12">
                                     <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" padding-right="30px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
 
-                                    Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">
+                                        Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">
 
-                                    Se Vision of Humanitys webbsida</a></span>
+                                        Se Vision of Humanitys webbsida</a></span>
                                     <span
                                     class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo"></span>
                                 </div>
@@ -116,11 +116,9 @@
                                     <div id="links" data-bind="foreach: selectedCountry().links">
                                         <p>
                                             <div id="titles" data-bind="text: selectedCountry().title">
-                                                <p><a data-bind="text:  $data"></a>
-
+                                                <p> <a data-bind="text:  $data"></a>
                                                 </p>
-                                            </div><a data-bind="attr: { href: $data }, text: $data"></a>
-
+                                            </div> <a data-bind="attr: { href: $data }, text: $data"></a>
                                         </p>
                                     </div>
                                 </div>
@@ -131,7 +129,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End wrapper2 -->
                 </div>
             </div>
         </div>
