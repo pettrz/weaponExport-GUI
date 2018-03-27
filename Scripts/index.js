@@ -215,8 +215,8 @@ if(width <= 992){
 .resize();
 
 function toggleInfobox(){
-  document.getElementById('infobox-start').style.display = 'none';
-  document.getElementById('infobox-country').style.display = 'block';
+  document.getElementById('infobox-before').style.display = 'none';
+  document.getElementById('infobox-after').style.display = 'block';
 
   if(expanded){
     $('.buttonInfo').click();
