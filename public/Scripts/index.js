@@ -45,6 +45,7 @@ function viewModel() {
     if (self.searchTerm() == '') {
       
       console.log('all countries returned')
+      countryList().sort((a, b) => a.country.localeCompare(b.country))
       return self.countryList();
     } else {
       var countries = [];
