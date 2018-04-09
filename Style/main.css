@@ -68,6 +68,7 @@ input:focus::-webkit-input-placeholder
 #inner-wrapper{
     height: 600px;
     background-color: #505050;
+    text-align: left;
 }
 
 
@@ -382,7 +383,7 @@ button:focus{
 }
 
 
-/* STATISTIK */
+/* STATISTICS */
 #main-content{
     height: 600px;
 }
@@ -406,4 +407,19 @@ button:focus{
 #stats-header{
     padding-top: 30px;
     padding-bottom: 20px;
+}
+
+/* ABOUT */
+#about-map{
+    padding: 30px;
+    margin-top: 50px;
+ }
+ 
+#about-header{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#logo-padding{
+    padding-top: 20px;
 }
