@@ -8,7 +8,7 @@ html,body {
 }
 
 #wrapper{
-    height: 600px;
+    height: 650px;
     color: white;
     font-size: 15px;
     line-height: 22px;
@@ -21,16 +21,22 @@ html,body {
 }
 
 /*Navbar*/
-#inner-wrapper .navbar{
-    background-color: #333131;
+#navbar-wrapper{
+    background-color: #2c2a2a;
     text-align: left;
+    min-height: 50px;
+    padding: 0;
 }
+
 
 /*Dropdown in navbar*/
 #dropdown-wrapper{
     position: absolute;
     right: 0;
     padding-right: 16px;
+}
+#dropdown-wrapper input{
+    margin: 0 !important;
 }
 
 input:focus::-webkit-input-placeholder 
@@ -58,10 +64,16 @@ input:focus::-webkit-input-placeholder
     padding: 0;
     max-height: 250px;
 }
+/*Main content*/
+#inner-wrapper{
+    height: 600px;
+    background-color: #505050;
+}
+
 
 /*Map*/
 #world-map{
-    height: 546px;
+    height: 600px;
 }
 
 /*Map interface*/
@@ -125,6 +137,8 @@ input:focus::-webkit-input-placeholder
 }
 
 
+
+
 /*Infobox after*/
 #infobox-after{
     text-align: center;
@@ -132,14 +146,10 @@ input:focus::-webkit-input-placeholder
     display: none;
 }
 
-#countryHeader{
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
 
 #flag{
-    height: 5em; 
-    width: 5em;
+    height: 4em; 
+    width: 5em; 
 }
 
 .infobox-header{
@@ -147,11 +157,13 @@ input:focus::-webkit-input-placeholder
     font-size: 32px;
 }
 
+#countryHeader{
+    padding-bottom: 20px;
+
+}
 
 #countryData {
     background-color: #333131;
-    padding-right: 0;
-    padding-left: 0;
 }
 
 
@@ -219,7 +231,8 @@ img{
 
 /*Infobox text*/
 #countryInfo{
-    overflow:hidden;
+    height: 290px;
+    overflow: hidden;
     padding: 0;
     transition: height 0.3s;
     position: relative;
