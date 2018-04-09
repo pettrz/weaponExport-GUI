@@ -55,24 +55,19 @@
                             </div>
                         </div>
     
-                        <div id="countryInfo" class="overflow-fade col-sm-12">
-                            <div id="info" class="col-sm-12" data-bind="text: selectedCountry().info">
-                            </div>
-                            <div class="col-sm-12">
-                                <p>Läs mer</p>
-                                <div id="links" data-bind="foreach: selectedCountry().links">
-                                    <p>
-                                        <div id="titles" data-bind="text: selectedCountry().title">
-                                            <p>
-                                                <a data-bind="text:  $data"></a>
-                                            </p>
-                                        </div>
-                                        <a data-bind="attr: { href: $data }, text: $data"></a>
-                                    </p>
-    
-                                </div>
-                            </div>
-                        </div>
+                       <div id="countryInfo" class="overflow-fade col-sm-12">
+	<div id="info" class="col-sm-12" data-bind="text: selectedCountry().info"></div>
+		<div class="col-sm-12">
+			<p>Läs mer</p>
+			<div id="links" data-bind="foreach: selectedCountry().links"> 
+				<a data-bind="attr: { href: link }, text: title"></a>
+			</div>
+		</div>
+	</div>
+	<div id="countryReadMore" class="col-sm-12">
+		<button onclick="changeSize()" id="btnInfo" class="buttonInfo" type="button"
+		data-toggle="collapse" data-target="#countryData">Läs mer</button>
+	</div>
     
                         <div id="countryReadMore" class="col-sm-12">
                             <button onclick="changeSize()" id="btnInfo" class="buttonInfo" type="button" data-toggle="collapse" data-target="#countryData">Läs mer</button>
