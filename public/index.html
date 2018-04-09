@@ -29,103 +29,209 @@
     <body>
         <div class="container">
             <div id="wrapper">
-                <div class="row h-100 mx-auto no-gutter">
-                    <div id="inner-wrapper" class="col-lg-8">
-                        <nav class="navbar navbar-expand-md navbar-dark">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div id="dropdown-wrapper">
-                                <form class="form-inline">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Sök land..."
-                                    aria-label="Search" data-target="#dropdownContent" data-toggle="dropdown"
-                                    data-bind="value: searchTerm, valueUpdate: 'keyup'">
-                                </form>
-                                <div id="dropdownContent" class="dropdown-menu dropdown-menu-right ml-auto "
-                                aria-labelledby="navbarDropdown">
-                                    <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="toggleInfobox()" data-bind="text: country, click: selectedCountry"></a>
+                <div id="navbar-wrapper" class="col-sm-12 col-md-12 col-lg-12">
+                    <nav class=" col-lg-8 navbar navbar-expand-md navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="dropdown-wrapper">
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Sök land..."
+                                aria-label="Search" data-target="#dropdownContent" data-toggle="dropdown"
+                                data-bind="value: searchTerm, valueUpdate: 'keyup'">
+                            </form>
+                            <div id="dropdownContent" class="dropdown-menu dropdown-menu-right ml-auto "
+                            aria-labelledby="navbarDropdown">
+                                <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="toggleInfobox()" data-bind="text: country, click: selectedCountry"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="nav navbar-nav mr-auto">
+                                <li class="nav-item"> <a class="nav-link active show" href="#map" data-toggle="tab">Vapenexportkarta</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" href="#stats" data-toggle="tab">Statistik</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" href="#participants" data-toggle="tab">Aktörer</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" href="#about" data-toggle="tab">Om kartan</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="tab-content">
+                    <div id="map" class="tab-pane active">
+                        <div class="row h-100 mx-auto no-gutter">
+                            <div id="inner-wrapper" class="col-lg-8">
+                                <div id="world-map"></div>
+                            </div>
+                            <div id="infobox-before" class="col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
+                                        <div class="col-sm-12 ">
+                                            <img src="./../Style/icons/svenska_freds-logo.png" />
+                                        </div>
+                                        <div class="col-sm-12">
+                                             <h3> Vapenexportkartan</h3>
+                                        </div>
+                                    </div>
+                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                                        <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen
+                                            och genom åren. Kartan visar ett urval av de länder dit svenska vapen skickats,
+                                            genom medveten export eller genom illegala överföringar.
+                                            <br/>
+                                            <br/>Läs mer om hur kartan, källor och urval i fliken “Om kartan”.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active"> <a class="nav-link" href="#">Vapenexportkarta <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item"> <a class="nav-link" href="#">Statistik</a>
-                                    </li>
-                                    <li class="nav-item"> <a class="nav-link disabled" href="#">Aktörer</a>
-                                    </li>
-                                    <li class="nav-item"> <a class="nav-link disabled" href="#">Om kartan</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                        <div id="world-map"></div>
-                    </div>
-                    <div id="infobox-before" class="col-md-12 col-lg-4">
-                        <div class="row mx-auto">
-                            <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
-                                <div class="col-sm-12 ">
-                                    <img src="./../Style/icons/svenska_freds-logo.png" />
+                            <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="countryHeader" class="col-sm-5 col-md-12">
+                                        <div class="col-md-12">
+                                            <div id="flag" class="flag-icon" data-bind="css: flag()"></div>
+                                        </div>
+                                        <div class="col-md-12">
+                                             <h3 data-bind="text: selectedCountry().country"></h3>
+                                        </div>
+                                    </div>
+                                    <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
+                                        <div id="tooltipFH" class="data-col col-sm-12">
+                                            <img src="./../Style/icons/freedom-house-logo.png" height="37px" width="37px">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
+
+            världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
+
+            </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
+                                            <span
+                                            class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
+                                        </div>
+                                        <div id="tooltipGpi" class="data-col col-sm-12">
+                                            <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" padding-right="30px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
+
+            Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">
+
+            Se Vision of Humanitys webbsida</a></span> <span class="columnInfo"
+                                            id="GPIInfo" data-bind="text: GPIInfo"></span>
+                                        </div>
+                                    </div>
+                                    <div id="countryInfo" class="overflow-fade col-sm-12">
+                                        <div id="info" class="col-sm-12" data-bind="text: selectedCountry().info"></div>
+                                        <div class="col-sm-12">
+                                            <p>Läs mer</p>
+                                            <div id="links" data-bind="foreach: selectedCountry().links">
+                                                <p>
+                                                    <div id="titles" data-bind="text: selectedCountry().title">
+                                                        <p> <a data-bind="text:  $data"></a>
+                                                        </p>
+                                                    </div> <a data-bind="attr: { href: $data }, text: $data"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="countryReadMore" class="col-sm-12">
+                                        <button onclick="changeSize()" id="btnInfo" class="buttonInfo" type="button"
+                                        data-toggle="collapse" data-target="#countryData">Läs mer</button>
+                                    </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="infobox-header">Vapenexportkartan</div>
-                                </div>
-                            </div>
-                            <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                                <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen
-                                    och genom åren. Kartan visar ett urval av de länder dit svenska vapen skickats,
-                                    genom medveten export eller genom illegala överföringar.
-                                    <br/>
-                                    <br/>Läs mer om hur kartan, källor och urval i fliken “Om kartan”.</p>
                             </div>
                         </div>
                     </div>
-                    <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
-                        <div class="row mx-auto">
-                            <div id="countryHeader" class="col-sm-5 col-md-0 col-lg-12">
-                                <div class="col-xs-12"> <span id="flag" class="flag-icon" data-bind="css: flag()"></span>
-                                </div>
-                                <div class="col-xs-12"> <span class="infobox-header" data-bind="text: selectedCountry().country"></span>
-                                </div>
+                    <div id="stats" class="tab-pane">
+                        <div class="row h-100 mx-auto no-gutter">
+                            <div id="inner-wrapper" class="col-lg-8">
+                                <!-- Main content -->
                             </div>
-                            <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
-                                <div id="tooltipFH" class="data-col col-sm-12">
-                                    <img src="./../Style/icons/freedom-house-logo.png" height="37px" width="37px">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
-
-                                        världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
-
-                                          </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
-                                    <span
-                                    class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
-                                </div>
-                                <div id="tooltipGpi" class="data-col col-sm-12">
-                                    <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" padding-right="30px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
-
-                                        Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">
-
-                                        Se Vision of Humanitys webbsida</a></span>
-                                    <span
-                                    class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo"></span>
-                                </div>
-                            </div>
-                            <div id="countryInfo" class="overflow-fade col-sm-12">
-                                <div id="info" class="col-sm-12" data-bind="text: selectedCountry().info"></div>
-                                <div class="col-sm-12">
-                                    <p>Läs mer</p>
-                                    <div id="links" data-bind="foreach: selectedCountry().links">
-                                        <p>
-                                            <div id="titles" data-bind="text: selectedCountry().title">
-                                                <p> <a data-bind="text:  $data"></a>
-                                                </p>
-                                            </div> <a data-bind="attr: { href: $data }, text: $data"></a>
-                                        </p>
+                            <div id="infobox-before" class="col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
+                                        <!-- intro header -->
+                                    </div>
+                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                                        <!-- intro text -->
                                     </div>
                                 </div>
                             </div>
-                            <div id="countryReadMore" class="col-sm-12">
-                                <button onclick="changeSize()" id="btnInfo" class="buttonInfo" type="button"
-                                data-toggle="collapse" data-target="#countryData">Läs mer</button>
+                            <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="countryHeader" class="col-sm-5 col-md-12">
+                                        <!-- info header -->
+                                    </div>
+                                    <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
+                                        <!-- info data -->
+                                    </div>
+                                    <div id="countryInfo" class="overflow-fade col-sm-12">
+                                        <!-- info text -->
+                                    </div>
+                                    <div id="countryReadMore" class="col-sm-12">
+                                        <!-- Read more -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="stats" class="tab-pane">
+                        <div class="row h-100 mx-auto no-gutter">
+                            <div id="inner-wrapper" class="col-lg-8">
+                                <!-- Main content -->
+                            </div>
+                            <div id="infobox-before" class="col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
+                                        <!-- intro header -->
+                                    </div>
+                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                                        <!-- intro text -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="countryHeader" class="col-sm-5 col-md-12">
+                                        <!-- info header -->
+                                    </div>
+                                    <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
+                                        <!-- info data -->
+                                    </div>
+                                    <div id="countryInfo" class="overflow-fade col-sm-12">
+                                        <!-- info text -->
+                                    </div>
+                                    <div id="countryReadMore" class="col-sm-12">
+                                        <!-- Read more -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="stats" class="tab-pane">
+                        <div class="row h-100 mx-auto no-gutter">
+                            <div id="inner-wrapper" class="col-lg-8">
+                                <!-- Main content -->
+                            </div>
+                            <div id="infobox-before" class="col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
+                                        <!-- intro header -->
+                                    </div>
+                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                                        <!-- intro text -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="countryHeader" class="col-sm-5 col-md-12">
+                                        <!-- info header -->
+                                    </div>
+                                    <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
+                                        <!-- info data -->
+                                    </div>
+                                    <div id="countryInfo" class="overflow-fade col-sm-12">
+                                        <!-- info text -->
+                                    </div>
+                                    <div id="countryReadMore" class="col-sm-12">
+                                        <!-- Read more -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

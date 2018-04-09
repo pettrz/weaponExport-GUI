@@ -142,9 +142,7 @@ function CreateMapFreedom() {
                 console.log(selectedCountry());
                 
 
-                toggleInfobox()
-
-
+                changeInfobox()
                 if(expanded){
                   $('.buttonInfo').click();
                 }
@@ -214,7 +212,7 @@ if(width <= 992){
  })
 .resize();
 
-function toggleInfobox(){
+function changeInfobox(){
   document.getElementById('infobox-before').style.display = 'none';
   document.getElementById('infobox-after').style.display = 'block';
 
