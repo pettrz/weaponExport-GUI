@@ -38,9 +38,9 @@ function viewModel() {
   self.linksInfo = ko.computed(()=>{
     return self.selectedCountry().links
   });
-  self.titleInfo = ko.computed(()=>{
-    return self.selectedCountry().title
-  });
+  // self.titleInfo = ko.computed(()=>{
+  //   return self.selectedCountry().title
+  // });
   self.showList = () => {
     if (self.searchTerm() == '') {
       

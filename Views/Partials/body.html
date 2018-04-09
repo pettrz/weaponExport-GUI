@@ -61,8 +61,11 @@
                             <div class="col-sm-12">
                                 <p>Läs mer</p>
                                 <div id="links" data-bind="foreach: selectedCountry().links">
+	                                <a data-bind="attr: { href: JSON.stringify(link) }, text: JSON.stringify(title)"></a>
+                                </div>
+                                <!--<div id="links" data-bind="foreach: selectedCountry().links">
                                     <p>
-                                        <div id="titles" data-bind="text: selectedCountry().title">
+                                        <div id="titles" data-bind="foreach: selectedCountry().title">
                                             <p>
                                                 <a data-bind="text:  $data"></a>
                                             </p>
@@ -70,7 +73,8 @@
                                         <a data-bind="attr: { href: $data }, text: $data"></a>
                                     </p>
     
-                                </div>
+                                </div>-->
+                               
                             </div>
                         </div>
     
