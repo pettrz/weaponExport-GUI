@@ -66,6 +66,7 @@ input:focus::-webkit-input-placeholder
 }
 /*Main content*/
 #inner-wrapper{
+    height: 600px;
     background-color: #505050;
     text-align: left;
 }
@@ -341,7 +342,11 @@ button:focus{
     }
     #world-map{
         height: 500px;
-    }    
+    }
+    #inner-wrapper{
+        height: 500px;
+        
+    }
 }
 
 /* 992px breakpoint */
