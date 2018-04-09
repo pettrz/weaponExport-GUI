@@ -68,6 +68,7 @@ input:focus::-webkit-input-placeholder
 #inner-wrapper{
     height: 600px;
     background-color: #505050;
+    text-align: left;
 }
 
 
@@ -380,3 +381,17 @@ button:focus{
 @media screen and (min-width : 1200px){
 
 }
+
+#about-map{
+    padding: 30px;
+    margin-top: 50px;
+ }
+ 
+ #about-header{
+ text-align: center;
+ padding-bottom: 20px;
+ }
+
+ #logo-padding{
+     padding-top: 20px;
+ }
