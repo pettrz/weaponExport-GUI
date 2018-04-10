@@ -50,16 +50,11 @@
          </div>
          <div class="col-sm-12">
             <p>Läs mer</p>
-            <div id="links" data-bind="foreach: selectedCountry().links">
-               <p>
-               <div id="titles" data-bind="text: selectedCountry().title">
-                  <p>
-                     <a data-bind="text:  $data"></a>
-                  </p>
-               </div>
-               <a data-bind="attr: { href: $data }, text: $data"></a>
-               </p>
-            </div>
+            <div id="links" data-bind="foreach: selectedCountry().links"> 
+				<a data-bind="attr: { href: link }, text: title" target="_blank"></a>
+                <br/>
+                <br/>     
+			</div>
          </div>
       </div>
       <div id="countryReadMore" class="col-sm-12">
