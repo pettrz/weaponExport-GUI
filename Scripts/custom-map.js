@@ -221,7 +221,3 @@ function changeInfobox(){
   }
   
 }
-
-function title(links) {
-    
-}
