@@ -120,9 +120,12 @@
                                         <div id="info" class="col-sm-12" data-bind="text: selectedCountry().info"></div>
                                         <div class="col-sm-12">
                                             <p>Läs mer</p>
-                                            <div id="links" data-bind="foreach: selectedCountry().links">	<a data-bind="attr: { href: link }, text: title" target="_blank"></a>
-                                                <br/>
-                                                <br/>
+                                            <div id="links" data-bind="foreach: selectedCountry().links">
+                                                <div data-bind="if:link">	<a data-bind="attr: { href: link }, text: title" target="_blank"></a>
+                                                    <br/>
+                                                    <br/>
+                                                    <div data-bind="if:!title"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

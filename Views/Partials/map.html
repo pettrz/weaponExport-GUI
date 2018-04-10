@@ -51,9 +51,12 @@
          <div class="col-sm-12">
             <p>Läs mer</p>
             <div id="links" data-bind="foreach: selectedCountry().links"> 
+                <div data-bind="if:link">
 				<a data-bind="attr: { href: link }, text: title" target="_blank"></a>
                 <br/>
-                <br/>     
+                <br/> 
+                <div data-bind="if:!title"></div>
+                </div>    
 			</div>
          </div>
       </div>
