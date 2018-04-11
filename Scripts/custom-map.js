@@ -38,9 +38,12 @@ function viewModel() {
   self.linksInfo = ko.computed(()=>{
     return self.selectedCountry().links
   });
-  // self.titleInfo = ko.computed(()=>{
-  //   return self.selectedCountry().title
-  // });
+  self.mapInfo = ko.computed(()=>{
+    return self.selectedCountry().info
+  });
+  
+
+
   self.showList = () => {
     if (self.searchTerm() == '') {
       

@@ -46,11 +46,11 @@
          </div>
       </div>
       <div id="countryInfo" class="overflow-fade col-sm-12">
-         <div id="info" class="col-sm-12" data-bind="text: selectedCountry().info">
+         <div id="info" class="col-sm-12" data-bind="text: mapInfo">
          </div>
          <div class="col-sm-12">
             <p>Läs mer</p>
-            <div id="links" data-bind="foreach: selectedCountry().links"> 
+            <div id="links" data-bind="foreach: linksInfo"> 
                 <div data-bind="if:link">
                 <p>
 				    <a data-bind="attr: { href: link }, text: title" target="_blank"></a>

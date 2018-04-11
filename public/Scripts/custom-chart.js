@@ -13,6 +13,26 @@ xhttpStats.onreadystatechange = function() {
 xhttpStats.open('GET', 'http://localhost:1137/stats', true);
 xhttpStats.send();
 
+// function viewModel() {
+//     self = this;
+//     self.yearList = ko.observableArray();
+//     self.selectedYear = ko.observable({year:''});
+  
+//     self.yearInfo = ko.computed(() =>{
+//       return self.selectedYear().year
+//     });
+//     self.weaponInfo = ko.computed(() => {
+//       return self.selectedCountry().weapons
+//     });
+//     // self.statsInfo = ko.computed(()=>{
+//     //   return self.selectedCountry().info
+//     // });
+//     console.log(yearInfo);
+    
+//   }
+  
+//   ko.applyBindings(viewModel);
+
 
 function CreateStatistic(request) {
     var years = [];
@@ -110,5 +130,18 @@ function CreateStatistic(request) {
 // };
 
 $("#chart").click(function(e) {
-   console.log("hej det funkar");
+   console.log("Success");
+
+//    document.getElementById('infobox-before2').style.display = 'none';
+//    document.getElementById('infobox-after2').style.display = 'block';
+   
+//     for (i = 0; i < yearList().length; i++) {
+//         if(yearList()[i].year == year)
+//         {
+//             selectedYear()(yearList()[i]);
+//             console.log(selectedYear());
+//         }
+//     }
+
+
  });
