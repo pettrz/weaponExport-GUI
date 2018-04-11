@@ -342,7 +342,11 @@ button:focus{
     }
     #world-map{
         height: 500px;
-    }    
+    }
+    #inner-wrapper{
+        height: 500px;
+        
+    }
 }
 
 /* 992px breakpoint */

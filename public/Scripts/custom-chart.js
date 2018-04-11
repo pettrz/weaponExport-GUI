@@ -1,5 +1,6 @@
 //STATISTICS
 
+//define request to get stats from database with api
 var xhttpStats = new XMLHttpRequest();
 xhttpStats.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
@@ -13,13 +14,14 @@ xhttpStats.send();
 
 
 function CreateStatistic(request) {
-    console.log(request);
     var years = [];
     var weapons = [];
+    var info = [];
 
     for (i = 0; i < request.length; i++) {
         years[i] = request[i].year;
         weapons[i] = request[i].weapons;
+        info[i] = request[i].info;
     }
 
     var ctx = document.getElementById('myChart').getContext('2d');

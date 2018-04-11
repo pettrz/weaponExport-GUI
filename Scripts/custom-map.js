@@ -35,7 +35,12 @@ function viewModel() {
   self.GPIInfo = ko.computed(() => {
     return self.selectedCountry().gpi + ' av 163'
   });
-
+  self.linksInfo = ko.computed(()=>{
+    return self.selectedCountry().links
+  });
+  // self.titleInfo = ko.computed(()=>{
+  //   return self.selectedCountry().title
+  // });
   self.showList = () => {
     if (self.searchTerm() == '') {
       
