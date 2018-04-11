@@ -137,9 +137,6 @@ input:focus::-webkit-input-placeholder
     padding: 10px;
 }
 
-
-
-
 /*Infobox after*/
 #infobox-after{
     text-align: center;
@@ -147,15 +144,9 @@ input:focus::-webkit-input-placeholder
     display: none;
 }
 
-
 #flag{
     height: 4em; 
     width: 5em; 
-}
-
-.infobox-header{
-    font-weight: 500;
-    font-size: 32px;
 }
 
 #countryHeader{
@@ -166,8 +157,6 @@ input:focus::-webkit-input-placeholder
 #countryData {
     background-color: #333131;
 }
-
-
 
 /*Tooltips for data in header*/
 #tooltipFH .tooltiptext {
