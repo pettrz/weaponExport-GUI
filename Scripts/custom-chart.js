@@ -8,7 +8,8 @@ xhttpStats.onreadystatechange = function() {
     var xhttpStatsList = JSON.parse(xhttpStats.response);
 
     CreateStatistic(xhttpStatsList);
-}}
+    }
+}
 xhttpStats.open('GET', 'http://localhost:1137/stats', true);
 xhttpStats.send();
 
@@ -24,7 +25,8 @@ function CreateStatistic(request) {
         info[i] = request[i].info;
     }
 
-    var ctx = document.getElementById('myChart').getContext('2d');
+    var canvas = document.getElementById("chart");
+    var ctx = canvas.getContext("2d");
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
@@ -98,4 +100,15 @@ function CreateStatistic(request) {
         }
         }
     });
+
+   
+
 }
+// canvas.onclick = function (evt) {
+//     var points = chart.getPointsAtEvent(evt);
+//     alert(chart.datasets[0].points.indexOf(points[0]));
+// };
+
+$("#chart").click(function(e) {
+   console.log("hej det funkar");
+ });
