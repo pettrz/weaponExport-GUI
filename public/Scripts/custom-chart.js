@@ -1,4 +1,5 @@
 //STATISTICS
+var weapons ={};
 
 //define request to get stats from database with api
 var xhttpStats = new XMLHttpRequest();
@@ -6,6 +7,12 @@ xhttpStats.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
 
     var xhttpStatsList = JSON.parse(xhttpStats.response);
+
+    for (var i = 0; i < xhttpStatsList.length; i++) {  
+        yearList.push(xhttpStatsList[i]);
+        weapons[xhttpStatsList[i].year] = xhttpStatsList[i].weapons;
+        console.log(yearList[i])
+      }
 
     CreateStatistic(xhttpStatsList);
     }
@@ -22,10 +29,10 @@ function viewModel() {
        return self.selectedYear().year
      });
     self.weaponInfo = ko.computed(() => {
-      return self.selectedCountry().weapons
+      return self.selectedYear().weapons
      });
       self.statsInfo = ko.computed(()=>{
-       return self.selectedCountry().info
+       return self.selectedYear().info
       });
     
    }
