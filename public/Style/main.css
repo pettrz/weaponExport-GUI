@@ -130,7 +130,7 @@ input:focus::-webkit-input-placeholder
 
 #introHeader{
     padding-bottom: 10px;
-    /*padding-top: 30px;*/
+    padding-top: 30px;
 }
 
 #introText{
@@ -424,7 +424,7 @@ button:focus{
 
 #introHeader2{
     padding-bottom: 10px;
-    /*padding-top: 30px;*/
+    padding-top: 30px;
 }
 
 #logo-padding2{

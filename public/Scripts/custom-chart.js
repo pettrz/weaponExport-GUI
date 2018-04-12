@@ -13,25 +13,24 @@ xhttpStats.onreadystatechange = function() {
 xhttpStats.open('GET', 'http://localhost:1137/stats', true);
 xhttpStats.send();
 
-// function viewModel() {
-//     self = this;
-//     self.yearList = ko.observableArray();
-//     self.selectedYear = ko.observable({year:''});
+function viewModel() {
+    self = this;
+    self.yearList = ko.observableArray();
+     self.selectedYear = ko.observable({year:''});
   
-//     self.yearInfo = ko.computed(() =>{
-//       return self.selectedYear().year
-//     });
-//     self.weaponInfo = ko.computed(() => {
-//       return self.selectedCountry().weapons
-//     });
-//     // self.statsInfo = ko.computed(()=>{
-//     //   return self.selectedCountry().info
-//     // });
-//     console.log(yearInfo);
+     self.yearInfo = ko.computed(() =>{
+       return self.selectedYear().year
+     });
+    self.weaponInfo = ko.computed(() => {
+      return self.selectedCountry().weapons
+     });
+      self.statsInfo = ko.computed(()=>{
+       return self.selectedCountry().info
+      });
     
-//   }
+   }
   
-//   ko.applyBindings(viewModel);
+   ko.applyBindings(viewModel, document.getElementById("viewmodel-statistics"));
 
 
 function CreateStatistic(request) {
