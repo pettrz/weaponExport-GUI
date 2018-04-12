@@ -1,5 +1,5 @@
 //STATISTICS
-var weapons ={};
+// var weapons ={};
 
 //define request to get stats from database with api
 var xhttpStats = new XMLHttpRequest();
@@ -10,8 +10,8 @@ xhttpStats.onreadystatechange = function() {
 
     for (var i = 0; i < xhttpStatsList.length; i++) {  
         yearList.push(xhttpStatsList[i]);
-        weapons[xhttpStatsList[i].year] = xhttpStatsList[i].weapons;
-        console.log(yearList[i])
+         //weapons[xhttpStatsList[i].year] = xhttpStatsList[i].weapons;
+        console.log(yearList()[i].year)
       }
 
     CreateStatistic(xhttpStatsList);
@@ -126,28 +126,26 @@ function CreateStatistic(request) {
         }
         }
     });
-
-   
-
 }
+
+
+// $("#chart").click(function(e, year) {
+//     console.log("Success");
+ 
+//  //    document.getElementById('infobox-before2').style.display = 'none';
+//  //    document.getElementById('infobox-after2').style.display = 'block';
+    
+//     for (i = 0; i < yearList().length; i++) {
+//          if(yearList()[i].year == year)
+//          {
+//              selectedYear()(yearList()[i]);
+//              console.log(selectedYear()[i]);
+//          }
+//     }
+ 
+// });
+
 // canvas.onclick = function (evt) {
 //     var points = chart.getPointsAtEvent(evt);
 //     alert(chart.datasets[0].points.indexOf(points[0]));
 // };
-
-$("#chart").click(function(e) {
-   console.log("Success");
-
-//    document.getElementById('infobox-before2').style.display = 'none';
-//    document.getElementById('infobox-after2').style.display = 'block';
-   
-//     for (i = 0; i < yearList().length; i++) {
-//         if(yearList()[i].year == year)
-//         {
-//             selectedYear()(yearList()[i]);
-//             console.log(selectedYear());
-//         }
-//     }
-
-
- });
