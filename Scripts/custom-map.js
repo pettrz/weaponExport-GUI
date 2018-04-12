@@ -217,7 +217,7 @@ if(width <= 992){
 
 function changeInfobox(){
   document.getElementById('infobox-before').style.display = 'none';
-  document.getElementById('infobox-after').style.display = 'block';
+  document.getElementById('viewmodel-map').style.display = 'block';
 
   if(expanded){
     $('.buttonInfo').click();

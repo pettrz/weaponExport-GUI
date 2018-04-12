@@ -11,7 +11,7 @@ xhttpStats.onreadystatechange = function() {
     for (var i = 0; i < xhttpStatsList.length; i++) {  
         yearList.push(xhttpStatsList[i]);
          //weapons[xhttpStatsList[i].year] = xhttpStatsList[i].weapons;
-        console.log(yearList()[i].year)
+        // console.log(yearList()[i].year)
       }
 
     CreateStatistic(xhttpStatsList);
@@ -46,12 +46,13 @@ function CreateStatistic(request) {
     var info = [];
 
     for (i = 0; i < request.length; i++) {
-        years[i] = request[i].year;
+        years[i] = request[i].year.toString();
         weapons[i] = request[i].weapons;
-        info[i] = request[i].info;
     }
 
-    var canvas = document.getElementById("chart");
+    window.years = years;
+
+    var canvas = document.getElementById("myChart");
     var ctx = canvas.getContext("2d");
     var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -126,26 +127,42 @@ function CreateStatistic(request) {
         }
         }
     });
+
+    clickOnPoint(canvas, chart, request);
 }
 
+/**
+ * Handles click event when point in chart is clicked, 
+ * returns label and value of clicked point
+ * 
+ * @param {*} canvas 
+ * @param {*} chart 
+ */
+function clickOnPoint(canvas, chart, allYears) {
 
-// $("#chart").click(function(e, year) {
-//     console.log("Success");
- 
-//  //    document.getElementById('infobox-before2').style.display = 'none';
-//  //    document.getElementById('infobox-after2').style.display = 'block';
-    
-//     for (i = 0; i < yearList().length; i++) {
-//          if(yearList()[i].year == year)
-//          {
-//              selectedYear()(yearList()[i]);
-//              console.log(selectedYear()[i]);
-//          }
-//     }
- 
-// });
+    canvas.onclick = function(canvas) {
+        
+        var firstPoint = chart.getElementAtEvent(canvas)[0];
+        
+        if (firstPoint) {
+            var label = chart.data.labels[firstPoint._index];
+            var value = chart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
+            console.log(label);
+            console.log(value);
+            
+            fillInfoBox(label, value, allYears[firstPoint._index].info);
+        } 
+    }
+}
 
-// canvas.onclick = function (evt) {
-//     var points = chart.getPointsAtEvent(evt);
-//     alert(chart.datasets[0].points.indexOf(points[0]));
-// };
+function fillInfoBox(year, weapons, info) {
+    var introBox = jQuery('#chart-intro-text');
+    var infoBox = jQuery('#chart-info-display');
+
+    infoBox.find('#stat-year').html(year);
+    infoBox.find('#stat-weapons').html(weapons);
+    infoBox.find('#stat-info').html(info);
+
+    introBox.hide();
+    infoBox.show();
+}

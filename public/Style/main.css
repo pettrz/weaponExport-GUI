@@ -138,7 +138,7 @@ input:focus::-webkit-input-placeholder
 }
 
 /*Infobox after*/
-#infobox-after{
+#viewmodel-map{
     text-align: center;
     background-color: #2c2a2a;
     display: none;
@@ -431,7 +431,7 @@ button:focus{
     padding-top: 20px;
 }
 
-#introText2{
+.introText2{
     padding: 10px;
 }
 
@@ -439,5 +439,9 @@ button:focus{
 #infobox-after2{
     text-align: center;
     background-color: #2c2a2a;
+    display: none;
+}
+
+#chart-info-display {
     display: none;
 }
