@@ -42,11 +42,23 @@ function viewModel() {
   // self.titleInfo = ko.computed(()=>{
   //   return self.selectedCountry().title
   // });
-  self.showList = () => {
+  self.showList = function(){
     if (self.searchTerm() == '') {
       
       console.log('all countries returned')
-      countryList().sort((a, b) => a.country.localeCompare(b.country))
+      countryList().sort(function(a, b) { a.country.localeCompare(b.country)})
+
+      countryList().sort(function(a, b) { 
+        var countryA = a.country.toUpperCase();
+        var countryB = b.country.toUpperCase();
+        if (countryA < countryB) {
+          return -1;
+        }
+        if (countryA > countryB) {
+          return 1;
+        }
+      });
+      
       return self.countryList();
     } else {
       var countries = [];
@@ -120,7 +132,7 @@ function CreateMapFreedom() {
               title: 'Demokratisk status',
               vertical: true,
         }}]},
-        onRegionOver(e, code) {
+        onRegionOver: function(e, code) {
           if (!(code in FHstatus))
             e.preventDefault();
         },
@@ -136,7 +148,7 @@ function CreateMapFreedom() {
             }
           }
         },
-        onRegionClick(e, code) {
+        onRegionClick: function(e, code) {
             for (i=0; i < countryList().length; i++)  {
               if(countryList()[i].code == code) {
                 selectedCountry(countryList()[i]);
