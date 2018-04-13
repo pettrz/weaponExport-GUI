@@ -200,7 +200,7 @@ input:focus::-webkit-input-placeholder
 }
 
 .data-col{
-    padding: 10px 15px 10px 15px;
+    padding: 13px 15px 13px 15px;
     text-align: left;
     font-weight: bold;
     vertical-align:middle;
@@ -388,15 +388,6 @@ button:focus{
     padding-top: 10px;
 }
 
-#stats-info{
-    /* overflow: scroll; */
-    overflow:hidden;
-    padding: 0;
-    transition: height 0.3s;
-    position: relative;
-    text-align: left;
-}
-
 #stats-header{
     padding-top: 30px;
     padding-bottom: 20px;
@@ -444,4 +435,22 @@ button:focus{
 
 #chart-info-display {
     display: none;
+}
+
+#weaponsData {
+    background-color: #333131;
+}
+
+#statsInfo{
+    height: 340px;
+    overflow: auto;
+    padding: 0;
+    transition: height 0.3s;
+    position: relative;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+#statsInfo #info{
+    padding: 20px;
 }
