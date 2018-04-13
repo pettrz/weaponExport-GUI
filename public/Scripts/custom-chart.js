@@ -20,7 +20,7 @@ xhttpStats.onreadystatechange = function() {
 xhttpStats.open('GET', 'http://localhost:1137/stats', true);
 xhttpStats.send();
 
-function viewModel() {
+function viewModelStats() {
     self = this;
     self.yearList = ko.observableArray();
      self.selectedYear = ko.observable({year:''});
@@ -37,7 +37,7 @@ function viewModel() {
     
    }
   
-   ko.applyBindings(viewModel, document.getElementById("viewmodel-statistics"));
+   ko.applyBindings(viewModelStats, document.getElementById("viewmodel-statistics"));
 
 
 function CreateStatistic(request) {

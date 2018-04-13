@@ -69,7 +69,7 @@ function viewModel() {
   };
 }
 
-ko.applyBindings(viewModel, document.getElementById("viewmodel-map"));
+ko.applyBindings(viewModel);
 
 // function CreateMapWeapons() {
 //   var map = $(function(){
