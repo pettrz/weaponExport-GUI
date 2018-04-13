@@ -15,6 +15,7 @@ xhttp.onreadystatechange = function() {
         
       }
     }
+    
     CreateMapFreedom();
 }}
 xhttp.open('GET', 'http://localhost:1137/map', true);
@@ -26,16 +27,16 @@ function viewModel() {
   self.selectedCountry = ko.observable({code:''});
 
   self.searchTerm = ko.observable("");
-  self.flag = ko.computed(() => {
+  self.flag = ko.computed(function(){
     return 'flag-icon flag-icon-' + self.selectedCountry().code.toLowerCase()
   });
-  self.statusInfo = ko.computed(() =>{
+  self.statusInfo = ko.computed(function(){
     return self.selectedCountry().FHstatus
   });
-  self.GPIInfo = ko.computed(() => {
+  self.GPIInfo = ko.computed(function(){
     return self.selectedCountry().gpi + ' av 163'
   });
-  self.linksInfo = ko.computed(()=>{
+  self.linksInfo = ko.computed(function(){
     return self.selectedCountry().links
   });
   // self.titleInfo = ko.computed(()=>{
