@@ -28,7 +28,7 @@ function viewModelStats() {
      self.yearInfo = ko.computed(() =>{
        return self.selectedYear().year
      });
-    self.weaponInfo = ko.computed(() => {
+     self.weaponInfo = ko.computed(() => {
       return self.selectedYear().weapons
      });
       self.statsInfo = ko.computed(()=>{
@@ -44,6 +44,7 @@ function CreateStatistic(request) {
     var years = [];
     var weapons = [];
     var info = [];
+    var links = [];
 
     for (i = 0; i < request.length; i++) {
         years[i] = request[i].year.toString();
@@ -158,6 +159,8 @@ function clickOnPoint(canvas, chart, allYears) {
 function fillInfoBox(year, weapons, info) {
     var introBox = jQuery('#chart-intro-text');
     var infoBox = jQuery('#chart-info-display');
+
+     
 
     infoBox.find('#stat-year').html(year);
     infoBox.find('#stat-weapons').html(weapons);
