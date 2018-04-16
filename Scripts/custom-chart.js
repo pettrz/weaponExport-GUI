@@ -25,15 +25,15 @@ function viewModelStats() {
     self.yearList = ko.observableArray();
      self.selectedYear = ko.observable({year:''});
   
-    //  self.yearInfo = ko.computed(() =>{
-    //    return self.selectedYear().year
-    //  });
-    //  self.weaponInfo = ko.computed(() => {
-    //   return self.selectedYear().weapons
-    //  });
-    //   self.statsInfo = ko.computed(()=>{
-    //    return self.selectedYear().info
-    //   });
+     self.yearInfo = ko.computed(() =>{
+       return self.selectedYear().year
+     });
+     self.weaponInfo = ko.computed(() => {
+      return self.selectedYear().weapons
+     });
+      self.statsInfo = ko.computed(()=>{
+       return self.selectedYear().info
+      });
       self.titleLinks = ko.computed(()=>{
         return self.selectedYear().statLinks
       });
@@ -147,14 +147,19 @@ function clickOnPoint(canvas, chart, allYears, allYears) {
     canvas.onclick = function(canvas) {
         
         var firstPoint = chart.getElementAtEvent(canvas)[0];
-        
+
         if (firstPoint) {
             var label = chart.data.labels[firstPoint._index];
             var value = chart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
             console.log(label);
             console.log(value);
-            console.log(info);
-            console.log(links);
+
+            for (i=0; i < yearList().length; i++)  {
+                if(yearList()[i].value == value) {
+                  selectedYear(yearList()[i]);
+                  console.log(viewmodelStats.selectedyear);
+                }
+            }
             
             fillInfoBox(label, value, allYears[firstPoint._index].info, allYears[firstPoint._index].links);
         } 
