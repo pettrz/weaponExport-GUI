@@ -15,6 +15,7 @@ xhttp.onreadystatechange = function() {
         
       }
     }
+    
     CreateMapFreedom();
 }}
 xhttp.open('GET', 'http://localhost:1137/map', true);
@@ -26,29 +27,39 @@ function viewModel() {
   self.selectedCountry = ko.observable({code:''});
 
   self.searchTerm = ko.observable("");
-  self.flag = ko.computed(() => {
+  self.flag = ko.computed(function(){
     return 'flag-icon flag-icon-' + self.selectedCountry().code.toLowerCase()
   });
-  self.statusInfo = ko.computed(() =>{
+  self.statusInfo = ko.computed(function(){
     return self.selectedCountry().FHstatus
   });
-  self.GPIInfo = ko.computed(() => {
+  self.GPIInfo = ko.computed(function(){
     return self.selectedCountry().gpi + ' av 163'
   });
-  self.linksInfo = ko.computed(()=>{
+  self.linksInfo = ko.computed(function(){
     return self.selectedCountry().links
   });
   self.mapInfo = ko.computed(()=>{
     return self.selectedCountry().info
   });
   
-
-
-  self.showList = () => {
+  self.showList = function(){
     if (self.searchTerm() == '') {
       
       console.log('all countries returned')
-      countryList().sort((a, b) => a.country.localeCompare(b.country))
+      countryList().sort(function(a, b) { a.country.localeCompare(b.country)})
+
+      countryList().sort(function(a, b) { 
+        var countryA = a.country.toUpperCase();
+        var countryB = b.country.toUpperCase();
+        if (countryA < countryB) {
+          return -1;
+        }
+        if (countryA > countryB) {
+          return 1;
+        }
+      });
+      
       return self.countryList();
     } else {
       var countries = [];
@@ -122,7 +133,7 @@ function CreateMapFreedom() {
               title: 'Demokratisk status',
               vertical: true,
         }}]},
-        onRegionOver(e, code) {
+        onRegionOver: function(e, code) {
           if (!(code in FHstatus))
             e.preventDefault();
         },
@@ -138,7 +149,7 @@ function CreateMapFreedom() {
             }
           }
         },
-        onRegionClick(e, code) {
+        onRegionClick: function(e, code) {
             for (i=0; i < countryList().length; i++)  {
               if(countryList()[i].code == code) {
                 selectedCountry(countryList()[i]);
