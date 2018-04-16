@@ -46,12 +46,10 @@ function viewModel() {
     if (self.searchTerm() == '') {
       
       console.log('all countries returned')
-      countryList().sort(function(a, b) { a.country.localeCompare(b.country)})
-
+    
       countryList().sort(function(a, b) { 
-        var countryA = a.country.toUpperCase(); // ignore upper and lowercase
-        var countryB = b.country.toUpperCase()
-
+        var countryA = a.country.toUpperCase();
+        var countryB = b.country.toUpperCase();
         if (countryA < countryB) {
           return -1;
         }
@@ -59,6 +57,7 @@ function viewModel() {
           return 1;
         }
       });
+      
       return self.countryList();
     } else {
       var countries = [];
