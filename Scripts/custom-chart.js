@@ -34,9 +34,9 @@ function viewModelStats() {
     //   self.statsInfo = ko.computed(()=>{
     //    return self.selectedYear().info
     //   });
-    //   self.titleLinks = ko.computed(()=>{
-    //     return self.selectedYear().statLinks
-    //   });
+      self.titleLinks = ko.computed(()=>{
+        return self.selectedYear().statLinks
+      });
     
    }
   
@@ -170,7 +170,7 @@ function fillInfoBox(year, weapons, info, links) {
     infoBox.find('#stat-year').html(year);
     infoBox.find('#stat-weapons').html(weapons);
     infoBox.find('#stat-info').html(info);
-    infoBox.find('#stat-links').html(links);
+    // infoBox.find('#stat-links').html(links);
 
     introBox.hide();
     infoBox.show();
