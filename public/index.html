@@ -185,6 +185,31 @@
                                                 </div>
                                                 <div id="statsInfo" class="col-sm-12">
                                                     <div id="stat-info" class="col-sm-12"></div>
+                                                    <!-- Read more - show title and links -->
+                                                    <!-- <div class="col-sm-12">
+
+                            <p>Läs mer</p>
+
+                            <div color="white" data-bind="foreach: titleLinks"> 
+
+                                <div data-bind="if:stat-link">
+
+                                <p>
+
+                                    <a data-bind="attr: { href: stat-link }, text: stat-title" target="_blank"></a>
+
+                                </p>
+
+                                </div>    
+
+                                <div data-bind="if:!stat-link">
+
+                                    <p data-bind="text: stat-title"></p>
+
+                                </div>
+
+                        </div> -->Läs mer
+                                                    <div class="col-sm-12" id="stat-links"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -193,95 +218,96 @@
                             </div>
                         </div>
                     </div>
-                    <div id="participants" class="tab-pane">
-                        <div class="row h-100 mx-auto no-gutter">
-                            <div id="inner-wrapper" class="col-lg-8">
-                                <!-- Main content -->
-                            </div>
-                            <div id="infobox-before" class="col-md-12 col-lg-4">
-                                <div class="row mx-auto">
-                                    <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
-                                        <!-- intro header -->
-                                    </div>
-                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                                        <!-- intro text -->
-                                    </div>
+                </div>
+                <div id="participants" class="tab-pane">
+                    <div class="row h-100 mx-auto no-gutter">
+                        <div id="inner-wrapper" class="col-lg-8">
+                            <!-- Main content -->
+                        </div>
+                        <div id="infobox-before" class="col-md-12 col-lg-4">
+                            <div class="row mx-auto">
+                                <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
+                                    <!-- intro header -->
+                                </div>
+                                <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                                    <!-- intro text -->
                                 </div>
                             </div>
-                            <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
-                                <div class="row mx-auto">
-                                    <div id="countryHeader" class="col-sm-5 col-md-12">
-                                        <!-- info header -->
-                                    </div>
-                                    <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
-                                        <!-- info data -->
-                                    </div>
-                                    <div id="countryInfo" class="overflow-fade col-sm-12">
-                                        <!-- info text -->
-                                    </div>
-                                    <div id="countryReadMore" class="col-sm-12">
-                                        <!-- Read more -->
-                                    </div>
+                        </div>
+                        <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
+                            <div class="row mx-auto">
+                                <div id="countryHeader" class="col-sm-5 col-md-12">
+                                    <!-- info header -->
+                                </div>
+                                <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
+                                    <!-- info data -->
+                                </div>
+                                <div id="countryInfo" class="overflow-fade col-sm-12">
+                                    <!-- info text -->
+                                </div>
+                                <div id="countryReadMore" class="col-sm-12">
+                                    <!-- Read more -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="about" class="tab-pane">
-                        <div class="row h-100 mx-auto no-gutter">
-                            <div id="inner-wrapper" class="col-lg-8">
-                                <!-- Main content -->
-                                <div id="about-map">
-                                    <div id="about-header">
-                                         <h2>Om kartan</h2>
-                                    </div>
-                                    <p>Syftet med den här kartan är att öka insynen i och informationen om svensk
-                                        vapenhandel. Handel med vapen och annan krigsmateriel omgärdas dock av
-                                        en omfattande sekretess som gör det svårt att få information om vad som
-                                        exporteras, till vem och hur besluten tas om att tillåta exporten. Kartan
-                                        visar ett urval av de stater där svenska vapen finns och ska inte betraktas
-                                        som heltäckande.
-                                        <br/>
-                                        <br/>
-                                         <h6>Så här har vi gjort urvalet:</h6>
-
-                                        <br/>Kartan visar de 30 största importörerna av svensk krigsmateriel, åren
-                                        2000-2010 (enligt regeringens skrivelser om strategisk exportkontroll).
-                                        Den visar också merparten av de länder med stora brister i demokratisk
-                                        status som Sverige har tillåtit export till samt konstaterade fall av illegala
-                                        överföringar av svensk krigsmateriel. Informationen baseras på tillgänglig
-                                        offentlig redovisning, Svenska Freds arkiv, mediarapportering och granskningar.
-                                        <br/>
-                                        <br/>Värdet av krigsmaterielexporten anges i löpande priser.</p>
+                </div>
+                <div id="about" class="tab-pane">
+                    <div class="row h-100 mx-auto no-gutter">
+                        <div id="inner-wrapper" class="col-lg-8">
+                            <!-- Main content -->
+                            <div id="about-map">
+                                <div id="about-header">
+                                     <h2>Om kartan</h2>
                                 </div>
+                                <p>Syftet med den här kartan är att öka insynen i och informationen om svensk
+                                    vapenhandel. Handel med vapen och annan krigsmateriel omgärdas dock av
+                                    en omfattande sekretess som gör det svårt att få information om vad som
+                                    exporteras, till vem och hur besluten tas om att tillåta exporten. Kartan
+                                    visar ett urval av de stater där svenska vapen finns och ska inte betraktas
+                                    som heltäckande.
+                                    <br/>
+                                    <br/>
+                                     <h6>Så här har vi gjort urvalet:</h6>
+
+                                    <br/>Kartan visar de 30 största importörerna av svensk krigsmateriel, åren
+                                    2000-2010 (enligt regeringens skrivelser om strategisk exportkontroll).
+                                    Den visar också merparten av de länder med stora brister i demokratisk
+                                    status som Sverige har tillåtit export till samt konstaterade fall av illegala
+                                    överföringar av svensk krigsmateriel. Informationen baseras på tillgänglig
+                                    offentlig redovisning, Svenska Freds arkiv, mediarapportering och granskningar.
+                                    <br/>
+                                    <br/>Värdet av krigsmaterielexporten anges i löpande priser.</p>
                             </div>
-                            <div id="infobox-before" class="col-md-12 col-lg-4">
-                                <div class="row mx-auto">
-                                    <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
-                                        <!-- intro header -->
-                                        <div class="col-sm-12">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" />
-                                        </div>
-                                        <div id="logo-padding">
-                                             <h3>Om produktionen</h3>
-                                        </div>
+                        </div>
+                        <div id="infobox-before" class="col-md-12 col-lg-4">
+                            <div class="row mx-auto">
+                                <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
+                                    <!-- intro header -->
+                                    <div class="col-sm-12">
+                                        <img src="./../Style/icons/svenska_freds-logo.png" />
                                     </div>
-                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                                        <!-- intro text -->
-                                        <p>Kartan har framställts av Team Chaos bestående av Viola Turesson, Petter
-                                            Knutsson, Jenny Miderkvist och Joakim Linna, 2018, baserat på en förlaga
-                                            av Elias Kukkola Settervik och Gustav Hultgren Svensson 2014.
-                                            <br/>
-                                            <br/>Båda versionerna är tillverkade för, och i samarbete med, Svenska Freds-
-                                            och Skiljedomsföreningen som också är ansvarig för texter och annat innehåll.
-                                            Har du frågor om materialet, skriv till <a href="mailto:info@svenskafreds.se?Subject=Frågor%20till%20Svenska%20Freds"
-                                            target="_top">Svenska Freds</a>.</p>
+                                    <div id="logo-padding">
+                                         <h3>Om produktionen</h3>
                                     </div>
+                                </div>
+                                <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                                    <!-- intro text -->
+                                    <p>Kartan har framställts av Team Chaos bestående av Viola Turesson, Petter
+                                        Knutsson, Jenny Miderkvist och Joakim Linna, 2018, baserat på en förlaga
+                                        av Elias Kukkola Settervik och Gustav Hultgren Svensson 2014.
+                                        <br/>
+                                        <br/>Båda versionerna är tillverkade för, och i samarbete med, Svenska Freds-
+                                        och Skiljedomsföreningen som också är ansvarig för texter och annat innehåll.
+                                        Har du frågor om materialet, skriv till <a href="mailto:info@svenskafreds.se?Subject=Frågor%20till%20Svenska%20Freds"
+                                        target="_top">Svenska Freds</a>.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </body>
 

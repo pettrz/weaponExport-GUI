@@ -25,15 +25,18 @@ function viewModelStats() {
     self.yearList = ko.observableArray();
      self.selectedYear = ko.observable({year:''});
   
-     self.yearInfo = ko.computed(() =>{
-       return self.selectedYear().year
-     });
-     self.weaponInfo = ko.computed(() => {
-      return self.selectedYear().weapons
-     });
-      self.statsInfo = ko.computed(()=>{
-       return self.selectedYear().info
-      });
+    //  self.yearInfo = ko.computed(() =>{
+    //    return self.selectedYear().year
+    //  });
+    //  self.weaponInfo = ko.computed(() => {
+    //   return self.selectedYear().weapons
+    //  });
+    //   self.statsInfo = ko.computed(()=>{
+    //    return self.selectedYear().info
+    //   });
+    //   self.titleLinks = ko.computed(()=>{
+    //     return self.selectedYear().statLinks
+    //   });
     
    }
   
@@ -44,7 +47,7 @@ function CreateStatistic(request) {
     var years = [];
     var weapons = [];
     var info = [];
-    var links = [];
+    var statLinks = [];
 
     for (i = 0; i < request.length; i++) {
         years[i] = request[i].year.toString();
@@ -129,7 +132,7 @@ function CreateStatistic(request) {
         }
     });
 
-    clickOnPoint(canvas, chart, request);
+    clickOnPoint(canvas, chart, request, request);
 }
 
 /**
@@ -139,7 +142,7 @@ function CreateStatistic(request) {
  * @param {*} canvas 
  * @param {*} chart 
  */
-function clickOnPoint(canvas, chart, allYears) {
+function clickOnPoint(canvas, chart, allYears, allYears) {
 
     canvas.onclick = function(canvas) {
         
@@ -150,13 +153,15 @@ function clickOnPoint(canvas, chart, allYears) {
             var value = chart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
             console.log(label);
             console.log(value);
+            console.log(info);
+            console.log(links);
             
-            fillInfoBox(label, value, allYears[firstPoint._index].info);
+            fillInfoBox(label, value, allYears[firstPoint._index].info, allYears[firstPoint._index].links);
         } 
     }
 }
 
-function fillInfoBox(year, weapons, info) {
+function fillInfoBox(year, weapons, info, links) {
     var introBox = jQuery('#chart-intro-text');
     var infoBox = jQuery('#chart-info-display');
 
@@ -165,6 +170,7 @@ function fillInfoBox(year, weapons, info) {
     infoBox.find('#stat-year').html(year);
     infoBox.find('#stat-weapons').html(weapons);
     infoBox.find('#stat-info').html(info);
+    infoBox.find('#stat-links').html(links);
 
     introBox.hide();
     infoBox.show();
