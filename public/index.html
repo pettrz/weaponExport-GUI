@@ -37,18 +37,6 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div id="dropdown-wrapper">
-                            <form class="form-inline">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Sök land..."
-                                aria-label="Search" data-target="#dropdownContent" data-toggle="dropdown"
-                                data-bind="value: searchTerm, valueUpdate: 'keyup'">
-                            </form>
-                            <div id="dropdownContent" class="dropdown-menu dropdown-menu-right ml-auto "
-                            aria-labelledby="navbarDropdown">
-                                <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="changeInfobox()" data-bind="text: country, click: selectedCountry"></a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="nav navbar-nav mr-auto">
                                 <li class="nav-item"> <a class="nav-link active show" href="#map" data-toggle="tab">Vapenexportkarta</a>
@@ -60,6 +48,18 @@
                                 <li class="nav-item"> <a class="nav-link" href="#about" data-toggle="tab">Om kartan</a>
                                 </li>
                             </ul>
+                        </div>
+                        <div id="dropdown-wrapper">
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Sök land..."
+                                aria-label="Search" data-target="#dropdownContent" data-toggle="dropdown"
+                                data-bind="value: searchTerm, valueUpdate: 'keyup'">
+                            </form>
+                            <div id="dropdownContent" class="dropdown-menu dropdown-menu-right ml-auto "
+                            aria-labelledby="navbarDropdown">
+                                <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="toggleInfobox()" data-bind="text: country, click: selectedCountry"></a>
+                                </div>
+                            </div>
                         </div>
                     </nav>
                 </div>

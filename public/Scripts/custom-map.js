@@ -47,8 +47,7 @@ function viewModel() {
     if (self.searchTerm() == '') {
       
       console.log('all countries returned')
-      countryList().sort(function(a, b) { a.country.localeCompare(b.country)})
-
+    
       countryList().sort(function(a, b) { 
         var countryA = a.country.toUpperCase();
         var countryB = b.country.toUpperCase();

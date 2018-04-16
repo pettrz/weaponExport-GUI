@@ -13,6 +13,11 @@ html,body {
     font-size: 15px;
     line-height: 22px;
     text-align: center;
+    scrollbar-face-color: white;
+    scrollbar-arrow-color: white;
+    scrollbar-track-color: #2c2a2a;
+
+ 
 }
 
 .no-gutter > [class*='col-'] {
@@ -32,11 +37,15 @@ html,body {
 /*Dropdown in navbar*/
 #dropdown-wrapper{
     position: absolute;
+    top: 8px;
     right: 0;
     padding-right: 16px;
+    
 }
 #dropdown-wrapper input{
     margin: 0 !important;
+    width: 200px;
+    height: 38px;
 }
 
 input:focus::-webkit-input-placeholder 
@@ -264,6 +273,7 @@ img{
     position: absolute;
     z-index: 1000;
     bottom:0;
+    left: 0;
     padding-bottom: 20px;
 }
 
