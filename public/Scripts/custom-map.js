@@ -39,9 +39,10 @@ function viewModel() {
   self.linksInfo = ko.computed(function(){
     return self.selectedCountry().links
   });
-  // self.titleInfo = ko.computed(()=>{
-  //   return self.selectedCountry().title
-  // });
+  self.mapInfo = ko.computed(()=>{
+    return self.selectedCountry().info
+  });
+  
   self.showList = function(){
     if (self.searchTerm() == '') {
       
@@ -49,9 +50,8 @@ function viewModel() {
       countryList().sort(function(a, b) { a.country.localeCompare(b.country)})
 
       countryList().sort(function(a, b) { 
-        var countryA = a.country.toUpperCase(); // ignore upper and lowercase
-        var countryB = b.country.toUpperCase()
-
+        var countryA = a.country.toUpperCase();
+        var countryB = b.country.toUpperCase();
         if (countryA < countryB) {
           return -1;
         }
@@ -59,6 +59,7 @@ function viewModel() {
           return 1;
         }
       });
+      
       return self.countryList();
     } else {
       var countries = [];
@@ -227,7 +228,7 @@ if(width <= 992){
 
 function changeInfobox(){
   document.getElementById('infobox-before').style.display = 'none';
-  document.getElementById('infobox-after').style.display = 'block';
+  document.getElementById('viewmodel-map').style.display = 'block';
 
   if(expanded){
     $('.buttonInfo').click();

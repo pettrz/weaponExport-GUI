@@ -39,9 +39,10 @@ function viewModel() {
   self.linksInfo = ko.computed(function(){
     return self.selectedCountry().links
   });
-  // self.titleInfo = ko.computed(()=>{
-  //   return self.selectedCountry().title
-  // });
+  self.mapInfo = ko.computed(()=>{
+    return self.selectedCountry().info
+  });
+  
   self.showList = function(){
     if (self.searchTerm() == '') {
       
@@ -227,7 +228,7 @@ if(width <= 992){
 
 function changeInfobox(){
   document.getElementById('infobox-before').style.display = 'none';
-  document.getElementById('infobox-after').style.display = 'block';
+  document.getElementById('viewmodel-map').style.display = 'block';
 
   if(expanded){
     $('.buttonInfo').click();
