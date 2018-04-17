@@ -21,7 +21,7 @@ xhttp.onreadystatechange = function() {
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
 
-function viewModel() {
+function viewModelMap() {
   self = this;
   self.countryList = ko.observableArray();
   self.selectedCountry = ko.observable({code:''});
@@ -42,6 +42,14 @@ function viewModel() {
   self.mapInfo = ko.computed(()=>{
     return self.selectedCountry().info
   });
+  
+
+
+}
+ko.applyBindings(viewModelMap, document.getElementById("map"));
+
+function viewModelSearch() {
+
   
   self.showList = function(){
     if (self.searchTerm() == '') {
@@ -77,9 +85,11 @@ function viewModel() {
       }
     }
   };
+  
 }
 
-ko.applyBindings(viewModel);
+
+ko.applyBindings(viewModelSearch, document.getElementById("dropdown-wrapper"));
 
 // function CreateMapWeapons() {
 //   var map = $(function(){
