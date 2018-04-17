@@ -455,12 +455,16 @@ button:focus{
     height: 340px;
     overflow: auto;
     padding: 0;
-    transition: height 0.3s;
     position: relative;
     text-align: left;
-    white-space: pre-wrap;
 }
 
 #statsInfo #info{
     padding: 20px;
+}
+#stat-info{
+    white-space: pre-wrap;
+}
+#stat-infobox{
+    padding-top: 20px;
 }
