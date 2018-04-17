@@ -23,7 +23,7 @@ xhttpStats.send();
 function viewModelStats() {
     self = this;
     self.yearList = ko.observableArray();
-     self.selectedYear = ko.observable({year:''});
+     self.selectedYear = ko.observable({code:''});
   
     //  self.yearInfo = ko.computed(() =>{
     //    return self.selectedYear().year
@@ -37,9 +37,10 @@ function viewModelStats() {
       self.linksStats = ko.computed(function(){
         return self.selectedYear().statLinks
       });
-      self.titleLinks = ko.computed(()=>{
-        return self.selectedYear().statLinks
-      });
+      self.statFlag = ko.computed(function(){
+          console.log(self.selectedYear());
+        return 'flag-icon flag-icon-' + self.selectedYear().code.toLowerCase()
+  });
     
    }
   
@@ -164,12 +165,12 @@ function clickOnPoint(canvas, chart, allYears) {
             console.log(label);
             console.log(value);
 
-            for (i=0; i < yearList().length; i++)  {
-                if(yearList()[i].value == value) {
-                  selectedYear(yearList()[i]);
-                  console.log(viewmodelStats.selectedyear);
-                }
-            }
+            // for (i=0; i < yearList().length; i++)  {
+            //     if(yearList()[i].value == value) {
+            //       selectedYear(yearList()[i]);
+            //       console.log(viewmodelStats.selectedyear);
+            //     }
+            // }
             
             for (var i=0; i < yearList().length; i++)  {
                 if(yearList()[i].year == label) {
