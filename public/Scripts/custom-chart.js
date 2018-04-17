@@ -140,9 +140,13 @@ function CreateStatistic(request) {
  * @param {*} chart 
  */
 function clickOnPoint(canvas, chart, allYears) {
-
+    
     canvas.onclick = function(canvas) {
         
+        $("#statsInfo").animate({
+            scrollTop: 0
+        }, 200);
+
         var firstPoint = chart.getElementAtEvent(canvas)[0];
         
         if (firstPoint) {
