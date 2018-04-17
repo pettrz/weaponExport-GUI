@@ -244,3 +244,15 @@ function changeInfobox(){
   }
   
 }
+
+$('.nav-item a').on('click', function (e) {
+  e.preventDefault();
+  
+  if($(this).attr('href')=='#map'){
+      $('#dropdown-wrapper').show();
+  }
+  else{
+      $('#dropdown-wrapper').hide();
+  }
+  $(this).tab('show');
+}); 
