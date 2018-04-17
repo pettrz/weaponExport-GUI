@@ -39,7 +39,7 @@ function viewModelMap() {
   self.linksInfo = ko.computed(function(){
     return self.selectedCountry().links
   });
-  self.mapInfo = ko.computed(()=>{
+  self.mapInfo = ko.computed(function(){
     return self.selectedCountry().info
   });
   
@@ -123,10 +123,11 @@ ko.applyBindings(viewModelSearch, document.getElementById("dropdown-wrapper"));
 //     });
 //   });
 // }
-
+var $container = $('#world-map');
 function CreateMapFreedom() {
   var map = $(function(){
     $('#world-map').vectorMap({
+        container: '',
         map: 'world_mill',
         series: {
           regions: [{
@@ -244,3 +245,21 @@ function changeInfobox(){
   }
   
 }
+
+// Hide search on other tabs than map
+$('.nav-item a').click(function (e) {
+  e.preventDefault();
+
+  if($(this).attr('href')=='#map'){
+      $('#dropdown-wrapper').show();
+  }
+  else{
+      $('#dropdown-wrapper').hide();
+  }
+  $(this).tab('show');
+}); 
+
+// Map resize on tab click
+$('.nav-item a[href^="#map"]').click(function() {
+    $container.resize();
+});

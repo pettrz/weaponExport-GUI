@@ -282,7 +282,7 @@ img{
     color: white;
     width: 150px;
     height: 40px;
-    border: 2px solid #FFFFFF !important;
+    border: none;
     cursor: pointer;
     
 }
@@ -417,6 +417,7 @@ button:focus{
 #logo-padding{
     padding-top: 20px;
 }
+
 
 /*Infobox before*/
 #infobox-before2{
