@@ -259,7 +259,7 @@ $('.nav-item a').click(function (e) {
   $(this).tab('show');
 }); 
 
-// map resize on tab click
+// Map resize on tab click
 $('.nav-item a[href^="#map"]').click(function() {
     $container.resize();
 });
