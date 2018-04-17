@@ -53,12 +53,15 @@ function CreateStatistic(request) {
     var info = [];
     var statLinks = [];
 
+
     for (i = 0; i < request.length; i++) {
         years[i] = request[i].year.toString();
         weapons[i] = request[i].weapons;
     }
 
     window.years = years;
+    var maxWeapons = Math.round(Math.max.apply(Math, weapons));
+    
 
     var canvas = document.getElementById("myChart");
     var ctx = canvas.getContext("2d");
@@ -85,54 +88,78 @@ function CreateStatistic(request) {
     
         // Configuration options go here
         options: {
-          responsive:true,
-          maintainAspectRatio: false,
-          elements: {
-            point: {
-              radius: 7,
-              hoverRadius: 12,
-              mode: 'index',
-              backgroundColor: 'rgb(255, 99, 132)',
+            
+            responsive: true,
+            maintainAspectRatio: false,
+            elements: {
+                point: {
+                    radius: 7,
+                    hoverRadius: 12,
+                    mode: 'index',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                }
+            },
+            legend: {
+                display: false,
+                // position: 'top',
+                // labels: {
+                //   fontColor: "white",
+                //   fontSize: 18,
+                // }
+            },
+            title: {
+                display: true,
+                text: 'Svensk vapenexportsumma',
+                fontColor: 'white',
+                fontSize: 16,
+            },
+            hover: {
+                
+                onHover: function(e, el) {
+                    $("#myChart").css("cursor", el[0] ? "pointer" : "default");
+                }
+                
+            },         
+            layout: {
+                padding: {
+                    left: 15,
+                    right: 45,
+                    top: 5,
+                    bottom: 15
+                }
+            },
+            
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 16,
+                        stepSize: 2,
+                        beginAtZero: true,
+                        max: maxWeapons + 4,
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Miljarder kr',
+                        fontColor: "white",
+                        fontSize: 20,
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 16,
+                        stepSize: 4,
+                        beginAtZero: true,
+                    },
+                    scaleLabel: {
+                    display: true,
+                    labelString: 'Årtal',
+                    fontColor: "white",
+                    fontSize: 20,
+                    }
+                }]
             }
-          },
-          legend: {
-            display: false,
-            // position: 'top',
-            // labels: {
-            //   fontColor: "white",
-            //   fontSize: 18,
-            // }
-          },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    fontColor: "white",
-                    fontSize: 18,
-                    stepSize: 2,
-                    beginAtZero: true,
-                },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'Miljarder kr',
-                  fontColor: "white",
-                  fontSize: 20,
-                }
-            }],
-            xAxes: [{
-                ticks: {
-                    fontColor: "white",
-                    fontSize: 14,
-                    stepSize: 4,
-                    beginAtZero: true,
-                },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'Årtal',
-                  fontColor: "white",
-                  fontSize: 20,
-                }
-            }]
-        }
         }
     });
 
