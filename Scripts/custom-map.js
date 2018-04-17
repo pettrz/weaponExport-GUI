@@ -21,7 +21,7 @@ xhttp.onreadystatechange = function() {
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
 
-function viewModel() {
+function viewModelMap() {
   self = this;
   self.countryList = ko.observableArray();
   self.selectedCountry = ko.observable({code:''});
@@ -77,9 +77,56 @@ function viewModel() {
       }
     }
   };
+
+}
+ko.applyBindings(viewModelMap, document.getElementById("map"));
+
+function viewModelSearch() {
+  self = this;
+  self.countryList = ko.observableArray();
+  self.selectedCountry = ko.observable({code:''});
+
+  self.searchTerm = ko.observable("");
+  
+  self.showList = function(){
+    if (self.searchTerm() == '') {
+      
+      console.log('all countries returned')
+    
+      countryList().sort(function(a, b) { 
+        var countryA = a.country.toUpperCase();
+        var countryB = b.country.toUpperCase();
+        if (countryA < countryB) {
+          return -1;
+        }
+        if (countryA > countryB) {
+          return 1;
+        }
+      });
+      
+      return self.countryList();
+    } else {
+      var countries = [];
+      for (i = 0; i < countryList().length; i++) {
+        if (countryList()[i].country.toUpperCase().includes(searchTerm().toUpperCase())) {
+          countries[i] = countryList()[i];
+          countries = countries.filter(function(n){ return n != undefined });
+        }
+      }
+      if (countries.length == 0) {
+        console.log('no match in list')
+        return [{country: "Inget resultat hittades."}]
+      } else {
+        console.log('returned matches in list')
+        return countries;
+      }
+    }
+  };
+  
 }
 
-ko.applyBindings(viewModel);
+
+ko.applyBindings(viewModelSearch, document.getElementById("dropdown-wrapper"));
 
 // function CreateMapWeapons() {
 //   var map = $(function(){

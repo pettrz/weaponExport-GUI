@@ -37,7 +37,7 @@ function viewModelStats() {
     
    }
   
-   ko.applyBindings(viewModelStats, document.getElementById("viewmodel-statistics"));
+   ko.applyBindings(viewModelStats, document.getElementById("stats"));
 
 
 function CreateStatistic(request) {
