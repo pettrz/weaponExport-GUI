@@ -37,6 +37,9 @@ function viewModelStats() {
       self.linksStats = ko.computed(function(){
         return self.selectedYear().statLinks
       });
+      self.titleLinks = ko.computed(()=>{
+        return self.selectedYear().statLinks
+      });
     
    }
   
@@ -47,7 +50,7 @@ function CreateStatistic(request) {
     var years = [];
     var weapons = [];
     var info = [];
-    var links = [];
+    var statLinks = [];
 
     for (i = 0; i < request.length; i++) {
         years[i] = request[i].year.toString();
@@ -152,7 +155,7 @@ function clickOnPoint(canvas, chart, allYears) {
         }, 200);
 
         var firstPoint = chart.getElementAtEvent(canvas)[0];
-        
+
         if (firstPoint) {
             //Converts years data to label (foreach points index)
             var label = chart.data.labels[firstPoint._index];
@@ -160,6 +163,13 @@ function clickOnPoint(canvas, chart, allYears) {
             var value = chart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
             console.log(label);
             console.log(value);
+
+            for (i=0; i < yearList().length; i++)  {
+                if(yearList()[i].value == value) {
+                  selectedYear(yearList()[i]);
+                  console.log(viewmodelStats.selectedyear);
+                }
+            }
             
             for (var i=0; i < yearList().length; i++)  {
                 if(yearList()[i].year == label) {
@@ -184,6 +194,7 @@ function fillInfoBox(year, weapons, info) {
     infoBox.find('#stat-year').html(year);
     infoBox.find('#stat-weapons').html(weapons);
     infoBox.find('#stat-info').html(info);
+    // infoBox.find('#stat-links').html(links);
 
     introBox.hide();
     infoBox.show();
