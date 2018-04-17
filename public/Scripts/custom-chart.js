@@ -25,14 +25,17 @@ function viewModelStats() {
     self.yearList = ko.observableArray();
      self.selectedYear = ko.observable({year:''});
   
-     self.yearInfo = ko.computed(() =>{
-       return self.selectedYear().year
-     });
-     self.weaponInfo = ko.computed(() => {
-      return self.selectedYear().weapons
-     });
-      self.statsInfo = ko.computed(()=>{
-       return self.selectedYear().info
+    //  self.yearInfo = ko.computed(() =>{
+    //    return self.selectedYear().year
+    //  });
+    //  self.weaponInfo = ko.computed(() => {
+    //   return self.selectedYear().weapons
+    //  });
+    //   self.statsInfo = ko.computed(()=>{
+    //    return self.selectedYear().info
+    //   });
+      self.linksStats = ko.computed(function(){
+        return self.selectedYear().statLinks
       });
     
    }
@@ -143,6 +146,7 @@ function clickOnPoint(canvas, chart, allYears) {
     
     canvas.onclick = function(canvas) {
         
+        // Scrolltop animation onclick
         $("#statsInfo").animate({
             scrollTop: 0
         }, 200);
@@ -150,22 +154,33 @@ function clickOnPoint(canvas, chart, allYears) {
         var firstPoint = chart.getElementAtEvent(canvas)[0];
         
         if (firstPoint) {
+            //Converts years data to label (foreach points index)
             var label = chart.data.labels[firstPoint._index];
+            //Converts weapons data to value (foreach points index)
             var value = chart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
             console.log(label);
             console.log(value);
             
+            for (var i=0; i < yearList().length; i++)  {
+                if(yearList()[i].year == label) {
+                   selectedYear(yearList()[i]);
+                   console.log("Selectedyear:" + selectedYear());
+                 }
+               }
+
+            //Sends values to fill infobox
             fillInfoBox(label, value, allYears[firstPoint._index].info);
         } 
     }
 }
 
+//Sends values to infobox
 function fillInfoBox(year, weapons, info) {
+    //Swtiches infobox content
     var introBox = jQuery('#chart-intro-text');
     var infoBox = jQuery('#chart-info-display');
 
-     
-
+    //Retrives from database
     infoBox.find('#stat-year').html(year);
     infoBox.find('#stat-weapons').html(weapons);
     infoBox.find('#stat-info').html(info);

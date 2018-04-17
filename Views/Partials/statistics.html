@@ -45,8 +45,24 @@
                     <div id="stat-infobox">
                         <div id="statsInfo" class="col-sm-12">
                             <div id="stat-info" class="col-sm-12">
+                                    
                             </div>
+                            <div id="statistik-link">
+                                <p>Läs mer</p>
+                                <div id="statLinks" data-bind="foreach: linksStats"> 
+                                    <div data-bind="if:statLink">
+                                    <p>
+                                        <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
+                                    </p>
+                                    </div>    
+                                    <div data-bind="if:!statLink">
+                                        <p data-bind="text: statTitle"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
+                        
                     </div>
                     
                     </div>   
