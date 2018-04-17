@@ -43,50 +43,13 @@ function viewModelMap() {
     return self.selectedCountry().info
   });
   
-  self.showList = function(){
-    if (self.searchTerm() == '') {
-      
-      console.log('all countries returned')
-    
-      countryList().sort(function(a, b) { 
-        var countryA = a.country.toUpperCase();
-        var countryB = b.country.toUpperCase();
-        if (countryA < countryB) {
-          return -1;
-        }
-        if (countryA > countryB) {
-          return 1;
-        }
-      });
-      
-      return self.countryList();
-    } else {
-      var countries = [];
-      for (i = 0; i < countryList().length; i++) {
-        if (countryList()[i].country.toUpperCase().includes(searchTerm().toUpperCase())) {
-          countries[i] = countryList()[i];
-          countries = countries.filter(function(n){ return n != undefined });
-        }
-      }
-      if (countries.length == 0) {
-        console.log('no match in list')
-        return [{country: "Inget resultat hittades."}]
-      } else {
-        console.log('returned matches in list')
-        return countries;
-      }
-    }
-  };
+
 
 }
 ko.applyBindings(viewModelMap, document.getElementById("map"));
 
 function viewModelSearch() {
-  self = this;
-  self.countryList = ko.observableArray();
-  self.selectedCountry = ko.observable({code:''});
 
-  self.searchTerm = ko.observable("");
   
   self.showList = function(){
     if (self.searchTerm() == '') {
