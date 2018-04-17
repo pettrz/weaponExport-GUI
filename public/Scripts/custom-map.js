@@ -27,7 +27,7 @@ function viewModelMap() {
   self.selectedCountry = ko.observable({code:''});
 
   self.searchTerm = ko.observable("");
-  self.flag = ko.computed(function(){
+  self.mapFlag = ko.computed(function(){
     return 'flag-icon flag-icon-' + self.selectedCountry().code.toLowerCase()
   });
   self.statusInfo = ko.computed(function(){

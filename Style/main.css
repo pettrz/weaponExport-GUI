@@ -452,6 +452,11 @@ button:focus{
     background-color: #333131;
 }
 
+#stat-flag{
+    height: 2em; 
+    width: 2.5em; 
+}
+
 #statsInfo{
     height: 340px;
     overflow: auto;

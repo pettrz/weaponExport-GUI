@@ -92,7 +92,7 @@
                                 <div class="row mx-auto">
                                     <div id="countryHeader" class="col-sm-5 col-md-12">
                                         <div class="col-md-12">
-                                            <div id="flag" class="flag-icon" data-bind="css: flag()"></div>
+                                            <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
                                         </div>
                                         <div class="col-md-12">
                                              <h3 data-bind="text: selectedCountry().country"></h3>
@@ -181,6 +181,10 @@
                                                 <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
                                                     <div class="data-col col-sm-12">
                                                         <img src="./../Style/icons/vapen-icon.png" height="37px" width="37px">Vapenexport (mdr/kr): <span class="columnInfo" id="stat-weapons"></span>
+                                                    </div>
+                                                    <div class="data-col col-sm-12">
+                                                        <img src="./../Style/icons/vapen-icon.png" height="37px" width="37px">Största vapenkund:
+                                                        <div id="stat-flag" class="flag-icon columnInfo" data-bind="css: statFlag()"></div>
                                                     </div>
                                                 </div>
                                                 <div id="stat-infobox">
