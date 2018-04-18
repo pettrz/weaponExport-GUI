@@ -481,3 +481,15 @@ statLinks{
 #statistik-link{
 padding: 15px;
 }
+
+
+/* PARTICIPANTS */
+
+#logos-header{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#participants-info-display{
+    display:none;
+}

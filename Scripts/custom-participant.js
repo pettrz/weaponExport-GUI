@@ -16,14 +16,13 @@ xhttpLogos.onreadystatechange = function() {
     
     //Creates function for all images
     CreateLogos(xhttpLogosList);
-
     }
 }
 
 xhttpLogos.open('GET', 'http://localhost:1137/participants', true);
 xhttpLogos.send();
 
-//Creates lists and variables from databsae
+//Creates lists and variables from database
 function viewModelLogo() {
     self = this;
     self.logosList = ko.observableArray();
@@ -40,23 +39,45 @@ function viewModelLogo() {
     });
     
    }
-  
+  //Applies viewModel for participants.html
    ko.applyBindings(viewModelLogo, document.getElementById("participants"));
 
 function CreateLogos(request){
 
+    //Creates an array for each variable
     var participantTitle = [];
     var img = [];
-
+    
     for (i = 0; i < request.length; i++) {
         participantTitle[i] = request[i].participantTitle.toString();
         img[i] = request[i].img;
 
         // console.log(participantTitle[i])
-        console.log(img[i])
+        // console.log(img[i])
     }
 
-    //Converts image-links to images
+}
 
+//Function runs by click on image
+function openInfobox(participantTitle, info){
 
+    //Finds clicked image
+    for (var i=0; i < logosList().length; i++)  {
+        if(logosList()[i].participantTitle == participantTitle) {
+           selectedLogo(logosList()[i]);
+           console.log("Selectedyear:" + selectedLogo());
+         }
+       }
+
+    //Assigns varibles
+    var introBox = jQuery('#participants-intro-text');
+    var infoBox = jQuery('#participants-info-display');
+
+    //Retrives from database
+    infoBox.find('#participant-title').html(participantTitle);
+    infoBox.find('#participants-info').html(info);
+
+    //Displays correct infobox
+    introBox.hide();
+    infoBox.show();
 }
