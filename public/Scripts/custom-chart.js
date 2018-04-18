@@ -60,6 +60,7 @@ function CreateStatistic(request) {
     }
 
     window.years = years;
+    //Calculates max value for weapons
     var maxWeapons = Math.round(Math.max.apply(Math, weapons));
     
 
