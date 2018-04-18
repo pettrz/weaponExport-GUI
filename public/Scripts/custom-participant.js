@@ -16,14 +16,13 @@ xhttpLogos.onreadystatechange = function() {
     
     //Creates function for all images
     CreateLogos(xhttpLogosList);
-
     }
 }
 
 xhttpLogos.open('GET', 'http://localhost:1137/participants', true);
 xhttpLogos.send();
 
-//Creates lists and variables from databsae
+//Creates lists and variables from database
 function viewModelLogo() {
     self = this;
     self.logosList = ko.observableArray();
@@ -40,11 +39,12 @@ function viewModelLogo() {
     });
     
    }
-  
+  //Applies viewModel for participants.html
    ko.applyBindings(viewModelLogo, document.getElementById("participants"));
 
 function CreateLogos(request){
-    //Creates an array
+
+    //Creates an array for each variable
     var participantTitle = [];
     var img = [];
     
@@ -61,6 +61,7 @@ function CreateLogos(request){
 //Function runs by click on image
 function openInfobox(participantTitle, info){
 
+    //Finds clicked image
     for (var i=0; i < logosList().length; i++)  {
         if(logosList()[i].participantTitle == participantTitle) {
            selectedLogo(logosList()[i]);
@@ -75,7 +76,6 @@ function openInfobox(participantTitle, info){
     //Retrives from database
     infoBox.find('#participant-title').html(participantTitle);
     infoBox.find('#participants-info').html(info);
-    // infoBox.find('#stat-links').html(links);
 
     //Displays correct infobox
     introBox.hide();
