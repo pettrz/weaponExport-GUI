@@ -85,12 +85,13 @@ function CreateLogos(request){
 //     infoBox.show();
 // }
 
-function openInfobox(participantTitle, info){
+function openInfobox(participantTitle, info, img){
+    console.log("test"+ participantTitle+info);
     for(var i=0; i<logosList().length; i++){
         if(logosList[i].img==logoImg){
             selectedLogo(logosList()[i]);
             console.log("test");
         }
     }
-    console.log("test"+ participantTitle+info);
+    
 }
