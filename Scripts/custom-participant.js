@@ -26,14 +26,17 @@ xhttpLogos.send();
 function viewModelLogo() {
     self = this;
     self.logosList = ko.observableArray();
-    self.selectedLogo = ko.observable({code:''});
+    self.selectedLogo = ko.observable({logo:''});
   
     self.titleInfo = ko.computed(() =>{
         return self.selectedLogo().participantTitle
     });
-    // self.statsInfo = ko.computed(()=>{
-    //     return self.selectedLogo().info
-    // });
+     self.logosInfo = ko.computed(()=>{
+         return self.selectedLogo().info
+     });
+     self.logoImg = ko.computed(()=>{
+         return self.selectedLogo().img
+     });
     self.linksLogos = ko.computed(function(){
         return self.selectedLogo().LogoLinks
     });
@@ -59,25 +62,35 @@ function CreateLogos(request){
 }
 
 //Function runs by click on image
+// function openInfobox(participantTitle, info){
+
+//     //Finds clicked image
+//     for (var i=0; i < logosList().length; i++)  {
+//         if(logosList()[i].participantTitle == participantTitle) {
+//            selectedLogo(logosList()[i]);
+//            console.log("Selectedyear:" + selectedLogo());
+//          }
+//        }
+
+//     //Assigns varibles
+//     var introBox = jQuery('#participants-intro-text');
+//     var infoBox = jQuery('#participants-info-display');
+
+//     //Retrives from database
+//     infoBox.find('#participant-title').html(participantTitle);
+//     infoBox.find('#participants-info').html(info);
+
+//     //Displays correct infobox
+//     introBox.hide();
+//     infoBox.show();
+// }
+
 function openInfobox(participantTitle, info){
-
-    //Finds clicked image
-    for (var i=0; i < logosList().length; i++)  {
-        if(logosList()[i].participantTitle == participantTitle) {
-           selectedLogo(logosList()[i]);
-           console.log("Selectedyear:" + selectedLogo());
-         }
-       }
-
-    //Assigns varibles
-    var introBox = jQuery('#participants-intro-text');
-    var infoBox = jQuery('#participants-info-display');
-
-    //Retrives from database
-    infoBox.find('#participant-title').html(participantTitle);
-    infoBox.find('#participants-info').html(info);
-
-    //Displays correct infobox
-    introBox.hide();
-    infoBox.show();
+    for(var i=0; i<logosList().length; i++){
+        if(logosList[i].img==logoImg){
+            selectedLogo(logosList()[i]);
+            console.log("test");
+        }
+    }
+    console.log("test"+ participantTitle+info);
 }
