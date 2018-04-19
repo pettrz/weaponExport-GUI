@@ -85,6 +85,9 @@ function CreateLogos(request){
 //     infoBox.show();
 // }
 
+// console.log(logosList);
+console.log(info);
+
 function openInfobox(participantTitle, info, img){
     console.log("test"+ participantTitle+info);
     for(var i=0; i<logosList().length; i++){

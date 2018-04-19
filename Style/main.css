@@ -490,6 +490,26 @@ padding: 15px;
     padding-bottom: 20px;
 }
 
+#tooltipImg .tooltiptext {
+    visibility: hidden;
+    padding:5px;
+    background-color: #f2f2f2;
+    color: #2c2a2a;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 140%;
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 3%;
+    margin-left: -10px;
+}
+
+#tooltipImg:hover .tooltiptext {
+    visibility: visible;
+}
+
 #participants-info-display{
     display:none;
 }

@@ -3,7 +3,12 @@
 
             <!-- Prints out all images from list -->
             <div data-bind="foreach: logosList()">
-                <img width="240px" height="100px" onclick="openInfobox()" data-bind="attr:{src: img}" />  
+                 
+                <div id="tooltipImg" class="data-col col-sm-6">
+                    <img width="240px" height="100px" onclick="openInfobox()" data-bind="attr:{src: img}" /> 
+                    <span class="tooltiptext" data-bind="text: participantTitle"></span>
+                    
+                </div>
             </div>
             
     </div>
