@@ -20,11 +20,6 @@ html,body {
  
 }
 
-.no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
-}
-
 /*Navbar*/
 #navbar-wrapper{
     background-color: #2c2a2a;
@@ -164,7 +159,7 @@ input:focus::-webkit-input-placeholder
 }
 
 #countryData {
-    background-color: #333131;
+    background-color: #333232;
 }
 
 /*Tooltips for data in header*/
@@ -278,21 +273,21 @@ img{
 }
 
 .buttonInfo {
-    background-color: #333131;
+    background-color: #333232;
     color: white;
     width: 150px;
     height: 40px;
     border: none;
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
 
 .buttonInfo:hover {
     background-color: #808080;
 }
 
-button:focus{
-     outline: 0 !important;
+.buttonInfo:focus, buttonInfo:active {
+    outline: none !important;
+    box-shadow: none;
 }
 
 .btnDisabled{
