@@ -60,6 +60,7 @@ function CreateStatistic(request) {
     }
 
     window.years = years;
+    //Calculates max value for weapons
     var maxWeapons = Math.round(Math.max.apply(Math, weapons));
     
 
@@ -191,13 +192,6 @@ function clickOnPoint(canvas, chart, allYears) {
             var value = chart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
             console.log(label);
             console.log(value);
-
-            // for (i=0; i < yearList().length; i++)  {
-            //     if(yearList()[i].value == value) {
-            //       selectedYear(yearList()[i]);
-            //       console.log(viewmodelStats.selectedyear);
-            //     }
-            // }
             
             for (var i=0; i < yearList().length; i++)  {
                 if(yearList()[i].year == label) {

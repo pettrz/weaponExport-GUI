@@ -27,6 +27,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
         <script src="Scripts/custom-map.js" defer="defer"></script>
         <script src="Scripts/custom-chart.js" defer="defer"></script>
+        <script src="Scripts/custom-participant.js" defer="defer"></script>
     </head>
     
     <body lang="sv">
@@ -213,29 +214,111 @@
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <!-- Main content -->
-                            </div>
-                            <div id="infobox-before" class="col-md-12 col-lg-4">
-                                <div class="row mx-auto">
-                                    <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
-                                        <div class="col-sm-12">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" />
-                                        </div>
-                                        <div class="col-sm-12" id="logo-padding2">
-                                             <h3>Aktörer</h3>
-                                        </div>
-                                    </div>
-                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                                        <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.
-                                            <br/>
-                                            <br/>Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för
-                                            valfritt årtal i kurvan och läs mer om det aktuella årets vapenexport.
-                                            Värdet på vapenexporten mäts i miljarder kronor.
-                                            <br/>
-                                        </p>
+                                <!-- Prints out all images from list -->
+                                <div data-bind="foreach: logosList()">
+                                    <div id="tooltipImg" class="data-col col-sm-6">
+                                        <img width="240px" height="100px" onclick="openInfobox()" data-bind="attr:{src: img}"
+                                        /> <span class="tooltiptext" data-bind="text: participantTitle"></span>
                                     </div>
                                 </div>
                             </div>
-                            <!--<div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
+                            <!-- Infobox displays before click -->
+                            <div id="infobox-before" class="col-md-12 col-lg-4">
+                                <div class="row mx-auto">
+                                    <div id="participants-intro-text">
+                                        <div id="introHeader" class="col-sm-5 col-md-5 col-lg-12">
+                                            <div class="col-sm-12">
+                                                <img src="./../Style/icons/svenska_freds-logo.png" />
+                                            </div>
+                                            <div class="col-sm-12" id="logo-padding2">
+                                                 <h3>Aktörer</h3>
+                                            </div>
+                                        </div>
+                                        <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                                            <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.
+                                                <br/>
+                                                <br/>Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för
+                                                valfritt årtal i kurvan och läs mer om det aktuella årets vapenexport.
+                                                Värdet på vapenexporten mäts i miljarder kronor.
+                                                <br/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Infobox displays after click -->
+                                <div id="viewmodel-participants">
+                                    <div id="participants-info-display">
+                                        <div class="row mx-auto">
+                                            <div id="logos-header" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">
+                                                <!--<h3 data-bind="text: logosList()[0].participantTitle"></h3>-->
+                                            </div>
+                                            <!-- <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
+
+                        <div class="data-col col-sm-12">
+
+                            <img src="./../Style/icons/vapen-icon.png" height="37px" width="37px"> Vapenexport (mdr/kr):
+
+                            <span class="columnInfo" id="stat-weapons"></span>
+
+                        </div>  
+
+                        <div class="data-col col-sm-12">
+
+                            <img src="./../Style/icons/vapen-icon.png" height="37px" width="37px"> Största vapenkund:
+
+                            <div id="stat-flag" class="flag-icon columnInfo" data-bind="css: statFlag()"></div>
+
+                        </div>
+
+                    </div>
+
+                
+
+                    <div id="stat-infobox">
+
+                        <div id="statsInfo" class="col-sm-12">
+
+                            <div id="stat-info" class="col-sm-12">
+
+                                    
+
+                            </div>
+
+                            <div id="statistik-link">
+
+                                <p>Läs mer</p>
+
+                                <div id="statLinks" data-bind="foreach: linksStats"> 
+
+                                    <div data-bind="if:statLink">
+
+                                    <p>
+
+                                        <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
+
+                                    </p>
+
+                                    </div>    
+
+                                    <div data-bind="if:!statLink">
+
+                                        <p data-bind="text: statTitle"></p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            
+
+                        </div>
+
+                    </div> --></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
 
         <div class="row mx-auto">
 
@@ -267,7 +350,7 @@
 
         </div>
 
-    </div>--></div>
+    </div> --></div>
                     </div>
                     <div id="about" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutter">

@@ -481,3 +481,34 @@ statLinks{
 #statistik-link{
 padding: 15px;
 }
+
+
+/* PARTICIPANTS */
+
+#logos-header{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#tooltipImg .tooltiptext {
+    visibility: hidden;
+    padding:5px;
+    background-color: #2c2a2a;
+    color: #f2f2f2;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 140%;
+    position: absolute;
+    z-index: 1;
+    bottom: -10%;
+    left: 4%;
+}
+
+#tooltipImg:hover .tooltiptext {
+    visibility: visible;
+}
+
+#participants-info-display{
+    display:none;
+}
