@@ -47,11 +47,18 @@
                     
                     <div id="stat-infobox">
                         <div id="statsInfo" class="col-sm-12">
-                            <div id="stat-info" class="col-sm-12">
-                                    
+
+                            <!-- Displays infotext -->
+                            <div id="stat-info" class="col-sm-12">      
                             </div>
+
+                            <!-- Displays links -->
                             <div id="statistik-link">
-                                <p>Läs mer</p>
+                                <div class="readMore">
+                                    <h6>Läs mer</h6>
+                                </div>
+
+                                <!-- Searches through list -> displays depending on title or link -->
                                 <div id="statLinks" data-bind="foreach: linksStats"> 
                                     <div data-bind="if:statLink">
                                     <p>

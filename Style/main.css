@@ -565,6 +565,10 @@ padding: 15px;
     padding-top: 20px;
 }
 
+.readMore{
+    padding-bottom: 10px;
+}
+
 #infoboxImg img{
     height: 50px;
 }
@@ -572,5 +576,5 @@ padding: 15px;
 #infoboxImg{
     background-color:  white;
     padding:15px;
-     border-radius: 3px;
+    border-radius: 3px;
 }

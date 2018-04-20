@@ -57,20 +57,25 @@
                 
                     <div id="logo-infobox">
                         <div id="logoInfo" class="col-sm-12">
+
                             <!-- Displays infotext -->
-                            <div data-bind="text: logosInfo" class="col-sm-12">
-                                    
+                            <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"> 
                             </div>
+
+                            <!-- Displays links -->
                             <div id="participant-link">
-                                <p>Läs mer</p>
-                                <!-- Displays links -->
+                                <div class="readMore">
+                                    <h6>Läs mer</h6>
+                                </div>
+
+                                <!-- Searches through list -> displays depending on title or link -->
                                 <div id="logoLinks" data-bind="foreach: linksLogos"> 
-                                    <div data-bind="if:logoLinks">
+                                    <div data-bind="if:logoLink">
                                     <p>
-                                        <a data-bind="attr: { href: logoLinks }, text: logoTitle" target="_blank"></a>
+                                        <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
                                     </p>
                                     </div>    
-                                    <div data-bind="if:!logoLinks">
+                                    <div data-bind="if:!logoLink">
                                         <p data-bind="text: logoTitle"></p>
                                     </div>
                                 </div>
