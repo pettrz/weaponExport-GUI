@@ -216,9 +216,6 @@ input:focus::-webkit-input-placeholder
     line-height: 30px;
 }
 
-img{
-    padding-right:10px;
-}
 
 .defRanks {
     color:#406eb7;
@@ -490,9 +487,30 @@ padding: 15px;
     padding-bottom: 20px;
 }
 
-.tooltipImg{
-    background: cornflowerblue;
+.pLogo-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.pLogo-col:hover{
+    background-color: #333131;
+    cursor: pointer;
+    -webkit-transition: background-color .7s ease-out;
+    -moz-transition: background-color .7s ease-out;
+    -o-transition: background-color .7s ease-out;
+    transition: background-color .7s ease-out;
+    
+}
+.pLogo-col img{
+    transition: all .2s ease-in-out;
+    max-width: 100%;
+    height: 130px;
+}
+.pLogo-col:hover > img {
+    transform: scale(1.1);
+}
+
 
 .tooltipImg .tooltiptext {
     visibility: hidden;

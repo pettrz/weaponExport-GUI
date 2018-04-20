@@ -65,7 +65,7 @@
                     </nav>
                 </div>
                 <div class="tab-content">
-                    <div id="map" class="tab-pane active">
+                    <div id="map" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <div id="world-map"></div>
@@ -210,45 +210,21 @@
                             </div>
                         </div>
                     </div>
-                    <div id="participants" class="tab-pane">
+                    <div id="participants" class="tab-pane active">
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <!-- Main content -->
                                 <!-- Prints out all images from list -->
                                 <div class="container h-100">
-                                    <div class="row mx-auto h-100" style="justify-content:center;">
-                                        <div class=" col-md-4 tooltipImg">
-                                            <img src="http://via.placeholder.com/100x100" style="max-width: 100%;max-height: 200px;"
-                                            />
+                                    <div class="row mx-auto h-100 justify-content-around">
+                                        <div class="col-md-4 tooltipImg pLogo-col">
+                                            <img src="http://via.placeholder.com/400x300" />
                                         </div>
-                                        <div class="col-md-4 tooltipImg">
-                                            <img src="http://via.placeholder.com/100x100" style="max-width: 100%;max-height: 200px;"
-                                            />
+                                        <!-- ko foreach: logosList() -->
+                                        <div class="col-md-4 tooltipImg pLogo-col">
+                                            <img src="http://via.placeholder.com/400x300" />
                                         </div>
-                                        <div class="col-md-4 tooltipImg">
-                                            <img src="http://via.placeholder.com/100x100" style="max-width: 100%;max-height: 200px;"
-                                            />
-                                        </div>
-                                        <div class=" col-md-4 tooltipImg">
-                                            <img src="http://via.placeholder.com/100x100" style="max-width: 100%;max-height: 200px;"
-                                            />
-                                        </div>
-                                        <div class=" col-md-4 tooltipImg">
-                                            <img src="http://via.placeholder.com/100x100" style="max-width: 100%;max-height: 200px;"
-                                            />
-                                        </div>
-                                        <div class=" col-md-4 tooltipImg">
-                                            <img src="http://via.placeholder.com/100x100" style="max-width: 100%;max-height: 200px;"
-                                            />
-                                        </div>
-                                        <div class=" col-md-4 tooltipImg">
-                                            <img src="http://via.placeholder.com/100x100" style="max-width: 100%;max-height: 200px;"
-                                            />
-                                        </div>
-                                        <div class=" col-md-4 tooltipImg">
-                                            <img src="http://via.placeholder.com/100x100" style="max-width: 100%;max-height: 200px;"
-                                            />
-                                        </div>
+                                        <!-- /ko -->
                                     </div>
                                 </div>
                             </div>
