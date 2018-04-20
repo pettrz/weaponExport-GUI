@@ -29,7 +29,7 @@ function viewModelLogo() {
     self.selectedLogo = ko.observable({logo:''});
   
     self.titleInfo = ko.computed(() =>{
-        return self.selectedLogo().participantTitle
+        return self.selectedLogo().participantTitle 
     });
      self.logosInfo = ko.computed(()=>{
          return self.selectedLogo().info
@@ -61,10 +61,10 @@ function CreateLogos(request){
 
 }
 
-//Function runs by click on image
+// Function runs by click on image
 // function openInfobox(participantTitle, info){
 
-//     //Finds clicked image
+    //Finds clicked image
 //     for (var i=0; i < logosList().length; i++)  {
 //         if(logosList()[i].participantTitle == participantTitle) {
 //            selectedLogo(logosList()[i]);
@@ -86,15 +86,17 @@ function CreateLogos(request){
 // }
 
 // console.log(logosList);
-console.log(info);
+// console.log(info);
 
-function openInfobox(participantTitle, info, img){
-    console.log("test"+ participantTitle+info);
-    for(var i=0; i<logosList().length; i++){
-        if(logosList[i].img==logoImg){
-            selectedLogo(logosList()[i]);
-            console.log("test");
-        }
-    }
+function openInfobox(el){
+
+    console.log(el);
+
+    // for(var i=0; i<logosList().length; i++){
+    //     if(logosList[i].img==logoImg){
+    //         selectedLogo(logosList()[i]);
+    //         console.log("test");
+    //     }
+    // }
     
 }
