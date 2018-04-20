@@ -564,3 +564,12 @@ padding: 15px;
 #logo-infobox{
     padding-top: 20px;
 }
+
+#infoboxImg img{
+    height: 50px;
+}
+
+#infoboxImg{
+    background-color:  white;
+    padding:15px;
+}
