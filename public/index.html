@@ -65,7 +65,7 @@
                     </nav>
                 </div>
                 <div class="tab-content">
-                    <div id="map" class="tab-pane active">
+                    <div id="map" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <div id="world-map"></div>
@@ -210,15 +210,18 @@
                             </div>
                         </div>
                     </div>
-                    <div id="participants" class="tab-pane">
+                    <div id="participants" class="tab-pane active">
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <!-- Main content -->
                                 <!-- Prints out all images from list -->
-                                <div data-bind="foreach: logosList()">
-                                    <div id="tooltipImg" class="data-col col-sm-6">
-                                        <img width="240px" height="100px" onclick="openInfobox(this)" data-bind="attr:{src: img}"
-                                        /> <span class="tooltiptext" data-bind="text: participantTitle"></span>
+                                <div class="container h-100">
+                                    <div class="row mx-auto h-100 justify-content-around">
+                                        <!-- ko foreach: logosList() -->
+                                        <div class="col-md-4 tooltipImg pLogo-col">
+                                            <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt="" /> <span class="tooltiptext" data-bind="text: participantTitle"></span>
+                                        </div>
+                                        <!-- /ko -->
                                     </div>
                                 </div>
                             </div>
