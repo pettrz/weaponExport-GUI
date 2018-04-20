@@ -249,72 +249,34 @@
                                 <div id="viewmodel-participants">
                                     <div id="participants-info-display">
                                         <div class="row mx-auto">
+                                            <!-- <div class="col-md-12">
+
+                            <div data-bind="attr:{src: logoImg}"></div>
+
+                    </div> -->
                                             <div id="logos-header" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">
-                                                <!--<h3 data-bind="text: logosList()[0].participantTitle"></h3>-->
+                                                 <h3 data-bind="text: titleInfo"></h3>
                                             </div>
-                                            <!-- <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
-
-                        <div class="data-col col-sm-12">
-
-                            <img src="./../Style/icons/vapen-icon.png" height="37px" width="37px"> Vapenexport (mdr/kr):
-
-                            <span class="columnInfo" id="stat-weapons"></span>
-
-                        </div>  
-
-                        <div class="data-col col-sm-12">
-
-                            <img src="./../Style/icons/vapen-icon.png" height="37px" width="37px"> Största vapenkund:
-
-                            <div id="stat-flag" class="flag-icon columnInfo" data-bind="css: statFlag()"></div>
-
-                        </div>
-
-                    </div>
-
-                
-
-                    <div id="stat-infobox">
-
-                        <div id="statsInfo" class="col-sm-12">
-
-                            <div id="stat-info" class="col-sm-12">
-
-                                    
-
-                            </div>
-
-                            <div id="statistik-link">
-
-                                <p>Läs mer</p>
-
-                                <div id="statLinks" data-bind="foreach: linksStats"> 
-
-                                    <div data-bind="if:statLink">
-
-                                    <p>
-
-                                        <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
-
-                                    </p>
-
-                                    </div>    
-
-                                    <div data-bind="if:!statLink">
-
-                                        <p data-bind="text: statTitle"></p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            
-
-                        </div>
-
-                    </div> --></div>
+                                            <div id="logo-infobox">
+                                                <div id="logoInfo" class="col-sm-12">
+                                                    <!-- Displays infotext -->
+                                                    <div data-bind="text: logosInfo" class="col-sm-12"></div>
+                                                    <div id="participant-link">
+                                                        <p>Läs mer</p>
+                                                        <!-- Displays links -->
+                                                        <div id="logoLinks" data-bind="foreach: linksLogos">
+                                                            <div data-bind="if:logoLinks">
+                                                                <p> <a data-bind="attr: { href: logoLinks }, text: logoTitle" target="_blank"></a>
+                                                                </p>
+                                                            </div>
+                                                            <div data-bind="if:!logoLinks">
+                                                                <p data-bind="text: logoTitle"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

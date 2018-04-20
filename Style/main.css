@@ -512,3 +512,31 @@ padding: 15px;
 #participants-info-display{
     display:none;
 }
+
+#logoInfo{
+    height: 340px;
+    overflow: auto;
+    padding: 0;
+    position: relative;
+    text-align: left;
+ }
+ 
+ #logoInfo #info{
+    padding: 20px;
+ }
+
+ #logoLinks{
+    font-weight: normal;
+    line-height: 100%;
+    word-wrap: break-word;
+}
+#participant-link{
+    padding: 15px;
+}
+
+#logo-info{
+    white-space: pre-wrap;
+}
+#logo-infobox{
+    padding-top: 20px;
+}

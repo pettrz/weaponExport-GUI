@@ -61,34 +61,17 @@ function CreateLogos(request){
 
 }
 
-// Function runs by click on image
-// function openInfobox(participantTitle, info){
-
-    //Finds clicked image
-//     for (var i=0; i < logosList().length; i++)  {
-//         if(logosList()[i].participantTitle == participantTitle) {
-//            selectedLogo(logosList()[i]);
-//            console.log("Selectedyear:" + selectedLogo());
-//          }
-//        }
-
-//     //Assigns varibles
-//     var introBox = jQuery('#participants-intro-text');
-//     var infoBox = jQuery('#participants-info-display');
-
-//     //Retrives from database
-//     infoBox.find('#participant-title').html(participantTitle);
-//     infoBox.find('#participants-info').html(info);
-
-//     //Displays correct infobox
-//     introBox.hide();
-//     infoBox.show();
-// }
-
-// console.log(logosList);
-// console.log(info);
-
+//Function runs when image is clicked
 function openInfobox(el){
+
+    //Assigns varibles
+    var introBox = jQuery('#participants-intro-text');
+    var infoBox = jQuery('#participants-info-display');
+
+    //Displays correct infobox
+    introBox.hide();
+    infoBox.show();
+
     var image = el;
     console.log(image);
 
@@ -102,13 +85,4 @@ function openInfobox(el){
             return;
         }
     }
-    
-
-    // for(var i=0; i<logosList().length; i++){
-    //     if(logosList[i].img==logoImg){
-    //         selectedLogo(logosList()[i]);
-    //         console.log("test");
-    //     }
-    // }
-    
 }
