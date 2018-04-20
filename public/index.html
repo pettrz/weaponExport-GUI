@@ -217,12 +217,9 @@
                                 <!-- Prints out all images from list -->
                                 <div class="container h-100">
                                     <div class="row mx-auto h-100 justify-content-around">
-                                        <div class="col-md-4 tooltipImg pLogo-col">
-                                            <img src="http://via.placeholder.com/400x300" />
-                                        </div>
                                         <!-- ko foreach: logosList() -->
                                         <div class="col-md-4 tooltipImg pLogo-col">
-                                            <img src="http://via.placeholder.com/400x300" />
+                                            <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt="" /> <span class="tooltiptext" data-bind="text: participantTitle"></span>
                                         </div>
                                         <!-- /ko -->
                                     </div>
