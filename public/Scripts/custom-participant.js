@@ -92,7 +92,17 @@ function openInfobox(el){
     var image = el;
     console.log(image);
 
+    var attribute = image.getAttribute("src");
+    console.log(attribute);
 
+    for(var i=0; i<logosList().length; i++){
+        if(logosList()[i].img==attribute){
+            selectedLogo(logosList()[i]);
+            console.log(selectedLogo());
+            return;
+        }
+    }
+    
 
     // for(var i=0; i<logosList().length; i++){
     //     if(logosList[i].img==logoImg){
