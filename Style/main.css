@@ -568,3 +568,13 @@ padding: 15px;
 .readMore{
     padding-bottom: 10px;
 }
+
+#infoboxImg img{
+    height: 50px;
+}
+
+#infoboxImg{
+    background-color:  white;
+    padding:15px;
+    border-radius: 3px;
+}
