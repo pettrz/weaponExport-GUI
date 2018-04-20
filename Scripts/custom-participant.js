@@ -89,8 +89,10 @@ function CreateLogos(request){
 // console.log(info);
 
 function openInfobox(el){
+    var image = el;
+    console.log(image);
 
-    console.log(el);
+
 
     // for(var i=0; i<logosList().length; i++){
     //     if(logosList[i].img==logoImg){
