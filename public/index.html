@@ -65,7 +65,7 @@
                     </nav>
                 </div>
                 <div class="tab-content">
-                    <div id="map" class="tab-pane">
+                    <div id="map" class="tab-pane active">
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <div id="world-map"></div>
@@ -121,7 +121,9 @@
                                     <div id="countryInfo" class="overflow-fade col-sm-12">
                                         <div id="info" class="col-sm-12" data-bind="text: mapInfo"></div>
                                         <div class="col-sm-12">
-                                            <p>Läs mer</p>
+                                            <div class="readMore">
+                                                 <h6>Läs mer</h6>
+                                            </div>
                                             <div id="links" data-bind="foreach: linksInfo">
                                                 <div data-bind="if:link">
                                                     <p> <a data-bind="attr: { href: link }, text: title" target="_blank"></a>
@@ -188,9 +190,14 @@
                                                 </div>
                                                 <div id="stat-infobox">
                                                     <div id="statsInfo" class="col-sm-12">
+                                                        <!-- Displays infotext -->
                                                         <div id="stat-info" class="col-sm-12"></div>
+                                                        <!-- Displays links -->
                                                         <div id="statistik-link">
-                                                            <p>Läs mer</p>
+                                                            <div class="readMore">
+                                                                 <h6>Läs mer</h6>
+                                                            </div>
+                                                            <!-- Searches through list -> displays depending on title or link -->
                                                             <div id="statLinks" data-bind="foreach: linksStats">
                                                                 <div data-bind="if:statLink">
                                                                     <p> <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
@@ -210,7 +217,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="participants" class="tab-pane active">
+                    <div id="participants" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <!-- Main content -->
@@ -263,16 +270,19 @@
                                             <div id="logo-infobox">
                                                 <div id="logoInfo" class="col-sm-12">
                                                     <!-- Displays infotext -->
-                                                    <div data-bind="text: logosInfo" class="col-sm-12"></div>
+                                                    <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"></div>
+                                                    <!-- Displays links -->
                                                     <div id="participant-link">
-                                                        <p>Läs mer</p>
-                                                        <!-- Displays links -->
+                                                        <div class="readMore">
+                                                             <h6>Läs mer</h6>
+                                                        </div>
+                                                        <!-- Searches through list -> displays depending on title or link -->
                                                         <div id="logoLinks" data-bind="foreach: linksLogos">
-                                                            <div data-bind="if:logoLinks">
-                                                                <p> <a data-bind="attr: { href: logoLinks }, text: logoTitle" target="_blank"></a>
+                                                            <div data-bind="if:logoLink">
+                                                                <p> <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
                                                                 </p>
                                                             </div>
-                                                            <div data-bind="if:!logoLinks">
+                                                            <div data-bind="if:!logoLink">
                                                                 <p data-bind="text: logoTitle"></p>
                                                             </div>
                                                         </div>

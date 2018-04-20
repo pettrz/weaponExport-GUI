@@ -38,7 +38,7 @@ function viewModelLogo() {
          return self.selectedLogo().img
      });
     self.linksLogos = ko.computed(function(){
-        return self.selectedLogo().LogoLinks
+        return self.selectedLogo().logoLinks
     });
     
    }
@@ -72,16 +72,20 @@ function openInfobox(el){
     introBox.hide();
     infoBox.show();
 
+    $("#logoInfo").animate({
+        scrollTop: 0
+    }, 200);
+
     var image = el;
-    console.log(image);
+    // console.log(image);
 
     var attribute = image.getAttribute("src");
-    console.log(attribute);
+    // console.log(attribute);
 
     for(var i=0; i<logosList().length; i++){
         if(logosList()[i].img==attribute){
             selectedLogo(logosList()[i]);
-            console.log(selectedLogo());
+            // console.log(selectedLogo());
             return;
         }
     }
