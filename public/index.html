@@ -65,7 +65,7 @@
                     </nav>
                 </div>
                 <div class="tab-content">
-                    <div id="map" class="tab-pane">
+                    <div id="map" class="tab-pane active">
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <div id="world-map"></div>
@@ -210,7 +210,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="participants" class="tab-pane active">
+                    <div id="participants" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutter">
                             <div id="inner-wrapper" class="col-lg-8">
                                 <!-- Main content -->
@@ -218,8 +218,13 @@
                                 <div class="container h-100">
                                     <div class="row mx-auto h-100 justify-content-around">
                                         <!-- ko foreach: logosList() -->
-                                        <div class="col-md-4 tooltipImg pLogo-col">
-                                            <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt="" /> <span class="tooltiptext" data-bind="text: participantTitle"></span>
+                                        <div class="col-sm-6 col-md-4 tooltipImg pLogo-col">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt="" />
+                                                </div>
+                                                <div class="col-sm-12 pTitle" data-bind="text: participantTitle"></div>
+                                            </div>
                                         </div>
                                         <!-- /ko -->
                                     </div>

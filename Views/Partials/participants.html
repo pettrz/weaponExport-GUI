@@ -2,13 +2,19 @@
             <!-- Main content -->
 
             <!-- Prints out all images from list -->
-            <div class="container h-100">
+                <div class="container h-100">
                     <div class="row mx-auto h-100 justify-content-around">
                         
                         <!-- ko foreach: logosList() -->
-                            <div  class="col-md-4 tooltipImg pLogo-col">
-                                <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt=""/>
-                                <span class="tooltiptext" data-bind="text: participantTitle"></span>
+                            <div  class="col-sm-6 col-md-4 tooltipImg pLogo-col">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt=""/>
+                                    </div>
+                                    <div  class="col-sm-12 pTitle" data-bind="text: participantTitle">
+   
+                                    </div>
+                                </div>
                             </div>
                         <!-- /ko -->
                             
