@@ -137,7 +137,7 @@ input:focus::-webkit-input-placeholder
     background-color: #2c2a2a;
 }
 
-#introHeader{
+.introHeader{
     padding-bottom: 10px;
     padding-top: 30px;
 }
