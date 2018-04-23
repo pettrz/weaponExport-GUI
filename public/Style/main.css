@@ -487,12 +487,16 @@ padding: 15px;
     padding-bottom: 20px;
 }
 
+#pLogos{
+    overflow-y: auto;
+}
+
 .pLogo-col{
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 200px;
+    height: 200px;
 }
 
 .pLogo-col:hover{
