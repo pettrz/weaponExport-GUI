@@ -8,7 +8,6 @@ html,body {
 }
 
 #wrapper{
-    height: 650px;
     color: white;
     font-size: 15px;
     line-height: 22px;
@@ -16,11 +15,6 @@ html,body {
     scrollbar-face-color: white;
     scrollbar-arrow-color: white;
     scrollbar-track-color: #2c2a2a;
-}
-
-.no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
 }
 
 /*Navbar*/
@@ -286,6 +280,7 @@ input:focus::-webkit-input-placeholder
     padding-top: 20px;
 }
 
+
 .buttonInfo {
     background-color: #3a3a3a;
     color: white;
@@ -344,10 +339,6 @@ button:focus{
         transform: scale(1, 1);
         left: 20px;
     } 
-
-    #countryReadMore{
-        position: static;
-    }
     #world-map{
         height: 500px;
     }
@@ -381,6 +372,10 @@ button:focus{
     
     #countryHeader{
         background-color: #333131;
+    }
+
+    #countryReadMore{
+        position: static;
     }
 }
 

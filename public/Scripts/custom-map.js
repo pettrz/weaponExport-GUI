@@ -223,16 +223,21 @@ var expanded = false;
     
   });
 
+  
 $(window).resize(function(){
  var width = $(window).width();
 if(width <= 992){
-  document.getElementById('btnInfo').style.display = 'static';
- $('#countryData').on('hide.bs.collapse', function (e) {
+  if(expanded){
+    $("#countryData").collapse('show');
+  }
+  $('#countryData').on('hide.bs.collapse', function (e) {
        e.preventDefault(e);
-   })
+  })
   } else {
-     document.getElementById('countryInfo').style.height = '270px';
      $('#countryData').unbind('hide.bs.collapse')
+     if(expanded){
+      $("#countryData").collapse('hide');
+    }
    }
  })
 .resize();
