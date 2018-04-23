@@ -190,7 +190,7 @@ var expanded = false;
     function changeSize(){
 
         if(!expanded){
-            document.getElementById('countryInfo').style.height = '375px';
+            document.getElementById('countryInfo').style.height = '390px';
             document.getElementById('countryInfo').style.overflow = 'auto';   
             document.getElementById('countryInfo').classList.remove("overflow-fade"); 
             document.getElementById('btnInfo').innerHTML='Visa mindre'; 
@@ -199,7 +199,7 @@ var expanded = false;
             
          } 
          else {
-            document.getElementById('countryInfo').style.height = '290px';
+            document.getElementById('countryInfo').style.height = '270px';
             document.getElementById('countryInfo').style.overflow = 'hidden';
             document.getElementById('countryInfo').classList.add("overflow-fade");   
             document.getElementById('btnInfo').innerHTML='Läs mer';  
@@ -230,7 +230,7 @@ if(width <= 992){
        e.preventDefault(e);
    })
   } else {
-     document.getElementById('countryInfo').style.height = '290px';
+     document.getElementById('countryInfo').style.height = '270px';
      $('#countryData').unbind('hide.bs.collapse')
    }
  })

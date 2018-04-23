@@ -144,6 +144,7 @@ input:focus::-webkit-input-placeholder
 
 #introText{
     padding: 10px;
+    overflow: auto;
 }
 
 /*Infobox after*/
@@ -164,7 +165,7 @@ input:focus::-webkit-input-placeholder
 }
 
 #countryData {
-    background-color: #333131;
+    background-color: #3a3a3a;
 }
 
 /*Tooltips for data in header*/
@@ -227,7 +228,7 @@ input:focus::-webkit-input-placeholder
 
 /*Infobox text*/
 #countryInfo{
-    height: 290px;
+    height: 270px;
     overflow: hidden;
     padding: 0;
     transition: height 0.3s;
@@ -272,10 +273,11 @@ input:focus::-webkit-input-placeholder
     bottom:0;
     left: 0;
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .buttonInfo {
-    background-color: #333131;
+    background-color: #3a3a3a;
     color: white;
     width: 150px;
     height: 40px;
@@ -443,7 +445,7 @@ button:focus{
 }
 
 #weaponsData {
-    background-color: #333131;
+    background-color: #3a3a3a;
 }
 
 #stat-flag{
@@ -581,4 +583,9 @@ padding: 15px;
     background-color:  white;
     padding:15px;
     border-radius: 3px;
+}
+
+#participantsTitle{
+    text-align: center;
+    padding-top: 15px;
 }
