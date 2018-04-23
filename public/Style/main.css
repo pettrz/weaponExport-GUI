@@ -137,7 +137,7 @@ input:focus::-webkit-input-placeholder
     background-color: #2c2a2a;
 }
 
-#introHeader{
+.introHeader{
     padding-bottom: 10px;
     padding-top: 30px;
 }
@@ -543,4 +543,46 @@ padding: 15px;
 
 #participants-info-display{
     display:none;
+}
+
+#logoInfo{
+    height: 340px;
+    overflow: auto;
+    padding: 0;
+    position: relative;
+    text-align: left;
+ }
+ 
+ #logoInfo #info{
+    padding: 20px;
+ }
+
+ #logoLinks{
+    font-weight: normal;
+    line-height: 100%;
+    word-wrap: break-word;
+}
+#participant-link{
+    padding: 15px;
+}
+
+#logo-info{
+    white-space: pre-wrap;
+}
+#logo-infobox{
+    padding-top: 20px;
+}
+
+.readMore{
+    padding-bottom: 10px;
+}
+
+#infoboxImg img{
+    height: 50px;
+}
+
+#infoboxImg{
+    background-color:  white;
+    padding:15px;
+    border-radius: 3px;
 }

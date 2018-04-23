@@ -5,9 +5,8 @@
     </div>
      
     <div id="infobox-before" class="col-md-12 col-lg-4">
-        <div class="row mx-auto"> 
-            <div id="chart-intro-text">
-                <div id="introHeader2" class="col-xs-5 col-sm-5 col-md-5 col-lg-12"> 
+        <div id="chart-intro-text" class="row mx-auto"> 
+                <div id="introHeader2" class="col-sm-5 col-md-5 col-lg-12"> 
                     <div class="col-sm-12">
                             <img src="./../Style/icons/svenska_freds-logo.png" />
                     </div>          
@@ -15,7 +14,7 @@
                         <h3>Statistik vapenexport</h3>
                     </div>
                 </div>
-                <div class="introText2" class="col-xs-7 col-sm-7 col-md-7 col-lg-12"> 
+                <div class="introText2 col-sm-7 col-md-7 col-lg-12"> 
                     <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.<br/><br/>
                         Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för valfritt årtal i
                         kurvan och läs mer om det aktuella årets vapenexport. Värdet på vapenexporten mäts i miljarder kronor.<br/>
@@ -24,13 +23,13 @@
                         Sipri Arms Transfers Database <br/>
                         Svenska Freds- och Skiljedomsföreningen
                     </p>
-                
                 </div>
             </div>
+                
             <div id="viewmodel-statistics"> 
                 <div id="chart-info-display">
                     <div class="row mx-auto">
-                        <div id="stats-header" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">             
+                        <div id="stats-header" class="col-xs-5 col-sm-5  col-lg-12">             
                             <h3 id="stat-year"></h3>
                         </div>
 
@@ -47,11 +46,18 @@
                     
                     <div id="stat-infobox">
                         <div id="statsInfo" class="col-sm-12">
-                            <div id="stat-info" class="col-sm-12">
-                                    
+
+                            <!-- Displays infotext -->
+                            <div id="stat-info" class="col-sm-12">      
                             </div>
+
+                            <!-- Displays links -->
                             <div id="statistik-link">
-                                <p>Läs mer</p>
+                                <div class="readMore">
+                                    <h6>Läs mer</h6>
+                                </div>
+
+                                <!-- Searches through list -> displays depending on title or link -->
                                 <div id="statLinks" data-bind="foreach: linksStats"> 
                                     <div data-bind="if:statLink">
                                     <p>
@@ -63,13 +69,9 @@
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
-                        
                     </div>
-                    
                     </div>   
                 </div>
             </div>
         </div> 
-    </div>
