@@ -113,6 +113,7 @@ function CreateStatistic(request) {
                 text: 'Svensk vapenexportsumma',
                 fontColor: 'white',
                 fontSize: 16,
+                horizontalAlign: "center",
             },
             hover: {
                 
