@@ -2,7 +2,7 @@
 <div id="inner-wrapper" class="col-lg-8">
     <!--map-->
    <div id="world-map"></div>
-   <!--map end-->
+   <!--map ends-->
 </div>
 <!--startpage infobox-->
 <div id="infobox-before" class="col-md-12 col-lg-4">
@@ -18,7 +18,7 @@
             <h3>Vapenexportkartan</h3>
          </div>
       </div>
-      <!--startpage infobox logo and title end-->
+      <!--startpage infobox logo and title ends-->
 
       <!--startpage infobox text-->
       <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
@@ -30,23 +30,23 @@
       </div>
    </div>
 </div>
-<!--startpage infobox end-->
+<!--startpage infobox ends-->
 
 <!--viewmodel for map-->
 <div id="viewmodel-map" class="col-sm-12 col-md-12 col-lg-4">
         <div class="row mx-auto no-gutters">
-            <!--countryflag and countryname in infobox-->
+            <!--Header in infobox-->
             <div id="countryHeader" class="col-xs-5 col-sm-5  col-lg-12">
                 <div class="col-md-12">
-                    <!--countryflag-->
+                    <!--countryflag in header-->
                     <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
                 </div>
                 <div class="col-md-12">
-                    <!--countryname-->
+                    <!--countryname in header-->
                     <h3 data-bind="text: selectedCountry().country"></h3>
                 </div>
             </div>
-            <!--countryflag and countryname in infobox end-->
+            <!--Header in infobox ends-->
 
             <!--countrydata Freedom House and GPI-->
             <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
@@ -61,7 +61,7 @@
                     <!--Freedom House Status-->
                     <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                 </div>
-                 <!--tooltip for Freedom House end-->
+                 <!--tooltip for Freedom House ends-->
 
                  <!--GPI-->
                  <!--tooltip for GPI-->
@@ -71,32 +71,51 @@
                     <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
                     Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">
                     Se Vision of Humanitys webbsida</a></span>
+                    <!--GPI ranking-->
                     <span class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo"></span>
                 </div>
+                <!--tooltip for GPI ends-->
             </div>
-            <!--countrydata Freedom House and GPI end-->
+            <!--countrydata Freedom House and GPI ends-->
 
+            <!--country infotext-->
             <div id="countryInfo" class="overflow-fade col-sm-12">
+                <!--text-->
                 <div id="info" class="col-sm-12" data-bind="text: mapInfo">
                 </div>
+                <!--text ends-->
+
+                <!--read more section for links-->
                 <div class="col-sm-12">
                     <div class="readMore">
                         <h6>Läs mer</h6>
                     </div>
+                    <!--links-->
                     <div id="links" data-bind="foreach: linksInfo"> 
+                        <!--links with titles-->
                         <div data-bind="if:link">
                         <p>
                             <a data-bind="attr: { href: link }, text: title" target="_blank"></a>
                         </p>
-                        </div>    
+                        </div>
+                        <!--links with titles ends-->
+
+                        <!--only titles-->
                         <div data-bind="if:!link">
                             <p data-bind="text: title"></p>
                         </div>
+                        <!--only titles ends-->
                     </div>
+                    <!--links ends-->
                 </div>
+                <!--read more section for links ends-->
             </div>
+            <!--country infotext ends-->
+
+            <!--read more button in infobox-->
             <div id="countryReadMore" class="col-sm-12">
                 <button height="270px" onclick="changeSize()" id="btnInfo" class="buttonInfo" type="button" data-toggle="collapse" data-target="#countryData">Läs mer</button>
             </div>
+            <!--read more button in infobox ends-->
         </div>
 </div>
