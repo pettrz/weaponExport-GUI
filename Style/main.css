@@ -16,8 +16,6 @@ html,body {
     scrollbar-face-color: white;
     scrollbar-arrow-color: white;
     scrollbar-track-color: #2c2a2a;
-
- 
 }
 
 .no-gutter > [class*='col-'] {
@@ -33,15 +31,14 @@ html,body {
     padding: 0;
 }
 
-
 /*Dropdown in navbar*/
 #dropdown-wrapper{
     position: absolute;
     top: 8px;
     right: 0;
-    padding-right: 16px;
-    
+    padding-right: 16px;  
 }
+
 #dropdown-wrapper input{
     margin: 0 !important;
     width: 200px;
@@ -73,6 +70,7 @@ input:focus::-webkit-input-placeholder
     padding: 0;
     max-height: 250px;
 }
+
 /*main content*/
 #inner-wrapper{
     height: 600px;
@@ -106,8 +104,8 @@ input:focus::-webkit-input-placeholder
     background-color: rgba(0, 0, 0, 0.55);
     padding-bottom: 20px;
     text-align: left;
-
 }
+
 .jvectormap-legend-cnt-v{
     bottom: 28px;
     left: 28px;
@@ -120,6 +118,7 @@ input:focus::-webkit-input-placeholder
     padding-left: 10px;
     font-size:14px;
 }
+
 .jvectormap-legend-cnt-v .jvectormap-legend-tick-sample{
     width:25px;
     height:25px;
