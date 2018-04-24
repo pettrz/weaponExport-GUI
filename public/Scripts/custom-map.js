@@ -1,31 +1,31 @@
-
 var FHstatus = {};
 
+//define request to get mapcontent from database with api
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
 
     var xhttpCountries = JSON.parse(xhttp.response);  
     
+    //creates countrylist from database
     for (var i = 0; i < xhttpCountries.length; i++) {  
       countryList.push(xhttpCountries[i]);
       FHstatus[xhttpCountries[i].code] = xhttpCountries[i].FHstatus;
-      if(countryList()[i].code=='SE'){
-        selectedCountry(countryList()[i]);
-      }
     }
     
+    //runs map function
     CreateMapFreedom();
 }}
 xhttp.open('GET', 'http://localhost:1137/map', true);
 xhttp.send();
 
+//viewmodel for map
+//viewmodel for statistics - creates variables for clicked element
 function viewModelMap() {
   self = this;
   self.countryList = ko.observableArray();
   self.selectedCountry = ko.observable({code:''});
 
-  self.searchTerm = ko.observable("");
   self.mapFlag = ko.computed(function(){
     return 'flag-icon flag-icon-' + self.selectedCountry().code.toLowerCase()
   });
@@ -41,20 +41,18 @@ function viewModelMap() {
   self.mapInfo = ko.computed(function(){
     return self.selectedCountry().info
   });
-  
-
-
 }
+//sends map viewmodel to map
 ko.applyBindings(viewModelMap, document.getElementById("map"));
 
+//viewmodel for searchbox
 function viewModelSearch() {
-
-  
-  self.showList = function(){
+    self.searchTerm = ko.observable("");
+    self.showList = function(){
     if (self.searchTerm() == '') {
-      
       console.log('all countries returned')
-    
+      
+      //sorts countrylist in alphabetical order
       countryList().sort(function(a, b) { 
         var countryA = a.country.toUpperCase();
         var countryB = b.country.toUpperCase();
@@ -65,30 +63,32 @@ function viewModelSearch() {
           return 1;
         }
       });
-      
       return self.countryList();
-    } else {
-      var countries = [];
-      for (i = 0; i < countryList().length; i++) {
-        if (countryList()[i].country.toUpperCase().includes(searchTerm().toUpperCase())) {
-          countries[i] = countryList()[i];
-          countries = countries.filter(function(n){ return n != undefined });
+      } else {
+        var countries = [];
+        //compares search with countrylist
+        for (i = 0; i < countryList().length; i++) {
+          if (countryList()[i].country.toUpperCase().includes(searchTerm().toUpperCase())) {
+            countries[i] = countryList()[i];
+            countries = countries.filter(function(n){ return n != undefined });
+          }
+        }
+        //returns countries
+        if (countries.length == 0) {
+          console.log('no match in list')
+          return [{country: "Inget resultat hittades."}]
+        } else {
+          console.log('returned matches in list')
+          return countries;
         }
       }
-      if (countries.length == 0) {
-        console.log('no match in list')
-        return [{country: "Inget resultat hittades."}]
-      } else {
-        console.log('returned matches in list')
-        return countries;
-      }
-    }
-  };
-  
+  }; 
 }
 
+//sends search viewmodel to dropdown-wrapper
 ko.applyBindings(viewModelSearch, document.getElementById("dropdown-wrapper"));
 
+//creates worldmap
 var $container = $('#world-map');
 function CreateMapFreedom() {
   var map = $(function(){
@@ -108,10 +108,12 @@ function CreateMapFreedom() {
               title: 'Demokratisk status',
               vertical: true,
         }}]},
+        //hover over country
         onRegionOver: function(e, code) {
           if (!(code in FHstatus))
             e.preventDefault();
         },
+        //tooltip for country
         onRegionTipShow: function(e, el, code){
           if (!(code in FHstatus))
             e.preventDefault();
@@ -123,6 +125,7 @@ function CreateMapFreedom() {
             }
           }
         },
+        //click on country
         onRegionClick: function(e, code) {
             for (i=0; i < countryList().length; i++)  {
               if(countryList()[i].code == code) {
@@ -139,9 +142,8 @@ function CreateMapFreedom() {
   });
 }
 
-//Read more button - changing content on click
+//read more button - changing content on click
 var expanded = false;
-
     function changeSize(){
         if(!expanded){
             document.getElementById('countryInfo').style.height = '390px';
@@ -157,18 +159,17 @@ var expanded = false;
             document.getElementById('countryInfo').classList.add("overflow-fade");   
             document.getElementById('btnInfo').innerHTML='Läs mer';  
             document.getElementById('info').style.paddingRight='20px';  
-
             expanded = false;       
     }
 }
 
-  //Cooldown on button
+  //cooldown on button
   $(".buttonInfo").on("click", function() {
-    
+    //on country click scrolls to top
     $("#countryInfo").scrollTop(0);
 
     $(".buttonInfo").toggleClass("btnDisabled")
-    
+    //disable
     setTimeout(function(){
       $(".buttonInfo").toggleClass("btnDisabled")
     }, 350); 
