@@ -33,6 +33,7 @@
     <body lang="sv">
         <div id="wrapper">
             <div class="container">
+                <!--navbar-->
                 <div id="navbar-wrapper" class="col-sm-12 col-md-12 col-lg-12">
                     <nav class=" col-lg-8 navbar navbar-expand-md navbar-dark">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -40,6 +41,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="nav navbar-nav mr-auto">
+                                <!--navbar item-->
                                 <li class="nav-item"> <a class="nav-link active show" href="#map" data-toggle="tab">Vapenexportkarta</a>
                                 </li>
                                 <li class="nav-item"> <a class="nav-link" href="#stats" data-toggle="tab">Statistik</a>
@@ -50,12 +52,14 @@
                                 </li>
                             </ul>
                         </div>
+                        <!--searchbox-->
                         <div id="dropdown-wrapper">
                             <form class="form-inline">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Sök land..."
                                 aria-label="Search" data-target="#dropdownContent" data-toggle="dropdown"
                                 data-bind="value: searchTerm, valueUpdate: 'keyup'">
                             </form>
+                            <!--searchcontent-->
                             <div id="dropdownContent" class="dropdown-menu dropdown-menu-right ml-auto "
                             aria-labelledby="navbarDropdown">
                                 <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="changeInfobox()" data-bind="text: country, click: selectedCountry"></a>
@@ -380,8 +384,8 @@
                     <div id="about" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutters">
                             <div id="inner-wrapper" class="col-md-12 col-lg-8">
-                                <!-- Main content -->
                                 <div id="about-map">
+                                    <!--main text-->
                                     <div id="about-header">
                                          <h2>Om kartan</h2>
                                     </div>
@@ -405,10 +409,11 @@
                                         <br/>Värdet av krigsmaterielexporten anges i löpande priser.</p>
                                 </div>
                             </div>
+                            <!--startpage infobox-->
                             <div id="infobox-before" class="col-md-12 col-lg-4">
                                 <div class="row mx-auto">
                                     <div class="introHeader col-sm-5 col-md-5 col-lg-12">
-                                        <!-- intro header -->
+                                        <!--startpage header -->
                                         <div class="col-sm-12">
                                             <img src="./../Style/icons/svenska_freds-logo.png" />
                                         </div>
@@ -416,8 +421,8 @@
                                              <h3>Om produktionen</h3>
                                         </div>
                                     </div>
+                                    <!-- startpage infobox text -->
                                     <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                                        <!-- intro text -->
                                         <p>Kartan har framställts av Team Chaos bestående av Viola Turesson, Petter
                                             Knutsson, Jenny Miderkvist och Joakim Linna, 2018, baserat på en förlaga
                                             av Elias Kukkola Settervik och Gustav Hultgren Svensson 2014.
@@ -429,6 +434,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--startpage infobox ends-->
                         </div>
                     </div>
                 </div>

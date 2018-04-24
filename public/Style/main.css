@@ -22,7 +22,7 @@ html,body {
     min-height: 50px;
     padding: 0;
 }
-/*Dropdown in navbar*/
+/*searchbox in navbar*/
 #dropdown-wrapper{
     position: absolute;
     top: 8px;
