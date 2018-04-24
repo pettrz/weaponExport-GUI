@@ -7,22 +7,21 @@ xhttpLogos.onreadystatechange = function() {
 
     var xhttpLogosList = JSON.parse(xhttpLogos.response);
 
+    //Creates logosList from database
     for (var i = 0; i < xhttpLogosList.length; i++) {  
         logosList.push(xhttpLogosList[i]);
-
-        //Outprints all titles of participants
-        //  console.log(logosList()[i].participantTitle)
     }
     
-    //Creates function for all images
+    //Runs images function
     CreateLogos(xhttpLogosList);
     }
 }
 
+//Sends correct data from database
 xhttpLogos.open('GET', 'http://localhost:1137/participants', true);
 xhttpLogos.send();
 
-//Creates lists and variables from database
+//Viewmodel for statistics - creates variables for clicked element
 function viewModelLogo() {
     self = this;
     self.logosList = ko.observableArray();
@@ -40,31 +39,29 @@ function viewModelLogo() {
     self.linksLogos = ko.computed(function(){
         return self.selectedLogo().logoLinks
     });
-    
    }
   //Applies viewModel for participants.html
    ko.applyBindings(viewModelLogo, document.getElementById("participants"));
 
-function CreateLogos(request){
 
+function CreateLogos(request){
+    
     //Creates an array for each variable
     var participantTitle = [];
     var img = [];
     
+    //Creates all participant titles and imgs from database
     for (i = 0; i < request.length; i++) {
         participantTitle[i] = request[i].participantTitle.toString();
         img[i] = request[i].img;
-
-        // console.log(participantTitle[i])
-        // console.log(img[i])
     }
-
 }
 
-//Function runs when image is clicked
+
+//Handles click event when a image is clicked
 function openInfobox(el){
 
-    //Assigns varibles
+    //Assigns variables for infoboxes - introbox/infobox
     var introBox = jQuery('#participants-intro-text');
     var infoBox = jQuery('#participants-info-display');
 
@@ -72,20 +69,18 @@ function openInfobox(el){
     introBox.hide();
     infoBox.show();
 
+    // Scroll to top animation onclick
     $("#logoInfo").animate({
         scrollTop: 0
     }, 200);
 
     var image = el;
-    // console.log(image);
-
     var attribute = image.getAttribute("src");
-    // console.log(attribute);
 
+    //Creates selectedLogo for clicked image
     for(var i=0; i<logosList().length; i++){
         if(logosList()[i].img==attribute){
             selectedLogo(logosList()[i]);
-            // console.log(selectedLogo());
             return;
         }
     }

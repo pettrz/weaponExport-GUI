@@ -274,14 +274,14 @@
                     </div>
                     <div id="participants" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutters">
+                            <!-- Main content -->
                             <div id="inner-wrapper" class="col-lg-8">
-                                <!-- Main content -->
-                                <!-- Prints out all images from list -->
                                 <div class="container h-100">
                                     <div id="pLogos" class="row mx-auto h-100 justify-content-around">
                                         <!-- ko foreach: logosList() -->
                                         <div class="col-sm-6 col-md-4 tooltipImg pLogo-col">
                                             <div class="row">
+                                                <!-- Displays images with titles -->
                                                 <div class="col-sm-12">
                                                     <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt="" />
                                                 </div>
@@ -292,9 +292,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Infobox displays before click -->
+                            <!-- Main content ends -->
+                            <!-- Displays infobox -->
                             <div id="infobox-before" class="col-md-12 col-lg-4">
+                                <!-- Startpage infobox -->
                                 <div id="participants-intro-text" class="row mx-auto">
+                                    <!-- Header: Logo and title -->
                                     <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
                                         <div class="col-sm-12">
                                             <img src="./../Style/icons/svenska_freds-logo.png" />
@@ -303,6 +306,7 @@
                                              <h3>Aktörer</h3>
                                         </div>
                                     </div>
+                                    <!-- Content: introduction text -->
                                     <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
                                         <p>Klicka på de olika aktörerna för att lära dig mer om hur den svenska vapenexporten
                                             fungerar och vilka som är huvudaktörerna. Du kan också läsa mer om vad
@@ -311,16 +315,20 @@
                                         </p>
                                     </div>
                                 </div>
-                                <!-- Infobox displays after click -->
+                                <!-- Startpage infobox ends -->
+                                <!-- Viewmodel-participants infobox (sends correct data) -->
                                 <div id="viewmodel-participants">
+                                    <!-- Displays content for infobox when image is clicked -->
                                     <div id="participants-info-display">
                                         <div class="row mx-auto justify-content-center">
+                                            <!-- Header: Logo and title -->
                                             <div id="infoboxImg" class="col-md-7">
                                                 <img data-bind="attr:{src: selectedLogo().img}" alt="" />
                                             </div>
                                             <div id="logos-header" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">
                                                  <h3 data-bind="text: titleInfo"></h3>
                                             </div>
+                                            <!-- Content: information text -->
                                             <div id="logo-infobox">
                                                 <div id="logoInfo" class="col-sm-12">
                                                     <!-- Displays infotext -->
@@ -345,41 +353,12 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Infobox onclick ends -->
                                 </div>
+                                <!-- Viewmodel-statistics infobox ends -->
                             </div>
-                            <!-- <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
-
-        <div class="row mx-auto">
-
-            <div id="countryHeader" class="col-sm-5 col-md-12">
-
-         
-
-            </div>
-
-            <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
-
-               
-
-            </div>
-
-            <div id="countryInfo" class="overflow-fade col-sm-12">
-
-             
-
-            </div>
-
-              
-
-           <div id="countryReadMore" class="col-sm-12">
-
-          
-
-           </div>
-
-        </div>
-
-    </div> --></div>
+                            <!-- Infobox ends -->
+                        </div>
                     </div>
                     <div id="about" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutters">

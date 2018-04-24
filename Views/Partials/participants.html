@@ -1,115 +1,101 @@
-    <div id="inner-wrapper" class="col-lg-8">
-            <!-- Main content -->
+<!-- Main content -->
+<div id="inner-wrapper" class="col-lg-8">
+        
+        <div class="container h-100">
+            <div id="pLogos" class="row mx-auto h-100 justify-content-around"> 
+                 
+                <!-- ko foreach: logosList() -->
+                    <div  class="col-sm-6 col-md-4 tooltipImg pLogo-col">
+                        <div class="row">
 
-            <!-- Prints out all images from list -->
-            
-            <div class="container h-100">
-                <div id="pLogos" class="row mx-auto h-100 justify-content-around">  
-                    <!-- ko foreach: logosList() -->
-                        <div  class="col-sm-6 col-md-4 tooltipImg pLogo-col">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt=""/>
-                                </div>
-                                <div  class="col-sm-12 pTitle" data-bind="text: participantTitle">
-                                </div>  
+                            <!-- Displays images with titles -->
+                            <div class="col-sm-12">
+                                <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt=""/>
                             </div>
-                        </div>
-                    <!-- /ko -->
-                        
-    
-
-                </div>
-            </div>
-            
-            
-    </div>
-     
-    <!-- Infobox displays before click -->
-    <div id="infobox-before" class="col-md-12 col-lg-4">
-        <div id="participants-intro-text" class="row mx-auto">
-          
-                <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
-                    <div class="col-sm-12">
-                        <img src="./../Style/icons/svenska_freds-logo.png" />
-                    </div>          
-                    <div class="col-sm-12" id="logo-padding2">             
-                        <h3>Aktörer</h3>
-                    </div>
-                </div>
-                <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                    <p>Klicka på de olika aktörerna för att lära dig mer om hur den svenska vapenexporten fungerar och vilka som är huvudaktörerna. 
-                    Du kan också läsa mer om vad du som privatperson kan göra för att ta avstånd från vapenindustrin.<br/>
-                </p>
-                </div>
-            
-        </div>
-        <!-- Infobox displays after click -->
-        <div id="viewmodel-participants"> 
-            <div id="participants-info-display">
-                <div class="row mx-auto justify-content-center">
-
-
-                    <div id="infoboxImg" class="col-md-7">
-                        <img data-bind="attr:{src: selectedLogo().img}" alt=""/>
-                      
-                    </div>
-
-
-
-                    <div id="logos-header" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">             
-                        <h3 data-bind="text: titleInfo"></h3>
-                    </div>
-                
-                    <div id="logo-infobox">
-                        <div id="logoInfo" class="col-sm-12">
-
-                            <!-- Displays infotext -->
-                            <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"> 
-                            </div>
-
-                            <!-- Displays links -->
-                            <div id="participant-link">
-                                <div class="readMore">
-                                    <h6>Läs mer</h6>
-                                </div>
-
-                                <!-- Searches through list -> displays depending on title or link -->
-                                <div id="logoLinks" data-bind="foreach: linksLogos"> 
-                                    <div data-bind="if:logoLink">
-                                    <p>
-                                        <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
-                                    </p>
-                                    </div>    
-                                    <div data-bind="if:!logoLink">
-                                        <p data-bind="text: logoTitle"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <div  class="col-sm-12 pTitle" data-bind="text: participantTitle">
+                            </div>  
                         </div>
                     </div>
-                
-                </div>   
+                <!-- /ko -->
             </div>
         </div>
+</div>
+<!-- Main content ends -->
+     
+ <!-- Displays infobox -->
+<div id="infobox-before" class="col-md-12 col-lg-4">
+
+    <!-- Startpage infobox -->
+    <div id="participants-intro-text" class="row mx-auto">
+
+            <!-- Header: Logo and title -->
+            <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
+                <div class="col-sm-12">
+                    <img src="./../Style/icons/svenska_freds-logo.png" />
+                </div>          
+                <div class="col-sm-12" id="logo-padding2">             
+                    <h3>Aktörer</h3>
+                </div>
+            </div>
+
+            <!-- Content: introduction text -->
+            <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                <p>Klicka på de olika aktörerna för att lära dig mer om hur den svenska vapenexporten fungerar och vilka som är huvudaktörerna. 
+                Du kan också läsa mer om vad du som privatperson kan göra för att ta avstånd från vapenindustrin.<br/></p>
+            </div>
+    </div>
+    <!-- Startpage infobox ends -->
+
+    <!-- Viewmodel-participants infobox (sends correct data) -->
+    <div id="viewmodel-participants"> 
+
+        <!-- Displays content for infobox when image is clicked -->
+        <div id="participants-info-display">
+            <div class="row mx-auto justify-content-center">
+
+                <!-- Header: Logo and title -->
+                <div id="infoboxImg" class="col-md-7">
+                    <img data-bind="attr:{src: selectedLogo().img}" alt=""/>
+                    
+                </div>
+                <div id="logos-header" class="col-xs-5 col-sm-5 col-md-0 col-lg-12">             
+                    <h3 data-bind="text: titleInfo"></h3>
+                </div>
+            
+                <!-- Content: information text -->
+                <div id="logo-infobox">
+                    <div id="logoInfo" class="col-sm-12">
+
+                        <!-- Displays infotext -->
+                        <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"> 
+                        </div>
+
+                        <!-- Displays links -->
+                        <div id="participant-link">
+                            <div class="readMore">
+                                <h6>Läs mer</h6>
+                            </div>
+
+                            <!-- Searches through list -> displays depending on title or link -->
+                            <div id="logoLinks" data-bind="foreach: linksLogos"> 
+                                <div data-bind="if:logoLink">
+                                <p>
+                                    <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
+                                </p>
+                                </div>    
+                                <div data-bind="if:!logoLink">
+                                    <p data-bind="text: logoTitle"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <!-- Infobox onclick ends -->
 
     </div>
-     
-    <!-- <div id="infobox-after" class="col-sm-12 col-md-12 col-lg-4">
-        <div class="row mx-auto">
-            <div id="countryHeader" class="col-sm-5 col-md-12">
-         
-            </div>
-            <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
-               
-            </div>
-            <div id="countryInfo" class="overflow-fade col-sm-12">
-             
-            </div>
-              
-           <div id="countryReadMore" class="col-sm-12">
-          
-           </div>
-        </div>
-    </div> -->
+    <!-- Viewmodel-statistics infobox ends -->
+
+</div>
+<!-- Infobox ends -->
