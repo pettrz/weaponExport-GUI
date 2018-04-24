@@ -157,7 +157,7 @@
                                         <div id="info" class="col-sm-12" data-bind="text: mapInfo"></div>
                                         <!--read more section for links-->
                                         <div class="col-sm-12">
-                                            <div class="readMore">
+                                            <div data-bind="if:checkLinksMap()" class="readMore">
                                                  <h6>Läs mer</h6>
                                             </div>
                                             <div id="links" data-bind="foreach: linksInfo">
@@ -246,7 +246,7 @@
                                                     <div id="stat-info" class="col-sm-12"></div>
                                                     <!-- Displays links -->
                                                     <div id="statistik-link">
-                                                        <div class="readMore">
+                                                        <div data-bind="if:checkLinksStats()" class="readMore">
                                                              <h6>Läs mer</h6>
                                                         </div>
                                                         <!-- Searches through list -> displays depending on title or link -->
@@ -335,7 +335,7 @@
                                                     <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"></div>
                                                     <!-- Displays links -->
                                                     <div id="participant-link">
-                                                        <div class="readMore">
+                                                        <div data-bind="if:checkLinksParticipants()" class="readMore">
                                                              <h6>Läs mer</h6>
                                                         </div>
                                                         <!-- Searches through list -> displays depending on title or link -->

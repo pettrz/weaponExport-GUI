@@ -39,10 +39,28 @@ function viewModelLogo() {
     self.linksLogos = ko.computed(function(){
         return self.selectedLogo().logoLinks
     });
-   }
-  //Applies viewModel for participants.html
-   ko.applyBindings(viewModelLogo, document.getElementById("participants"));
+}
+//Applies viewModel for participants.html
+ko.applyBindings(viewModelLogo, document.getElementById("participants"));
 
+//Checks if selectedCountry contains links - returns readMore depending on content
+function checkLinksParticipants(){
+    if(linksLogos()!=undefined){
+      if(linksLogos().length==1){
+        if(linksLogos()[0].logoLink=="" && linksLogos()[0].logoTitle==""){
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        return true;
+      }
+  
+    }
+    else{
+      return false;
+    }
+  }
 
 function CreateLogos(request){
     
