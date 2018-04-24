@@ -129,7 +129,7 @@ input:focus::-webkit-input-placeholder
     background-color: #2c2a2a;
 }
 
-/*startpage infoboxheader logo and title*/
+/*startpage header*/
 .introHeader{
     padding-bottom: 10px;
     padding-top: 30px;
@@ -153,19 +153,19 @@ input:focus::-webkit-input-placeholder
     padding-bottom: 20px;
 }
 
-/*countryflag in header*/
+/*countryflag*/
 #flag{
     height: 4em; 
     width: 5em; 
 }
 
-/*countrydata Freedom House and GPI*/
+/*countrydata*/
 #countryData {
     background-color: #3a3a3a;
 }
 
 /*tooltips for data in header*/
-/*tooltip for Freedom House*/
+/*Freedom House*/
 #tooltipFH .tooltiptext {
     visibility: hidden;
     padding:5px;
@@ -185,9 +185,8 @@ input:focus::-webkit-input-placeholder
 #tooltipFH:hover .tooltiptext {
     visibility: visible;
 }
-/*tooltip for Freedom House ends*/
 
-/*tooltip for GPI*/
+/*GPI*/
 #tooltipGpi .tooltiptext {
     visibility: hidden;
     background-color: #f2f2f2;
@@ -207,7 +206,7 @@ input:focus::-webkit-input-placeholder
 #tooltipGpi:hover .tooltiptext {
     visibility: visible;
 }
-/*tooltip for GPI ends*/
+/*tooltips ends*/
 
 .data-col{
     padding: 13px 15px 13px 15px;
