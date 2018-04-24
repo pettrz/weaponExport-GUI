@@ -1,34 +1,49 @@
+    <!-- Displays chart -->
     <div id="inner-wrapper" class="col-lg-8">
             <div class="chart-container">
                     <canvas id="myChart"></canvas>
             </div>
     </div>
      
+    <!-- Displays infobox -->
     <div id="infobox-before" class="col-md-12 col-lg-4">
+
+        <!-- Startpage infobox -->
         <div id="chart-intro-text" class="row mx-auto"> 
-                <div id="introHeader2" class="col-sm-5 col-md-5 col-lg-12"> 
-                    <div class="col-sm-12">
-                            <img src="./../Style/icons/svenska_freds-logo.png" />
-                    </div>          
-                    <div class="col-sm-12" id="logo-padding2">             
-                        <h3>Statistik vapenexport</h3>
-                    </div>
-                </div>
-                <div class="introText2 col-sm-7 col-md-7 col-lg-12"> 
-                    <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.<br/><br/>
-                        Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för valfritt årtal i
-                        kurvan och läs mer om det aktuella årets vapenexport. Värdet på vapenexporten mäts i miljarder kronor.<br/>
-                    </p>
+
+            <!-- Header: Logo and title -->
+            <div id="introHeader2" class="col-sm-5 col-md-5 col-lg-12"> 
+                <div class="col-sm-12">
+                        <img src="./../Style/icons/svenska_freds-logo.png" />
+                </div>          
+                <div class="col-sm-12" id="logo-padding2">             
+                    <h3>Statistik vapenexport</h3>
                 </div>
             </div>
-                
+
+            <!-- Content: introduction text -->
+            <div class="introText2 col-sm-7 col-md-7 col-lg-12"> 
+                <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.<br/><br/>
+                    Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för valfritt årtal i
+                    kurvan och läs mer om det aktuella årets vapenexport. Värdet på vapenexporten mäts i miljarder kronor.<br/>
+                </p>
+            </div>
+        </div>
+        <!-- Startpage infobox ends -->
+            
+            <!-- Viewmodel-statistics infobox (sends correct data) -->
             <div id="viewmodel-statistics"> 
+
+                <!-- Displays content for infobox when chart is clicked -->
                 <div id="chart-info-display">
                     <div class="row mx-auto">
+
+                        <!-- Statistics title -->
                         <div id="stats-header" class="col-xs-5 col-sm-5  col-lg-12">             
                             <h3 id="stat-year"></h3>
                         </div>
 
+                        <!-- Icons and associated data -->
                         <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
                             <div class="data-col col-sm-12">
                                 <img src="./../Style/icons/vapen-icon.png" style="padding-right: 10px" height="37px" width="37px"> Vapenexport (mdr/kr):
@@ -39,35 +54,46 @@
                                 <div id="stat-flag" class="flag-icon columnInfo" data-bind="css: statFlag()"></div>
                             </div>
                         </div>
-                    
-                    <div id="stat-infobox">
-                        <div id="statsInfo" class="col-sm-12">
+                        
+                        <!-- Content: textbox -->
+                        <div id="stat-infobox">
+                            <div id="statsInfo" class="col-sm-12">
 
-                            <!-- Displays infotext -->
-                            <div id="stat-info" class="col-sm-12">      
-                            </div>
-
-                            <!-- Displays links -->
-                            <div id="statistik-link">
-                                <div class="readMore">
-                                    <h6>Läs mer</h6>
+                                <!-- Displays information text -->
+                                <div id="stat-info" class="col-sm-12">      
                                 </div>
 
-                                <!-- Searches through list -> displays depending on title or link -->
-                                <div id="statLinks" data-bind="foreach: linksStats"> 
-                                    <div data-bind="if:statLink">
-                                    <p>
-                                        <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
-                                    </p>
-                                    </div>    
-                                    <div data-bind="if:!statLink">
-                                        <p data-bind="text: statTitle"></p>
+                                <!-- Displays links -->
+                                <div id="statistik-link">
+                                    <div class="readMore">
+                                        <h6>Läs mer</h6>
+                                    </div>
+
+                                    <!-- Searches through list -> displays depending on title or link -->
+                                    <div id="statLinks" data-bind="foreach: linksStats"> 
+
+                                        <!-- Title on link -->
+                                        <div data-bind="if:statLink">
+                                            <p>
+                                                <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
+                                            </p>
+                                        </div>   
+
+                                        <!-- Title without link -->
+                                        <div data-bind="if:!statLink">
+                                            <p data-bind="text: statTitle"></p>
+                                        </div>
+
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
-                    </div>
+
                     </div>   
                 </div>
             </div>
+            <!-- Viewmodel-statistics infobox ends -->
         </div> 
+        <!-- Infobox ends -->

@@ -175,7 +175,7 @@ var expanded = false;
     }, 350);   
   });
 
-//responsive design
+//responsive infobox toggling
 $(window).resize(function(){
  var width = $(window).width();
 if(width <= 992){
