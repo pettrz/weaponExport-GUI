@@ -84,9 +84,11 @@
 
                 <!--read more section for links-->
                 <div class="col-sm-12">
-                    <div class="readMore">
-                        <h6>Läs mer</h6>
-                    </div>
+
+                        <div data-bind="if:checkLinksMap()" class="readMore">
+                                <h6>Läs mer</h6>
+                        </div>
+                    
 
                     <div id="links" data-bind="foreach: linksInfo"> 
                         <!--links with titles-->
@@ -94,7 +96,7 @@
                             <p>
                                 <a data-bind="attr: { href: link }, text: title" target="_blank"></a>
                             </p>
-                        </div>
+                         </div>
 
                         <!--only titles-->
                         <div data-bind="if:!link">

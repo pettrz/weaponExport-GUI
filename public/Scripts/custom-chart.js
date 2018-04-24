@@ -39,6 +39,25 @@ function viewModelStats() {
 //Sends viewmodelstats to statistics 
 ko.applyBindings(viewModelStats, document.getElementById("stats"));
 
+//Checks if selectedCountry contains links - returns readMore depending on content
+function checkLinksStats(){
+    if(linksStats()!=undefined){
+      if(linksStats().length==1){
+        if(linksStats()[0].statLink=="" && linksStats()[0].statTitle==""){
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        return true;
+      }
+  
+    }
+    else{
+      return false;
+    }
+  }
+
 //Creates chart and variables
 function CreateStatistic(request) {
     var years = [];

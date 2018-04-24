@@ -144,6 +144,7 @@ function CreateMapFreedom() {
 
 //read more button - changing content on click
 var expanded = false;
+
     function changeSize(){
         if(!expanded){
             document.getElementById('countryInfo').style.height = '390px';
@@ -152,8 +153,7 @@ var expanded = false;
             document.getElementById('btnInfo').innerHTML='Visa mindre'; 
             document.getElementById('info').style.paddingRight='12px';  
             expanded = true;
-         } 
-         else {
+         } else {
             document.getElementById('countryInfo').style.height = '270px';
             document.getElementById('countryInfo').style.overflow = 'hidden';
             document.getElementById('countryInfo').classList.add("overflow-fade");   
@@ -163,17 +163,36 @@ var expanded = false;
     }
 }
 
-  //cooldown on button
-  $(".buttonInfo").on("click", function() {
-    //on country click scrolls to top
-    $("#countryInfo").scrollTop(0);
-    //disable button
+//Checks if selectedCountry contains links - returns readMore depending on content
+function checkLinksMap(){
+  if(linksInfo()!=undefined){
+    if(linksInfo().length==1){
+      if(linksInfo()[0].link=="" && linksInfo()[0].title==""){
+        return false;
+      } else {
+        return true;
+      }
+    } else {
+      return true;
+    }
+
+  }
+  else{
+    return false;
+  }
+}
+
+//cooldown on button
+$(".buttonInfo").on("click", function() {
+  //on country click scrolls to top
+  $("#countryInfo").scrollTop(0);
+  //disable button
+  $(".buttonInfo").toggleClass("btnDisabled")
+  //enable button
+  setTimeout(function(){
     $(".buttonInfo").toggleClass("btnDisabled")
-    //enable button
-    setTimeout(function(){
-      $(".buttonInfo").toggleClass("btnDisabled")
-    }, 350);   
-  });
+  }, 350);   
+});
 
 //responsive infobox toggling
 $(window).resize(function(){
