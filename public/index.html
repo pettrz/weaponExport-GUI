@@ -77,18 +77,16 @@
                             <!--startpage infobox-->
                             <div id="infobox-before" class="col-md-12 col-lg-4">
                                 <div class="row mx-auto">
-                                    <!--startpage infoboxheader logo and title-->
+                                    <!--startpage header-->
                                     <div class="introHeader col-sm-5 col-md-5 col-lg-12">
                                         <div class="col-sm-12 ">
-                                            <!--logo-->
                                             <img src="./../Style/icons/svenska_freds-logo.png" />
                                         </div>
                                         <div class="col-sm-12" id="logo-padding">
-                                            <!--title-->
                                              <h3>Vapenexportkartan</h3>
                                         </div>
                                     </div>
-                                    <!--startpage infoboxheader logo and title ends-->
+                                    <!--startpage header-->
                                     <!--startpage infobox text-->
                                     <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
                                         <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen
@@ -106,71 +104,73 @@
                                     <!--header in infobox-->
                                     <div id="countryHeader" class="col-xs-5 col-sm-5  col-lg-12">
                                         <div class="col-md-12">
-                                            <!--countryflag in header-->
                                             <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
                                         </div>
                                         <div class="col-md-12">
-                                            <!--countryname in header-->
                                              <h3 data-bind="text: selectedCountry().country"></h3>
                                         </div>
                                     </div>
                                     <!--header in infobox ends-->
-                                    <!--countrydata Freedom House and GPI-->
+                                    <!--countrydata-->
                                     <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
                                         <!--Freedom House-->
                                         <!--tooltip for Freedom House-->
                                         <div id="tooltipFH" class="data-col col-sm-12">
-                                            <!--icon and text for tooltip Freedom House-->
                                             <img src="./../Style/icons/freedom-house-logo.png" style="padding-right: 10px"
                                             height="37px" width="37px">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
 
                     världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
 
-                    </br><a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida</a></span>
-                                            <!--Freedom
-                                            House Status--> <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
+                    </br>
+
+                    <a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida
+
+                    </a>
+
+                    </span>
+                                            <!--Freedom House Status--> <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
                                         </div>
                                         <!--tooltip for Freedom House ends-->
                                         <!--GPI-->
                                         <!--tooltip for GPI-->
                                         <div id="tooltipGpi" class="data-col col-sm-12">
-                                            <!--icon and text for tooltip GPI-->
                                             <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" style="padding-right: 10px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
 
-                    Ju högre placring desto fredligare land. </br><a class="defRanks" href="http://visionofhumanity.org/">
+                    Ju högre placring desto fredligare land.
 
-                    Se Vision of Humanitys webbsida</a></span>
-                                            <!--GPI
-                                            ranking--> <span class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo"></span>
+                    </br>
+
+                    <a class="defRanks" href="http://visionofhumanity.org/">
+
+                    Se Vision of Humanitys webbsida
+
+                    </a>
+
+                    </span>
+                                            <!--GPI ranking--> <span class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo"></span>
                                         </div>
                                         <!--tooltip for GPI ends-->
                                     </div>
-                                    <!--countrydata Freedom House and GPI ends-->
+                                    <!--countrydata-->
                                     <!--country infotext-->
                                     <div id="countryInfo" class="overflow-fade col-sm-12">
-                                        <!--text-->
                                         <div id="info" class="col-sm-12" data-bind="text: mapInfo"></div>
-                                        <!--text ends-->
                                         <!--read more section for links-->
                                         <div class="col-sm-12">
                                             <div class="readMore">
                                                  <h6>Läs mer</h6>
                                             </div>
-                                            <!--links-->
                                             <div id="links" data-bind="foreach: linksInfo">
                                                 <!--links with titles-->
                                                 <div data-bind="if:link">
                                                     <p> <a data-bind="attr: { href: link }, text: title" target="_blank"></a>
                                                     </p>
                                                 </div>
-                                                <!--links with titles ends-->
                                                 <!--only titles-->
                                                 <div data-bind="if:!link">
                                                     <p data-bind="text: title"></p>
                                                 </div>
-                                                <!--only titles ends-->
                                             </div>
-                                            <!--links ends-->
                                         </div>
                                         <!--read more section for links ends-->
                                     </div>
@@ -180,7 +180,6 @@
                                         <button height="270px" onclick="changeSize()" id="btnInfo" class="buttonInfo"
                                         type="button" data-toggle="collapse" data-target="#countryData">Läs mer</button>
                                     </div>
-                                    <!--read more button in infobox ends-->
                                 </div>
                             </div>
                             <!--viewmodel for map ends-->
@@ -210,13 +209,6 @@
                                             valfritt årtal i kurvan och läs mer om det aktuella årets vapenexport.
                                             Värdet på vapenexporten mäts i miljarder kronor.
                                             <br/>
-                                            <!-- <h6>Informationen är hämtad ifrån:</h6>
-
-                        Regeringens årliga skrivelser om strategisk exportkontroll <br/>
-
-                        Sipri Arms Transfers Database <br/>
-
-                        Svenska Freds- och Skiljedomsföreningen -->
                                         </p>
                                     </div>
                                 </div>
@@ -297,11 +289,9 @@
                                         </div>
                                     </div>
                                     <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                                        <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.
-                                            <br/>
-                                            <br/>Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för
-                                            valfritt årtal i kurvan och läs mer om det aktuella årets vapenexport.
-                                            Värdet på vapenexporten mäts i miljarder kronor.
+                                        <p>Klicka på de olika aktörerna för att lära dig mer om hur den svenska vapenexporten
+                                            fungerar och vilka som är huvudaktörerna. Du kan också läsa mer om vad
+                                            du som privatperson kan göra för att ta avstånd från vapenindustrin.
                                             <br/>
                                         </p>
                                     </div>

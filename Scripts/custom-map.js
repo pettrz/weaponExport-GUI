@@ -5,15 +5,13 @@ var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
 
-    var xhttpCountries = JSON.parse(xhttp.response);
-    
+    var xhttpCountries = JSON.parse(xhttp.response);  
     
     for (var i = 0; i < xhttpCountries.length; i++) {  
       countryList.push(xhttpCountries[i]);
       FHstatus[xhttpCountries[i].code] = xhttpCountries[i].FHstatus;
       if(countryList()[i].code=='SE'){
         selectedCountry(countryList()[i]);
-        
       }
     }
     
@@ -89,41 +87,8 @@ function viewModelSearch() {
   
 }
 
-
 ko.applyBindings(viewModelSearch, document.getElementById("dropdown-wrapper"));
 
-// function CreateMapWeapons() {
-//   var map = $(function(){
-//     $('#world-map').vectorMap({
-//         map: 'world_mill',
-//         series: {
-//           regions: [{
-//             values: weapons,
-//             scale: ['#f9bbbb', '#ad1414'],
-//             normalizeFunction: 'polynomial',
-//             legend: {
-//               title: 'Status ' + "<br>" +'Freedom House',
-//               vertical: true,
-//         }}]},
-//         onRegionOver(e, code) {
-//           if (!(code in weapons))
-//             e.preventDefault();
-//         },
-//         onRegionTipShow: function(e, el, code){
-//           if (!(code in weapons))
-//             e.preventDefault();
-//         },
-//         onRegionClick(e, code) {
-//             for (i=0; i < countryList().length; i++)  {
-//               if(countryList()[i].code == code) {
-//                 selectedCountry(countryList()[i]);
-//                 console.log(selectedCountry());innerHTML = country.gpi + ' av 162';
-//               }
-//             }
-//         },
-//     });
-//   });
-// }
 var $container = $('#world-map');
 function CreateMapFreedom() {
   var map = $(function(){
@@ -132,7 +97,6 @@ function CreateMapFreedom() {
         map: 'world_mill',
         series: {
           regions: [{
-            // values: guns,
             values: FHstatus,
             scale: {
               'Fri': '#75d187',
@@ -155,7 +119,6 @@ function CreateMapFreedom() {
             for (i=0; i < countryList().length; i++)  {
               if(countryList()[i].code == code) {
                 el.html(countryList()[i].country);
-                //console.log(selectedCountry());
               }
             }
           }
@@ -165,19 +128,10 @@ function CreateMapFreedom() {
               if(countryList()[i].code == code) {
                 selectedCountry(countryList()[i]);
                 console.log(selectedCountry());
-                
-
                 changeInfobox()
                 if(expanded){
                   $('.buttonInfo').click();
                 }
-                
-                
-                // document.getElementById('country').innerHTML = country.country;
-                // document.getElementById('info').innerHTML = country.info;
-                // document.getElementById('flag').className = 'flag-icon flag-icon-' + code.toLowerCase();
-                // document.getElementById('weaponInfo').innerHTML = country.FHstatus + ' / år';
-                // document.getElementById('GPIInfo').innerHTML = country.gpi + ' av 162';
               }
             }
         },
@@ -189,7 +143,6 @@ function CreateMapFreedom() {
 var expanded = false;
 
     function changeSize(){
-
         if(!expanded){
             document.getElementById('countryInfo').style.height = '390px';
             document.getElementById('countryInfo').style.overflow = 'auto';   
@@ -197,7 +150,6 @@ var expanded = false;
             document.getElementById('btnInfo').innerHTML='Visa mindre'; 
             document.getElementById('info').style.paddingRight='12px';  
             expanded = true;
-            
          } 
          else {
             document.getElementById('countryInfo').style.height = '270px';
