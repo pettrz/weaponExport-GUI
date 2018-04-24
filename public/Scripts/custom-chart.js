@@ -7,7 +7,7 @@ xhttpStats.onreadystatechange = function() {
 
     var xhttpStatsList = JSON.parse(xhttpStats.response);
 
-    //Creates list from database
+    //Creates yearList from database
     for (var i = 0; i < xhttpStatsList.length; i++) {  
         yearList.push(xhttpStatsList[i]);
       }
@@ -181,7 +181,7 @@ function clickOnPoint(canvas, chart, allYears) {
 //Sends values to infobox
 function fillInfoBox(year, weapons, info) {
 
-    //Creates variables for infoboxes - introbox/infobox
+    //Assigns variables for infoboxes - introbox/infobox
     var introBox = jQuery('#chart-intro-text');
     var infoBox = jQuery('#chart-info-display');
 
@@ -190,7 +190,7 @@ function fillInfoBox(year, weapons, info) {
     infoBox.find('#stat-weapons').html(weapons);
     infoBox.find('#stat-info').html(info);
 
-    //Displays different infoboxes
+    //Displays correct infobox
     introBox.hide();
     infoBox.show();
 }
