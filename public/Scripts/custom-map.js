@@ -167,29 +167,34 @@ var expanded = false;
   $(".buttonInfo").on("click", function() {
     //on country click scrolls to top
     $("#countryInfo").scrollTop(0);
-
+    //disable button
     $(".buttonInfo").toggleClass("btnDisabled")
-    //disable
+    //enable button
     setTimeout(function(){
       $(".buttonInfo").toggleClass("btnDisabled")
-    }, 350); 
-    
+    }, 350);   
   });
 
+//responsive design
 $(window).resize(function(){
  var width = $(window).width();
 if(width <= 992){
-  document.getElementById('btnInfo').style.display = 'static';
- $('#countryData').on('hide.bs.collapse', function (e) {
+  if(expanded){
+    $("#countryData").collapse('show');
+  }
+  $('#countryData').on('hide.bs.collapse', function (e) {
        e.preventDefault(e);
-   })
+  })
   } else {
-     document.getElementById('countryInfo').style.height = '270px';
      $('#countryData').unbind('hide.bs.collapse')
+     if(expanded){
+      $("#countryData").collapse('hide');
+    }
    }
  })
 .resize();
 
+//changes infobox from startpage to country
 function changeInfobox(){
   document.getElementById('infobox-before').style.display = 'none';
   document.getElementById('viewmodel-map').style.display = 'block';
@@ -200,7 +205,7 @@ function changeInfobox(){
   
 }
 
-// Hide search on other tabs than map
+// hide search on other tabs than map
 $('.nav-item a').click(function (e) {
   e.preventDefault();
 
@@ -213,7 +218,7 @@ $('.nav-item a').click(function (e) {
   $(this).tab('show');
 }); 
 
-// Map resize on tab click
+// map resize on tab click
 $('.nav-item a[href^="#map"]').click(function() {
     $container.resize();
 });
