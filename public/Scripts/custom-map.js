@@ -101,7 +101,7 @@ function CreateMapFreedom() {
             scale: {
               'Fri': '#75d187',
               'Delvis fri': '#efe599',
-              'Ofri': '#b54d4d'
+              'Inte fri': '#b54d4d'
             },
             normalizeFunction: 'polynomial',
             legend: {
