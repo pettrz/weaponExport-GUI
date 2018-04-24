@@ -6,7 +6,6 @@ html,body {
     padding-right: 0;
 }
 #wrapper{
-    height: 650px;
     color: white;
     font-size: 15px;
     line-height: 22px;
@@ -15,12 +14,6 @@ html,body {
     scrollbar-arrow-color: white;
     scrollbar-track-color: #2c2a2a;
 }
-
-.no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
-}
-
 
 /*Navbar*/
 #navbar-wrapper{
@@ -34,9 +27,9 @@ html,body {
     position: absolute;
     top: 8px;
     right: 0;
-    padding-right: 16px;
-    
+    padding-right: 16px;  
 }
+
 #dropdown-wrapper input{
     margin: 0 !important;
     width: 200px;
@@ -99,8 +92,8 @@ input:focus::-webkit-input-placeholder
     background-color: rgba(0, 0, 0, 0.55);
     padding-bottom: 20px;
     text-align: left;
-
 }
+
 .jvectormap-legend-cnt-v{
     bottom: 28px;
     left: 28px;
@@ -112,6 +105,7 @@ input:focus::-webkit-input-placeholder
     padding-left: 10px;
     font-size:14px;
 }
+
 .jvectormap-legend-cnt-v .jvectormap-legend-tick-sample{
     width:25px;
     height:25px;
@@ -141,7 +135,12 @@ input:focus::-webkit-input-placeholder
 }
 #countryHeader{
     padding-bottom: 20px;
+}
 
+/*countryflag*/
+#flag{
+    height: 4em; 
+    width: 5em; 
 }
 #countryData {
     background-color: #3a3a3a;
@@ -246,8 +245,7 @@ input:focus::-webkit-input-placeholder
     width: 150px;
     height: 40px;
     border: none;
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
 .buttonInfo:hover {
     background-color: #808080;
@@ -324,6 +322,10 @@ button:focus{
     
     #countryHeader{
         background-color: #333131;
+    }
+
+    #countryReadMore{
+        position: static;
     }
 }
 /* 1200px breakpoint */
