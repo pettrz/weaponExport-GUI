@@ -10,10 +10,23 @@ xhttpStats.onreadystatechange = function() {
     //Creates yearList from database
     for (var i = 0; i < xhttpStatsList.length; i++) {  
         yearList.push(xhttpStatsList[i]);
-      }
+    }
+
+    // Sort array by year
+    function compareYears(a, b) {
+        if (a.year < b.year)
+          return -1;
+        if (a.year > b.year)
+          return 1;
+        return 0;
+    }
+    xhttpStatsList.sort(compareYears);
 
     //Runs chart function
     CreateStatistic(xhttpStatsList);
+    
+      
+    console.log(xhttpStatsList);
     }
 }
 
