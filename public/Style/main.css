@@ -453,7 +453,7 @@ padding: 15px;
     display:none;
 }
 #logoInfo{
-    height: 340px;
+    height: 300px;
     overflow: auto;
     padding: 0;
     position: relative;
@@ -481,12 +481,12 @@ padding: 15px;
     padding-bottom: 10px;
 }
 #infoboxImg img{
-    height: 50px;
+    height: 80px;
+    padding:5px;
 }
 #infoboxImg{
-    background-color:  white;
-    padding:15px;
-    border-radius: 3px;
+    background-color: white;
+    margin:20px;
 }
 #participantsTitle{
     text-align: center;
