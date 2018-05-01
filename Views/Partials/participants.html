@@ -2,15 +2,13 @@
 <div id="inner-wrapper" class="col-lg-8">
         
         <div class="container h-100">
-            <div id="pLogos" class="row mx-auto h-100 justify-content-around"> 
-                 
-                <!-- ko foreach: logosList() -->
-                    <div  class="col-sm-6 col-md-4 tooltipImg pLogo-col">
-                        <div class="row">
+            <div id="pLogos" class="row h-100 mx-auto justify-content-around">  
 
-                            <!-- Displays images with titles -->
+                <!-- ko foreach: logosList() -->
+                    <div class="col-sm-6 col-md-4 pLogo-col d-flex align-items-center justify-content-center">
+                        <div class="row">
                             <div class="col-sm-12">
-                                <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt=""/>
+                                <img onclick="openInfobox(this)" data-bind="attr:{src: img, alt: participantTitle}" alt="Aktör" width="150px"/>
                             </div>
                             <div  class="col-sm-12 pTitle" data-bind="text: participantTitle">
                             </div>  
@@ -23,7 +21,7 @@
 <!-- Main content ends -->
      
  <!-- Displays infobox -->
-<div id="infobox-before" class="col-md-12 col-lg-4">
+<div class="infobox-before col-md-12 col-lg-4">
 
     <!-- Startpage infobox -->
     <div id="participants-intro-text" class="row mx-auto">
@@ -31,7 +29,7 @@
             <!-- Header: Logo and title -->
             <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
                 <div class="col-sm-12">
-                    <img src="./../Style/icons/svenska_freds-logo.png" />
+                    <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp" />
                 </div>          
                 <div class="col-sm-12" id="logo-padding2">             
                     <h3>Aktörer</h3>
@@ -45,9 +43,10 @@
             </div>
     </div>
     <!-- Startpage infobox ends -->
+</div>
 
     <!-- Viewmodel-participants infobox (sends correct data) -->
-    <div id="viewmodel-participants"> 
+    <div class="infobox-after col-md-12 col-lg-4">
 
         <!-- Displays content for infobox when image is clicked -->
         <div id="participants-info-display">
@@ -55,7 +54,7 @@
 
                 <!-- Header: Logo and title -->
                 <div id="infoboxImg" class="col-md-7">
-                    <img data-bind="attr:{src: selectedLogo().img}" alt=""/>
+                    <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"/>
                     
                 </div>
                 <div id="logos-header" class="col-lg-12">             
@@ -96,6 +95,3 @@
 
     </div>
     <!-- Viewmodel-statistics infobox ends -->
-
-</div>
-<!-- Infobox ends -->

@@ -84,6 +84,7 @@ function openInfobox(el){
     var infoBox = jQuery('#participants-info-display');
 
     //Displays correct infobox
+    changeInfobox()
     introBox.hide();
     infoBox.show();
 

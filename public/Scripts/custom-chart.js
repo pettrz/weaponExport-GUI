@@ -213,13 +213,15 @@ function clickOnPoint(canvas, chart, allYears) {
 //Sends values to infobox
 function fillInfoBox(year, weapons, info) {
 
+    changeInfobox();
+
     //Assigns variables for infoboxes - introbox/infobox
     var introBox = jQuery('#chart-intro-text');
     var infoBox = jQuery('#chart-info-display');
 
     //Retrieves from database
-    infoBox.find('#stat-year').html(year);
-    infoBox.find('#stat-weapons').html(weapons);
+    infoBox.find('#stat-year').html("Årtal " + year);
+    infoBox.find('#stat-weapons').html(weapons + " Miljarder kr");
     infoBox.find('#stat-info').html(info);
 
     //Displays correct infobox

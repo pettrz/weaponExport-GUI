@@ -75,12 +75,13 @@
                                 <div id="world-map"></div>
                             </div>
                             <!--startpage infobox-->
-                            <div id="infobox-before" class="col-md-12 col-lg-4">
+                            <div class="infobox-before col-md-12 col-lg-4">
                                 <div class="row mx-auto">
                                     <!--startpage header-->
                                     <div class="introHeader col-sm-5 col-md-5 col-lg-12">
                                         <div class="col-sm-12 ">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" />
+                                            <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
+                                            />
                                         </div>
                                         <div class="col-sm-12" id="logo-padding">
                                              <h3>Vapenexportkartan</h3>
@@ -99,10 +100,10 @@
                             </div>
                             <!--startpage infobox ends-->
                             <!--viewmodel for map-->
-                            <div id="viewmodel-map" class="col-sm-12 col-md-12 col-lg-4">
+                            <div class="infobox-after col-md-12 col-lg-4">
                                 <div class="row mx-auto no-gutters">
                                     <!--header in infobox-->
-                                    <div id="countryHeader" class="col-xs-5 col-sm-5  col-lg-12">
+                                    <div id="countryHeader" class="col-xs-5 col-sm-5 col-lg-12">
                                         <div class="col-md-12">
                                             <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
                                         </div>
@@ -116,8 +117,8 @@
                                         <!--Freedom House-->
                                         <!--tooltip for Freedom House-->
                                         <div id="tooltipFH" class="data-col col-sm-12">
-                                            <img src="./../Style/icons/freedom-house-logo.png" style="padding-right: 10px"
-                                            height="37px" width="37px">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
+                                            <img class="data-icon" src="./../Style/icons/freedom-house-logo.png" height="35px"
+                                            width="35px" alt="Freedom House ikon">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
 
                     världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
 
@@ -128,19 +129,20 @@
                     </a>
 
                     </span>
-                                            <!--Freedom House Status--> <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
+                                            <!--Freedom House Status--> <span class="float-right" id="statusInfo" data-bind="text: statusInfo"></span>
                                         </div>
                                         <!--tooltip for Freedom House ends-->
                                         <!--GPI-->
                                         <!--tooltip for GPI-->
                                         <div id="tooltipGpi" class="data-col col-sm-12">
-                                            <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" style="padding-right: 10px">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
+                                            <img class="data-icon" src="./../Style/icons/gpi-logo.png" height="35px"
+                                            width="35px" alt="GPI ikon">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
 
                     Ju högre placring desto fredligare land.
 
                     <br/>
 
-                    <a class="defRanks" href="http://visionofhumanity.org/">
+                    <a class="defRanks" href="http://visionofhumanity.org/" target="_blank">
 
                     Se Vision of Humanitys webbsida
 
@@ -187,26 +189,24 @@
                     </div>
                     <div id="stats" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutters">
-                            <!-- Displays chart -->
+                            <!-- Chart -->
                             <div id="inner-wrapper" class="col-lg-8">
                                 <div class="chart-container">
                                     <canvas id="myChart"></canvas>
                                 </div>
                             </div>
-                            <!-- Displays infobox -->
-                            <div id="infobox-before" class="col-md-12 col-lg-4">
-                                <!-- Startpage infobox -->
+                            <!-- /Chart -->
+                            <!-- Infobox Intro -->
+                            <div class="infobox-before col-md-12 col-lg-4">
                                 <div id="chart-intro-text" class="row mx-auto">
-                                    <!-- Header: Logo and title -->
                                     <div id="introHeader2" class="col-sm-5 col-md-5 col-lg-12">
                                         <div class="col-sm-12">
                                             <img src="./../Style/icons/svenska_freds-logo.png" />
                                         </div>
-                                        <div class="col-sm-12" id="logo-padding2">
+                                        <div class="col-sm-12">
                                              <h3>Statistik vapenexport</h3>
                                         </div>
                                     </div>
-                                    <!-- Content: introduction text -->
                                     <div class="introText2 col-sm-7 col-md-7 col-lg-12">
                                         <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.
                                             <br/>
@@ -217,59 +217,55 @@
                                         </p>
                                     </div>
                                 </div>
-                                <!-- Startpage infobox ends -->
-                                <!-- Viewmodel-statistics infobox (sends correct data) -->
-                                <div id="viewmodel-statistics">
-                                    <!-- Displays content for infobox when chart is clicked -->
-                                    <div id="chart-info-display">
-                                        <div class="row mx-auto">
-                                            <!-- Statistics title -->
-                                            <div id="stats-header" class="col-xs-5 col-sm-5  col-lg-12">
-                                                 <h3 id="stat-year"></h3>
+                            </div>
+                            <!-- /Infobox Intro -->
+                            <!-- Infobox Data -->
+                            <div class="infobox-after col-md-12 col-lg-4">
+                                <!-- Displays content for infobox when chart is clicked -->
+                                <div id="chart-info-display">
+                                    <div class="row mx-auto no-gutters">
+                                        <div id="stats-header" class="col-xs-5 col-sm-5  col-lg-12">
+                                             <h3 id="stat-year"></h3>
+                                        </div>
+                                        <!-- Icons and associated data -->
+                                        <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
+                                            <div class="data-col col-sm-12">
+                                                <img class="data-icon" src="./../Style/icons/vapen-ikon.png" height="35px"
+                                                width="35px">Vapenexport: <span class="columnInfo" id="stat-weapons"></span>
                                             </div>
-                                            <!-- Icons and associated data -->
-                                            <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
-                                                <div class="data-col col-sm-12">
-                                                    <img src="./../Style/icons/vapen-icon.png" style="padding-right: 10px"
-                                                    height="37px" width="37px">Vapenexport (mdr kr): <span class="columnInfo" id="stat-weapons"></span>
-                                                </div>
-                                                <div class="data-col col-sm-12">
-                                                    <img src="./../Style/icons/money-icon.png" style="padding-right: 10px"
-                                                    height="37px" width="37px">Största vapenkund:
-                                                    <div id="stat-flag" class="flag-icon columnInfo" data-bind="css: statFlag()"></div>
-                                                </div>
+                                            <div class="data-col col-sm-12">
+                                                <img class="data-icon" src="./../Style/icons/money-icon.png" height="35px"
+                                                width="35px">Största vapenkund:
+                                                <div id="stat-flag" class="flag-icon columnInfo" data-bind="css: statFlag()"></div>
                                             </div>
-                                            <!-- Content: textbox -->
-                                            <div id="stat-infobox">
-                                                <div id="statsInfo" class="col-sm-12">
-                                                    <!-- Displays information text -->
-                                                    <div id="stat-info" class="col-sm-12"></div>
-                                                    <!-- Displays links -->
-                                                    <div id="statistik-link">
-                                                        <div data-bind="if:checkLinksStats()" class="readMore">
-                                                             <h6>Läs mer</h6>
+                                        </div>
+                                        <!-- Content: textbox -->
+                                        <div id="stat-infobox">
+                                            <div id="statsInfo" class="col-sm-12">
+                                                <!-- Displays information text -->
+                                                <div id="stat-info" class="col-sm-12"></div>
+                                                <!-- Links -->
+                                                <div id="statistik-link">
+                                                    <div data-bind="if:checkLinksStats()" class="readMore">
+                                                         <h6>Läs mer</h6>
+                                                    </div>
+                                                    <div id="statLinks" data-bind="foreach: linksStats">
+                                                        <div data-bind="if:statLink">
+                                                            <p> <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
+                                                            </p>
                                                         </div>
-                                                        <!-- Searches through list -> displays depending on title or link -->
-                                                        <div id="statLinks" data-bind="foreach: linksStats">
-                                                            <!-- Title on link -->
-                                                            <div data-bind="if:statLink">
-                                                                <p> <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
-                                                                </p>
-                                                            </div>
-                                                            <!-- Title without link -->
-                                                            <div data-bind="if:!statLink">
-                                                                <p data-bind="text: statTitle"></p>
-                                                            </div>
+                                                        <div data-bind="if:!statLink">
+                                                            <p data-bind="text: statTitle"></p>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- /Links -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Viewmodel-statistics infobox ends -->
                             </div>
-                            <!-- Infobox ends -->
+                            <!-- /Infobox Data -->
                         </div>
                     </div>
                     <div id="participants" class="tab-pane">
@@ -277,13 +273,13 @@
                             <!-- Main content -->
                             <div id="inner-wrapper" class="col-lg-8">
                                 <div class="container h-100">
-                                    <div id="pLogos" class="row mx-auto h-100 justify-content-around">
+                                    <div id="pLogos" class="row h-100 mx-auto justify-content-around">
                                         <!-- ko foreach: logosList() -->
-                                        <div class="col-sm-6 col-md-4 tooltipImg pLogo-col">
+                                        <div class="col-sm-6 col-md-4 pLogo-col d-flex align-items-center justify-content-center">
                                             <div class="row">
-                                                <!-- Displays images with titles -->
                                                 <div class="col-sm-12">
-                                                    <img onclick="openInfobox(this)" data-bind="attr:{src: img}" alt="" />
+                                                    <img onclick="openInfobox(this)" data-bind="attr:{src: img, alt: participantTitle}"
+                                                    alt="Aktör" width="150px" />
                                                 </div>
                                                 <div class="col-sm-12 pTitle" data-bind="text: participantTitle"></div>
                                             </div>
@@ -294,13 +290,14 @@
                             </div>
                             <!-- Main content ends -->
                             <!-- Displays infobox -->
-                            <div id="infobox-before" class="col-md-12 col-lg-4">
+                            <div class="infobox-before col-md-12 col-lg-4">
                                 <!-- Startpage infobox -->
                                 <div id="participants-intro-text" class="row mx-auto">
                                     <!-- Header: Logo and title -->
                                     <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
                                         <div class="col-sm-12">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" />
+                                            <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
+                                            />
                                         </div>
                                         <div class="col-sm-12" id="logo-padding2">
                                              <h3>Aktörer</h3>
@@ -316,48 +313,48 @@
                                     </div>
                                 </div>
                                 <!-- Startpage infobox ends -->
-                                <!-- Viewmodel-participants infobox (sends correct data) -->
-                                <div id="viewmodel-participants">
-                                    <!-- Displays content for infobox when image is clicked -->
-                                    <div id="participants-info-display">
-                                        <div class="row mx-auto justify-content-center">
-                                            <!-- Header: Logo and title -->
-                                            <div id="infoboxImg" class="col-md-7">
-                                                <img data-bind="attr:{src: selectedLogo().img}" alt="" />
-                                            </div>
-                                            <div id="logos-header" class="col-lg-12">
-                                                 <h3 data-bind="text: titleInfo"></h3>
-                                            </div>
-                                            <!-- Content: information text -->
-                                            <div id="logo-infobox">
-                                                <div id="logoInfo" class="col-sm-12">
-                                                    <!-- Displays infotext -->
-                                                    <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"></div>
-                                                    <!-- Displays links -->
-                                                    <div id="participant-link">
-                                                        <div data-bind="if:checkLinksParticipants()" class="readMore">
-                                                             <h6>Läs mer</h6>
+                            </div>
+                            <!-- Viewmodel-participants infobox (sends correct data) -->
+                            <div class="infobox-after col-md-12 col-lg-4">
+                                <!-- Displays content for infobox when image is clicked -->
+                                <div id="participants-info-display">
+                                    <div class="row mx-auto justify-content-center">
+                                        <!-- Header: Logo and title -->
+                                        <div id="infoboxImg" class="col-md-7">
+                                            <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"
+                                            />
+                                        </div>
+                                        <div id="logos-header" class="col-lg-12">
+                                             <h3 data-bind="text: titleInfo"></h3>
+                                        </div>
+                                        <!-- Content: information text -->
+                                        <div id="logo-infobox">
+                                            <div id="logoInfo" class="col-sm-12">
+                                                <!-- Displays infotext -->
+                                                <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"></div>
+                                                <!-- Displays links -->
+                                                <div id="participant-link">
+                                                    <div data-bind="if:checkLinksParticipants()" class="readMore">
+                                                         <h6>Läs mer</h6>
+                                                    </div>
+                                                    <!-- Searches through list -> displays depending on title or link -->
+                                                    <div id="logoLinks" data-bind="foreach: linksLogos">
+                                                        <div data-bind="if:logoLink">
+                                                            <p> <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
+                                                            </p>
                                                         </div>
-                                                        <!-- Searches through list -> displays depending on title or link -->
-                                                        <div id="logoLinks" data-bind="foreach: linksLogos">
-                                                            <div data-bind="if:logoLink">
-                                                                <p> <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
-                                                                </p>
-                                                            </div>
-                                                            <div data-bind="if:!logoLink">
-                                                                <p data-bind="text: logoTitle"></p>
-                                                            </div>
+                                                        <div data-bind="if:!logoLink">
+                                                            <p data-bind="text: logoTitle"></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Infobox onclick ends -->
                                 </div>
-                                <!-- Viewmodel-statistics infobox ends -->
+                                <!-- Infobox onclick ends -->
                             </div>
-                            <!-- Infobox ends -->
+                            <!-- Viewmodel-statistics infobox ends -->
                         </div>
                     </div>
                     <div id="about" class="tab-pane">
@@ -391,12 +388,13 @@
                                 </div>
                             </div>
                             <!--startpage infobox-->
-                            <div id="infobox-before" class="col-md-12 col-lg-4">
+                            <div class="infobox-before col-md-12 col-lg-4">
                                 <div class="row mx-auto">
                                     <div class="introHeader col-sm-5 col-md-5 col-lg-12">
                                         <!--startpage header -->
                                         <div class="col-sm-12">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" />
+                                            <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
+                                            />
                                         </div>
                                         <div id="logo-padding">
                                              <h3>Om produktionen</h3>
