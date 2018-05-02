@@ -3,12 +3,12 @@
 </div>
 
 <!--startpage infobox-->
-<div id="infobox-before" class="col-md-12 col-lg-4">
+<div class="infobox-before col-md-12 col-lg-4">
    <div class="row mx-auto">
        <!--startpage header-->
       <div class="introHeader col-sm-5 col-md-5 col-lg-12">
          <div class="col-sm-12 ">   
-            <img src="./../Style/icons/svenska_freds-logo.png" />
+            <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"/>
          </div>
          <div class="col-sm-12" id="logo-padding">
             <h3>Vapenexportkartan</h3>
@@ -29,16 +29,14 @@
 <!--startpage infobox ends-->
 
 <!--viewmodel for map-->
-<div id="viewmodel-map" class="col-sm-12 col-md-12 col-lg-4">
+<div class="infobox-after col-md-12 col-lg-4">
         <div class="row mx-auto no-gutters">
             <!--header in infobox-->
-            <div id="countryHeader" class="col-xs-5 col-sm-5  col-lg-12">
-                <div class="col-md-12">       
-                    <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
-                </div>
+            <div id="countryHeader" class="d-flex align-items-center col-sm-5 col-lg-12"> 
                 <div class="col-md-12">
-                    <h3 data-bind="text: selectedCountry().country"></h3>
-                </div>
+                    <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>              
+                    <h3 data-bind="text: selectedCountry().country"></h3> 
+                </div>                 
             </div>
             <!--header in infobox ends-->
 
@@ -47,7 +45,7 @@
                 <!--Freedom House-->
                 <!--tooltip for Freedom House-->
                 <div id="tooltipFH" class="data-col col-sm-12">
-                    <img src="./../Style/icons/freedom-house-logo.png" style="padding-right: 10px" height="37px" width="37px"> Status Freedom House:
+                    <img class="data-icon" src="./../Style/icons/freedom-house-logo.png" height="35px" width="35px" alt="Freedom House ikon"> Status Freedom House:
                     <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
                     världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
                     <br/>
@@ -55,18 +53,18 @@
                     </a>
                     </span>
                     <!--Freedom House Status-->
-                    <span class="columnInfo" id="statusInfo" data-bind="text: statusInfo"></span>
+                    <span class="float-right" id="statusInfo" data-bind="text: statusInfo"></span>
                 </div>
                  <!--tooltip for Freedom House ends-->
 
                  <!--GPI-->
                  <!--tooltip for GPI-->
                 <div id="tooltipGpi" class="data-col col-sm-12">
-                    <img src="./../Style/icons/gpi-logo.png" height="37px" width="40px" style="padding-right: 10px"> GPI - ranking:
+                    <img class="data-icon" src="./../Style/icons/gpi-logo.png" height="35px" width="35px" alt="GPI ikon"> GPI - ranking:
                     <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
                     Ju högre placring desto fredligare land.
                     <br/>
-                    <a class="defRanks" href="http://visionofhumanity.org/">
+                    <a class="defRanks" href="http://visionofhumanity.org/" target="_blank">
                     Se Vision of Humanitys webbsida
                     </a>
                     </span>

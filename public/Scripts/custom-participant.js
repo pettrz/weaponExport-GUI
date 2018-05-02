@@ -79,13 +79,8 @@ function CreateLogos(request){
 //Handles click event when a image is clicked
 function openInfobox(el){
 
-    //Assigns variables for infoboxes - introbox/infobox
-    var introBox = jQuery('#participants-intro-text');
-    var infoBox = jQuery('#participants-info-display');
-
-    //Displays correct infobox
-    introBox.hide();
-    infoBox.show();
+    //Changes infoboc
+    changeInfobox()
 
     // Scroll to top animation onclick
     $("#logoInfo").animate({

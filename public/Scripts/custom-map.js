@@ -130,8 +130,8 @@ function CreateMapFreedom() {
             for (i=0; i < countryList().length; i++)  {
               if(countryList()[i].code == code) {
                 selectedCountry(countryList()[i]);
-                console.log(selectedCountry());
-                changeInfobox()
+
+                changeInfobox();
                 if(expanded){
                   $('.buttonInfo').click();
                 }
@@ -182,62 +182,58 @@ function checkLinksMap(){
   }
 }
 
-//cooldown on button
-$(".buttonInfo").on("click", function() {
-  //on country click scrolls to top
+ //Map infobox button actions
+ $(".buttonInfo").on("click", function() {
+    
   $("#countryInfo").scrollTop(0);
-  //disable button
+
   $(".buttonInfo").toggleClass("btnDisabled")
-  //enable button
   setTimeout(function(){
     $(".buttonInfo").toggleClass("btnDisabled")
-  }, 350);   
+  }, 350); 
+  
 });
 
-//responsive infobox toggling
 $(window).resize(function(){
- var width = $(window).width();
+var width = $(window).width();
 if(width <= 992){
   if(expanded){
     $("#countryData").collapse('show');
   }
   $('#countryData').on('hide.bs.collapse', function (e) {
-       e.preventDefault(e);
+      e.preventDefault(e);
   })
-  } else {
-     $('#countryData').unbind('hide.bs.collapse')
-     if(expanded){
+} else {
+    $('#countryData').unbind('hide.bs.collapse')
+    if(expanded){
       $("#countryData").collapse('hide');
     }
-   }
- })
+}
+})
 .resize();
 
-//changes infobox from startpage to country
-function changeInfobox(){
-  document.getElementById('infobox-before').style.display = 'none';
-  document.getElementById('viewmodel-map').style.display = 'block';
-
-  if(expanded){
-    $('.buttonInfo').click();
-  }
-  
-}
-
-// hide search on other tabs than map
+// Tab actions
+var activeTab = "#map";
 $('.nav-item a').click(function (e) {
   e.preventDefault();
-
+  activeTab = $(this).attr('href');
+  
+  // Hide searchbar
   if($(this).attr('href')=='#map'){
       $('#dropdown-wrapper').show();
-  }
-  else{
+  } else{
       $('#dropdown-wrapper').hide();
   }
   $(this).tab('show');
 }); 
 
-// map resize on tab click
+//Infobox change
+function changeInfobox() {
+$( activeTab + ' .infobox-before').hide();
+$( activeTab + ' .infobox-after').show();
+}
+
+// Map resize on tab click
 $('.nav-item a[href^="#map"]').click(function() {
-    $container.resize();
+  $container.resize();
 });
