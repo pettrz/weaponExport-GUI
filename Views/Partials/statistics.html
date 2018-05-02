@@ -13,7 +13,7 @@
                 <div class="col-sm-12">
                         <img src="./../Style/icons/svenska_freds-logo.png" />
                 </div>          
-                <div class="col-sm-12">             
+                <div class="col-sm-12 headerStyle">             
                     <h3>Statistik vapenexport</h3>
                 </div>
             </div>
@@ -32,17 +32,17 @@
 
                     <div class="row mx-auto no-gutters">
 
-                        <div id="stats-header" class="col-xs-5 col-sm-5 col-lg-12">             
+                        <div id="stats-header" class="headerStyle col-xs-5 col-sm-5 col-lg-12">             
                             <h3 id="stat-year"></h3>
                         </div>
 
                         <!-- Icons and associated data -->
-                        <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
+                        <div id="weaponsData" class="columnStyle col-sm-7 col-md-7 col-lg-12">
                             <div class="data-col col-sm-12">
                                 <img class="data-icon" src="./../Style/icons/vapen-ikon.png" height="35px" width="35px"> Vapenexport:
                                 <span class="float-right" id="stat-weapons"></span>
                             </div>  
-                            <div class="data-col col-sm-12">
+                            <div class=" columnStyle data-col col-sm-12">
                                 <img class="data-icon" src="./../Style/icons/money-icon.png" height="35px" width="35px"> Största vapenkund:
                                 <div id="stat-flag" class="flag-icon float-right" data-bind="css: statFlag()"></div>
                             </div>
@@ -58,12 +58,12 @@
 
                                 <!-- Links -->
                                 <div id="statistik-link">
-                                    <div data-bind="if:checkLinksStats()" class="readMore">
-                                        <h6>Läs mer</h6>
+                                    <div data-bind="if:checkLinksStats()" class="linksHeaderStyle">
+                                        Läs mer
                                     </div>
 
                                     <div id="statLinks" data-bind="foreach: linksStats"> 
-                                        <div data-bind="if:statLink">
+                                        <div data-bind="if:statLink" class="linkStyle">
                                             <p>
                                                 <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
                                             </p>

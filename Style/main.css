@@ -209,9 +209,6 @@ input:focus::-webkit-input-placeholder
     vertical-align:middle;
     line-height: 30px;
 }
-.defRanks {
-    color:#406eb7;
-}
 .columnInfo{
    float: right;
 }
@@ -280,7 +277,7 @@ a:hover{
 
 .buttonInfo {
     background-color: #45434B;
-
+    font-family: 'Merriweather Sans', sans-serif;    
     color: white;
     width: 150px;
     height: 40px;
@@ -348,7 +345,7 @@ button:focus{
         width: 26px;
         line-height: 17px;
         font-size: 32px;
-        background-color: #45434B;
+        background-color: #333138;
     }
     .jvectormap-zoomout{
         top: 65px;
@@ -357,7 +354,7 @@ button:focus{
         width: 26px;
         line-height: 17px;
         font-size: 32px;
-        background-color: #45434B;
+        background-color: #333138;
     }
     
     #countryHeader{
@@ -394,6 +391,8 @@ button:focus{
 }
 .introText2{
     padding: 10px;
+    overflow: auto;
+    font-family: 'Merriweather', serif;
 }
 #introHeader2{
     padding-bottom: 10px;
@@ -406,7 +405,8 @@ button:focus{
     display: none;
 }
 #weaponsData {
-    background-color: #3a3a3a;
+    background-color: #45434B;
+    border: #333138 1px solid;
 }
 #stat-flag{
     height: 2em; 
@@ -424,6 +424,8 @@ button:focus{
 }
 #stat-info{
     white-space: pre-wrap;
+    font-family: 'Merriweather', serif;
+
 }
 #stat-infobox{
     padding-top: 20px;
@@ -466,6 +468,9 @@ padding: 15px;
 }
 .pTitle{
     padding-top: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    
 }
 .tooltipImg .tooltiptext {
     visibility: hidden;
@@ -508,6 +513,7 @@ padding: 15px;
 }
 #logo-info{
     white-space: pre-wrap;
+    font-family: 'Merriweather', serif;
 }
 #logo-infobox{
     padding-top: 20px;
@@ -538,6 +544,9 @@ padding: 15px;
 #about-header{
     text-align: center;
     padding-bottom: 20px;
+}
+.aboutText{
+    font-family: 'Merriweather', serif;
 }
 
 

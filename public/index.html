@@ -205,7 +205,7 @@
                                         <div class="col-sm-12">
                                             <img src="./../Style/icons/svenska_freds-logo.png" />
                                         </div>
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 headerStyle">
                                              <h3>Statistik vapenexport</h3>
                                         </div>
                                     </div>
@@ -224,16 +224,16 @@
                             <!-- Infobox Data -->
                             <div class="infobox-after col-md-12 col-lg-4">
                                 <div class="row mx-auto no-gutters">
-                                    <div id="stats-header" class="col-xs-5 col-sm-5 col-lg-12">
+                                    <div id="stats-header" class="headerStyle col-xs-5 col-sm-5 col-lg-12">
                                          <h3 id="stat-year"></h3>
                                     </div>
                                     <!-- Icons and associated data -->
-                                    <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
+                                    <div id="weaponsData" class="columnStyle col-sm-7 col-md-7 col-lg-12">
                                         <div class="data-col col-sm-12">
                                             <img class="data-icon" src="./../Style/icons/vapen-ikon.png" height="35px"
                                             width="35px">Vapenexport: <span class="float-right" id="stat-weapons"></span>
                                         </div>
-                                        <div class="data-col col-sm-12">
+                                        <div class=" columnStyle data-col col-sm-12">
                                             <img class="data-icon" src="./../Style/icons/money-icon.png" height="35px"
                                             width="35px">Största vapenkund:
                                             <div id="stat-flag" class="flag-icon float-right" data-bind="css: statFlag()"></div>
@@ -246,11 +246,9 @@
                                             <div id="stat-info" class="col-sm-12"></div>
                                             <!-- Links -->
                                             <div id="statistik-link">
-                                                <div data-bind="if:checkLinksStats()" class="readMore">
-                                                     <h6>Läs mer</h6>
-                                                </div>
+                                                <div data-bind="if:checkLinksStats()" class="linksHeaderStyle">Läs mer</div>
                                                 <div id="statLinks" data-bind="foreach: linksStats">
-                                                    <div data-bind="if:statLink">
+                                                    <div data-bind="if:statLink" class="linkStyle">
                                                         <p> <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
                                                         </p>
                                                     </div>
@@ -296,7 +294,7 @@
                                             <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
                                             />
                                         </div>
-                                        <div class="col-sm-12" id="logo-padding2">
+                                        <div class="headerStyle col-sm-12" id="logo-padding2">
                                              <h3>Aktörer</h3>
                                         </div>
                                     </div>
@@ -317,7 +315,7 @@
                                         <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"
                                         />
                                     </div>
-                                    <div id="logos-header" class="col-lg-12">
+                                    <div id="logos-header" class="headerStyle col-lg-12">
                                          <h3 data-bind="text: titleInfo"></h3>
                                     </div>
                                     <!-- Content: information text -->
@@ -326,11 +324,9 @@
                                             <div id="logo-info" class="col-sm-12" data-bind="text: logosInfo"></div>
                                             <!-- Links -->
                                             <div id="participant-link">
-                                                <div class="readMore" data-bind="if:checkLinksParticipants()">
-                                                     <h6>Läs mer</h6>
-                                                </div>
+                                                <div class="linksHeaderStyle" data-bind="if:checkLinksParticipants()">Läs mer</div>
                                                 <div id="logoLinks" data-bind="foreach: linksLogos">
-                                                    <div data-bind="if:logoLink">
+                                                    <div data-bind="if:logoLink" class="linkStyle">
                                                         <p> <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
                                                         </p>
                                                     </div>
@@ -352,29 +348,31 @@
                             <div id="inner-wrapper" class="col-md-12 col-lg-8">
                                 <div id="about-map">
                                     <!--main text-->
-                                    <div id="about-header">
+                                    <div id="about-header" class="headerStyle">
                                          <h2>Om kartan</h2>
                                     </div>
-                                    <p>Syftet med den här kartan är att öka insynen i och informationen om svensk
-                                        vapenhandel. Handel med vapen och annan krigsmateriel omgärdas dock av
-                                        en omfattande sekretess som gör det svårt att få information om vad som
-                                        exporteras, till vem och hur besluten tas om att tillåta exporten. Kartan
-                                        visar ett urval av de stater där svenska vapen finns och ska inte betraktas
-                                        som heltäckande.
-                                        <br/>
-                                        <br/>
-                                    </p>
-                                     <h6>Så här har vi gjort urvalet:</h6>
+                                    <div class="aboutText">
+                                        <p>Syftet med den här kartan är att öka insynen i och informationen om svensk
+                                            vapenhandel. Handel med vapen och annan krigsmateriel omgärdas dock av
+                                            en omfattande sekretess som gör det svårt att få information om vad som
+                                            exporteras, till vem och hur besluten tas om att tillåta exporten. Kartan
+                                            visar ett urval av de stater där svenska vapen finns och ska inte betraktas
+                                            som heltäckande.
+                                            <br/>
+                                            <br/>
+                                        </p>
+                                         <h6>Så här har vi gjort urvalet:</h6>
 
-                                    <br/>
-                                    <p>Kartan visar de 30 största importörerna av svensk krigsmateriel, åren
-                                        2000-2010 (enligt regeringens skrivelser om strategisk exportkontroll).
-                                        Den visar också merparten av de länder med stora brister i demokratisk
-                                        status som Sverige har tillåtit export till samt konstaterade fall av illegala
-                                        överföringar av svensk krigsmateriel. Informationen baseras på tillgänglig
-                                        offentlig redovisning, Svenska Freds arkiv, mediarapportering och granskningar.
                                         <br/>
-                                        <br/>Värdet av krigsmaterielexporten anges i löpande priser.</p>
+                                        <p>Kartan visar de 30 största importörerna av svensk krigsmateriel, åren
+                                            2000-2010 (enligt regeringens skrivelser om strategisk exportkontroll).
+                                            Den visar också merparten av de länder med stora brister i demokratisk
+                                            status som Sverige har tillåtit export till samt konstaterade fall av illegala
+                                            överföringar av svensk krigsmateriel. Informationen baseras på tillgänglig
+                                            offentlig redovisning, Svenska Freds arkiv, mediarapportering och granskningar.
+                                            <br/>
+                                            <br/>Värdet av krigsmaterielexporten anges i löpande priser.</p>
+                                    </div>
                                 </div>
                             </div>
                             <!--startpage infobox-->
@@ -386,7 +384,7 @@
                                             <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
                                             />
                                         </div>
-                                        <div id="logo-padding">
+                                        <div id="logo-padding" class="headerStyle">
                                              <h3>Om produktionen</h3>
                                         </div>
                                     </div>

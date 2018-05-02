@@ -99,8 +99,8 @@ function CreateStatistic(request) {
         data: {
             labels: years,
             datasets: [{
-                label: "Miljarder kr/år ",
-                borderColor: 'rgb(255, 99, 132)',
+                label: "Miljarder kr ",
+                borderColor: '#E54500',
                 data: weapons,
                 borderWidth: 5,
             }]
@@ -113,7 +113,7 @@ function CreateStatistic(request) {
                     radius: 7,
                     hoverRadius: 12,
                     mode: 'index',
-                    backgroundColor: 'rgb(255, 99, 132)',
+                    backgroundColor: '#E54500',
                 }
             },
             legend: {

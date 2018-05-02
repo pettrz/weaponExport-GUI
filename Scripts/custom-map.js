@@ -132,9 +132,7 @@ function CreateMapFreedom() {
                 selectedCountry(countryList()[i]);
 
                 changeInfobox();
-                if(expanded){
-                  $('.buttonInfo').click();
-                }
+                
               }
             }
         },
@@ -231,6 +229,9 @@ $('.nav-item a').click(function (e) {
 function changeInfobox() {
 $( activeTab + ' .infobox-before').hide();
 $( activeTab + ' .infobox-after').show();
+  if(expanded){
+    $('.buttonInfo').click();
+  }
 }
 
 // Map resize on tab click

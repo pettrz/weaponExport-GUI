@@ -27,7 +27,7 @@
                 <div class="col-sm-12">
                     <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp" />
                 </div>          
-                <div class="col-sm-12" id="logo-padding2">             
+                <div class="headerStyle col-sm-12" id="logo-padding2">             
                     <h3>Aktörer</h3>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                     <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"/>
                     
                 </div>
-                <div id="logos-header" class="col-lg-12">             
+                <div id="logos-header" class="headerStyle col-lg-12">             
                     <h3 data-bind="text: titleInfo"></h3>
                 </div>
             
@@ -59,13 +59,13 @@
 
                         <!-- Links -->
                         <div id="participant-link">
-                            <div class="readMore" data-bind="if:checkLinksParticipants()">
-                                <h6>Läs mer</h6>
+                            <div  class="linksHeaderStyle" data-bind="if:checkLinksParticipants()">
+                                Läs mer
                             </div>
 
     
                             <div id="logoLinks" data-bind="foreach: linksLogos"> 
-                                <div data-bind="if:logoLink">
+                                <div data-bind="if:logoLink" class="linkStyle">
                                 <p>
                                     <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
                                 </p>
