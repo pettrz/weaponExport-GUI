@@ -10,7 +10,7 @@
          <div class="col-sm-12 ">   
             <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"/>
          </div>
-         <div class="col-sm-12" id="logo-padding">
+         <div class="headerStyle col-sm-12" id="logo-padding">
             <h3>Vapenexportkartan</h3>
          </div>
       </div>
@@ -34,8 +34,10 @@
             <!--header in infobox-->
             <div id="countryHeader" class="d-flex align-items-center col-sm-5 col-lg-12"> 
                 <div class="col-md-12">
-                    <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>              
-                    <h3 data-bind="text: selectedCountry().country"></h3> 
+                    <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>  
+                    <div class="headerStyle">
+                        <h3 data-bind="text: selectedCountry().country"></h3>
+                    </div>            
                 </div>                 
             </div>
             <!--header in infobox ends-->
@@ -44,7 +46,7 @@
             <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
                 <!--Freedom House-->
                 <!--tooltip for Freedom House-->
-                <div id="tooltipFH" class="data-col col-sm-12">
+                <div id="tooltipFH" class="columnStyle data-col col-sm-12">
                     <img class="data-icon" src="./../Style/icons/freedom-house-logo.png" height="35px" width="35px" alt="Freedom House ikon"> Status Freedom House:
                     <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
                     världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
@@ -59,7 +61,7 @@
 
                  <!--GPI-->
                  <!--tooltip for GPI-->
-                <div id="tooltipGpi" class="data-col col-sm-12">
+                <div id="tooltipGpi" class="columnStyle data-col col-sm-12">
                     <img class="data-icon" src="./../Style/icons/gpi-logo.png" height="35px" width="35px" alt="GPI ikon"> GPI - ranking:
                     <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
                     Ju högre placring desto fredligare land.
@@ -83,14 +85,14 @@
                 <!--read more section for links-->
                 <div class="col-sm-12">
 
-                        <div data-bind="if:checkLinksMap()" class="readMore">
-                                <h6>Läs mer</h6>
+                        <div data-bind="if:checkLinksMap()" class="linksHeaderStyle">
+                            Läs mer
                         </div>
                     
 
-                    <div id="links" data-bind="foreach: linksInfo"> 
+                    <div id="links" class="linksStyle" data-bind="foreach: linksInfo"> 
                         <!--links with titles-->
-                        <div data-bind="if:link">
+                        <div data-bind="if:link" class="linkStyle">
                             <p>
                                 <a data-bind="attr: { href: link }, text: title" target="_blank"></a>
                             </p>
