@@ -17,6 +17,10 @@
         />
         <link rel="stylesheet" href="Style/flag-icon.css" type="text/css" media="screen"
         />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans"
+        rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="Scripts/jquery-jvectormap-2.0.3.min.js"></script>
         <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
@@ -35,27 +39,27 @@
             <div class="container">
                 <!--navbar-->
                 <div id="navbar-wrapper" class="col-sm-12 col-md-12 col-lg-12">
-                    <nav class=" col-lg-8 navbar navbar-expand-md navbar-dark">
+                    <nav class=" col-lg-8 navbar navbar-expand-md navbar-dark navbarStyle">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="nav navbar-nav mr-auto">
                                 <!--navbar item-->
-                                <li class="nav-item"> <a class="nav-link active show" href="#map" data-toggle="tab">Vapenexportkarta</a>
+                                <li class="nav-item"> <a class="navStyle nav-link active show" href="#map" data-toggle="tab">Vapenexportkarta</a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="#stats" data-toggle="tab">Statistik</a>
+                                <li class="nav-item"> <a class="navStyle nav-link" href="#stats" data-toggle="tab">Statistik</a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="#participants" data-toggle="tab">Aktörer</a>
+                                <li class="nav-item"> <a class="navStyle nav-link" href="#participants" data-toggle="tab">Aktörer</a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="#about" data-toggle="tab">Om kartan</a>
+                                <li class="nav-item"> <a class="navStyle nav-link" href="#about" data-toggle="tab">Om kartan</a>
                                 </li>
                             </ul>
                         </div>
                         <!--searchbox-->
                         <div id="dropdown-wrapper">
                             <form class="form-inline">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Sök land..."
+                                <input class="navStyle form-control mr-sm-2" type="search" placeholder="Sök land..."
                                 aria-label="Search" data-target="#dropdownContent" data-toggle="dropdown"
                                 data-bind="value: searchTerm, valueUpdate: 'keyup'">
                             </form>
@@ -83,7 +87,7 @@
                                             <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
                                             />
                                         </div>
-                                        <div class="col-sm-12" id="logo-padding">
+                                        <div class="headerStyle col-sm-12" id="logo-padding">
                                              <h3>Vapenexportkartan</h3>
                                         </div>
                                     </div>
@@ -106,7 +110,9 @@
                                     <div id="countryHeader" class="d-flex align-items-center col-sm-5 col-lg-12">
                                         <div class="col-md-12">
                                             <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
-                                             <h3 data-bind="text: selectedCountry().country"></h3> 
+                                            <div class="headerStyle">
+                                                 <h3 data-bind="text: selectedCountry().country"></h3>
+                                            </div>
                                         </div>
                                     </div>
                                     <!--header in infobox ends-->
@@ -114,7 +120,7 @@
                                     <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
                                         <!--Freedom House-->
                                         <!--tooltip for Freedom House-->
-                                        <div id="tooltipFH" class="data-col col-sm-12">
+                                        <div id="tooltipFH" class="columnStyle data-col col-sm-12">
                                             <img class="data-icon" src="./../Style/icons/freedom-house-logo.png" height="35px"
                                             width="35px" alt="Freedom House ikon">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
 
@@ -132,7 +138,7 @@
                                         <!--tooltip for Freedom House ends-->
                                         <!--GPI-->
                                         <!--tooltip for GPI-->
-                                        <div id="tooltipGpi" class="data-col col-sm-12">
+                                        <div id="tooltipGpi" class="columnStyle data-col col-sm-12">
                                             <img class="data-icon" src="./../Style/icons/gpi-logo.png" height="35px"
                                             width="35px" alt="GPI ikon">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
 
@@ -157,12 +163,10 @@
                                         <div id="info" class="col-sm-12" data-bind="text: mapInfo"></div>
                                         <!--read more section for links-->
                                         <div class="col-sm-12">
-                                            <div data-bind="if:checkLinksMap()" class="readMore">
-                                                 <h6>Läs mer</h6>
-                                            </div>
-                                            <div id="links" data-bind="foreach: linksInfo">
+                                            <div data-bind="if:checkLinksMap()" class="linksHeaderStyle">Läs mer</div>
+                                            <div id="links" class="linksStyle" data-bind="foreach: linksInfo">
                                                 <!--links with titles-->
-                                                <div data-bind="if:link">
+                                                <div data-bind="if:link" class="linkStyle">
                                                     <p> <a data-bind="attr: { href: link }, text: title" target="_blank"></a>
                                                     </p>
                                                 </div>
