@@ -213,18 +213,13 @@ function clickOnPoint(canvas, chart, allYears) {
 //Sends values to infobox
 function fillInfoBox(year, weapons, info) {
 
-    changeInfobox();
-
-    //Assigns variables for infoboxes - introbox/infobox
-    var introBox = jQuery('#chart-intro-text');
-    var infoBox = jQuery('#chart-info-display');
+    var infoboxChart = $('#stats .infobox-after');
 
     //Retrieves from database
-    infoBox.find('#stat-year').html("Årtal " + year);
-    infoBox.find('#stat-weapons').html(weapons + " Miljarder kr");
-    infoBox.find('#stat-info').html(info);
+    infoboxChart.find('#stat-year').html("Årtal " + year);
+    infoboxChart.find('#stat-weapons').html(weapons + " Miljarder kr");
+    infoboxChart.find('#stat-info').html(info);
 
     //Displays correct infobox
-    introBox.hide();
-    infoBox.show();
+    changeInfobox();
 }

@@ -103,12 +103,10 @@
                             <div class="infobox-after col-md-12 col-lg-4">
                                 <div class="row mx-auto no-gutters">
                                     <!--header in infobox-->
-                                    <div id="countryHeader" class="col-xs-5 col-sm-5 col-lg-12">
+                                    <div id="countryHeader" class="d-flex align-items-center col-sm-5 col-lg-12">
                                         <div class="col-md-12">
                                             <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
-                                        </div>
-                                        <div class="col-md-12">
-                                             <h3 data-bind="text: selectedCountry().country"></h3>
+                                             <h3 data-bind="text: selectedCountry().country"></h3> 
                                         </div>
                                     </div>
                                     <!--header in infobox ends-->
@@ -221,46 +219,43 @@
                             <!-- /Infobox Intro -->
                             <!-- Infobox Data -->
                             <div class="infobox-after col-md-12 col-lg-4">
-                                <!-- Displays content for infobox when chart is clicked -->
-                                <div id="chart-info-display">
-                                    <div class="row mx-auto no-gutters">
-                                        <div id="stats-header" class="col-xs-5 col-sm-5  col-lg-12">
-                                             <h3 id="stat-year"></h3>
+                                <div class="row mx-auto no-gutters">
+                                    <div id="stats-header" class="col-xs-5 col-sm-5 col-lg-12">
+                                         <h3 id="stat-year"></h3>
+                                    </div>
+                                    <!-- Icons and associated data -->
+                                    <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
+                                        <div class="data-col col-sm-12">
+                                            <img class="data-icon" src="./../Style/icons/vapen-ikon.png" height="35px"
+                                            width="35px">Vapenexport: <span class="float-right" id="stat-weapons"></span>
                                         </div>
-                                        <!-- Icons and associated data -->
-                                        <div id="weaponsData" class="col-sm-7 col-md-7 col-lg-12">
-                                            <div class="data-col col-sm-12">
-                                                <img class="data-icon" src="./../Style/icons/vapen-ikon.png" height="35px"
-                                                width="35px">Vapenexport: <span class="columnInfo" id="stat-weapons"></span>
-                                            </div>
-                                            <div class="data-col col-sm-12">
-                                                <img class="data-icon" src="./../Style/icons/money-icon.png" height="35px"
-                                                width="35px">Största vapenkund:
-                                                <div id="stat-flag" class="flag-icon columnInfo" data-bind="css: statFlag()"></div>
-                                            </div>
+                                        <div class="data-col col-sm-12">
+                                            <img class="data-icon" src="./../Style/icons/money-icon.png" height="35px"
+                                            width="35px">Största vapenkund:
+                                            <div id="stat-flag" class="flag-icon float-right" data-bind="css: statFlag()"></div>
                                         </div>
-                                        <!-- Content: textbox -->
-                                        <div id="stat-infobox">
-                                            <div id="statsInfo" class="col-sm-12">
-                                                <!-- Displays information text -->
-                                                <div id="stat-info" class="col-sm-12"></div>
-                                                <!-- Links -->
-                                                <div id="statistik-link">
-                                                    <div data-bind="if:checkLinksStats()" class="readMore">
-                                                         <h6>Läs mer</h6>
+                                    </div>
+                                    <!-- Content: textbox -->
+                                    <div id="stat-infobox">
+                                        <div id="statsInfo" class="col-sm-12">
+                                            <!-- Displays information text -->
+                                            <div id="stat-info" class="col-sm-12"></div>
+                                            <!-- Links -->
+                                            <div id="statistik-link">
+                                                <div data-bind="if:checkLinksStats()" class="readMore">
+                                                     <h6>Läs mer</h6>
+                                                </div>
+                                                <div id="statLinks" data-bind="foreach: linksStats">
+                                                    <div data-bind="if:statLink">
+                                                        <p> <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
+                                                        </p>
                                                     </div>
-                                                    <div id="statLinks" data-bind="foreach: linksStats">
-                                                        <div data-bind="if:statLink">
-                                                            <p> <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
-                                                            </p>
-                                                        </div>
-                                                        <div data-bind="if:!statLink">
-                                                            <p data-bind="text: statTitle"></p>
-                                                        </div>
+                                                    <div data-bind="if:!statLink">
+                                                        <p data-bind="text: statTitle"></p>
                                                     </div>
                                                 </div>
-                                                <!-- /Links -->
                                             </div>
+                                            <!-- /Links -->
                                         </div>
                                     </div>
                                 </div>
@@ -270,30 +265,28 @@
                     </div>
                     <div id="participants" class="tab-pane">
                         <div class="row h-100 mx-auto no-gutters">
-                            <!-- Main content -->
+                            <!-- Participants -->
                             <div id="inner-wrapper" class="col-lg-8">
                                 <div class="container h-100">
                                     <div id="pLogos" class="row h-100 mx-auto justify-content-around">
                                         <!-- ko foreach: logosList() -->
-                                        <div class="col-sm-6 col-md-4 pLogo-col d-flex align-items-center justify-content-center">
+                                        <div class="pLogo-col d-flex align-items-center justify-content-center col-sm-6 col-md-4">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <img onclick="openInfobox(this)" data-bind="attr:{src: img, alt: participantTitle}"
-                                                    alt="Aktör" width="150px" />
+                                                    <img data-bind="attr:{src: img, alt: participantTitle}" width="150px"
+                                                    onclick="openInfobox(this)" />
+                                                    <div class="pTitle" data-bind="text: participantTitle"></div>
                                                 </div>
-                                                <div class="col-sm-12 pTitle" data-bind="text: participantTitle"></div>
                                             </div>
                                         </div>
                                         <!-- /ko -->
                                     </div>
                                 </div>
                             </div>
-                            <!-- Main content ends -->
-                            <!-- Displays infobox -->
+                            <!-- /Participants -->
+                            <!-- Infobox Intro -->
                             <div class="infobox-before col-md-12 col-lg-4">
-                                <!-- Startpage infobox -->
                                 <div id="participants-intro-text" class="row mx-auto">
-                                    <!-- Header: Logo and title -->
                                     <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
                                         <div class="col-sm-12">
                                             <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
@@ -303,7 +296,6 @@
                                              <h3>Aktörer</h3>
                                         </div>
                                     </div>
-                                    <!-- Content: introduction text -->
                                     <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
                                         <p>Klicka på de olika aktörerna för att lära dig mer om hur den svenska vapenexporten
                                             fungerar och vilka som är huvudaktörerna. Du kan också läsa mer om vad
@@ -312,49 +304,43 @@
                                         </p>
                                     </div>
                                 </div>
-                                <!-- Startpage infobox ends -->
                             </div>
-                            <!-- Viewmodel-participants infobox (sends correct data) -->
+                            <!-- /Infobox Intro -->
+                            <!-- Infobox Data-->
                             <div class="infobox-after col-md-12 col-lg-4">
-                                <!-- Displays content for infobox when image is clicked -->
-                                <div id="participants-info-display">
-                                    <div class="row mx-auto justify-content-center">
-                                        <!-- Header: Logo and title -->
-                                        <div id="infoboxImg" class="col-md-7">
-                                            <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"
-                                            />
-                                        </div>
-                                        <div id="logos-header" class="col-lg-12">
-                                             <h3 data-bind="text: titleInfo"></h3>
-                                        </div>
-                                        <!-- Content: information text -->
-                                        <div id="logo-infobox">
-                                            <div id="logoInfo" class="col-sm-12">
-                                                <!-- Displays infotext -->
-                                                <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"></div>
-                                                <!-- Displays links -->
-                                                <div id="participant-link">
-                                                    <div data-bind="if:checkLinksParticipants()" class="readMore">
-                                                         <h6>Läs mer</h6>
+                                <div class="row mx-auto justify-content-center">
+                                    <div id="infoboxImg" class="col-md-7">
+                                        <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"
+                                        />
+                                    </div>
+                                    <div id="logos-header" class="col-lg-12">
+                                         <h3 data-bind="text: titleInfo"></h3>
+                                    </div>
+                                    <!-- Content: information text -->
+                                    <div id="logo-infobox">
+                                        <div id="logoInfo" class="col-sm-12">
+                                            <div id="logo-info" class="col-sm-12" data-bind="text: logosInfo"></div>
+                                            <!-- Links -->
+                                            <div id="participant-link">
+                                                <div class="readMore" data-bind="if:checkLinksParticipants()">
+                                                     <h6>Läs mer</h6>
+                                                </div>
+                                                <div id="logoLinks" data-bind="foreach: linksLogos">
+                                                    <div data-bind="if:logoLink">
+                                                        <p> <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
+                                                        </p>
                                                     </div>
-                                                    <!-- Searches through list -> displays depending on title or link -->
-                                                    <div id="logoLinks" data-bind="foreach: linksLogos">
-                                                        <div data-bind="if:logoLink">
-                                                            <p> <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
-                                                            </p>
-                                                        </div>
-                                                        <div data-bind="if:!logoLink">
-                                                            <p data-bind="text: logoTitle"></p>
-                                                        </div>
+                                                    <div data-bind="if:!logoLink">
+                                                        <p data-bind="text: logoTitle"></p>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- /Links -->
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Infobox onclick ends -->
                             </div>
-                            <!-- Viewmodel-statistics infobox ends -->
+                            <!-- /Infobox Data -->
                         </div>
                     </div>
                     <div id="about" class="tab-pane">

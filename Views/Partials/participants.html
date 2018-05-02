@@ -1,32 +1,28 @@
-<!-- Main content -->
+<!-- Participants -->
 <div id="inner-wrapper" class="col-lg-8">
         
         <div class="container h-100">
             <div id="pLogos" class="row h-100 mx-auto justify-content-around">  
 
                 <!-- ko foreach: logosList() -->
-                    <div class="col-sm-6 col-md-4 pLogo-col d-flex align-items-center justify-content-center">
+                    <div class="pLogo-col d-flex align-items-center justify-content-center col-sm-6 col-md-4">
                         <div class="row">
                             <div class="col-sm-12">
-                                <img onclick="openInfobox(this)" data-bind="attr:{src: img, alt: participantTitle}" alt="Aktör" width="150px"/>
+                                <img data-bind="attr:{src: img, alt: participantTitle}" width="150px" onclick="openInfobox(this)"/>
+                                <div class="pTitle" data-bind="text: participantTitle">
+                                </div> 
                             </div>
-                            <div  class="col-sm-12 pTitle" data-bind="text: participantTitle">
-                            </div>  
                         </div>
                     </div>
                 <!-- /ko -->
             </div>
         </div>
 </div>
-<!-- Main content ends -->
+<!-- /Participants -->
      
- <!-- Displays infobox -->
+<!-- Infobox Intro -->
 <div class="infobox-before col-md-12 col-lg-4">
-
-    <!-- Startpage infobox -->
     <div id="participants-intro-text" class="row mx-auto">
-
-            <!-- Header: Logo and title -->
             <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
                 <div class="col-sm-12">
                     <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp" />
@@ -35,24 +31,18 @@
                     <h3>Aktörer</h3>
                 </div>
             </div>
-
-            <!-- Content: introduction text -->
             <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
                 <p>Klicka på de olika aktörerna för att lära dig mer om hur den svenska vapenexporten fungerar och vilka som är huvudaktörerna. 
                 Du kan också läsa mer om vad du som privatperson kan göra för att ta avstånd från vapenindustrin.<br/></p>
             </div>
     </div>
-    <!-- Startpage infobox ends -->
 </div>
+<!-- /Infobox Intro -->
 
-    <!-- Viewmodel-participants infobox (sends correct data) -->
+    <!-- Infobox Data-->
     <div class="infobox-after col-md-12 col-lg-4">
-
-        <!-- Displays content for infobox when image is clicked -->
-        <div id="participants-info-display">
             <div class="row mx-auto justify-content-center">
 
-                <!-- Header: Logo and title -->
                 <div id="infoboxImg" class="col-md-7">
                     <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"/>
                     
@@ -65,17 +55,16 @@
                 <div id="logo-infobox">
                     <div id="logoInfo" class="col-sm-12">
 
-                        <!-- Displays infotext -->
-                        <div id="logo-info" data-bind="text: logosInfo" class="col-sm-12"> 
+                        <div id="logo-info" class="col-sm-12" data-bind="text: logosInfo"> 
                         </div>
 
-                        <!-- Displays links -->
+                        <!-- Links -->
                         <div id="participant-link">
-                            <div data-bind="if:checkLinksParticipants()" class="readMore">
+                            <div class="readMore" data-bind="if:checkLinksParticipants()">
                                 <h6>Läs mer</h6>
                             </div>
 
-                            <!-- Searches through list -> displays depending on title or link -->
+    
                             <div id="logoLinks" data-bind="foreach: linksLogos"> 
                                 <div data-bind="if:logoLink">
                                 <p>
@@ -87,11 +76,9 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- /Links -->
                     </div>
                 </div>
             </div>   
-        </div>
-        <!-- Infobox onclick ends -->
-
     </div>
-    <!-- Viewmodel-statistics infobox ends -->
+    <!-- /Infobox Data -->

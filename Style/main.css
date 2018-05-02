@@ -327,11 +327,13 @@ button:focus{
     
     #countryHeader{
         background-color: #333131;
+        padding: 0;
     }
 
     #countryReadMore{
         position: static;
     }
+
 }
 /* 1200px breakpoint */
 @media screen and (max-width : 1200px){
