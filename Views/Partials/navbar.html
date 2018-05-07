@@ -30,10 +30,10 @@
               <!-- Dropdown content -->
               <div id="dropdown-content" class="dropdown-menu dropdown-menu-right ml-auto" aria-labelledby="navbarDropdown">
                     <div data-bind="foreach: showList()"> 
-                        <div data-bind="if:country!='Inget resultat hittades.'">
+                        <div data-bind="if:country!='Inget resultat'">
                             <a class="dropdown-item" onclick="changeInfobox()" data-bind=" text: country, click: selectedCountry"></a>
                         </div>
-                        <div data-bind="if:country=='Inget resultat hittades.'">
+                        <div data-bind="if:country=='Inget resultat'">
                             <a class="dropdown-item" data-bind=" text: country"></a>
                         </div>
                     </div>
