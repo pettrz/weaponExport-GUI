@@ -76,7 +76,7 @@ function viewModelSearch() {
         //returns countries
         if (countries.length == 0) {
           console.log('no match in list')
-          return [{country: "Inget resultat hittades."}]
+          return [{country: "Inget resultat"}]
         } else {
           console.log('returned matches in list')
           return countries;
