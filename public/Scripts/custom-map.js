@@ -192,19 +192,20 @@ function checkLinksMap(){
   
 });
 
+// Disable Data-collapse in smaller widths
 $(window).resize(function(){
 var width = $(window).width();
 if(width <= 992){
   if(expanded){
-    $("#countryData").collapse('show');
+    $("#data-collapse").collapse('show');
   }
-  $('#countryData').on('hide.bs.collapse', function (e) {
+  $('#data-collapse').on('hide.bs.collapse', function (e) {
       e.preventDefault(e);
   })
 } else {
-    $('#countryData').unbind('hide.bs.collapse')
+    $('#data-collapse').unbind('hide.bs.collapse')
     if(expanded){
-      $("#countryData").collapse('hide');
+      $("#data-collapse").collapse('hide');
     }
 }
 })
