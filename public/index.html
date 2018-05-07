@@ -9,399 +9,381 @@
         type="text/css" media="screen" />
         <link rel="stylesheet" href="Style/bootstrap.min.css" type="text/css"
         media="screen" />
-        <link rel="stylesheet" href="Style/bootstrap-grid.min.css" type="text/css"
-        media="screen" />
-        <link rel="stylesheet" href="Style/bootstrap-reboot.min.css" type="text/css"
-        media="screen" />
         <link rel="stylesheet" href="Style/main.css" type="text/css" media="screen"
         />
         <link rel="stylesheet" href="Style/flag-icon.css" type="text/css" media="screen"
         />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans"
-        rel="stylesheet">
+        <!-- Older jquery version required for full jvectormap compability -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="Scripts/jquery-jvectormap-2.0.3.min.js"></script>
         <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
         <script src="Scripts/Chart.min.js"></script>
         <script src="Scripts/bootstrap.min.js"></script>
-        <script src="Scripts/fontawesome.js"></script>
-        <script src="Scripts/fontawesome-all.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+        <!-- Custom js -->
         <script src="Scripts/custom-map.js" defer="defer"></script>
         <script src="Scripts/custom-chart.js" defer="defer"></script>
         <script src="Scripts/custom-participant.js" defer="defer"></script>
     </head>
     
-    <body lang="sv">
-        <div id="wrapper">
-            <div class="container">
-                <!--navbar-->
-                <div id="navbar-wrapper" class="col-sm-12 col-md-12 col-lg-12">
-                    <nav class=" col-lg-8 navbar navbar-expand-md navbar-dark navbarStyle">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="nav navbar-nav mr-auto">
-                                <!--navbar item-->
-                                <li class="nav-item"> <a class="navStyle nav-link active show" href="#map" data-toggle="tab">Vapenexportkarta</a>
-                                </li>
-                                <li class="nav-item"> <a class="navStyle nav-link" href="#stats" data-toggle="tab">Statistik</a>
-                                </li>
-                                <li class="nav-item"> <a class="navStyle nav-link" href="#participants" data-toggle="tab">Aktörer</a>
-                                </li>
-                                <li class="nav-item"> <a class="navStyle nav-link" href="#about" data-toggle="tab">Om kartan</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--searchbox-->
-                        <div id="dropdown-wrapper">
-                            <form class="form-inline">
-                                <input class="navStyle form-control mr-sm-2" type="search" placeholder="Sök land..."
-                                aria-label="Search" data-target="#dropdownContent" data-toggle="dropdown"
-                                data-bind="value: searchTerm, valueUpdate: 'keyup'">
-                            </form>
-                            <!--searchcontent-->
-                            <div id="dropdownContent" class="dropdown-menu dropdown-menu-right ml-auto "
-                            aria-labelledby="navbarDropdown">
-                                <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="changeInfobox()" data-bind="text: country, click: selectedCountry"></a>
-                                </div>
+    <body lang="sv" id="weaponmap-app">
+        <div class="container">
+            <!--Navbar wrapper-->
+            <div id="navbar-wrapper">
+                <!--Navbar-->
+                <nav class="col-lg-8 navbar navbar-expand-md navbar-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item"> <a class="nav-link active show" href="#map" data-toggle="tab">Vapenexportkarta</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="#stats" data-toggle="tab">Statistik</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="#participants" data-toggle="tab">Aktörer</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="#about" data-toggle="tab">Om kartan</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Dropdown Search-->
+                    <div id="dropdown-wrapper">
+                        <form>
+                            <input class="form-control" type="search" placeholder="Sök land..." aria-label="Search"
+                            data-target="#dropdown-content" data-toggle="dropdown" data-bind="value: searchTerm, valueUpdate: 'keyup'">
+                        </form>
+                        <!-- Dropdown content -->
+                        <div id="dropdown-content" class="dropdown-menu dropdown-menu-right ml-auto"
+                        aria-labelledby="navbarDropdown">
+                            <div data-bind="foreach: showList()"> <a class="dropdown-item" onclick="changeInfobox()" data-bind="text: country, click: selectedCountry"></a>
                             </div>
-                        </div>
-                    </nav>
-                </div>
-                <div class="tab-content">
-                    <div id="map" class="tab-pane active">
-                        <div class="row h-100 mx-auto no-gutters">
-                            <div id="inner-wrapper" class="col-lg-8">
-                                <div id="world-map"></div>
-                            </div>
-                            <!--startpage infobox-->
-                            <div class="infobox-before col-md-12 col-lg-4">
-                                <div class="row mx-auto">
-                                    <!--startpage header-->
-                                    <div class="introHeader col-sm-5 col-md-5 col-lg-12">
-                                        <div class="col-sm-12 ">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
-                                            />
-                                        </div>
-                                        <div class="headerStyle col-sm-12" id="logo-padding">
-                                             <h3>Vapenexportkartan</h3>
-                                        </div>
-                                    </div>
-                                    <!--startpage header-->
-                                    <!--startpage infobox text-->
-                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                                        <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen
-                                            och genom åren. Kartan visar ett urval av de länder dit svenska vapen skickats,
-                                            genom medveten export eller genom illegala överföringar.
-                                            <br/>
-                                            <br/>Läs mer om kartan, källor och urval i fliken “Om kartan”.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--startpage infobox ends-->
-                            <!--viewmodel for map-->
-                            <div class="infobox-after col-md-12 col-lg-4">
-                                <div class="row mx-auto no-gutters">
-                                    <!--header in infobox-->
-                                    <div id="countryHeader" class="d-flex align-items-center col-sm-5 col-lg-12">
-                                        <div class="col-md-12">
-                                            <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
-                                            <div class="headerStyle">
-                                                 <h3 data-bind="text: selectedCountry().country"></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--header in infobox ends-->
-                                    <!--countrydata-->
-                                    <div id="countryData" class="collapse show col-sm-7 col-md-7 col-lg-12">
-                                        <!--Freedom House-->
-                                        <!--tooltip for Freedom House-->
-                                        <div id="tooltipFH" class="columnStyle data-col col-sm-12">
-                                            <img class="data-icon" src="./../Style/icons/freedom-house-logo.png" height="35px"
-                                            width="35px" alt="Freedom House ikon">Status Freedom House: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
-
-                    världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
-
-                    <br/>
-
-                    <a class="defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida
-
-                    </a>
-
-                    </span>
-                                            <!--Freedom House Status--> <span class="float-right" id="statusInfo" data-bind="text: statusInfo"></span>
-                                        </div>
-                                        <!--tooltip for Freedom House ends-->
-                                        <!--GPI-->
-                                        <!--tooltip for GPI-->
-                                        <div id="tooltipGpi" class="columnStyle data-col col-sm-12">
-                                            <img class="data-icon" src="./../Style/icons/gpi-logo.png" height="35px"
-                                            width="35px" alt="GPI ikon">GPI - ranking: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
-
-                    Ju högre placring desto fredligare land.
-
-                    <br/>
-
-                    <a class="defRanks" href="http://visionofhumanity.org/" target="_blank">
-
-                    Se Vision of Humanitys webbsida
-
-                    </a>
-
-                    </span>
-                                            <!--GPI ranking--> <span class="columnInfo" id="GPIInfo" data-bind="text: GPIInfo"></span>
-                                        </div>
-                                        <!--tooltip for GPI ends-->
-                                    </div>
-                                    <!--countrydata-->
-                                    <!--country infotext-->
-                                    <div id="countryInfo" class="overflow-fade col-sm-12">
-                                        <div id="info" class="col-sm-12" data-bind="text: mapInfo"></div>
-                                        <!--read more section for links-->
-                                        <div class="col-sm-12">
-                                            <div data-bind="if:checkLinksMap()" class="linksHeaderStyle">Läs mer</div>
-                                            <div id="links" class="linksStyle" data-bind="foreach: linksInfo">
-                                                <!--links with titles-->
-                                                <div data-bind="if:link" class="linkStyle">
-                                                    <p> <a data-bind="attr: { href: link }, text: title" target="_blank"></a>
-                                                    </p>
-                                                </div>
-                                                <!--only titles-->
-                                                <div data-bind="if:!link">
-                                                    <p data-bind="text: title"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--read more section for links ends-->
-                                    </div>
-                                    <!--country infotext ends-->
-                                    <!--read more button in infobox-->
-                                    <div id="countryReadMore" class="col-sm-12">
-                                        <button onclick="changeSize()" id="btnInfo" class="buttonInfo" type="button"
-                                        data-toggle="collapse" data-target="#countryData">Läs mer</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--viewmodel for map ends-->
                         </div>
                     </div>
-                    <div id="stats" class="tab-pane">
-                        <div class="row h-100 mx-auto no-gutters">
-                            <!-- Chart -->
-                            <div id="inner-wrapper" class="col-lg-8">
-                                <div class="chart-container">
-                                    <canvas id="myChart"></canvas>
-                                </div>
-                            </div>
-                            <!-- /Chart -->
-                            <!-- Infobox Intro -->
-                            <div class="infobox-before col-md-12 col-lg-4">
-                                <div id="chart-intro-text" class="row mx-auto">
-                                    <div id="introHeader2" class="col-sm-5 col-md-5 col-lg-12">
-                                        <div class="col-sm-12">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" />
-                                        </div>
-                                        <div class="col-sm-12 headerStyle">
-                                             <h3>Statistik vapenexport</h3>
-                                        </div>
-                                    </div>
-                                    <div class="introText2 col-sm-7 col-md-7 col-lg-12">
-                                        <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.
-                                            <br/>
-                                            <br/>Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för
-                                            valfritt årtal i kurvan och läs mer om det aktuella årets vapenexport.
-                                            Värdet på vapenexporten mäts i miljarder kronor.
-                                            <br/>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Infobox Intro -->
-                            <!-- Infobox Data -->
-                            <div class="infobox-after col-md-12 col-lg-4">
-                                <div class="row mx-auto no-gutters">
-                                    <div id="stats-header" class="headerStyle col-xs-5 col-sm-5 col-lg-12">
-                                         <h3 id="stat-year"></h3>
-                                    </div>
-                                    <!-- Icons and associated data -->
-                                    <div id="weaponsData" class="columnStyle col-sm-7 col-md-7 col-lg-12">
-                                        <div class="data-col col-sm-12">
-                                            <img class="data-icon" src="./../Style/icons/vapen-ikon.png" height="35px"
-                                            width="35px">Vapenexport: <span class="float-right" id="stat-weapons"></span>
-                                        </div>
-                                        <div class=" columnStyle data-col col-sm-12">
-                                            <img class="data-icon" src="./../Style/icons/money-icon.png" height="35px"
-                                            width="35px">Största vapenkund:
-                                            <div id="stat-flag" class="flag-icon float-right" data-bind="css: statFlag()"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Content: textbox -->
-                                    <div id="stat-infobox">
-                                        <div id="statsInfo" class="col-sm-12">
-                                            <!-- Displays information text -->
-                                            <div id="stat-info" class="col-sm-12"></div>
-                                            <!-- Links -->
-                                            <div id="statistik-link">
-                                                <div data-bind="if:checkLinksStats()" class="linksHeaderStyle">Läs mer</div>
-                                                <div id="statLinks" data-bind="foreach: linksStats">
-                                                    <div data-bind="if:statLink" class="linkStyle">
-                                                        <p> <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
-                                                        </p>
-                                                    </div>
-                                                    <div data-bind="if:!statLink">
-                                                        <p data-bind="text: statTitle"></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /Links -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Infobox Data -->
+                </nav>
+            </div>
+            <!-- Tabs -->
+            <div class="tab-content">
+                <!-- Map -->
+                <div id="map" class="tab-pane active">
+                    <div class="row h-100 mx-auto no-gutters">
+                        <!-- Main content: Map -->
+                        <div class="inner-wrapper h-100 col-lg-8">
+                            <div id="world-map"></div>
                         </div>
-                    </div>
-                    <div id="participants" class="tab-pane">
-                        <div class="row h-100 mx-auto no-gutters">
-                            <!-- Participants -->
-                            <div id="inner-wrapper" class="col-lg-8">
-                                <div class="container h-100">
-                                    <div id="pLogos" class="row h-100 mx-auto justify-content-around">
-                                        <!-- ko foreach: logosList() -->
-                                        <div class="pLogo-col d-flex align-items-center justify-content-center col-sm-6 col-md-4">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <img data-bind="attr:{src: img, alt: participantTitle}" width="150px"
-                                                    onclick="openInfobox(this)" />
-                                                    <div class="pTitle" data-bind="text: participantTitle"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /ko -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Participants -->
-                            <!-- Infobox Intro -->
-                            <div class="infobox-before col-md-12 col-lg-4">
-                                <div id="participants-intro-text" class="row mx-auto">
-                                    <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
-                                        <div class="col-sm-12">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
-                                            />
-                                        </div>
-                                        <div class="headerStyle col-sm-12" id="logo-padding2">
-                                             <h3>Aktörer</h3>
-                                        </div>
-                                    </div>
-                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                                        <p>En rad aktörer är direkt och indirekt inblandade i vapenexporten, genom
-                                            att främja, kontrollera, reglera, granska eller stödja den. Klicka på de
-                                            olika aktörerna för att lära dig mer om deras roll i vapenhandeln.
-                                            <br/>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Infobox Intro -->
-                            <!-- Infobox Data-->
-                            <div class="infobox-after col-md-12 col-lg-4">
-                                <div class="row mx-auto justify-content-center">
-                                    <div id="infoboxImg" class="col-md-7">
-                                        <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"
+                        <!--Infobox intro map-->
+                        <div class="infobox-before col-md-12 col-lg-4">
+                            <div class="row mx-auto no-gutters">
+                                <!--Intro header-->
+                                <div class="py-5 col-sm-5 col-md-5 col-lg-12">
+                                    <div class="col-sm-12">
+                                        <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
                                         />
                                     </div>
-                                    <div id="logos-header" class="headerStyle col-lg-12">
-                                         <h3 data-bind="text: titleInfo"></h3>
+                                    <div class="pt-4">
+                                         <h3>Vapenexportkartan</h3>
                                     </div>
-                                    <!-- Content: information text -->
-                                    <div id="logo-infobox">
-                                        <div id="logoInfo" class="col-sm-12">
-                                            <div id="logo-info" class="col-sm-12" data-bind="text: logosInfo"></div>
-                                            <!-- Links -->
-                                            <div id="participant-link">
-                                                <div class="linksHeaderStyle" data-bind="if:checkLinksParticipants()">Läs mer</div>
-                                                <div id="logoLinks" data-bind="foreach: linksLogos">
-                                                    <div data-bind="if:logoLink" class="linkStyle">
-                                                        <p> <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
-                                                        </p>
-                                                    </div>
-                                                    <div data-bind="if:!logoLink">
-                                                        <p data-bind="text: logoTitle"></p>
-                                                    </div>
-                                                </div>
+                                </div>
+                                <!--Intro text-->
+                                <div class="d-flex align-items-center col-sm-7 col-md-7 col-lg-12">
+                                    <div class="col-sm-12">
+                                        <p>Klicka på länderna och läs mer om Sveriges vapenexport runt om i världen
+                                            och genom åren. Kartan visar ett urval av de länder dit svenska vapen skickats,
+                                            genom medveten export eller genom illegala överföringar.</p>
+                                        <p>Läs mer om kartan, källor och urval i fliken “Om kartan”.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Infobox with data-->
+                        <div class="infobox-after col-md-12 col-lg-4">
+                            <div class="row mx-auto no-gutters">
+                                <!--header in infobox-->
+                                <div class="infobox-header pb-3 d-flex align-items-center justify-content-center col-sm-5 col-lg-12">
+                                    <div class="col-sm-12">
+                                        <div id="flag" class="flag-icon" data-bind="css: mapFlag()"></div>
+                                         <h3 class="pt-2" data-bind="text: selectedCountry().country"></h3>
+                                    </div>
+                                </div>
+                                <!--Icons & data-->
+                                <div id="data-collapse" class="data-wrapper collapse show col-sm-7 col-md-7 col-lg-12">
+                                    <!--Tooltip Freedom House-->
+                                    <div id="tooltipFH" class="data-col col-sm-12">
+                                        <img class="mr-3" src="./../Style/icons/freedom-house-logo.png" height="35px"
+                                        width="35px" alt="Freedom House ikon">FH status: <span class="tooltiptext">Freedom House är en oberoende amerikansk organisation som bland annat kategoriserar 
+
+                        världens länder efter hur demokratiska de är. Länderna klassas som "fria", "delvis fria" eller "inte fria".
+
+                        <br/>
+
+                        <a class="h-link defRanks" href="https://freedomhouse.org/">Se Freedom House webbsida
+
+                        </a>
+
+                    </span> <span class="float-right" id="statusInfo" data-bind="text: statusInfo"></span>
+                                    </div>
+                                    <!--Tooltip GPI-->
+                                    <div id="tooltipGpi" class="data-col col-sm-12">
+                                        <img class="mr-3" src="./../Style/icons/gpi-logo.png" height="35px" width="35px"
+                                        alt="GPI ikon">GPI rankning: <span class="tooltiptext">Global Peace Index rangordnar 163 av världens länder efter hur fredliga de är. 
+
+                        Ju högre placring desto fredligare land.
+
+                        <br/>
+
+                        <a class="h-link defRanks" href="http://visionofhumanity.org/" target="_blank">
+
+                        Se Vision of Humanitys webbsida
+
+                        </a>
+
+                    </span> <span class="float-right" id="GPIInfo" data-bind="text: GPIInfo"></span>
+                                    </div>
+                                </div>
+                                <!--Country infotext-->
+                                <div id="countryinfo-wrapper" class="info-wrapper overflow-fade col-sm-12">
+                                    <!-- Displays info text -->
+                                    <div id="info" class="info col-sm-12" data-bind="text: mapInfo"></div>
+                                    <!--Link section-->
+                                    <div class="col-sm-12">
+                                        <div data-bind="if:checkLinksMap()" class="py-3">
+                                             <h3>Läs mer</h3>
+                                        </div>
+                                        <div data-bind="foreach: linksInfo">
+                                            <!--Hyperlinks-->
+                                            <div data-bind="if:link" class="linkStyle">
+                                                <p> <a class="h-link" data-bind="attr: { href: link }, text: title" target="_blank"></a>
+                                                </p>
                                             </div>
-                                            <!-- /Links -->
+                                            <!--Only titles-->
+                                            <div data-bind="if:!link">
+                                                <p data-bind="text: title"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Read more button-->
+                                <div id="btn-wrapper" class="col-sm-12">
+                                    <button onclick="changeSize()" id="btn-map" class="btn" type="button"
+                                    data-toggle="collapse" data-target="#data-collapse">Läs mer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Statistics -->
+                <div id="stats" class="tab-pane">
+                    <div class="row h-100 mx-auto no-gutters">
+                        <!-- Main content: Chart -->
+                        <div class="inner-wrapper col-lg-8">
+                            <div class="chart-container">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                        <!-- Infobox Intro -->
+                        <div class="infobox-before col-md-12 col-lg-4">
+                            <div class="row mx-auto no-gutters">
+                                <!--Intro header-->
+                                <div class="py-5 col-sm-5 col-md-5 col-lg-12">
+                                    <div class="col-sm-12">
+                                        <img src="./../Style/icons/svenska_freds-logo.png" />
+                                    </div>
+                                    <div class="pt-4">
+                                         <h3>Statistik vapenexport</h3>
+                                    </div>
+                                </div>
+                                <!--Intro text-->
+                                <div class="d-flex align-items-center col-sm-7 col-md-7 col-lg-12">
+                                    <div class="col-sm-12">
+                                        <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.</p>
+                                        <p>Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för
+                                            valfritt årtal i kurvan och läs mer om det aktuella årets vapenexport.
+                                            Värdet på vapenexporten mäts i miljarder kronor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Infobox Data -->
+                        <div class="infobox-after col-md-12 col-lg-4">
+                            <div class="row mx-auto no-gutters">
+                                <div class="infobox-header py-3 d-flex align-items-center justify-content-center col-sm-5 col-lg-12">
+                                     <h3 id="stat-year"></h3>
+                                </div>
+                                <!--Icons & data-->
+                                <div class="data-wrapper col-sm-7 col-md-7 col-lg-12">
+                                    <div class="data-col col-sm-12">
+                                        <img class="mr-3 data-icon" src="./../Style/icons/vapen-ikon.png" height="35px"
+                                        width="35px" alt="Vapenikon för årets totala vapenexportsvärde.">Vapenexport: <span id="stat-weapons" class="float-right"></span>
+                                    </div>
+                                    <div class="data-col col-sm-12">
+                                        <img class="mr-3 data-icon" src="./../Style/icons/money-icon.png" height="35px"
+                                        width="35px" alt="Pengaikon för årets största vapenkund.">Största vapenkund:
+                                        <div id="stat-flag" class="flag-icon float-right" data-bind="css: statFlag()"></div>
+                                    </div>
+                                </div>
+                                <!-- Stats infotext -->
+                                <div id="statsinfo-wrapper" class="info-wrapper p-3 col-sm-12">
+                                    <!-- Displays info text -->
+                                    <div id="stat-info" class="info col-sm-12"></div>
+                                    <!-- Link section -->
+                                    <div class="col-sm-12">
+                                        <div data-bind="if:checkLinksStats()" class="py-3">
+                                             <h3>Läs mer</h3>
+                                        </div>
+                                        <div data-bind="foreach: linksStats">
+                                            <!--Hyperlinks-->
+                                            <div data-bind="if:statLink">
+                                                <p> <a class="h-link" data-bind="attr: { href: statLink }, text: statTitle"
+                                                    target="_blank"></a>
+                                                </p>
+                                            </div>
+                                            <!--Only titles-->
+                                            <div data-bind="if:!statLink">
+                                                <p data-bind="text: statTitle"></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- /Infobox Data -->
                         </div>
                     </div>
-                    <div id="about" class="tab-pane">
-                        <div class="row h-100 mx-auto no-gutters">
-                            <div id="inner-wrapper" class="col-md-12 col-lg-8">
-                                <div id="about-map">
-                                    <!--main text-->
-                                    <div id="about-header" class="headerStyle">
+                </div>
+                <!-- Participants -->
+                <div id="participants" class="tab-pane">
+                    <div class="row h-100 mx-auto no-gutters">
+                        <!-- Main content: Participants -->
+                        <div class="inner-wrapper col-lg-8">
+                            <div class="container h-100">
+                                <div id="pLogos" class="row h-100 mx-auto justify-content-around">
+                                    <!-- ko foreach: logosList() -->
+                                    <div class="pLogo-col d-flex align-items-center justify-content-center col-sm-6 col-md-4">
+                                        <div class="col-sm-12">
+                                            <img data-bind="attr:{src: img, alt: participantTitle}" width="150" onclick="openInfobox(this)"
+                                            />
+                                             <h6 class="pt-4" data-bind="text: participantTitle">
+
+                            </h6> 
+                                        </div>
+                                    </div>
+                                    <!-- /ko -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Infobox Intro -->
+                        <div class="infobox-before col-md-12 col-lg-4">
+                            <div class="row mx-auto no-gutters">
+                                <!--Intro header-->
+                                <div class="py-5 col-sm-5 col-md-5 col-lg-12">
+                                    <div class="col-sm-12">
+                                        <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
+                                        />
+                                    </div>
+                                    <div class="pt-4">
+                                         <h3>Aktörer</h3>
+                                    </div>
+                                </div>
+                                <!--Intro text-->
+                                <div class="d-flex align-items-center col-sm-7 col-md-7 col-lg-12">
+                                    <div class="col-sm-12">
+                                        <p>En rad aktörer är direkt och indirekt inblandade i vapenexporten, genom
+                                            att främja, kontrollera, reglera, granska eller stödja den. Klicka på de
+                                            olika aktörerna för att lära dig mer om deras roll i vapenhandeln.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Infobox Data-->
+                        <div class="infobox-after col-md-12 col-lg-4">
+                            <div class="row mx-auto justify-content-center">
+                                <div id="infobox-img" class="m-3 py-2 col-7">
+                                    <img class="my-2" data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"
+                                    height="80" />
+                                </div>
+                                <div class="pt-4 col-lg-12">
+                                     <h3 data-bind="text: titleInfo"></h3>
+                                </div>
+                                <!--Participant infotext-->
+                                <div id="logoinfo-wrapper" class="info-wrapper col-sm-12">
+                                    <!-- Displays info text -->
+                                    <div id="logo-info" class="info p-3 col-sm-12" data-bind="text: logosInfo"></div>
+                                    <!-- Link section -->
+                                    <div class="col-sm-12">
+                                        <div class="py-3" data-bind="if:checkLinksParticipants()">
+                                             <h3>Läs mer</h3>
+                                        </div>
+                                        <div data-bind="foreach: linksLogos" class="py-3">
+                                            <!-- Hyperlinks -->
+                                            <div data-bind="if:logoLink">
+                                                <p> <a class="h-link" data-bind="attr: { href: logoLink }, text: logoTitle"
+                                                    target="_blank"></a>
+                                                </p>
+                                            </div>
+                                            <!-- Title without link -->
+                                            <div data-bind="if:!logoLink">
+                                                <p data-bind="text: logoTitle"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- About -->
+                <div id="about" class="tab-pane">
+                    <div class="row h-100 mx-auto no-gutters">
+                        <!-- Main content: About -->
+                        <div class="inner-wrapper col-md-12 col-lg-8">
+                            <div class="container h-100 d-flex align-items-center" style="overflow-y: auto">
+                                <!--Main text-->
+                                <div id="about-wrapper" class="row mx-auto">
+                                    <div class="pb-4 text-center col-md-12">
                                          <h2>Om kartan</h2>
                                     </div>
-                                    <div class="aboutText">
+                                    <div class="px-5 col-md-12">
                                         <p>Syftet med den här kartan är att öka insynen i och informationen om svensk
                                             vapenhandel. Handel med vapen och annan krigsmateriel omgärdas dock av
                                             en omfattande sekretess som gör det svårt att få information om vad som
                                             exporteras, till vem och hur besluten tas om att tillåta exporten. Kartan
                                             visar ett urval av de stater där svenska vapen finns och ska inte betraktas
-                                            som heltäckande.
-                                            <br/>
-                                            <br/>
-                                        </p>
-                                         <h6>Så här har vi gjort urvalet:</h6>
-
-                                        <br/>
-                                        <p>Kartan visar de 30 största importörerna av svensk krigsmateriel, åren
+                                            som heltäckande.</p>
+                                         <h5 class="pt-4">Så här har vi gjort urvalet:</h5>
+                                        <p class=pt-3>Kartan visar de 30 största importörerna av svensk krigsmateriel, åren
                                             2000-2010 (enligt regeringens skrivelser om strategisk exportkontroll).
                                             Den visar också merparten av de länder med stora brister i demokratisk
                                             status som Sverige har tillåtit export till samt konstaterade fall av illegala
                                             överföringar av svensk krigsmateriel. Informationen baseras på tillgänglig
-                                            offentlig redovisning, Svenska Freds arkiv, mediarapportering och granskningar.
-                                            <br/>
-                                            <br/>Värdet av krigsmaterielexporten anges i löpande priser.</p>
+                                            offentlig redovisning, Svenska Freds arkiv, mediarapportering och granskningar.</p>
+                                        <p>Värdet av krigsmaterielexporten anges i löpande priser.</p>
                                     </div>
                                 </div>
                             </div>
-                            <!--startpage infobox-->
-                            <div class="infobox-before col-md-12 col-lg-4">
-                                <div class="row mx-auto">
-                                    <div class="introHeader col-sm-5 col-md-5 col-lg-12">
-                                        <!--startpage header -->
-                                        <div class="col-sm-12">
-                                            <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
-                                            />
-                                        </div>
-                                        <div id="logo-padding" class="headerStyle">
-                                             <h3>Om produktionen</h3>
-                                        </div>
+                        </div>
+                        <!--Infobox Intro-->
+                        <div class="infobox-before col-md-12 col-lg-4">
+                            <div class="row mx-auto no-gutters">
+                                <div class="py-5 col-sm-5 col-md-5 col-lg-12">
+                                    <div class="col-sm-12">
+                                        <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp"
+                                        />
                                     </div>
-                                    <!-- startpage infobox text -->
-                                    <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
+                                    <div class="pt-4">
+                                         <h3>Om produktionen</h3>
+                                    </div>
+                                </div>
+                                <!-- Production text -->
+                                <div class="d-flex align-items-center col-sm-7 col-md-7 col-lg-12">
+                                    <div class="col-sm-12">
                                         <p>Kartan har framställts av Team Chaos bestående av Viola Turesson, Petter
                                             Knutsson, Jenny Miderkvist och Joakim Linna, 2018, baserat på en förlaga
-                                            av Elias Kukkola Settervik och Gustav Hultgren Svensson 2014.
-                                            <br/>
-                                            <br/>Båda versionerna är tillverkade för, och i samarbete med, Svenska Freds-
+                                            av Elias Kukkola Settervik och Gustav Hultgren Svensson 2014.</p>
+                                        <p>Båda versionerna är tillverkade för, och i samarbete med, Svenska Freds-
                                             och Skiljedomsföreningen som också är ansvarig för texter och annat innehåll.
-                                            Har du frågor om materialet, skriv till <a href="mailto:info@svenskafreds.se?Subject=Frågor%20till%20Svenska%20Freds"
+                                            Har du frågor om materialet, skriv till <a class="h-link" href="mailto:info@svenskafreds.se?Subject=Frågor%20till%20Svenska%20Freds"
                                             target="_top">Svenska Freds</a>.</p>
                                     </div>
                                 </div>
                             </div>
-                            <!--startpage infobox ends-->
                         </div>
                     </div>
                 </div>
