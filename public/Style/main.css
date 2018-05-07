@@ -288,9 +288,15 @@ p, .info{  /* Paragraphs*/
 #pLogos{
     overflow-y: auto;
 }
+.pLogo-content{
+    height: 150px;
+
+}
 .pLogo-col{
-    height: 200px;
+    display: flex;
     text-align: center;
+    align-items: center;
+    min-height: 200px;
 }
 .pLogo-col:hover{
     background-color: #333131;
@@ -301,7 +307,8 @@ p, .info{  /* Paragraphs*/
     transition: background-color .7s ease-out; 
 }
 .pLogo-col img{
-    transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out; 
+    max-width: 150px; /* Images not 4:3 will be stretched down*/
 }
 .pLogo-col:hover img {
     transform: scale(1.1);
