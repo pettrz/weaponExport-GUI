@@ -1,83 +1,81 @@
-<!-- Participants -->
-<div id="inner-wrapper" class="col-lg-8">
+<!-- Main content: Participants -->
+<div class="inner-wrapper col-lg-8">
         
         <div class="container h-100">
-            <div id="pLogos" class="row h-100 mx-auto justify-content-around">  
-
-                <!-- ko foreach: logosList() -->
+            <div id="pLogos" class="row h-100 mx-auto justify-content-around">
+                <!-- ko foreach: logosList() --> 
                     <div class="pLogo-col d-flex align-items-center justify-content-center col-sm-6 col-md-4">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <img data-bind="attr:{src: img, alt: participantTitle}" width="150px" onclick="openInfobox(this)"/>
-                                <div class="pTitle" data-bind="text: participantTitle">
-                                </div> 
-                            </div>
+                        <div class="col-sm-12">
+                            <img data-bind="attr:{src: img, alt: participantTitle}" width="150" onclick="openInfobox(this)"/>
+                            <h6 class="pt-4" data-bind="text: participantTitle">
+                            </h6> 
                         </div>
                     </div>
                 <!-- /ko -->
             </div>
         </div>
 </div>
-<!-- /Participants -->
+
      
 <!-- Infobox Intro -->
 <div class="infobox-before col-md-12 col-lg-4">
-    <div id="participants-intro-text" class="row mx-auto">
-            <div class="col-sm-5 col-md-5 col-lg-12 introHeader">
-                <div class="col-sm-12">
-                    <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp" />
-                </div>          
-                <div class="headerStyle col-sm-12" id="logo-padding2">             
-                    <h3>Aktörer</h3>
-                </div>
+    <div class="row mx-auto no-gutters">
+        <!--Intro header-->
+        <div class="py-5 col-sm-5 col-md-5 col-lg-12">
+            <div class="col-sm-12">
+                <img src="./../Style/icons/svenska_freds-logo.png" alt="Svenska Freds logotyp" />
             </div>
-            <div id="introText" class="col-sm-7 col-md-7 col-lg-12">
-                <p>En rad aktörer är direkt och indirekt inblandade i vapenexporten, genom att främja, kontrollera, reglera, granska eller stödja den. Klicka på de olika aktörerna för att lära dig mer om deras roll i vapenhandeln.<br/></p>
+            <div class="pt-4">             
+                <h3>Aktörer</h3>
             </div>
+        </div>
+        <!--Intro text-->
+        <div class="d-flex align-items-center col-sm-7 col-md-7 col-lg-12">
+            <div class="col-sm-12">
+                <p> En rad aktörer är direkt och indirekt inblandade i vapenexporten, genom att främja, kontrollera, 
+                    reglera, granska eller stödja den. Klicka på de olika aktörerna för att lära dig mer om deras roll 
+                    i vapenhandeln.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
-<!-- /Infobox Intro -->
 
-    <!-- Infobox Data-->
-    <div class="infobox-after col-md-12 col-lg-4">
-            <div class="row mx-auto justify-content-center">
 
-                <div id="infoboxImg" class="col-md-7">
-                    <img data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}"/>
-                    
-                </div>
-                <div id="logos-header" class="headerStyle col-lg-12">             
-                    <h3 data-bind="text: titleInfo"></h3>
-                </div>
-            
-                <!-- Content: information text -->
-                <div id="logo-infobox">
-                    <div id="logoInfo" class="col-sm-12">
-
-                        <div id="logo-info" class="col-sm-12" data-bind="text: logosInfo"> 
-                        </div>
-
-                        <!-- Links -->
-                        <div id="participant-link">
-                            <div  class="linksHeaderStyle" data-bind="if:checkLinksParticipants()">
-                                Läs mer
-                            </div>
-
+<!-- Infobox Data-->
+<div class="infobox-after col-md-12 col-lg-4">
+    <div class="row mx-auto justify-content-center">
+        <div id="infobox-img" class="m-3 py-2 col-7">
+            <img class="my-2" data-bind="attr:{src: selectedLogo().img, alt: selectedLogo().participantTitle}" height="80"/>
+        </div>
+        <div  class="pt-4 col-lg-12">             
+            <h3 data-bind="text: titleInfo"></h3>
+        </div>
     
-                            <div id="logoLinks" data-bind="foreach: linksLogos"> 
-                                <div data-bind="if:logoLink" class="linkStyle">
-                                <p>
-                                    <a data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
-                                </p>
-                                </div>    
-                                <div data-bind="if:!logoLink">
-                                    <p data-bind="text: logoTitle"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Links -->
+        <!--Participant infotext-->
+        <div id="logoinfo-wrapper" class="info-wrapper col-sm-12">
+            <!-- Displays info text -->
+            <div id="logo-info" class="info p-3 col-sm-12" data-bind="text: logosInfo"> 
+            </div>
+
+            <!-- Link section -->
+            <div class="col-sm-12">
+                <div class="py-3" data-bind="if:checkLinksParticipants()">
+                    <h3>Läs mer</h3>
+                </div>
+                <div data-bind="foreach: linksLogos" class="py-3">
+                    <!-- Hyperlinks -->
+                    <div data-bind="if:logoLink">
+                        <p>
+                            <a class="h-link" data-bind="attr: { href: logoLink }, text: logoTitle" target="_blank"></a>
+                        </p>
+                    </div>
+                    <!-- Title without link -->
+                    <div data-bind="if:!logoLink">
+                        <p data-bind="text: logoTitle"></p>
                     </div>
                 </div>
-            </div>   
-    </div>
-    <!-- /Infobox Data -->
+            </div>
+        </div>
+    </div>   
+</div>

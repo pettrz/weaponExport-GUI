@@ -145,17 +145,17 @@ var expanded = false;
 
     function changeSize(){
         if(!expanded){
-            document.getElementById('countryInfo').style.height = '390px';
-            document.getElementById('countryInfo').style.overflow = 'auto';   
-            document.getElementById('countryInfo').classList.remove("overflow-fade"); 
-            document.getElementById('btnInfo').innerHTML='Visa mindre'; 
+            document.getElementById('countryinfo-wrapper').style.height = '390px';
+            document.getElementById('countryinfo-wrapper').style.overflow = 'auto';   
+            document.getElementById('countryinfo-wrapper').classList.remove("overflow-fade"); 
+            document.getElementById('btn-map').innerHTML='Visa mindre'; 
             document.getElementById('info').style.paddingRight='12px';  
             expanded = true;
          } else {
-            document.getElementById('countryInfo').style.height = '270px';
-            document.getElementById('countryInfo').style.overflow = 'hidden';
-            document.getElementById('countryInfo').classList.add("overflow-fade");   
-            document.getElementById('btnInfo').innerHTML='Läs mer';  
+            document.getElementById('countryinfo-wrapper').style.height = '270px';
+            document.getElementById('countryinfo-wrapper').style.overflow = 'hidden';
+            document.getElementById('countryinfo-wrapper').classList.add("overflow-fade");   
+            document.getElementById('btn-map').innerHTML='Läs mer';  
             document.getElementById('info').style.paddingRight='20px';  
             expanded = false;       
     }
@@ -181,13 +181,13 @@ function checkLinksMap(){
 }
 
  //Map infobox button actions
- $(".buttonInfo").on("click", function() {
+ $("#btn-map").on("click", function() {
     
-  $("#countryInfo").scrollTop(0);
+  $("#countryinfo-wrapper").scrollTop(0);
 
-  $(".buttonInfo").toggleClass("btnDisabled")
+  $("#btn-map").toggleClass("btnDisabled")
   setTimeout(function(){
-    $(".buttonInfo").toggleClass("btnDisabled")
+    $("#btn-map").toggleClass("btnDisabled")
   }, 350); 
   
 });
@@ -230,7 +230,7 @@ function changeInfobox() {
 $( activeTab + ' .infobox-before').hide();
 $( activeTab + ' .infobox-after').show();
   if(expanded){
-    $('.buttonInfo').click();
+    $('.btn-map').click();
   }
 }
 

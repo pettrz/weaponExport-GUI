@@ -1,83 +1,79 @@
-    <!-- Chart -->
-    <div id="inner-wrapper" class="col-lg-8">
-        <div class="chart-container">
-            <canvas id="myChart"></canvas>
-        </div>
+<!-- Main content: Chart -->
+<div class="inner-wrapper col-lg-8">
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
     </div>
-    <!-- /Chart -->
-     
-    <!-- Infobox Intro -->
-    <div class="infobox-before col-md-12 col-lg-4">
-        <div id="chart-intro-text" class="row mx-auto"> 
-            <div id="introHeader2" class="col-sm-5 col-md-5 col-lg-12"> 
-                <div class="col-sm-12">
-                        <img src="./../Style/icons/svenska_freds-logo.png" />
-                </div>          
-                <div class="col-sm-12 headerStyle">             
-                    <h3>Statistik vapenexport</h3>
-                </div>
+</div>
+    
+<!-- Infobox Intro -->
+<div class="infobox-before col-md-12 col-lg-4">
+    <div class="row mx-auto no-gutters">
+        <!--Intro header-->
+        <div class="py-5 col-sm-5 col-md-5 col-lg-12"> 
+            <div class="col-sm-12">
+                    <img src="./../Style/icons/svenska_freds-logo.png" />
+            </div>          
+            <div class="pt-4">             
+                <h3>Statistik vapenexport</h3>
             </div>
-            <div class="introText2 col-sm-7 col-md-7 col-lg-12"> 
-                <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.<br/><br/>
-                    Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för valfritt årtal i
-                    kurvan och läs mer om det aktuella årets vapenexport. Värdet på vapenexporten mäts i miljarder kronor.<br/>
+        </div>
+        <!--Intro text-->
+        <div class="d-flex align-items-center col-sm-7 col-md-7 col-lg-12"> 
+            <div class="col-sm-12">
+                <p>Sedan början av 2000-talet har den svenska vapenexporten mer än tredubblats.</p>
+                <p> Grafen illustrerar svensk vapenexport över tid. Klicka på punkterna för valfritt årtal i
+                    kurvan och läs mer om det aktuella årets vapenexport. Värdet på vapenexporten mäts i miljarder kronor.
                 </p>
             </div>
         </div>
     </div>
-    <!-- /Infobox Intro -->
-            
-            <!-- Infobox Data -->
-            <div class="infobox-after col-md-12 col-lg-4">
+</div>
+        
+<!-- Infobox Data -->
+<div class="infobox-after col-md-12 col-lg-4">
+    <div class="row mx-auto no-gutters">
+        <div class="infobox-header py-3 d-flex align-items-center justify-content-center col-sm-5 col-lg-12">             
+            <h3 id="stat-year"></h3>
+        </div>
 
-                    <div class="row mx-auto no-gutters">
+        <!--Icons & data-->
+        <div class="data-wrapper col-sm-7 col-md-7 col-lg-12">
+            <div class="data-col col-sm-12">
+                <img class="mr-3 data-icon" src="./../Style/icons/vapen-ikon.png" height="35px" width="35px" alt="Vapenikon för årets totala vapenexportsvärde."> Vapenexport:
+                <span id="stat-weapons" class="float-right"></span>
+            </div>  
+            <div class="data-col col-sm-12">
+                <img class="mr-3 data-icon" src="./../Style/icons/money-icon.png" height="35px" width="35px" alt="Pengaikon för årets största vapenkund."> Största vapenkund:
+                <div id="stat-flag" class="flag-icon float-right" data-bind="css: statFlag()"></div>
+            </div>
+        </div>
+        
+        <!-- Stats infotext -->
+        <div id="statsinfo-wrapper" class="info-wrapper p-3 col-sm-12">
 
-                        <div id="stats-header" class="headerStyle col-xs-5 col-sm-5 col-lg-12">             
-                            <h3 id="stat-year"></h3>
-                        </div>
+            <!-- Displays info text -->
+            <div id="stat-info" class="info col-sm-12">      
+            </div>
 
-                        <!-- Icons and associated data -->
-                        <div id="weaponsData" class="columnStyle col-sm-7 col-md-7 col-lg-12">
-                            <div class="data-col col-sm-12">
-                                <img class="data-icon" src="./../Style/icons/vapen-ikon.png" height="35px" width="35px"> Vapenexport:
-                                <span class="float-right" id="stat-weapons"></span>
-                            </div>  
-                            <div class=" columnStyle data-col col-sm-12">
-                                <img class="data-icon" src="./../Style/icons/money-icon.png" height="35px" width="35px"> Största vapenkund:
-                                <div id="stat-flag" class="flag-icon float-right" data-bind="css: statFlag()"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Content: textbox -->
-                        <div id="stat-infobox">
-                            <div id="statsInfo" class="col-sm-12">
+            <!-- Link section -->
+            <div class="col-sm-12">
+                <div data-bind="if:checkLinksStats()" class="py-3">
+                    <h3>Läs mer</h3>
+                </div>
 
-                                <!-- Displays information text -->
-                                <div id="stat-info" class="col-sm-12">      
-                                </div>
-
-                                <!-- Links -->
-                                <div id="statistik-link">
-                                    <div data-bind="if:checkLinksStats()" class="linksHeaderStyle">
-                                        Läs mer
-                                    </div>
-
-                                    <div id="statLinks" data-bind="foreach: linksStats"> 
-                                        <div data-bind="if:statLink" class="linkStyle">
-                                            <p>
-                                                <a data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
-                                            </p>
-                                        </div>   
-                                        <div data-bind="if:!statLink">
-                                            <p data-bind="text: statTitle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /Links -->
-                            </div>
-
-                        </div>
-
-                    </div>   
-        </div> 
-        <!-- /Infobox Data -->
+                <div data-bind="foreach: linksStats"> 
+                    <!--Hyperlinks-->
+                    <div data-bind="if:statLink">
+                        <p>
+                            <a class="h-link" data-bind="attr: { href: statLink }, text: statTitle" target="_blank"></a>
+                        </p>
+                    </div>
+                    <!--Only titles-->
+                    <div data-bind="if:!statLink">
+                        <p data-bind="text: statTitle"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div> 
