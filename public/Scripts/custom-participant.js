@@ -27,13 +27,13 @@ function viewModelLogo() {
     self.logosList = ko.observableArray();
     self.selectedLogo = ko.observable({logo:''});
   
-    self.titleInfo = ko.computed(() =>{
+    self.titleInfo = ko.computed(function() {
         return self.selectedLogo().participantTitle 
     });
-     self.logosInfo = ko.computed(()=>{
+     self.logosInfo = ko.computed(function(){
          return self.selectedLogo().info
      });
-     self.logoImg = ko.computed(()=>{
+     self.logoImg = ko.computed(function(){
          return self.selectedLogo().img
      });
     self.linksLogos = ko.computed(function(){
