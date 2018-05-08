@@ -1,3 +1,11 @@
+// VAPENKARTA
+// Created by Team Chaos - 2018
+
+// Petter Knutsson - petterknutsson5@gmail.com
+// Viola Turesson - violaturesson@gmail.com
+// Jenny Miderkvist - jenny.miderkvist@gmail.com
+// Joakim Linna - joakimlinna1998@gmail.com
+
 var FHstatus = {};
 
 //define request to get mapcontent from database with api
