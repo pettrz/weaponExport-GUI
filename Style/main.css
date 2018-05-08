@@ -170,6 +170,9 @@ p, .info{  /* Paragraphs*/
     line-height: 30px;
 }
 /*Tooltips*/
+.tooltiptext{
+    text-align: center;
+}
 #tooltipFH .tooltiptext {
     visibility: hidden;
     padding:5px;
