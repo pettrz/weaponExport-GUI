@@ -231,7 +231,7 @@ function changeInfobox() {
 $( activeTab + ' .infobox-before').hide();
 $( activeTab + ' .infobox-after').show();
   if(expanded){
-    $('.btn-map').click();
+    $('#btn-map').click();
   }
 }
 
