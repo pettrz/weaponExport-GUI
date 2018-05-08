@@ -2,11 +2,13 @@
 <div class="inner-wrapper col-lg-8">
         
         <div class="container h-100">
-            <div id="pLogos" class="row h-100 mx-auto justify-content-around">
+            <div id="pLogos" class="row h-100 mx-auto d-flex justify-content-center align-items-center">
                 <!-- ko foreach: logosList() --> 
                     <div class="pLogo-col col-sm-6 col-md-4">
                         <div class="pLogo-content col-sm-12">
-                            <img data-bind="attr:{src: img, alt: participantTitle}" height="90" onclick="openInfobox(this)"/>
+                            <span class="img-transition">
+                                <img data-bind="attr:{src: img, alt: participantTitle}" height="90" onclick="openInfobox(this)"/>
+                            </span>
                             <h6 class="pt-4" data-bind="text: participantTitle">
                             </h6> 
                         </div>
