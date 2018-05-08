@@ -183,7 +183,7 @@ function clickOnPoint(canvas, chart, allYears) {
     canvas.onclick = function(canvas) {
         
         // Scroll to top animation onclick
-        $("#statsInfo").animate({
+        $("#statsinfo-wrapper").animate({
             scrollTop: 0
         }, 200);
 

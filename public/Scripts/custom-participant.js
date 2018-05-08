@@ -83,7 +83,7 @@ function openInfobox(el){
     changeInfobox()
 
     // Scroll to top animation onclick
-    $("#logoInfo").animate({
+    $("#logoinfo-wrapper").animate({
         scrollTop: 0
     }, 200);
 
