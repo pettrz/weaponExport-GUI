@@ -46,9 +46,10 @@ Scrum (Ramverk för projektarbeten) |
 Sidan är kopplat med ett API som datan hämtas ifrån, och varken kartan eller diagramet kommer visas utan lokalserver. Detta projekt är överlämnat till en webbyrå som inte laddat upp än på Svenska Freds.
 
 GUI finns på: https://mapgui.netlify.com/
-För att se all data, ta ner vårt [API](https://github.com/pettrz/weaponExport-API) och kör `server.js` via node.js.
+För att se all data, ta ner vårt [API](https://github.com/pettrz/weaponExport-API) och starta `server.js` via node.js.
 
-(Ta hänsyn till att all data är fejkad, och är menad att ändras av Svenska Freds personalen via adminsidan.)
+(Ta hänsyn till att all data är fejkad, och är menad att ändras av Svenska Freds-personalen via adminsidan.)
+
 # Övriga noteringar
 
 Mycket i detta projekt var relativt nytt för mig, och jag lärde mig väldigt mycket under projektets gång vilket ledde till många förbättringar under hela projektets gång.
