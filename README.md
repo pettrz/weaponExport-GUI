@@ -31,16 +31,21 @@ Bibliotek & tekniker|
 [Bootstrap 4](https://getbootstrap.com/)  |
 Flexbox  |
 [JQuery](https://jquery.com/) |
+[Gulp](https://gulpjs.com/) (Builds) |
 [JvectorMap](http://jvectormap.com/) |
-[ChartJS](https://www.chartjs.org/)  |
+[ChartJS](https://www.chartjs.org/) |
+
+
 
 Övriga verktyg & Metodik |
 ------------- |
 Adobe Photoshop  |
 [Lucidchart](https://www.lucidchart.com/) (Wireframes)  |
 [Slack](https://www.slack.com/) (Kommunikationskanal) |
+Scrum (Ramverk för projekt) |
 Visual Studio Code (Textredigerare) |
-Scrum (Ramverk för projektarbeten) |
+Visual Studio Team Services |
+
 
 ### Tillgänglighet
 Sidan är kopplat med ett API som datan hämtas ifrån, och varken kartan eller diagramet kommer visas utan lokalserver. Detta projekt är överlämnat till en webbyrå som inte laddat upp än på Svenska Freds.
