@@ -53,7 +53,7 @@ Sidan är kopplat med ett API som datan hämtas ifrån, och varken kartan eller 
 GUI finns på: https://mapgui.netlify.com/
 Datan laddas ej in pga. att kartans API behöver köras. 
 
-Här finns ett album med bilder av kartan:
+Här finns ett album med bilder av kartan: https://imgur.com/a/nYI5wCh
 
 (Ta hänsyn till att all data är fejkad, och är menad att ändras av Svenska Freds-personalen via adminsidan.)
 
