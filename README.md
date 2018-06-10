@@ -48,15 +48,17 @@ Visual Studio Team Services |
 
 
 ### Tillgänglighet
-Sidan är kopplat med ett API som datan hämtas ifrån, och varken kartan eller diagramet kommer visas utan lokalserver. Detta projekt är överlämnat till en webbyrå som inte laddat upp än på Svenska Freds.
+Sidan är kopplat med ett API som datan hämtas ifrån, och varken kartan eller diagramet kommer visas utan lokalserver. Detta projekt är överlämnat till en webbyrå som inte än hunnit publicera på Svenska Freds webbsida.
 
 GUI finns på: https://mapgui.netlify.com/
-För att se all data, ta ner vårt [API](https://github.com/pettrz/weaponExport-API) och starta `server.js` via node.js.
+Datan laddas ej in pga. att kartans API behöver köras. 
+
+Här finns ett album med bilder av kartan:
 
 (Ta hänsyn till att all data är fejkad, och är menad att ändras av Svenska Freds-personalen via adminsidan.)
 
 ### Övriga noteringar
 
-Mycket i detta projekt var relativt nytt för mig, och jag lärde mig väldigt mycket under projektets gång vilket ledde till många förbättringar under hela projektets gång.
+Mycket i detta projekt var relativt nytt för mig, och jag lärde mig väldigt mycket under projektets gång vilket ledde till många förbättringar under hela projektets gång. Det var även en utmaning att få plats med så mycket funktioner och data på en liten yta, till skillnad från en hel webbsida.
  
  
