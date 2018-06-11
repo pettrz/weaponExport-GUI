@@ -34,6 +34,9 @@ Flexbox  |
 [Gulp](https://gulpjs.com/) (Builds) |
 [JvectorMap](http://jvectormap.com/) |
 [ChartJS](https://www.chartjs.org/) |
+[NPM](https://www.npmjs.com/) |
+[NodeJS](https://www.nodejs.org/) |
+
 
 
 
